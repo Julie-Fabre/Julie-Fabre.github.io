@@ -11,53 +11,59 @@
         <link rel="stylesheet" href="css/index.css">
     </head>
 
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>
-                    Coquelicot!
-                </h1>
-                <h2>
-                    Nice to meet you!
-                </h2>
-            </div>
-            
-            <div class = "content">
-                <div class="section content-1">
-                    <h2>Subtitle 1</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sodales ut etiam sit amet nisl purus in. Tortor posuere ac ut consequat semper viverra nam libero. Neque vitae tempus quam pellentesque nec. Dolor magna eget est lorem ipsum dolor sit amet. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Cras tincidunt lobortis feugiat vivamus at. Egestas pretium aenean pharetra magna. Et egestas quis ipsum suspendisse ultrices gravida dictum. Ultricies leo integer malesuada nunc. Porta nibh venenatis cras sed felis eget velit. Quis auctor elit sed vulputate mi sit amet mauris. Dolor sit amet consectetur adipiscing elit ut aliquam. Vitae tortor condimentum lacinia quis vel.
-                    </p>
-                </div>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#software">Software</a></li>
+                <li><a href="#about">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                <div class="section content-2">
-                    <h3>Subtitle 2</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sodales ut etiam sit amet nisl purus in. Tortor posuere ac ut consequat semper viverra nam libero. Neque vitae tempus quam pellentesque nec. Dolor magna eget est lorem ipsum dolor sit amet. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Cras tincidunt lobortis feugiat vivamus at. Egestas pretium aenean pharetra magna. Et egestas quis ipsum suspendisse ultrices gravida dictum. Ultricies leo integer malesuada nunc. Porta nibh venenatis cras sed felis eget velit. Quis auctor elit sed vulputate mi sit amet mauris. Dolor sit amet consectetur adipiscing elit ut aliquam. Vitae tortor condimentum lacinia quis vel.
-                    </p>
-                </div>
+    <section id="home">
+        <h1>Welcome to My Website!</h1>
+        <p>This is the homepage section.</p>
+    </section>
 
-                <div class="section content-3">
-                    <h4>Subtitle 4</h4>
-                    <ol>
-                        <li>item 1</li>
-                        <li>item 2</li>
-                        <li>item 3</li>
-                        <li>item 4</li>
-                    </ol>
-                </div>
+    <section id="blog">
+        <h1>Blog</h1>
+        <input type="text" id="search" onkeyup="searchPosts()" placeholder="Search blog posts...">
+        <p>This is the blog section.</p>
+        <h2>Shoemaking</h2>
+        <article class="blog-post">
+            <h3>Title of the Shoemaking Blog Post</h3>
+            <p>Content coming soon...</p>
+        </article>
+        <h2>Fun Data Analysis</h2>
+        <article class="blog-post">
+            <h3>Title of the Fun Data Analysis Blog Post</h3>
+            <p>Content coming soon...</p>
+        </article>
+        <h2>Tinkering Projects</h2>
+        <article class="blog-post">
+            <h3>Title of the Tinkering Projects Blog Post</h3>
+            <p>Content coming soon...</p>
+        </article>
+    </section>
 
-            </div>
-            
-        <div class="footer">
-            <h3>
-                Thanks for visiting my very ugly page!
-            </h3>
+    <section id="software">
+        <h1>Software</h1>
+        <p>This is the software section.</p>
+    </section>
 
-            <p>Copywrite &copy; Coquelicot 2021 </p>
-        </div>
+    <section id="about">
+        <h1>About Me</h1>
+        <p>This is the About Me section.</p>
+    </section>
 
-        </div>
+    <footer>
+        <p>Copyright &copy; 2023 My Website</p>
+    </footer>
 
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
+s
