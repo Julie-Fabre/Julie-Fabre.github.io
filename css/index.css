@@ -28,6 +28,14 @@ section {
     margin: 20px 0;
 }
 
+area {
+    outline: none;
+}
+
+area:hover {
+    outline: 2px solid #000;
+}
+
 footer {
     background-color: #f8f9fa;
     text-align: center;
