@@ -9,6 +9,9 @@ header {
     padding: 10px;
 }
 
+nav {
+    background-color: rgba(255, 139, 0, 0.5);
+}
 
 nav ul {
     display: flex;
@@ -24,7 +27,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 
