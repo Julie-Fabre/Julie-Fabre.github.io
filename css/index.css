@@ -88,10 +88,12 @@ nav ul li a:hover {
     font-family: 'IM Fell English', serif; /* Replace 'Your Font' with the font you want to use */
 }
 
-#home img {
-    width: 30%;
-    height: auto;
+section#home svg {
+    width: 100vw;
+    height: auto; /* Or use 100vh to take up full height */
+    position: relative;  /* Ensures the SVG stays within the document flow */
 }
+
 
 /* Selects all a tags, changes their color and removes underline */
 a {
