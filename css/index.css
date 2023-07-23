@@ -31,16 +31,19 @@ nav ul {
 }
 
 nav ul li {
+    position: relative;
     flex: 1;
     text-align: center;
 }
 
 nav ul li ul {
     display: none;
-    position: absolute;
-    background-color: #ffffff;  /* Or any color you want for the dropdown background */
-    padding: 10px;
+    position: absolute; /* Change from relative to absolute */
+    right: 0; /* Add this line to align the submenu to the right edge of the parent li */
+    background-color: #ffffff;
+    padding: 2px;
     border-radius: 5px;
+    width: 200px; /* Set a width for the drop-down */
 }
 
 nav ul li:hover ul {
