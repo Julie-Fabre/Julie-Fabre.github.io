@@ -24,6 +24,7 @@ nav ul {
 nav ul li {
     flex: 1;
     text-align: center;
+    padding: 10;
     border-right: 1px solid white;
 }
 
