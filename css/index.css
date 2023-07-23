@@ -39,7 +39,11 @@ nav ul li:last-child {
 
 nav ul li a.active {
     font-weight: bold;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+}
+
+nav ul li a:hover {
+    color: rgba(225, 225, 225, 1); /* Link color when hovered */
 }
 
 #logo {
