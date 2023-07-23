@@ -42,7 +42,7 @@ nav ul li a.active {
 }
 
 #logo {
-    height: 10px;  /* You can adjust this value as needed to fit your design */
+    height: 50px;  /* You can adjust this value as needed to fit your design */
     width: auto;  /* This will keep the logo's aspect ratio consistent */
 }
 
