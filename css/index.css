@@ -36,16 +36,16 @@ nav ul li:last-child {
     border-right: none;
 }
 
+nav ul li a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 #logo {
     height: 10px;  /* You can adjust this value as needed to fit your design */
     width: auto;  /* This will keep the logo's aspect ratio consistent */
 }
 
-.highlight {
-    font-weight: bold;
-    text-decoration: underline;
-    padding: 5px;
-}
 
 section {
     margin: 20px 0;
