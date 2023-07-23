@@ -52,7 +52,7 @@ nav ul li:hover ul {
 
 nav ul li ul li {
     display: block;
-    text-align: right;
+    text-align: left;
 }
 
 
