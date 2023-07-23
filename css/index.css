@@ -88,6 +88,11 @@ nav ul li a:hover {
     font-family: 'IM Fell English', serif; /* Replace 'Your Font' with the font you want to use */
 }
 
+#home img {
+    width: 30%;
+    height: auto;
+}
+
 /* Selects all a tags, changes their color and removes underline */
 a {
     color: rgb(255, 68, 0);  /* Replace with the color you want for links */
