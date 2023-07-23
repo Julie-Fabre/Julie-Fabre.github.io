@@ -84,13 +84,23 @@ nav ul li a:hover {
 
 /* Selects all a tags, changes their color and removes underline */
 a {
-    color: rgb(255, 139, 0);  /* Replace with the color you want for links */
+    color: rgb(255, 68, 0);  /* Replace with the color you want for links */
     text-decoration: none;
 }
 
 /* Changes the color of a tags when hovered over */
 a:hover {
     color: rgb(130, 130, 130);  /* Replace with the color you want for hovered links */
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q::before {
+    content: open-quote;
+}
+q::after {
+    content: close-quote;
 }
 
 section {
