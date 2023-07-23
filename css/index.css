@@ -89,7 +89,7 @@ nav ul li a:hover {
 }
 
 section#home svg {
-    width: 100vw;
+    width: 80vw;
     height: auto; /* Or use 100vh to take up full height */
     position: relative;  /* Ensures the SVG stays within the document flow */
 }
