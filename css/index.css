@@ -37,7 +37,7 @@ nav ul li {
 
 nav ul li ul {
     display: none;
-    position: absolute;
+    position: relative;
     background-color: #ffffff;  /* Or any color you want for the dropdown background */
     padding: 10px;
     border-radius: 5px;
@@ -48,7 +48,7 @@ nav ul li:hover ul {
 }
 
 nav ul li ul li {
-    display: block;
+    display: none;
 }
 
 nav ul li a {
@@ -79,6 +79,16 @@ nav ul li a:hover {
     width: auto;  /* This will keep the logo's aspect ratio consistent */
 }
 
+/* Selects all a tags, changes their color and removes underline */
+a {
+    color: rgb(255, 139, 0);  /* Replace with the color you want for links */
+    text-decoration: none;
+}
+
+/* Changes the color of a tags when hovered over */
+a:hover {
+    color: rgb(130, 130, 130);  /* Replace with the color you want for hovered links */
+}
 
 section {
     margin: 20px 0;
