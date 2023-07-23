@@ -9,6 +9,15 @@ header {
     padding: 10px;
 }
 
+
+nav ul li a, h1, h2, h3, h4, h5, h6 {
+    font-family: 'IM Fell English SC', serif;
+}
+
+p, li, span {
+    font-family: 'IM Fell English', serif;
+}
+
 nav {
     /*background-color: rgba(255, 139, 0, 0.5);*/
     padding: 10px 50px 10px 50px;/*top, right, bottom, left padding */
