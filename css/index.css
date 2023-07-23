@@ -35,6 +35,22 @@ nav ul li {
     text-align: center;
 }
 
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;  /* Or any color you want for the dropdown background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    display: block;
+}
+
 nav ul li a {
     text-decoration: none;
     color: black;
