@@ -11,7 +11,7 @@ header {
 
 nav {
     background-color: rgba(255, 139, 0, 0.5);
-    padding: 20px 10px 20px 10px;/*top, right, bottom, left padding */
+    padding: 20px 50px 20px 50px;/*top, right, bottom, left padding */
 }
 
 nav ul {
@@ -36,7 +36,7 @@ nav ul li.divider {
 }
 
 #logo {
-    height: 50px;  /* You can adjust this value as needed to fit your design */
+    height: 5px;  /* You can adjust this value as needed to fit your design */
     width: auto;  /* This will keep the logo's aspect ratio consistent */
 }
 
