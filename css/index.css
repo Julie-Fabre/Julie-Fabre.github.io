@@ -94,6 +94,12 @@ section#home svg {
     position: relative;  /* Ensures the SVG stays within the document flow */
 }
 
+section#logo svg {
+    width: 10vw;
+    height: auto; /* Or use 100vh to take up full height */
+    position: relative;  /* Ensures the SVG stays within the document flow */
+}
+
 
 /* Selects all a tags, changes their color and removes underline */
 a {
