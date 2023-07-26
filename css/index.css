@@ -75,14 +75,12 @@ nav ul li a:hover {
 }
 
 #logo-container {
-    width: auto;
-    height: 10vh; /* Or use 100vh to take up full height */
     text-align: center; /* Centers the logo */
     padding-bottom: 10px; /* Adds some space between the logo and the tab section */
 }
 
 #logo {
-    height: 100px;  /* You can adjust this value as needed to fit your design */
+    height: 50px;  /* You can adjust this value as needed to fit your design */
     width: auto;  /* This will keep the logo's aspect ratio consistent */
 }
 
