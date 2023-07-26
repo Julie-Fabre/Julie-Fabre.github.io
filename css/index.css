@@ -40,7 +40,7 @@ nav ul li ul {
     display: none;
     position: absolute; /* Change from relative to absolute */
     right: 0; /* Add this line to align the submenu to the right edge of the parent li */
-    background-color: rgba(50,50,50,1);
+    background-color: rgba(200,200,200,1);
     padding: 2px;
     border-radius: 5px;
     width: 200px; /* Set a width for the drop-down */
@@ -80,7 +80,7 @@ nav ul li a:hover {
 }
 
 #logo {
-    height: 50px;  /* You can adjust this value as needed to fit your design */
+    height: 70px;  /* You can adjust this value as needed to fit your design */
     width: auto;  /* This will keep the logo's aspect ratio consistent */
 }
 
