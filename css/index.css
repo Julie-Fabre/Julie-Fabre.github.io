@@ -40,7 +40,7 @@ nav ul li ul {
     display: none;
     position: absolute; /* Change from relative to absolute */
     right: 0; /* Add this line to align the submenu to the right edge of the parent li */
-    background-color: rgba(248,248,248,1);
+    background-color: rgba(245,245,245,1);
     padding: 2px;
     border-radius: 5px;
     width: 200px; /* Set a width for the drop-down */
