@@ -75,6 +75,8 @@ nav ul li a:hover {
 }
 
 #logo-container {
+    width: auto;
+    height: 10vh; /* Or use 100vh to take up full height */
     text-align: center; /* Centers the logo */
     padding-bottom: 10px; /* Adds some space between the logo and the tab section */
 }
@@ -94,11 +96,6 @@ section#home svg {
     position: relative;  /* Ensures the SVG stays within the document flow */
 }
 
-section#logo svg {
-    width: auto;
-    height: 10vh; /* Or use 100vh to take up full height */
-    position: relative;  /* Ensures the SVG stays within the document flow */
-}
 
 
 /* Selects all a tags, changes their color and removes underline */
