@@ -95,8 +95,8 @@ section#home svg {
 }
 
 section#logo svg {
-    width: 5vw;
-    height: auto; /* Or use 100vh to take up full height */
+    width: auto;
+    height: 10vh; /* Or use 100vh to take up full height */
     position: relative;  /* Ensures the SVG stays within the document flow */
 }
 
