@@ -18,54 +18,48 @@ p, li, span {
     font-family: 'IM Fell English', serif;
 }
 
-
-#mainNav {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px 50px 10px 50px;
-  overflow: hidden;
-  background-color: #333;  /* You can change this */
+nav {
+    /*background-color: rgba(255, 139, 0, 0.5);*/
+    padding: 10px 50px 10px 50px;/*top, right, bottom, left padding */
 }
 
-/* Style the list items to display inline with padding */
-#mainNav li {
-  float: left;
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style-type: none;
 }
 
-/* Style the links to add color, center the text and adjust the padding */
-#mainNav li a {
-  display: block;
-  color: white;  /* You can change this */
-  text-align: center;
-  padding: 14px 16px;  /* You can change this */
-  text-decoration: none;
+nav ul li {
+    position: relative;
+    flex: 1;
+    text-align: center;
 }
 
-/* Change the color on hover */
-#mainNav li a:hover {
-  background-color: rgba(245, 245, 245, 1);  /* You can change this */
-  color: rgba(100, 100, 100, 1);
+nav ul li ul {
+    display: none;
+    position: absolute; /* Change from relative to absolute */
+    right: 0; /* Add this line to align the submenu to the right edge of the parent li */
+    background-color: rgba(245,245,245,1);
+    padding: 2px;
+    border-radius: 5px;
+    width: 200px; /* Set a width for the drop-down */
 }
 
-.subMenu li {
-  float: none;
-  background-color: #333;  /* You can change this */
+nav ul li:hover ul {
+    display: block;
 }
 
-.subMenu li a {
-  padding: 12px 16px;  /* You can change this */
-  text-decoration: none;
-  display: block;
-  text-align: left;
+nav ul li ul li {
+    display: block;
+    text-align: center;
 }
 
-.subMenu li a:hover {
-  background-color: #111;  /* You can change this */
-}
 
-/* Show the submenu on hover */
-#mainNav li:hover .subMenu {
-  display: block;
+nav ul li a {
+    text-decoration: none;
+    color: black;
 }
 
 nav ul li:last-child {
@@ -77,6 +71,9 @@ nav ul li a.active {
     /*text-decoration: underline;*/
 }
 
+nav ul li a:hover {
+    color: rgba(100, 100, 100, 1); /* Link color when hovered */
+}
 
 #logo-container {
     text-align: center; /* Centers the logo */
@@ -95,7 +92,7 @@ nav ul li a.active {
 }
 
 #search {
-    margin-right: 10px;
+    margin-right: 0px;
     padding: 0px;
     font-family: 'IM Fell English', serif; /* Change the font family */
     font-size: 14px; /* Adjust the font size as needed */
