@@ -8,8 +8,9 @@ var articles = [ {
 
 function hideElements() {
     document.getElementById('home').style.display = 'none';
+    //document.getElementById('article').style.display = 'none';
     document.getElementById('footer').style.display = 'none';
-    document.body.style.display = 'none';
+    //document.body.style.display = 'none';
 }
 
 
