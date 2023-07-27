@@ -15,7 +15,7 @@ function hideElements() {
 
 
 function searchArticles() {
-    var query = document.getElementById('search').value;
+    var query = document.getElementById('searchButton').value;
 
     // Clear current search results
     document.getElementById('searchResults').innerHTML = '';
@@ -27,7 +27,7 @@ function searchArticles() {
     });
 
     // Hide other sections of the page
-    //hideElements(); // Add this line to hide non-related sections
+    hideElements(); // Add this line to hide non-related sections
 
 
     // Display the results
