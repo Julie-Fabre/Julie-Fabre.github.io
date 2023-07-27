@@ -1,12 +1,11 @@
 // JavaScript
+var searchForm = document.getElementById('searchForm');
 var input = document.getElementById('search');
 
-// Add keyup event listener to the search input field
-input.addEventListener('keyup', function(event) {
-    // 13 is the Enter key code
-    if (event.keyCode === 13) {
-        searchPosts();
-    }
+// Add submit event listener to the search form
+searchForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    searchPosts();
 });
 
 function searchPosts() {
