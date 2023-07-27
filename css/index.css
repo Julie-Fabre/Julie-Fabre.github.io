@@ -119,12 +119,11 @@ nav ul li a:hover {
     }
 
     .responsive-img {
-        width: 100%;
+        width: 90%;
         height: auto;
     }
 }
 
-Copy code
 .rss-button {
     display: inline-block;
     background-color: #ff9900;
