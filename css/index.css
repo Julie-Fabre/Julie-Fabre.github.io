@@ -27,6 +27,7 @@ nav {
 nav ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0;
     list-style-type: none;
 }
@@ -39,12 +40,13 @@ nav ul li {
 
 nav ul li ul {
     display: none;
-    position: absolute; /* Change from relative to absolute */
-    right: 0; /* Add this line to align the submenu to the right edge of the parent li */
+    position: absolute;
+    right: 0;
     background-color: rgba(245,245,245,1);
     padding: 2px;
     border-radius: 5px;
     width: 200px; /* Set a width for the drop-down */
+    flex-direction: column; /* align the items along the vertical line */
 }
 
 nav ul li:hover ul {
@@ -87,7 +89,6 @@ nav ul li a:hover {
 
 .search-bar {
     display: flex;
-    align-items: center;
     justify-content: flex-end; /* Align to the right */
 }
 
