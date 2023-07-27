@@ -92,11 +92,17 @@ nav ul li a:hover {
     justify-content: flex-end; /* Align to the right */
 }
 
+#searchForm {
+    margin: 0;
+    padding: 0;
+}
+
 #search {
-    margin-right: 0px;
+    margin: 0px;
     padding: 0px;
     font-family: 'IM Fell English', serif; /* Change the font family */
     font-size: 14px; /* Adjust the font size as needed */
+    vertical-align: middle;
 }
 
 section#home svg {
