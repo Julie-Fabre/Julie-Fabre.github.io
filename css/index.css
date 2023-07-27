@@ -124,14 +124,19 @@ nav ul li a:hover {
     }
 }
 
-.rss-button {
-    display: inline-block;
+nav ul li a.rss-button {
+    display: inline-flex;
+    align-items: center;
     background-color: #ff9900;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+}
+
+nav ul li a.rss-button:hover {
+    background-color: #e68a00;
 }
 
 section#home svg {
