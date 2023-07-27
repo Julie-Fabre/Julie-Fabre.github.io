@@ -6,6 +6,12 @@ var articles = [ {
         link: 'tintin_fusee.html'
     },];
 
+function hideElements() {
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('footer').style.display = 'none';
+}
+
+
 function searchArticles() {
     var query = document.getElementById('search').value;
     console.log(query);
@@ -17,6 +23,10 @@ function searchArticles() {
     return article.title.toLowerCase().includes(query.toLowerCase()) || article.content.toLowerCase().includes(query.toLowerCase());
     });
     console.log(results);
+
+     // Hide other sections of the page
+    hideElements(); // Add this line to hide non-related sections
+
 
     // Display the results
     for (var i = 0; i < results.length; i++) {
