@@ -124,6 +124,17 @@ nav ul li a:hover {
     }
 }
 
+Copy code
+.rss-button {
+    display: inline-block;
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 section#home svg {
     width: 80vw;
     height: auto;
