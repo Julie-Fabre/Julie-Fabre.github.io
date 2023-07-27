@@ -61,4 +61,6 @@ function searchArticles(event) {
 }
 
 // Listen for form submission
-document.getElementById('searchForm').addEventListener('submit', searchArticles);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('searchForm').addEventListener('submit', searchArticles);
+});
