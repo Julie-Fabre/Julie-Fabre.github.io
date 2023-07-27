@@ -31,3 +31,5 @@ function searchArticles() {
         document.getElementById('searchResults').appendChild(resultDiv);
     }
 }
+
+document.getElementById('searchButton').addEventListener('click', searchArticles);
