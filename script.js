@@ -28,7 +28,7 @@ function searchArticles() {
     console.log(results);
 
     // Hide other sections of the page
-    //hideElements(); // Add this line to hide non-related sections
+    hideElements(); // Add this line to hide non-related sections
 
 
     // Display the results
@@ -43,7 +43,7 @@ function searchArticles() {
             content.textContent = results[i].content;
 
             resultDiv.appendChild(titleLink);
-            resultDiv.appendChild(content);
+            //resultDiv.appendChild(content);
 
             document.getElementById('searchResults').appendChild(resultDiv);
         }
