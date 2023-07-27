@@ -92,7 +92,7 @@ nav ul li a:hover {
 
 #search {
     margin-right: 10px;
-    padding: 5px;
+    padding: 0px;
     font-family: 'IM Fell English', serif; /* Change the font family */
     font-size: 14px; /* Adjust the font size as needed */
 }

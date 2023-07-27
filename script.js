@@ -1,10 +1,8 @@
-
 // JavaScript
-var searchContainer = document.querySelector('.search-bar');
 var input = document.getElementById('search');
 
-// Add keyup event listener to the search container
-searchContainer.addEventListener('keyup', function(event) {
+// Add keyup event listener to the search input field
+input.addEventListener('keyup', function(event) {
     // 13 is the Enter key code
     if (event.keyCode === 13) {
         searchPosts();
