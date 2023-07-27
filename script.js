@@ -1,5 +1,5 @@
 // Assuming articles is an array of objects with 'title' and 'content' properties
-var articles = [{
+var articles = [ {
         title: 'Tintin\'s rocket',
         content: 'Web development has its roots in the early days of the internet...',
         date: '2023-07-27'
