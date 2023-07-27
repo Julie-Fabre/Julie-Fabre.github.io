@@ -1,14 +1,13 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 header {
-    /*background-color: #f8f9fa;*/
     padding: 10px;
 }
-
 
 nav ul li a, h1, h2, h3, h4, h5, h6 {
     font-family: 'IM Fell English SC', serif;
@@ -19,36 +18,33 @@ p, li, span {
 }
 
 nav {
-    /*background-color: rgba(255, 139, 0, 0.5);*/
-    padding: 10px 50px 10px 50px;/*top, right, bottom, left padding */
+    padding: 10px 50px;
 }
-
 
 nav ul {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0;
     list-style-type: none;
+    flex-wrap: wrap;
 }
 
 nav ul li {
     position: relative;
     flex: 1;
     text-align: center;
-    left: 0;
+    margin-bottom: 1rem;
 }
 
 nav ul li ul {
     display: none;
     position: absolute;
     left: 50%;
-    margin-left: -100px;
+    transform: translateX(-50%);
     background-color: rgba(245,245,245,1);
     padding: 2px;
     border-radius: 5px;
-    width: 200px; /* Set a width for the drop-down */
-    flex-direction: column; /* align the items along the vertical line */
+    width: 200px;
 }
 
 nav ul li:hover ul {
@@ -59,7 +55,6 @@ nav ul li ul li {
     display: block;
     text-align: center;
 }
-
 
 nav ul li a {
     text-decoration: none;
@@ -72,88 +67,89 @@ nav ul li:last-child {
 
 nav ul li a.active {
     font-weight: bold;
-    /*text-decoration: underline;*/
 }
 
 nav ul li a:hover {
-    color: rgba(100, 100, 100, 1); /* Link color when hovered */
+    color: rgba(100, 100, 100, 1);
 }
 
 #logo-container {
-    text-align: center; /* Centers the logo */
-    padding-bottom: 10px; /* Adds some space between the logo and the tab section */
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 #logo {
-    height: 70px;  /* You can adjust this value as needed to fit your design */
-    width: auto;  /* This will keep the logo's aspect ratio consistent */
+    height: 70px;
+    width: auto;
 }
 
 .search-bar {
     display: flex;
-    justify-content: flex-end; /* Align to the right */
-}
-
-#searchForm {
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #search {
-    margin: 0px;
+    margin-right: 0px;
     padding: 0px;
-    font-family: 'IM Fell English', serif; /* Change the font family */
-    font-size: 14px; /* Adjust the font size as needed */
-    vertical-align: middle;
+    font-family: 'IM Fell English', serif;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+
+    nav ul li {
+        flex-basis: 100%;
+        margin-bottom: 0;
+    }
+
+    nav ul li ul {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+    }
 }
 
 section#home svg {
     width: 80vw;
-    height: auto; /* Or use 100vh to take up full height */
-    position: relative;  /* Ensures the SVG stays within the document flow */
+    height: auto;
 }
 
 body {
-  font-family: 'IM Fell English', serif; /* Default font for the whole page */
+  font-family: 'IM Fell English', serif;
 }
 
-/* New font for articles */
 article {
   font-family: 'IM Fell English', serif;
 }
 
-/* Selects all a tags, changes their color and removes underline */
 a {
-    color: rgb(255, 68, 0);  /* Replace with the color you want for links */
+    color: rgb(255, 68, 0);
     text-decoration: none;
 }
 
-/* Changes the color of a tags when hovered over */
 a:hover {
-    color: rgb(130, 130, 130);  /* Replace with the color you want for hovered links */
+    color: rgb(130, 130, 130);
 }
 
 q {
   quotes: "“" "”" "‘" "’";
 }
+
 q::before {
     content: open-quote;
 }
+
 q::after {
     content: close-quote;
 }
 
-
 section {
     margin: 20px 0;
-}
-
-area {
-    outline: none;
-}
-
-area:hover {
-    outline: 2px solid #000;
 }
 
 footer {
