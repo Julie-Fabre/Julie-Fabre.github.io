@@ -14,41 +14,42 @@ function hideElements() {
 
 function searchArticles() {
     var query = document.getElementById('search').value;
-    console.log(query);
+
     // Clear current search results
     document.getElementById('searchResults').innerHTML = '';
 
     // Filter the articles based on the user's query
     var results = articles.filter(function(article) {
-    return article.title.toLowerCase().includes(query.toLowerCase()) || article.content.toLowerCase().includes(query.toLowerCase());
+        return article.title.toLowerCase().includes(query.toLowerCase()) ||
+               article.content.toLowerCase().includes(query.toLowerCase());
     });
-    console.log(results);
 
-     // Hide other sections of the page
+    // Hide other sections of the page
     hideElements(); // Add this line to hide non-related sections
 
 
     // Display the results
-    for (var i = 0; i < results.length; i++) {
-        var resultDiv = document.createElement('div');
-        var title = document.createElement('h2');
-        var titleLink = document.createElement('a'); // Create a link instead of a heading
-        var content = document.createElement('p');
+    if(results.length > 0) {
+        for (var i = 0; i < results.length; i++) {
+            var resultDiv = document.createElement('div');
+            var titleLink = document.createElement('a'); // Create a link instead of a heading
+            var content = document.createElement('p');
 
-        titleLink.textContent = results[i].title;
-        titleLink.href = results[i].link; // Set the link's URL to the article's link
-        content.textContent = results[i].content;
+            titleLink.textContent = results[i].title;
+            titleLink.href = results[i].link; // Set the link's URL to the article's link
+            content.textContent = results[i].content;
 
-        resultDiv.appendChild(title);
-        resultDiv.appendChild(content);
+            resultDiv.appendChild(titleLink);
+            resultDiv.appendChild(content);
 
-        document.getElementById('searchResults').appendChild(resultDiv);
-    }
+            document.getElementById('searchResults').appendChild(resultDiv);
+        }
     } else {
         var noResults = document.createElement('p');
         noResults.textContent = 'No search results found for "' + query + '".';
         document.getElementById('searchResults').appendChild(noResults);
     }
 }
+
 
 document.getElementById('searchButton').addEventListener('click', searchArticles);
