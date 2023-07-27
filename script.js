@@ -15,8 +15,8 @@ function hideElements() {
 
 
 function searchArticles() {
-    var query = document.getElementById('searchButton').value;
-    console.log(query);
+    var query = document.getElementById('search').value;
+
     // Clear current search results
     document.getElementById('searchResults').innerHTML = '';
 
@@ -25,34 +25,40 @@ function searchArticles() {
         return article.title.toLowerCase().includes(query.toLowerCase()) ||
                article.content.toLowerCase().includes(query.toLowerCase());
     });
-    console.log(results);
 
     // Hide other sections of the page
-    hideElements(); // Add this line to hide non-related sections
+    hideElements();
 
+    // Create a title for the search results
+    var resultsTitle = document.createElement('h2');
+    resultsTitle.textContent = 'Search results for "' + query + '":';
+    document.getElementById('searchResults').appendChild(resultsTitle);
+
+    // Create a list for the search results
+    var resultsList = document.createElement('ul');
 
     // Display the results
     if(results.length > 0) {
         for (var i = 0; i < results.length; i++) {
-            var resultDiv = document.createElement('div');
+            var listItem = document.createElement('li');
             var titleLink = document.createElement('a'); // Create a link instead of a heading
-            var content = document.createElement('p');
 
             titleLink.textContent = results[i].title;
             titleLink.href = results[i].link; // Set the link's URL to the article's link
-            content.textContent = results[i].content;
 
-            resultDiv.appendChild(titleLink);
-            //resultDiv.appendChild(content);
-
-            document.getElementById('searchResults').appendChild(resultDiv);
+            listItem.appendChild(titleLink);
+            resultsList.appendChild(listItem);
         }
     } else {
-        var noResults = document.createElement('p');
-        noResults.textContent = 'No search results found for "' + query + '".';
-        document.getElementById('searchResults').appendChild(noResults);
+        var noResults = document.createElement('li');
+        noResults.textContent = 'No search results found. Check your search query, this search function is pretty basic and doesn\'t handle typos.';
+        resultsList.appendChild(noResults);
     }
+
+    // Append the list of results to the search results container
+    document.getElementById('searchResults').appendChild(resultsList);
 }
+
 
 
 document.getElementById('searchButton').addEventListener('click', searchArticles);
