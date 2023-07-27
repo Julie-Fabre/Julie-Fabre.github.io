@@ -16,7 +16,7 @@ function hideElements() {
 
 function searchArticles() {
     var query = document.getElementById('searchButton').value;
-
+    console.log(query);
     // Clear current search results
     document.getElementById('searchResults').innerHTML = '';
 
@@ -25,6 +25,7 @@ function searchArticles() {
         return article.title.toLowerCase().includes(query.toLowerCase()) ||
                article.content.toLowerCase().includes(query.toLowerCase());
     });
+    console.log(results);
 
     // Hide other sections of the page
     hideElements(); // Add this line to hide non-related sections
