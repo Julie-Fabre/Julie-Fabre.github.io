@@ -84,8 +84,17 @@ nav ul li a:hover {
     width: auto;  /* This will keep the logo's aspect ratio consistent */
 }
 
-#search-bar {
-    font-family: 'IM Fell English', serif; /* Replace 'Your Font' with the font you want to use */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align to the right */
+}
+
+#search {
+    margin-right: 10px;
+    padding: 5px;
+    font-family: 'IM Fell English', serif; /* Change the font family */
+    font-size: 14px; /* Adjust the font size as needed */
 }
 
 section#home svg {
