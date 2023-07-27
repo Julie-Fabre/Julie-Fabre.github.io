@@ -7,14 +7,15 @@ var articles = [ {
 
 function searchArticles() {
     var query = document.getElementById('search').value;
-
+    console.log(query);
     // Clear current search results
     document.getElementById('searchResults').innerHTML = '';
 
     // Filter the articles based on the user's query
     var results = articles.filter(function(article) {
-        return article.title.includes(query) || article.content.includes(query);
+    return article.title.toLowerCase().includes(query.toLowerCase()) || article.content.toLowerCase().includes(query.toLowerCase());
     });
+    console.log(results);
 
     // Display the results
     for (var i = 0; i < results.length; i++) {
