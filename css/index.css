@@ -103,7 +103,14 @@ section#home svg {
     position: relative;  /* Ensures the SVG stays within the document flow */
 }
 
+body {
+  font-family: 'IM Fell English', serif; /* Default font for the whole page */
+}
 
+/* New font for articles */
+article {
+  font-family: 'IM Fell English', serif;
+}
 
 /* Selects all a tags, changes their color and removes underline */
 a {
