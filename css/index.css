@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'IM Fell English', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -111,6 +111,16 @@ nav ul li a:hover {
         left: auto;
         transform: none;
         width: 100%;
+    }
+    .search-bar {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .responsive-img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
