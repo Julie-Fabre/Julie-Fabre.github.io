@@ -1,19 +1,24 @@
-function searchPosts() {
-    // Declare variables
-    var input, filter, section, article, h3, i, txtValue;
-    input = document.getElementById('search');
-    filter = input.value.toUpperCase();
-    section = document.getElementById("blog");
-    article = section.getElementsByTagName('article');
+// JavaScript
+var input = document.getElementById('search');
+input.addEventListener('keyup', function (event) {
+    // 13 is the Enter key code
+    if (event.keyCode === 13) {
+        searchPosts();
+    }
+});
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < article.length; i++) {
-        h3 = article[i].getElementsByTagName("h3")[0];
-        txtValue = h3.textContent || h3.innerText;
+function searchPosts() {
+    var filter = input.value.toUpperCase();
+    var section = document.getElementById("blog");
+    var articles = section.getElementsByTagName('article');
+
+    for (var i = 0; i < articles.length; i++) {
+        var h3 = articles[i].getElementsByTagName("h3")[0];
+        var txtValue = h3.textContent || h3.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            article[i].style.display = "";
+            articles[i].style.display = "";
         } else {
-            article[i].style.display = "none";
+            articles[i].style.display = "none";
         }
     }
 }
