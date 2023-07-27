@@ -36,12 +36,14 @@ nav ul li {
     position: relative;
     flex: 1;
     text-align: center;
+    left: 0;
 }
 
 nav ul li ul {
     display: none;
     position: absolute;
-    right: 0;
+    left: 50%;
+    margin-left: -100px;
     background-color: rgba(245,245,245,1);
     padding: 2px;
     border-radius: 5px;
