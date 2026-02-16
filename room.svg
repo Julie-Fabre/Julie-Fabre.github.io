@@ -198,38 +198,40 @@
 <line x1="98" y1="50" x2="205" y2="49" style="stroke:#6b4e30;stroke-width:0.8" id="curtain-rod" />
 <circle cx="98" cy="50" r="0.8" style="fill:#6b4e30;stroke:none" />
 <circle cx="205" cy="49" r="0.8" style="fill:#6b4e30;stroke:none" />
-<!-- Left curtain - gathered folds -->
+<!-- Left curtain - continuous fabric shape -->
 <path style="fill:url(#curtain-gradient);fill-opacity:0.9;stroke:#4a3520;stroke-width:0.4"
-  d="M 99,50 C 99,50 100,51 102,51.5 C 104,52 106,51 107.5,51 C 108.5,51 109.5,51.5 110,52
-     L 110,62 C 109,62 107.5,61.5 106,62 C 104,62.5 103,63.5 102,63 C 100.5,62.5 99.5,61.5 99,62
-     L 99,74 C 99.5,74.5 101,75 102.5,75 C 104,75 106,74 107,74.5 C 108.5,75 109.5,76 110,76
-     L 110,87 C 109,87 107.5,86 106,86.5 C 104,87 103,88 101.5,87.5 C 100,87 99,86 99,86.5
-     L 99,98 C 99.5,98.5 101,99.5 103,99 C 105,98.5 107,98 108.5,98.5 C 109.5,99 110,99.5 110,100
-     L 110,110 C 109,110 107,109.5 105,110 C 103,110.5 101,111 99,110 Z"
+  d="M 99,50 C 100,50.5 102,51.5 104,51 C 106,50.5 108,51.5 110,52
+     C 109.5,60 110.5,68 109.5,76
+     C 108.5,84 110,92 109,100
+     L 108.5,110
+     L 99,110
+     C 99.5,100 98.5,92 99.5,84
+     C 100.5,76 99,68 99.5,60 Z"
   id="curtain-left" />
-<!-- Left curtain fold lines -->
-<path style="fill:none;stroke:#9a7040;stroke-width:0.25;stroke-opacity:0.6"
-  d="M 103,52 L 103,110" id="curtain-left-fold1" />
-<path style="fill:none;stroke:#9a7040;stroke-width:0.2;stroke-opacity:0.5"
-  d="M 106,51.5 L 106.5,110" id="curtain-left-fold2" />
-<path style="fill:none;stroke:#b08050;stroke-width:0.15;stroke-opacity:0.4"
-  d="M 108.5,51.5 C 108.5,65 109,75 108.5,90 C 108,100 109,105 109,110" id="curtain-left-fold3" />
-<!-- Right curtain - gathered folds (mirrored) -->
+<!-- Left curtain fold lines (wavy) -->
+<path style="fill:none;stroke:#9a7040;stroke-width:0.25;stroke-opacity:0.5"
+  d="M 102.5,51 C 102.5,60 103,70 102.5,80 C 102,90 103,100 102.5,110" id="curtain-left-fold1" />
+<path style="fill:none;stroke:#9a7040;stroke-width:0.2;stroke-opacity:0.4"
+  d="M 105.5,51 C 106,62 105.5,72 106,82 C 106.5,92 105.5,102 106,110" id="curtain-left-fold2" />
+<path style="fill:none;stroke:#b08050;stroke-width:0.2;stroke-opacity:0.3"
+  d="M 108,52 C 108.5,62 109,72 108.5,82 C 108,92 109,102 108.5,110" id="curtain-left-fold3" />
+<!-- Right curtain - continuous fabric shape (mirrored) -->
 <path style="fill:url(#curtain-gradient);fill-opacity:0.9;stroke:#4a3520;stroke-width:0.4"
-  d="M 204,49.5 C 204,49.5 203,50.5 201,51 C 199,51.5 197,50.5 195.5,50.5 C 194.5,50.5 193.5,51 193,51.5
-     L 193,61.5 C 194,61.5 195.5,61 197,61.5 C 199,62 200,63 201,62.5 C 202.5,62 203.5,61 204,61.5
-     L 204,73.5 C 203.5,74 202,74.5 200.5,74.5 C 199,74.5 197,73.5 196,74 C 194.5,74.5 193.5,75.5 193,75.5
-     L 193,86.5 C 194,86.5 195.5,85.5 197,86 C 199,86.5 200,87.5 201.5,87 C 203,86.5 204,85.5 204,86
-     L 204,97.5 C 203.5,98 202,99 200,98.5 C 198,98 196,97.5 194.5,98 C 193.5,98.5 193,99 193,99.5
-     L 193,109 C 194,109 196,108.5 198,109 C 200,109.5 202,110 204,109 Z"
+  d="M 204,49.5 C 202,50 200,51 198,50.5 C 196,50 194,51 193,51.5
+     C 193.5,60 192.5,68 193.5,76
+     C 194.5,84 193,92 194,100
+     L 194.5,109
+     L 204,109
+     C 203.5,99 204.5,91 203.5,83
+     C 202.5,75 204,67 203.5,59 Z"
   id="curtain-right" />
-<!-- Right curtain fold lines -->
-<path style="fill:none;stroke:#9a7040;stroke-width:0.25;stroke-opacity:0.6"
-  d="M 200,51 L 200,109" id="curtain-right-fold1" />
-<path style="fill:none;stroke:#9a7040;stroke-width:0.2;stroke-opacity:0.5"
-  d="M 197,51 L 196.5,109" id="curtain-right-fold2" />
-<path style="fill:none;stroke:#b08050;stroke-width:0.15;stroke-opacity:0.4"
-  d="M 194.5,51 C 194.5,65 194,75 194.5,90 C 195,100 194,105 194,109" id="curtain-right-fold3" /></g><g
+<!-- Right curtain fold lines (wavy) -->
+<path style="fill:none;stroke:#9a7040;stroke-width:0.25;stroke-opacity:0.5"
+  d="M 200.5,50.5 C 200.5,60 200,70 200.5,80 C 201,90 200,100 200.5,109" id="curtain-right-fold1" />
+<path style="fill:none;stroke:#9a7040;stroke-width:0.2;stroke-opacity:0.4"
+  d="M 197.5,50.5 C 197,62 197.5,72 197,82 C 196.5,92 197.5,102 197,109" id="curtain-right-fold2" />
+<path style="fill:none;stroke:#b08050;stroke-width:0.2;stroke-opacity:0.3"
+  d="M 195,51 C 194.5,62 194,72 194.5,82 C 195,92 194,102 194.5,109" id="curtain-right-fold3" /></g><g
        id="window-sill"
        inkscape:label="window-sill"><path
          style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:1"
@@ -3431,15 +3433,29 @@
   <!-- Upper shelf curved bracket right -->
   <path style="fill:none;stroke:#4a3520;stroke-width:0.5"
     d="M 239,66 C 239,68 239,71 237.5,72" id="bracket-upper-right" />
-  <!-- Books on upper shelf (leaning) -->
-  <path style="fill:#c4785a;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 224,58 L 225.2,58.2 L 225,64.8 L 223.8,64.6 Z" id="book1" />
-  <path style="fill:#7a9a6a;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 225.5,57.5 L 226.8,57.7 L 226.6,64.9 L 225.3,64.7 Z" id="book2" />
-  <path style="fill:#6a82a8;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 227,57.8 L 228.5,58 L 228.3,65 L 226.8,64.8 Z" id="book3" />
-  <path style="fill:#c8a858;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 228.8,58.5 L 230.8,59 L 231.3,65.2 L 229.3,64.8 Z" id="book4-leaning" />
+  <!-- Books on upper shelf -->
+  <!-- Demon Copperhead (Kingsolver) - orange/copper -->
+  <path style="fill:#c4683a;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
+    d="M 222.5,57.8 L 223.8,58 L 223.6,64.6 L 222.3,64.4 Z" id="book-demon" />
+  <text transform="translate(223.1,63.8) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.65px;fill:#fff8e8;fill-opacity:0.85">Demon Copperhead</text>
+  <!-- Hamlet (Shakespeare) - dark maroon, thinner -->
+  <path style="fill:#6a2233;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
+    d="M 224.2,57.5 L 225.2,57.6 L 225,64.7 L 224,64.6 Z" id="book-hamlet" />
+  <text transform="translate(224.7,63.5) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.6px;fill:#e8d0a0;fill-opacity:0.85">Hamlet</text>
+  <!-- A la recherche du temps perdu (Proust) - cream/ivory, thick -->
+  <path style="fill:#f0e8d0;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
+    d="M 225.5,57.2 L 228,57.5 L 227.8,65 L 225.3,64.7 Z" id="book-proust" />
+  <path style="fill:#c8a850;fill-opacity:0.4;stroke:none"
+    d="M 225.8,57.5 L 227.7,57.7 L 227.5,64.8 L 225.6,64.5 Z" id="book-proust-gold" />
+  <text transform="translate(226.8,64.2) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.5px;fill:#6a5030;fill-opacity:0.9">A la recherche du temps perdu</text>
+  <!-- Physical Biology of the Cell - blue/teal, thick -->
+  <path style="fill:#2a6878;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
+    d="M 228.3,57.8 L 230.2,58 L 230,65 L 228.1,64.8 Z" id="book-physbio" />
+  <text transform="translate(229.3,64.2) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.45px;fill:#d0e8f0;fill-opacity:0.85">Physical Biology of the Cell</text>
+  <!-- Organic Chemistry of Biological Pathways - dark navy, thick, leaning -->
+  <path style="fill:#1a2a48;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
+    d="M 230.5,58.5 L 232.8,59.2 L 233.3,65.2 L 231,64.8 Z" id="book-orgchem" />
+  <text transform="translate(232,64.5) rotate(-85)" style="font-family:'IM Fell English',serif;font-size:0.4px;fill:#a0b8d0;fill-opacity:0.85">Organic Chem. Biol. Pathways</text>
   <!-- Lower shelf -->
   <path style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
     d="M 219,82 L 241,80.5 L 241,81.5 L 219,83 Z" id="shelf-lower-top" />
@@ -3456,16 +3472,64 @@
     d="M 233,76 C 232.5,76 232,76.5 232,77 L 231.5,80 C 231.5,80.5 232.5,81 233.5,81 C 234.5,81 235.5,80.5 235.5,80 L 235,77 C 235,76.5 234.5,76 234,76 Z"
     id="jar" />
   <ellipse cx="233.5" cy="76" rx="1.2" ry="0.4" style="fill:#a89078;stroke:#4a3520;stroke-width:0.2" id="jar-rim" />
-  <!-- Small plant sprig in jar -->
-  <path style="fill:none;stroke:#5a8848;stroke-width:0.4"
-    d="M 233.5,76 C 233,74 232,72 231.5,70" id="plant-stem1" />
-  <path style="fill:none;stroke:#5a8848;stroke-width:0.4"
-    d="M 233.5,76 C 234,73.5 235,71.5 236,70" id="plant-stem2" />
-  <!-- Tiny leaves -->
-  <ellipse cx="231.5" cy="70" rx="1" ry="0.5" style="fill:#6aa050;fill-opacity:0.8;stroke:none" transform="rotate(-20,231.5,70)" id="leaf1" />
-  <ellipse cx="236" cy="70" rx="1" ry="0.5" style="fill:#6aa050;fill-opacity:0.8;stroke:none" transform="rotate(15,236,70)" id="leaf2" />
-  <ellipse cx="232.5" cy="72" rx="0.8" ry="0.4" style="fill:#7ab060;fill-opacity:0.7;stroke:none" transform="rotate(-30,232.5,72)" id="leaf3" />
-  <ellipse cx="234.5" cy="72.5" rx="0.8" ry="0.4" style="fill:#7ab060;fill-opacity:0.7;stroke:none" transform="rotate(25,234.5,72.5)" id="leaf4" />
+  <!-- Pink variegated philodendron -->
+  <!-- Stems -->
+  <path style="fill:none;stroke:#4a7838;stroke-width:0.35"
+    d="M 233.5,76 C 233,74.5 232.5,73 231.5,71.5" id="philo-stem1" />
+  <path style="fill:none;stroke:#4a7838;stroke-width:0.35"
+    d="M 233.5,76 C 234.5,74 235.5,72 236.5,70.5" id="philo-stem2" />
+  <path style="fill:none;stroke:#4a7838;stroke-width:0.3"
+    d="M 233.5,76 C 233,74 231.5,72.5 230,71" id="philo-stem3" />
+  <path style="fill:none;stroke:#4a7838;stroke-width:0.3"
+    d="M 233.5,76 C 234,74 235,72 236,71" id="philo-stem4" />
+  <path style="fill:none;stroke:#4a7838;stroke-width:0.25"
+    d="M 233.5,76 C 233.8,74 234.5,72 234,69.5" id="philo-stem5" />
+  <!-- Heart-shaped leaves (philodendron) with pink variegation -->
+  <!-- Leaf 1 - large, top left, mostly green with pink splash -->
+  <path style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
+    d="M 231.5,71.5 C 230.5,70.5 229.5,70 229,69 C 229,68 230,67.5 231,68 C 231.5,67 232,67.5 232,68.5 C 232.5,67.5 233,67 233.5,68 C 234,69 233,70 231.5,71.5 Z"
+    id="philo-leaf1" transform="rotate(-15,231.5,71.5)" />
+  <path style="fill:#e890a0;fill-opacity:0.6;stroke:none"
+    d="M 230.5,69.5 C 230.5,69 231,68.5 231.5,69 C 231.5,69.5 231,70 230.5,69.5 Z"
+    id="philo-leaf1-pink" transform="rotate(-15,231.5,71.5)" />
+  <!-- Leaf vein -->
+  <path style="fill:none;stroke:#2a5830;stroke-width:0.12;stroke-opacity:0.5"
+    d="M 231.5,71.5 C 231.2,70 231,69 231.2,68" id="philo-vein1" transform="rotate(-15,231.5,71.5)" />
+  <!-- Leaf 2 - large, top right, heavy pink variegation -->
+  <path style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
+    d="M 236.5,70.5 C 237.5,69.5 238.5,69 239,68 C 239,67 238,66.5 237,67 C 236.5,66 236,66.5 236,67.5 C 235.5,66.5 235,66 234.5,67 C 234,68 235,69 236.5,70.5 Z"
+    id="philo-leaf2" transform="rotate(10,236.5,70.5)" />
+  <path style="fill:#e890a0;fill-opacity:0.65;stroke:none"
+    d="M 237,69 C 237.5,68 238,67.5 237.5,67 C 237,67 236.5,67.5 236.5,68 C 236.5,68.5 237,69 237,69 Z"
+    id="philo-leaf2-pink1" transform="rotate(10,236.5,70.5)" />
+  <path style="fill:#f0a0b0;fill-opacity:0.5;stroke:none"
+    d="M 235.5,68.5 C 235.5,68 236,67.5 236,68 C 236,68.5 235.5,69 235.5,68.5 Z"
+    id="philo-leaf2-pink2" transform="rotate(10,236.5,70.5)" />
+  <path style="fill:none;stroke:#2a5830;stroke-width:0.12;stroke-opacity:0.5"
+    d="M 236.5,70.5 C 236.8,69 237,68 236.8,67" id="philo-vein2" transform="rotate(10,236.5,70.5)" />
+  <!-- Leaf 3 - medium, lower left, green with pink edge -->
+  <path style="fill:#48904a;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
+    d="M 230,71 C 229.2,70.2 228.5,70 228,69.2 C 228,68.5 228.8,68.2 229.5,68.8 C 229.8,68 230.2,68.2 230.3,69 C 230.8,68.2 231.2,68 231.5,68.6 C 231.5,69.2 230.8,70 230,71 Z"
+    id="philo-leaf3" transform="rotate(-35,230,71)" />
+  <path style="fill:#e890a0;fill-opacity:0.55;stroke:none"
+    d="M 228.8,69.5 C 228.5,69.2 228.5,68.8 229,69 C 229.2,69.3 229,69.7 228.8,69.5 Z"
+    id="philo-leaf3-pink" transform="rotate(-35,230,71)" />
+  <!-- Leaf 4 - small, drooping right -->
+  <path style="fill:#3a8048;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
+    d="M 236,71 C 236.8,70.5 237.2,70.2 237.5,69.5 C 237.5,69 237,68.8 236.5,69.2 C 236.3,68.8 236,68.8 235.8,69.2 C 235.5,68.8 235.2,68.8 235,69.2 C 235,69.8 235.5,70.2 236,71 Z"
+    id="philo-leaf4" transform="rotate(30,236,71)" />
+  <path style="fill:#f0a0b0;fill-opacity:0.7;stroke:none"
+    d="M 236.5,69.8 C 236.8,69.5 237,69.2 236.8,69 C 236.5,69 236.3,69.3 236.5,69.8 Z"
+    id="philo-leaf4-pink" transform="rotate(30,236,71)" />
+  <!-- Leaf 5 - top center, almost entirely pink! (new growth) -->
+  <path style="fill:#e88098;fill-opacity:0.9;stroke:#c06878;stroke-width:0.15"
+    d="M 234,69.5 C 233.3,68.8 233,68.3 233,67.8 C 233,67.3 233.5,67 234,67.5 C 234.2,67 234.5,67 234.7,67.5 C 235,67 235.3,67.3 235.3,67.8 C 235.3,68.3 234.7,68.8 234,69.5 Z"
+    id="philo-leaf5-pink" />
+  <path style="fill:#48904a;fill-opacity:0.35;stroke:none"
+    d="M 233.8,68.5 C 233.5,68 233.5,67.5 234,67.8 C 234,68.2 233.8,68.5 233.8,68.5 Z"
+    id="philo-leaf5-green" />
+  <path style="fill:none;stroke:#c06878;stroke-width:0.1;stroke-opacity:0.5"
+    d="M 234,69.5 C 234,68.5 234,68 234,67.5" id="philo-vein5" />
 </g><g
        id="g21455"
        inkscape:label="tintin_fusee"><image
