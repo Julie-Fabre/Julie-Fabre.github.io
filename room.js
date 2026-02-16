@@ -40,10 +40,17 @@ document.addEventListener("DOMContentLoaded", function () {
       svg.style.height = "auto";
       container.appendChild(svg);
 
+      // Build a lookup of inkscape:label -> element
+      var INKSCAPE_NS = "http://www.inkscape.org/namespaces/inkscape";
+      var labelMap = {};
+      svg.querySelectorAll("g").forEach(function (g) {
+        var label = g.getAttributeNS(INKSCAPE_NS, "label");
+        if (label) labelMap[label] = g;
+      });
+
       // Wire up each interactive object
       interactiveObjects.forEach(function (obj) {
-        // Find the <g> element by its inkscape:label attribute
-        var el = svg.querySelector('[inkscape\\:label="' + obj.svgLabel + '"]');
+        var el = labelMap[obj.svgLabel];
         if (!el) {
           console.warn("Room: could not find SVG group with label:", obj.svgLabel);
           return;
