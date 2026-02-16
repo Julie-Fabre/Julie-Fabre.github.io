@@ -139,9 +139,42 @@ nav ul li a.rss-button:hover {
     background-color: #e68a00;
 }
 
-section#home svg {
+/* Interactive room */
+#room-container {
+    text-align: center;
+}
+
+#room-container svg {
     width: 80vw;
     height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.interactive-object {
+    cursor: pointer;
+}
+
+.interactive-object:hover {
+    filter: drop-shadow(0 0 4px rgba(255, 68, 0, 0.6));
+}
+
+.room-tooltip {
+    position: fixed;
+    background: #333;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'IM Fell English', serif;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 100;
+}
+
+.room-tooltip.visible {
+    opacity: 1;
 }
 
 body {
