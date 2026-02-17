@@ -83,6 +83,47 @@
   <stop offset="0.5" style="stop-color:#c89050;stop-opacity:1" />
   <stop offset="1" style="stop-color:#b88040;stop-opacity:1" />
 </linearGradient>
+<radialGradient id="poppy-g1" cx="0.3" cy="0.3" r="0.7">
+  <stop offset="0" style="stop-color:#ff4500" />
+  <stop offset="0.5" style="stop-color:#dc143c" />
+  <stop offset="1" style="stop-color:#8b0000" />
+</radialGradient>
+<radialGradient id="poppy-g2" cx="0.35" cy="0.35" r="0.65">
+  <stop offset="0" style="stop-color:#ff8c00" />
+  <stop offset="0.4" style="stop-color:#ff4500" />
+  <stop offset="1" style="stop-color:#b22222" />
+</radialGradient>
+<radialGradient id="poppy-g3" cx="0.3" cy="0.35" r="0.7">
+  <stop offset="0" style="stop-color:#ff69b4" />
+  <stop offset="0.5" style="stop-color:#dc143c" />
+  <stop offset="1" style="stop-color:#800020" />
+</radialGradient>
+<radialGradient id="poppy-g4" cx="0.35" cy="0.3" r="0.65">
+  <stop offset="0" style="stop-color:#ffd700" />
+  <stop offset="0.3" style="stop-color:#ff6347" />
+  <stop offset="0.7" style="stop-color:#dc143c" />
+  <stop offset="1" style="stop-color:#8b0000" />
+</radialGradient>
+<radialGradient id="poppy-g5" cx="0.4" cy="0.3" r="0.7">
+  <stop offset="0" style="stop-color:#ff6347" />
+  <stop offset="0.6" style="stop-color:#cc2244" />
+  <stop offset="1" style="stop-color:#660022" />
+</radialGradient>
+<radialGradient id="poppy-g6" cx="0.3" cy="0.4" r="0.65">
+  <stop offset="0" style="stop-color:#ff7744" />
+  <stop offset="0.5" style="stop-color:#ee3300" />
+  <stop offset="1" style="stop-color:#991100" />
+</radialGradient>
+<radialGradient id="poppy-g7" cx="0.35" cy="0.25" r="0.7">
+  <stop offset="0" style="stop-color:#ffaa33" />
+  <stop offset="0.4" style="stop-color:#ee5500" />
+  <stop offset="1" style="stop-color:#882200" />
+</radialGradient>
+<radialGradient id="poppy-g8" cx="0.25" cy="0.35" r="0.65">
+  <stop offset="0" style="stop-color:#ff3366" />
+  <stop offset="0.5" style="stop-color:#cc1144" />
+  <stop offset="1" style="stop-color:#770033" />
+</radialGradient>
 <clipPath id="floor-clip">
   <path d="M -3.05,164.90 L 54.31,136.35 L 84.15,136.35 L 121.64,126.58 L 181.98,126.02 L 215.82,136.14 L 241.91,135.95 L 300.10,165.42 Z" />
 </clipPath></defs><g
@@ -3688,208 +3729,246 @@
     d="M 234,69.5 C 234,68.5 234,68 234,67.5" id="philo-vein5" />
 </g>
 <!-- Black Brompton with hand-painted poppies -->
-<g id="brompton-bike" inkscape:label="brompton">
+<g id="brompton-bike" inkscape:label="brompton" transform="translate(41,163) scale(1.6) translate(-41,-163)">
+  <!-- === WHEELS === -->
   <!-- Rear wheel -->
-  <circle cx="18" cy="153" r="5.3" style="fill:none;stroke:#2a2a2a;stroke-width:0.9" />
-  <circle cx="18" cy="153" r="4.6" style="fill:none;stroke:#888;stroke-width:0.2" />
-  <circle cx="18" cy="153" r="0.7" style="fill:#444;stroke:#333;stroke-width:0.2" />
-  <g style="stroke:#aaa;stroke-width:0.08">
-    <line x1="18" y1="148.5" x2="18" y2="152.3" />
-    <line x1="18" y1="153.7" x2="18" y2="157.5" />
-    <line x1="13.5" y1="153" x2="17.3" y2="153" />
-    <line x1="18.7" y1="153" x2="22.5" y2="153" />
-    <line x1="15.15" y1="149.85" x2="17.45" y2="152.45" />
-    <line x1="18.55" y1="153.55" x2="20.85" y2="156.15" />
-    <line x1="15.15" y1="156.15" x2="17.45" y2="153.55" />
-    <line x1="18.55" y1="152.45" x2="20.85" y2="149.85" />
-    <line x1="16.2" y1="148.7" x2="17.3" y2="152.3" />
-    <line x1="18.7" y1="153.7" x2="19.8" y2="157.3" />
-    <line x1="13.7" y1="151.2" x2="17.3" y2="152.3" />
-    <line x1="18.7" y1="153.7" x2="22.3" y2="154.8" />
+  <circle cx="24" cy="155" r="7.3" style="fill:none;stroke:#2a2a2a;stroke-width:1.2" />
+  <circle cx="24" cy="155" r="6.3" style="fill:none;stroke:#777;stroke-width:0.25" />
+  <circle cx="24" cy="155" r="1" style="fill:#444;stroke:#333;stroke-width:0.25" />
+  <g style="stroke:#aaa;stroke-width:0.1">
+    <line x1="24" y1="148.8" x2="24" y2="154" /><line x1="24" y1="156" x2="24" y2="161.2" />
+    <line x1="17.8" y1="155" x2="23" y2="155" /><line x1="25" y1="155" x2="30.2" y2="155" />
+    <line x1="19.6" y1="150.6" x2="23.3" y2="154.3" /><line x1="24.7" y1="155.7" x2="28.4" y2="159.4" />
+    <line x1="19.6" y1="159.4" x2="23.3" y2="155.7" /><line x1="24.7" y1="154.3" x2="28.4" y2="150.6" />
+    <line x1="21.6" y1="149" x2="23.4" y2="154" /><line x1="24.6" y1="156" x2="26.4" y2="161" />
+    <line x1="18" y1="152.6" x2="23" y2="154.4" /><line x1="25" y1="155.6" x2="30" y2="157.4" />
   </g>
-
   <!-- Front wheel -->
-  <circle cx="43" cy="155" r="5.3" style="fill:none;stroke:#2a2a2a;stroke-width:0.9" />
-  <circle cx="43" cy="155" r="4.6" style="fill:none;stroke:#888;stroke-width:0.2" />
-  <circle cx="43" cy="155" r="0.7" style="fill:#444;stroke:#333;stroke-width:0.2" />
-  <g style="stroke:#aaa;stroke-width:0.08">
-    <line x1="43" y1="150.5" x2="43" y2="154.3" />
-    <line x1="43" y1="155.7" x2="43" y2="159.5" />
-    <line x1="38.5" y1="155" x2="42.3" y2="155" />
-    <line x1="43.7" y1="155" x2="47.5" y2="155" />
-    <line x1="40.15" y1="151.85" x2="42.45" y2="154.45" />
-    <line x1="43.55" y1="155.55" x2="45.85" y2="158.15" />
-    <line x1="40.15" y1="158.15" x2="42.45" y2="155.55" />
-    <line x1="43.55" y1="154.45" x2="45.85" y2="151.85" />
-    <line x1="41.2" y1="150.7" x2="42.3" y2="154.3" />
-    <line x1="43.7" y1="155.7" x2="44.8" y2="159.3" />
-    <line x1="38.7" y1="153.2" x2="42.3" y2="154.3" />
-    <line x1="43.7" y1="155.7" x2="47.3" y2="156.8" />
+  <circle cx="58" cy="157" r="7.3" style="fill:none;stroke:#2a2a2a;stroke-width:1.2" />
+  <circle cx="58" cy="157" r="6.3" style="fill:none;stroke:#777;stroke-width:0.25" />
+  <circle cx="58" cy="157" r="1" style="fill:#444;stroke:#333;stroke-width:0.25" />
+  <g style="stroke:#aaa;stroke-width:0.1">
+    <line x1="58" y1="150.8" x2="58" y2="156" /><line x1="58" y1="158" x2="58" y2="163.2" />
+    <line x1="51.8" y1="157" x2="57" y2="157" /><line x1="59" y1="157" x2="64.2" y2="157" />
+    <line x1="53.6" y1="152.6" x2="57.3" y2="156.3" /><line x1="58.7" y1="157.7" x2="62.4" y2="161.4" />
+    <line x1="53.6" y1="161.4" x2="57.3" y2="157.7" /><line x1="58.7" y1="156.3" x2="62.4" y2="152.6" />
+    <line x1="55.6" y1="151" x2="57.4" y2="156" /><line x1="58.6" y1="158" x2="60.4" y2="163" />
+    <line x1="52" y1="154.6" x2="57" y2="156.4" /><line x1="59" y1="157.6" x2="64" y2="159.4" />
   </g>
 
-  <!-- Rear mudguard -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:0.5;stroke-linecap:round"
-    d="M 14.5,149.5 C 13.5,151 13.5,154 15,156.5 C 16.5,158.2 19.5,158.5 21.5,157" />
-  <!-- Front mudguard -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:0.5;stroke-linecap:round"
-    d="M 39.5,151.5 C 38.5,153.5 38.5,156 40.5,158 C 42,159.5 45,159.5 46.5,158" />
+  <!-- === MUDGUARDS === -->
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:0.6;stroke-linecap:round"
+    d="M 19,150 C 17.5,152 17.5,156 19.5,158.5 C 21.5,160.5 25.5,161 28,159.5" />
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:0.6;stroke-linecap:round"
+    d="M 53,153 C 52,155.5 52,158 54,160.5 C 56,162.5 60,162.5 62.5,160.5" />
 
+  <!-- === FRAME === -->
   <!-- Chain stay -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:0.9;stroke-linecap:round"
-    d="M 25,150 L 18,153" />
-  <!-- Rear stay (curved Brompton arm) -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:0.9;stroke-linecap:round"
-    d="M 24,147.5 C 21.5,149.5 19.5,151.5 18,153" />
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.2;stroke-linecap:round"
+    d="M 34,153 L 24,155" />
+  <!-- Rear stay (curved Brompton arm from pivot) -->
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.2;stroke-linecap:round"
+    d="M 32,150 C 29,152 26,154 24,155" />
 
-  <!-- Main tube (the long Brompton beam) — BLACK -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:2.2;stroke-linecap:round"
-    d="M 22,147 L 40,144" id="main-tube" />
+  <!-- Main tube (the long Brompton beam) -->
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:3;stroke-linecap:round"
+    d="M 27,149 L 56,145" id="main-tube" />
 
-  <!-- Hinge clamp (distinctive Brompton feature) -->
-  <rect x="29.5" y="144.2" width="3" height="2.8" rx="0.4"
+  <!-- Hinge clamp -->
+  <rect x="39.5" y="145.5" width="4" height="3.5" rx="0.5"
     style="fill:#2a2a2a;stroke:#111;stroke-width:0.3" />
-  <circle cx="31" cy="145.6" r="0.45" style="fill:#999;stroke:#777;stroke-width:0.15" />
+  <circle cx="41.5" cy="147.3" r="0.6" style="fill:#999;stroke:#777;stroke-width:0.2" />
 
   <!-- Head tube -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.8;stroke-linecap:round"
-    d="M 40,140 L 41,149" />
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:2.5;stroke-linecap:round"
+    d="M 55,140 L 56.5,152" />
   <!-- Front fork -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:1;stroke-linecap:round"
-    d="M 41,149 C 41.5,151 42.5,153.5 43,155" />
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.3;stroke-linecap:round"
+    d="M 56.5,152 C 57,154 57.5,156 58,157" />
 
   <!-- Seat tube -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.3;stroke-linecap:round"
-    d="M 22,147 L 19.5,131" />
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.8;stroke-linecap:round"
+    d="M 28,149 L 25,128" />
 
-  <!-- Rear rack (small Brompton rack) -->
+  <!-- Rear rack -->
+  <path style="fill:none;stroke:#333;stroke-width:0.6;stroke-linecap:round"
+    d="M 20,149 L 29,148.5" />
   <path style="fill:none;stroke:#333;stroke-width:0.5;stroke-linecap:round"
-    d="M 15,148 L 22,147" />
-  <path style="fill:none;stroke:#333;stroke-width:0.4;stroke-linecap:round"
-    d="M 15.5,148 L 16,151" />
-  <path style="fill:none;stroke:#333;stroke-width:0.4;stroke-linecap:round"
-    d="M 21,147.5 L 20,150" />
+    d="M 20.5,149 L 21.5,152.5" />
+  <path style="fill:none;stroke:#333;stroke-width:0.5;stroke-linecap:round"
+    d="M 27.5,148.5 L 26,151.5" />
 
-  <!-- Tall handlebar stem (distinctive Brompton) -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.2;stroke-linecap:round"
-    d="M 40,140 L 41,125" />
+  <!-- === HANDLEBAR (STRAIGHT) === -->
+  <!-- Tall stem -->
+  <path style="fill:none;stroke:#1a1a1a;stroke-width:1.5;stroke-linecap:round"
+    d="M 55,140 L 56,122" />
   <!-- Stem hinge clamp -->
-  <rect x="39.8" y="133.5" width="1.5" height="1.5" rx="0.3"
+  <rect x="55" y="132" width="2" height="2" rx="0.3"
     style="fill:#2a2a2a;stroke:#111;stroke-width:0.2" />
+  <!-- Straight handlebar -->
+  <line x1="50" y1="122" x2="62" y2="122"
+    style="stroke:#1a1a1a;stroke-width:1.5;stroke-linecap:round" />
+  <!-- Rubber grips -->
+  <line x1="49" y1="122" x2="51" y2="122" style="stroke:#333;stroke-width:2.8;stroke-linecap:round" />
+  <line x1="61" y1="122" x2="63" y2="122" style="stroke:#333;stroke-width:2.8;stroke-linecap:round" />
 
-  <!-- M-type handlebar -->
-  <path style="fill:none;stroke:#1a1a1a;stroke-width:1;stroke-linecap:round"
-    d="M 38,126 C 39,124.5 40,124 41,124 C 42,124 43,124.5 44.5,126" />
-  <!-- Handlebar grips (rubber) -->
-  <path style="stroke:#2a2a2a;stroke-width:2;stroke-linecap:round"
-    d="M 37,126.5 L 38,126" />
-  <path style="stroke:#2a2a2a;stroke-width:2;stroke-linecap:round"
-    d="M 44.5,126 L 45.5,126.5" />
-
-  <!-- Saddle -->
+  <!-- === SADDLE === -->
   <path style="fill:#1a1a1a;stroke:#111;stroke-width:0.3"
-    d="M 17.5,130 C 18.5,129.5 20,129.5 21.5,130 C 21.5,131 20.5,132 19.5,132.2 C 18,132 17.5,131 17.5,130 Z" />
-  <path style="fill:none;stroke:#333;stroke-width:0.15"
-    d="M 18.5,130.5 C 19,130.2 20,130.2 20.8,130.5" />
+    d="M 22.5,127 C 23.5,126 25.5,126 27,126.8 C 27,128 26,129 24.5,129.5 C 23,129.5 22.5,128.5 22.5,127 Z" />
 
-  <!-- Chainring -->
-  <circle cx="25" cy="150" r="2.8" style="fill:none;stroke:#444;stroke-width:0.45" />
-  <circle cx="25" cy="150" r="2.3" style="fill:none;stroke:#555;stroke-width:0.12" />
-  <circle cx="25" cy="150" r="0.6" style="fill:#333;stroke:#222;stroke-width:0.2" />
-  <!-- Crank arm & pedal -->
-  <path style="fill:none;stroke:#333;stroke-width:0.7;stroke-linecap:round"
-    d="M 25,150 L 27.5,152.5" />
-  <rect x="27" y="152" width="2" height="0.7" rx="0.2"
+  <!-- === DRIVETRAIN === -->
+  <circle cx="34" cy="153" r="3.8" style="fill:none;stroke:#444;stroke-width:0.5" />
+  <circle cx="34" cy="153" r="3.2" style="fill:none;stroke:#555;stroke-width:0.15" />
+  <circle cx="34" cy="153" r="0.8" style="fill:#333;stroke:#222;stroke-width:0.2" />
+  <path style="fill:none;stroke:#333;stroke-width:0.8;stroke-linecap:round"
+    d="M 34,153 L 37,156" />
+  <rect x="36.5" y="155.5" width="2.5" height="0.9" rx="0.2"
     style="fill:#555;stroke:#444;stroke-width:0.15" />
-  <!-- Chain (simplified catenary) -->
-  <path style="fill:none;stroke:#555;stroke-width:0.3"
-    d="M 27.8,150 C 32,149.8 38,150 41,150.5" />
-  <path style="fill:none;stroke:#555;stroke-width:0.3"
-    d="M 22.2,150.5 L 18.5,152.5" />
+  <path style="fill:none;stroke:#555;stroke-width:0.35"
+    d="M 37.5,153 C 43,152.5 50,153 56,154" />
+  <path style="fill:none;stroke:#555;stroke-width:0.35"
+    d="M 30.5,153.5 L 24.5,155" />
 
-  <!-- === HAND-PAINTED POPPIES === -->
+  <!-- === PAINTED-ON POPPIES — flat on tubes, 4 petals each === -->
+  <!-- Each poppy: rotate to tube angle, then scale(1,0.4) to flatten onto the cylinder -->
 
-  <!-- Poppy 1: large, on seat tube upper area -->
-  <g transform="translate(20.5,137)">
-    <ellipse cx="-1.2" cy="-0.3" rx="1.6" ry="1.3" style="fill:#d42020;fill-opacity:0.9" transform="rotate(-15)" />
-    <ellipse cx="1.0" cy="-0.5" rx="1.5" ry="1.2" style="fill:#e83030;fill-opacity:0.85" transform="rotate(10)" />
-    <ellipse cx="0.3" cy="1.0" rx="1.4" ry="1.1" style="fill:#c81818;fill-opacity:0.9" transform="rotate(5)" />
-    <ellipse cx="-0.8" cy="0.8" rx="1.2" ry="1.0" style="fill:#d02828;fill-opacity:0.85" transform="rotate(-20)" />
-    <circle cx="0" cy="0.1" r="0.55" style="fill:#1a1a1a" />
-    <g style="fill:#ffd700;stroke:none">
-      <circle cx="-0.15" cy="-0.15" r="0.08" />
-      <circle cx="0.15" cy="-0.1" r="0.08" />
-      <circle cx="0" cy="0.15" r="0.08" />
-      <circle cx="-0.2" cy="0.1" r="0.07" />
-      <circle cx="0.2" cy="0.1" r="0.07" />
-    </g>
-  </g>
-  <!-- Leaf near poppy 1 -->
-  <path style="fill:#3a6a30;fill-opacity:0.7;stroke:#2a5020;stroke-width:0.1"
-    d="M 19,138.5 C 18,139 17,139.5 16.5,140 C 17.5,139.8 18.5,139 19,138.5 Z" />
-  <path style="fill:#4a7a3a;fill-opacity:0.6;stroke:#2a5020;stroke-width:0.1"
-    d="M 21.5,138.5 C 22.5,139.5 22.8,140.5 22.5,141 C 22.5,140 22,139 21.5,138.5 Z" />
+  <!-- MAIN TUBE poppies (tube angle ≈ -7.9°, from (27,149) to (56,145)) -->
 
-  <!-- Poppy 2: on main tube, front of hinge -->
-  <g transform="translate(35.5,144) rotate(-9)">
-    <ellipse cx="-1.0" cy="-0.2" rx="1.4" ry="1.1" style="fill:#e03030;fill-opacity:0.9" transform="rotate(-10)" />
-    <ellipse cx="0.8" cy="-0.4" rx="1.3" ry="1.0" style="fill:#d42020;fill-opacity:0.85" transform="rotate(15)" />
-    <ellipse cx="0.2" cy="0.9" rx="1.2" ry="0.9" style="fill:#c81818;fill-opacity:0.9" transform="rotate(-5)" />
-    <ellipse cx="-0.6" cy="0.6" rx="1.0" ry="0.8" style="fill:#d82828;fill-opacity:0.8" />
-    <circle cx="0" cy="0.1" r="0.5" style="fill:#1a1a1a" />
-    <g style="fill:#ffd700;stroke:none">
-      <circle cx="-0.12" cy="-0.1" r="0.07" />
-      <circle cx="0.12" cy="-0.08" r="0.07" />
-      <circle cx="0" cy="0.12" r="0.07" />
-    </g>
+  <!-- Poppy 1: near rear of main tube -->
+  <g transform="translate(30,148.6) rotate(-7.9) scale(1,0.4)">
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g1)" transform="rotate(5,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g6)" transform="rotate(95,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g3)" transform="rotate(185,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g7)" transform="rotate(270,0,0)" />
+    <circle cx="0" cy="0" r="0.5" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.2" style="fill:#ffd700" />
   </g>
 
-  <!-- Poppy 3: behind hinge on main tube -->
-  <g transform="translate(25.5,146.5) rotate(-8)">
-    <ellipse cx="-0.8" cy="-0.2" rx="1.2" ry="1.0" style="fill:#d42020;fill-opacity:0.9" transform="rotate(5)" />
-    <ellipse cx="0.7" cy="-0.3" rx="1.1" ry="0.9" style="fill:#e83030;fill-opacity:0.85" transform="rotate(-12)" />
-    <ellipse cx="0" cy="0.8" rx="1.0" ry="0.8" style="fill:#c81818;fill-opacity:0.9" />
-    <circle cx="0" cy="0.1" r="0.4" style="fill:#1a1a1a" />
-    <g style="fill:#ffd700;stroke:none">
-      <circle cx="-0.1" cy="-0.05" r="0.06" />
-      <circle cx="0.1" cy="0" r="0.06" />
-    </g>
-  </g>
-  <!-- Leaf near poppy 3 -->
-  <path style="fill:#3a6a30;fill-opacity:0.65;stroke:#2a5020;stroke-width:0.1"
-    d="M 24,147.5 C 23,148 22,149 21.5,149.5 C 22.5,149 23.5,148 24,147.5 Z" />
-
-  <!-- Poppy 4: small one on head tube area -->
-  <g transform="translate(40,141.5)">
-    <ellipse cx="-0.6" cy="-0.2" rx="1.0" ry="0.8" style="fill:#e03030;fill-opacity:0.9" transform="rotate(-8)" />
-    <ellipse cx="0.5" cy="-0.1" rx="0.9" ry="0.7" style="fill:#d42020;fill-opacity:0.85" transform="rotate(10)" />
-    <ellipse cx="0" cy="0.6" rx="0.8" ry="0.6" style="fill:#c81818;fill-opacity:0.85" />
-    <circle cx="0" cy="0.1" r="0.35" style="fill:#1a1a1a" />
-    <g style="fill:#ffd700;stroke:none">
-      <circle cx="-0.08" cy="-0.02" r="0.05" />
-      <circle cx="0.08" cy="0.02" r="0.05" />
-    </g>
+  <!-- Poppy 2: left-center main tube -->
+  <g transform="translate(33.5,148.1) rotate(-7.9) scale(1,0.4)">
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g4)" transform="rotate(10,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g8)" transform="rotate(100,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g5)" transform="rotate(190,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g2)" transform="rotate(280,0,0)" />
+    <circle cx="0" cy="0" r="0.45" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.18" style="fill:#ffd700" />
   </g>
 
-  <!-- Poppy 5: on the stem -->
-  <g transform="translate(40.5,130)">
-    <ellipse cx="-0.7" cy="-0.2" rx="1.1" ry="0.9" style="fill:#d82828;fill-opacity:0.9" transform="rotate(5)" />
-    <ellipse cx="0.6" cy="-0.3" rx="1.0" ry="0.8" style="fill:#e03030;fill-opacity:0.85" transform="rotate(-10)" />
-    <ellipse cx="0" cy="0.7" rx="0.9" ry="0.7" style="fill:#c81818;fill-opacity:0.9" />
-    <circle cx="0" cy="0.05" r="0.4" style="fill:#1a1a1a" />
-    <g style="fill:#ffd700;stroke:none">
-      <circle cx="-0.1" cy="-0.05" r="0.06" />
-      <circle cx="0.1" cy="0" r="0.06" />
-      <circle cx="0" cy="0.1" r="0.06" />
-    </g>
+  <!-- Poppy 3: just before hinge -->
+  <g transform="translate(37,147.6) rotate(-7.9) scale(1,0.4)">
+    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g2)" transform="rotate(-5,0,0)" />
+    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g7)" transform="rotate(85,0,0)" />
+    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g1)" transform="rotate(180,0,0)" />
+    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g5)" transform="rotate(265,0,0)" />
+    <circle cx="0" cy="0" r="0.55" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.22" style="fill:#ffd700" />
   </g>
-  <!-- Leaf near poppy 5 -->
-  <path style="fill:#4a7a3a;fill-opacity:0.6;stroke:#2a5020;stroke-width:0.1"
-    d="M 41.5,131 C 42.5,131.5 43,132.5 43,133 C 42.5,132.2 42,131.5 41.5,131 Z" />
 
-  <!-- "Poppy Mobile" text artistically along main tube -->
-  <text x="31" y="145.2" text-anchor="middle"
-    style="font-family:'IM Fell English',serif;font-size:1.6;fill:#c83030;font-style:italic;letter-spacing:0.3"
-    transform="rotate(-9.5, 31, 145.2)">Poppy Mobile</text>
+  <!-- Poppy 4: just after hinge -->
+  <g transform="translate(45,146.5) rotate(-7.9) scale(1,0.4)">
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g6)" transform="rotate(0,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g3)" transform="rotate(88,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g8)" transform="rotate(182,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g4)" transform="rotate(275,0,0)" />
+    <circle cx="0" cy="0" r="0.45" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.18" style="fill:#ffd700" />
+  </g>
+
+  <!-- Poppy 5: right-center main tube -->
+  <g transform="translate(49,146.0) rotate(-7.9) scale(1,0.4)">
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g8)" transform="rotate(8,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g1)" transform="rotate(98,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g6)" transform="rotate(188,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g4)" transform="rotate(278,0,0)" />
+    <circle cx="0" cy="0" r="0.5" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.2" style="fill:#ffd700" />
+  </g>
+
+  <!-- Poppy 6: near front of main tube -->
+  <g transform="translate(53,145.5) rotate(-7.9) scale(1,0.4)">
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g5)" transform="rotate(-3,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g2)" transform="rotate(92,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g7)" transform="rotate(185,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g3)" transform="rotate(272,0,0)" />
+    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
+  </g>
+
+  <!-- HEAD TUBE poppies (tube angle ≈ 83°, from (55,140) to (56.5,152)) -->
+
+  <!-- Poppy 7: upper head tube -->
+  <g transform="translate(55.3,142) rotate(83) scale(1,0.4)">
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g3)" transform="rotate(5,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g7)" transform="rotate(95,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g1)" transform="rotate(185,0,0)" />
+    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g6)" transform="rotate(275,0,0)" />
+    <circle cx="0" cy="0" r="0.45" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.18" style="fill:#ffd700" />
+  </g>
+
+  <!-- Poppy 8: lower head tube -->
+  <g transform="translate(56,148) rotate(83) scale(1,0.4)">
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g7)" transform="rotate(-8,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g4)" transform="rotate(87,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g8)" transform="rotate(177,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g2)" transform="rotate(267,0,0)" />
+    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
+  </g>
+
+  <!-- STEM poppies (tube angle ≈ -87°, from (55,140) to (56,122)) -->
+
+  <!-- Poppy 9: mid-stem -->
+  <g transform="translate(55.6,132) rotate(-87) scale(1,0.4)">
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g4)" transform="rotate(3,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g5)" transform="rotate(93,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g8)" transform="rotate(183,0,0)" />
+    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g1)" transform="rotate(273,0,0)" />
+    <circle cx="0" cy="0" r="0.5" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.2" style="fill:#ffd700" />
+  </g>
+
+  <!-- Poppy 10: upper stem -->
+  <g transform="translate(55.8,126) rotate(-87) scale(1,0.4)">
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g6)" transform="rotate(-6,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g3)" transform="rotate(90,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g5)" transform="rotate(180,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g7)" transform="rotate(270,0,0)" />
+    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
+  </g>
+
+  <!-- REAR STAY poppy (tube angle ≈ -32°, from (32,150) to (24,155)) -->
+
+  <!-- Poppy 11: on rear stay -->
+  <g transform="translate(28.5,152) rotate(-32) scale(1,0.4)">
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g2)" transform="rotate(0,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g8)" transform="rotate(92,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g4)" transform="rotate(184,0,0)" />
+    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g6)" transform="rotate(276,0,0)" />
+    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
+  </g>
+
+  <!-- CHAIN STAY poppy (tube angle ≈ -11°, from (34,153) to (24,155)) -->
+
+  <!-- Poppy 12: on chain stay -->
+  <g transform="translate(29,154) rotate(-11) scale(1,0.4)">
+    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g7)" transform="rotate(7,0,0)" />
+    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g1)" transform="rotate(97,0,0)" />
+    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g3)" transform="rotate(187,0,0)" />
+    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g5)" transform="rotate(277,0,0)" />
+    <circle cx="0" cy="0" r="0.35" style="fill:#1a1a1a" />
+    <circle cx="0" cy="0" r="0.14" style="fill:#ffd700" />
+  </g>
+
+  <!-- === "POPPY" / "MOBILE" TEXT on main tube === -->
+  <text x="49" y="145.5" text-anchor="middle"
+    style="font-family:'IM Fell English',serif;font-size:3.2;fill:#ff4400;font-style:italic;letter-spacing:1"
+    transform="rotate(-7.9, 49, 145.5)">Poppy</text>
+  <text x="49" y="148.8" text-anchor="middle"
+    style="font-family:'IM Fell English',serif;font-size:2.4;fill:#ff4400;font-style:italic;letter-spacing:1.5"
+    transform="rotate(-7.9, 49, 148.8)">Mobile</text>
 </g>
 
 <!-- Framed Open Science Award on left wall -->
