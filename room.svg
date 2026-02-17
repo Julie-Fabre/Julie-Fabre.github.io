@@ -3728,8 +3728,88 @@
   <path style="fill:none;stroke:#c06878;stroke-width:0.1;stroke-opacity:0.5"
     d="M 234,69.5 C 234,68.5 234,68 234,67.5" id="philo-vein5" />
 </g>
+
+<!-- Fermentation shelf on right wall -->
+<g id="fermentation-shelf" inkscape:label="fermentation">
+  <!-- Shelf board -->
+  <path style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
+    d="M 219,99 L 241,97.5 L 241,98.5 L 219,100 Z" id="shelf-ferm-top" />
+  <path style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
+    d="M 219,100 L 241,98.5 L 241,100 L 219,101.5 Z" id="shelf-ferm-front" />
+  <!-- Curved brackets -->
+  <path style="fill:none;stroke:#4a3520;stroke-width:0.5"
+    d="M 221,101.5 C 221,103 221,106 219.5,107" />
+  <path style="fill:none;stroke:#4a3520;stroke-width:0.5"
+    d="M 239,100 C 239,102 239,105 237.5,106" />
+
+  <!-- === KOMBUCHA JAR (left, taller) === -->
+  <g transform="translate(224,92)">
+    <!-- Glass jar body -->
+    <path d="M -2.5,0 L -2.5,6 C -2.5,6.8 -1.5,7 0,7 C 1.5,7 2.5,6.8 2.5,6 L 2.5,0 Z"
+      style="fill:#e8d8a8;fill-opacity:0.5;stroke:#b0a080;stroke-width:0.2" />
+    <!-- Amber kombucha liquid -->
+    <path d="M -2.3,1.5 L -2.3,5.8 C -2.3,6.5 -1.3,6.8 0,6.8 C 1.3,6.8 2.3,6.5 2.3,5.8 L 2.3,1.5 Z"
+      style="fill:#c8871e;fill-opacity:0.55;stroke:none" />
+    <!-- SCOBY disk floating at liquid surface -->
+    <ellipse cx="0" cy="1.5" rx="2.2" ry="0.5"
+      style="fill:#d4b88c;fill-opacity:0.7;stroke:#b09868;stroke-width:0.1" />
+    <!-- Glass highlight -->
+    <path d="M -2.2,0.5 L -2.2,5.5" style="stroke:#fff;stroke-width:0.15;opacity:0.3" />
+    <!-- Jar neck -->
+    <path d="M -1.8,-0.8 L -1.8,0 L -2.5,0 L -2.5,0 L 2.5,0 L 2.5,0 L 1.8,0 L 1.8,-0.8 Z"
+      style="fill:#e8d8a8;fill-opacity:0.4;stroke:#b0a080;stroke-width:0.15" />
+    <!-- Muslin cloth cover (draped, tied) -->
+    <path d="M -2.5,-1.2 C -2.8,-1.8 -2.2,-2 -1.5,-1.5 C -0.8,-1.2 0.8,-1.2 1.5,-1.5 C 2.2,-2 2.8,-1.8 2.5,-1.2 L 2,-0.8 L -2,-0.8 Z"
+      style="fill:#f0ece0;stroke:#d0c8b0;stroke-width:0.12" />
+    <!-- Rubber band / string tie -->
+    <ellipse cx="0" cy="-0.8" rx="2" ry="0.25"
+      style="fill:none;stroke:#8a7050;stroke-width:0.2" />
+    <!-- Label -->
+    <rect x="-1.5" y="3" width="3" height="1.8" rx="0.15"
+      style="fill:#f5f0e0;stroke:#c0b090;stroke-width:0.1" />
+    <text x="0" y="4.2" text-anchor="middle"
+      style="font-family:'IM Fell English',serif;font-size:0.8px;fill:#5a4a30">Kombucha</text>
+  </g>
+
+  <!-- === KEFIR JAR (right, shorter/wider) === -->
+  <g transform="translate(232,93.5)">
+    <!-- Glass jar body -->
+    <path d="M -2.2,0 L -2.2,4.5 C -2.2,5.2 -1.3,5.5 0,5.5 C 1.3,5.5 2.2,5.2 2.2,4.5 L 2.2,0 Z"
+      style="fill:#e8e8e8;fill-opacity:0.45;stroke:#b0b0a0;stroke-width:0.2" />
+    <!-- Milky white kefir liquid -->
+    <path d="M -2,1 L -2,4.3 C -2,4.9 -1.2,5.3 0,5.3 C 1.2,5.3 2,4.9 2,4.3 L 2,1 Z"
+      style="fill:#f0ece8;fill-opacity:0.75;stroke:none" />
+    <!-- Kefir grains visible at bottom -->
+    <circle cx="-0.5" cy="4.5" r="0.25" style="fill:#e8dcc8;stroke:#d0c4a8;stroke-width:0.08" />
+    <circle cx="0.3" cy="4.6" r="0.3" style="fill:#e0d4c0;stroke:#c8bcaa;stroke-width:0.08" />
+    <circle cx="-0.2" cy="4.8" r="0.2" style="fill:#e5d8c5;stroke:#d0c4a8;stroke-width:0.06" />
+    <circle cx="0.8" cy="4.4" r="0.2" style="fill:#e2d6c2;stroke:#ccbfa8;stroke-width:0.06" />
+    <!-- Glass highlight -->
+    <path d="M -1.9,0.5 L -1.9,4" style="stroke:#fff;stroke-width:0.12;opacity:0.3" />
+    <!-- Jar neck -->
+    <path d="M -1.5,-0.6 L -1.5,0 L -2.2,0 L 2.2,0 L 1.5,0 L 1.5,-0.6 Z"
+      style="fill:#e8e8e8;fill-opacity:0.4;stroke:#b0b0a0;stroke-width:0.12" />
+    <!-- Muslin cloth cover -->
+    <path d="M -2.2,-0.9 C -2.5,-1.4 -1.8,-1.6 -1.2,-1.2 C -0.5,-1 0.5,-1 1.2,-1.2 C 1.8,-1.6 2.5,-1.4 2.2,-0.9 L 1.6,-0.6 L -1.6,-0.6 Z"
+      style="fill:#f0ece0;stroke:#d0c8b0;stroke-width:0.12" />
+    <!-- Rubber band -->
+    <ellipse cx="0" cy="-0.6" rx="1.7" ry="0.2"
+      style="fill:none;stroke:#8a7050;stroke-width:0.18" />
+    <!-- Label -->
+    <rect x="-1.2" y="2" width="2.4" height="1.5" rx="0.15"
+      style="fill:#f5f0e0;stroke:#c0b090;stroke-width:0.1" />
+    <text x="0" y="3" text-anchor="middle"
+      style="font-family:'IM Fell English',serif;font-size:0.75px;fill:#5a4a30">Kefir</text>
+  </g>
+
+  <!-- Tiny bubbles in kombucha (fermentation activity) -->
+  <circle cx="223.5" cy="95" r="0.15" style="fill:#fff;fill-opacity:0.3" />
+  <circle cx="224.5" cy="94" r="0.1" style="fill:#fff;fill-opacity:0.25" />
+  <circle cx="224" cy="96" r="0.12" style="fill:#fff;fill-opacity:0.2" />
+</g>
+
 <!-- Black Brompton with hand-painted poppies -->
-<g id="brompton-bike" inkscape:label="brompton" transform="translate(41,163) scale(1.6) translate(-41,-163)">
+<g id="brompton-bike" inkscape:label="brompton" transform="translate(75,150) rotate(-8) scale(1.6) translate(-41,-163)">
   <!-- === WHEELS === -->
   <!-- Rear wheel -->
   <circle cx="24" cy="155" r="7.3" style="fill:none;stroke:#2a2a2a;stroke-width:1.2" />
@@ -4012,6 +4092,206 @@
   <circle cx="24" cy="98" r="1.2" style="fill:#c8a050;fill-opacity:0.6;stroke:#b08030;stroke-width:0.2" />
   <circle cx="24" cy="98" r="0.6" style="fill:#dab860;stroke:none" />
 </g>
+
+<!-- Monitor 1: PORTRAIT — live raw Neuropixels traces -->
+<g id="raw-traces-monitor" inkscape:label="raw_traces_monitor">
+  <!-- Stand base -->
+  <path d="M 133,101 L 143,100.6 L 143.5,101.5 L 132.5,102 Z"
+    style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.2" />
+  <!-- Stand neck -->
+  <path d="M 137,100.8 L 139,100.7 L 139,98 L 137,98.1 Z"
+    style="fill:#333;stroke:#1a1a1a;stroke-width:0.15" />
+  <!-- Monitor bezel (portrait: tall and narrow) -->
+  <path d="M 131,98 L 145,97.4 L 145,82 L 131,82.6 Z"
+    style="fill:#1a1a1a;stroke:#0a0a0a;stroke-width:0.3" />
+  <!-- Screen area -->
+  <path d="M 131.8,97.2 L 144.2,96.6 L 144.2,83 L 131.8,83.6 Z"
+    style="fill:#0a0a18;stroke:none" />
+  <!-- Raw traces — 10 channels, green oscilloscope style -->
+  <!-- Channel 1 -->
+  <path d="M 132.2,84.5 C 133,84.5 133.5,84.3 134,84.5 C 134.5,84.7 135,84.5 135.5,84.2 C 135.8,83.5 136,85.2 136.3,84.5 C 136.8,84.5 137.5,84.6 138,84.5 C 138.5,84.3 139,84.6 139.5,84.5 L 140,84.1 C 140.2,83.2 140.4,85.6 140.6,84.5 C 141,84.5 141.5,84.4 142,84.5 C 142.5,84.6 143,84.5 143.8,84.5"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9" />
+  <!-- Channel 2 -->
+  <path d="M 132.2,85.8 C 133,85.9 133.5,85.7 134,85.8 C 134.5,86 135,85.7 135.5,85.8 C 136,85.9 136.5,85.6 137,85.8 C 137.5,85.8 138,86 138.5,85.8 C 139,85.6 139.5,85.9 140,85.8 C 140.5,85.7 141,85.8 141.5,86 C 142,85.8 142.5,85.7 143,85.8 L 143.8,85.9"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85" />
+  <!-- Channel 3 (with spike) -->
+  <path d="M 132.2,87.2 C 133,87.2 133.5,87.1 134,87.2 C 134.5,87.3 135,87.2 135.3,86.4 C 135.5,88 135.7,87.2 136,87.1 C 136.5,87.2 137,87.3 137.5,87.2 C 138,87.1 138.5,87.2 139,87.3 C 139.5,87.2 140,87.1 140.5,87.2 C 141,87.3 141.5,87.2 142,87.1 C 142.5,87.2 143,87.3 143.8,87.2"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9" />
+  <!-- Channel 4 -->
+  <path d="M 132.2,88.5 C 133,88.6 133.5,88.4 134,88.5 C 134.5,88.5 135,88.6 135.5,88.5 C 136,88.3 136.5,88.5 137,88.6 C 137.5,88.5 138,88.4 138.5,88.5 C 139,88.6 139.5,88.5 140,88.4 C 140.3,87.7 140.5,89.2 140.7,88.5 C 141,88.5 141.5,88.4 142,88.5 C 142.5,88.6 143,88.5 143.8,88.5"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85" />
+  <!-- Channel 5 (with spike) -->
+  <path d="M 132.2,89.8 C 133,89.8 133.3,89.7 133.5,89 C 133.7,90.5 133.9,89.8 134.5,89.9 C 135,89.8 135.5,89.7 136,89.8 C 136.5,89.9 137,89.8 137.5,89.7 C 138,89.8 138.5,89.9 139,89.8 C 139.5,89.7 140,89.8 140.5,89.9 C 141,89.8 141.5,89.7 142,89.8 C 142.5,89.9 143,89.8 143.8,89.8"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9" />
+  <!-- Channel 6 -->
+  <path d="M 132.2,91.2 C 133,91.1 133.5,91.2 134,91.3 C 134.5,91.2 135,91.1 135.5,91.2 C 136,91.3 136.5,91.2 137,91.1 C 137.5,91.2 138,91.3 138.5,91.2 C 139,91.1 139.5,91.2 140,91.3 C 140.5,91.2 141,91.1 141.5,91.2 C 142,91.3 142.5,91.2 143,91.1 L 143.8,91.2"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85" />
+  <!-- Channel 7 (with spike) -->
+  <path d="M 132.2,92.5 C 133,92.5 133.5,92.4 134,92.5 C 134.5,92.6 135,92.5 135.5,92.4 C 136,92.5 136.5,92.6 137,92.5 C 137.5,92.4 138,92.5 138.2,91.8 C 138.4,93.2 138.6,92.5 139,92.5 C 139.5,92.4 140,92.5 140.5,92.6 C 141,92.5 141.5,92.4 142,92.5 C 142.5,92.6 143,92.5 143.8,92.5"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9" />
+  <!-- Channel 8 -->
+  <path d="M 132.2,93.8 C 133,93.9 133.5,93.7 134,93.8 C 134.5,93.9 135,93.8 135.5,93.7 C 136,93.8 136.5,93.9 137,93.8 C 137.5,93.7 138,93.8 138.5,93.9 C 139,93.8 139.5,93.7 140,93.8 C 140.5,93.9 141,93.8 141.5,93.7 C 142,93.8 142.5,93.9 143,93.8 L 143.8,93.8"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85" />
+  <!-- Channel 9 -->
+  <path d="M 132.2,95.1 C 133,95.1 133.5,95 134,95.1 C 134.3,94.5 134.5,95.7 134.8,95.1 C 135.5,95.2 136,95.1 136.5,95 C 137,95.1 137.5,95.2 138,95.1 C 138.5,95 139,95.1 139.5,95.2 C 140,95.1 140.5,95 141,95.1 C 141.5,95.2 142,95.1 142.5,95 C 143,95.1 143.5,95.2 143.8,95.1"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9" />
+  <!-- Channel 10 -->
+  <path d="M 132.2,96.4 C 133,96.3 133.5,96.4 134,96.5 C 134.5,96.4 135,96.3 135.5,96.4 C 136,96.5 136.5,96.4 137,96.3 C 137.5,96.4 138,96.5 138.5,96.4 C 139,96.3 139.5,96.4 140,96.5 C 140.5,96.4 141,96.3 141.5,96.4 C 142,96.5 142.5,96.4 143,96.3 L 143.8,96.4"
+    style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85" />
+  <!-- Subtle screen glow -->
+  <path d="M 131.8,97.2 L 144.2,96.6 L 144.2,83 L 131.8,83.6 Z"
+    style="fill:#00e868;fill-opacity:0.03;stroke:none" />
+</g>
+
+<!-- Monitor 2: LANDSCAPE — analysis (spike waveforms + raster) -->
+<g id="analysis-monitor" inkscape:label="analysis_monitor">
+  <!-- Stand base -->
+  <path d="M 155,101 L 170,100.5 L 170.5,101.4 L 154.5,102 Z"
+    style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.2" />
+  <!-- Stand neck -->
+  <path d="M 161.5,100.7 L 163.5,100.6 L 163.5,98 L 161.5,98.1 Z"
+    style="fill:#333;stroke:#1a1a1a;stroke-width:0.15" />
+  <!-- Monitor bezel (landscape: wide and shorter) -->
+  <path d="M 150,98 L 175,97.2 L 175,86 L 150,86.8 Z"
+    style="fill:#1a1a1a;stroke:#0a0a0a;stroke-width:0.3" />
+  <!-- Screen area -->
+  <path d="M 150.8,97.2 L 174.2,96.5 L 174.2,86.8 L 150.8,87.5 Z"
+    style="fill:#0a0a18;stroke:none" />
+
+  <!-- LEFT HALF: Spike waveforms (overlaid colored clusters) -->
+  <!-- Cluster 1 — red unit -->
+  <path d="M 151.5,92 C 152,91.8 152.3,90 152.5,89 C 152.7,93.5 153,92.2 153.5,92.5 C 154,92.2 154.5,92 155,92"
+    style="fill:none;stroke:#ff4444;stroke-width:0.18;opacity:0.7" />
+  <path d="M 151.5,92.1 C 152,91.9 152.3,90.2 152.5,89.3 C 152.7,93.3 153,92.3 153.5,92.4 C 154,92.3 154.5,92.1 155,92.1"
+    style="fill:none;stroke:#ff4444;stroke-width:0.18;opacity:0.5" />
+  <path d="M 151.5,91.9 C 152,91.7 152.3,89.8 152.5,88.8 C 152.7,93.6 153,92.1 153.5,92.6 C 154,92.1 154.5,91.9 155,91.9"
+    style="fill:none;stroke:#ff4444;stroke-width:0.18;opacity:0.6" />
+  <!-- Cluster 2 — blue unit -->
+  <path d="M 155.5,92 C 156,91.5 156.3,90.5 156.5,89.5 C 156.7,93 157,92.5 157.5,92.3 C 158,92 158.5,92 159,92"
+    style="fill:none;stroke:#4488ff;stroke-width:0.18;opacity:0.7" />
+  <path d="M 155.5,92.1 C 156,91.6 156.3,90.3 156.5,89.8 C 156.7,92.8 157,92.4 157.5,92.2 C 158,92.1 158.5,92.1 159,92.1"
+    style="fill:none;stroke:#4488ff;stroke-width:0.18;opacity:0.5" />
+  <path d="M 155.5,91.9 C 156,91.4 156.3,90.7 156.5,89.3 C 156.7,93.2 157,92.6 157.5,92.4 C 158,91.9 158.5,91.9 159,91.9"
+    style="fill:none;stroke:#4488ff;stroke-width:0.18;opacity:0.6" />
+  <!-- Cluster 3 — green unit -->
+  <path d="M 151.5,95 C 152,94.8 152.2,93.8 152.4,93 C 152.6,96 153,95.2 153.5,95.3 C 154,95 154.5,95 155,95"
+    style="fill:none;stroke:#44dd44;stroke-width:0.18;opacity:0.7" />
+  <path d="M 151.5,95.1 C 152,94.9 152.2,94 152.4,93.3 C 152.6,95.8 153,95.1 153.5,95.2 C 154,95.1 154.5,95.1 155,95.1"
+    style="fill:none;stroke:#44dd44;stroke-width:0.18;opacity:0.5" />
+  <!-- Cluster 4 — yellow unit -->
+  <path d="M 155.5,95 C 156,94.6 156.2,93.5 156.4,92.8 C 156.6,96.2 157,95.3 157.5,95.2 C 158,95 158.5,95 159,95"
+    style="fill:none;stroke:#ddcc22;stroke-width:0.18;opacity:0.7" />
+  <path d="M 155.5,95.1 C 156,94.7 156.2,93.7 156.4,93.1 C 156.6,96 157,95.2 157.5,95.1 C 158,95.1 158.5,95.1 159,95.1"
+    style="fill:none;stroke:#ddcc22;stroke-width:0.18;opacity:0.5" />
+
+  <!-- Dividing line between panels -->
+  <line x1="160" y1="87.5" x2="160" y2="96.5" style="stroke:#333;stroke-width:0.15" />
+
+  <!-- RIGHT HALF: Raster plot -->
+  <!-- Colored dots in rows (each row = a trial, columns = time) -->
+  <!-- Trial rows — red unit -->
+  <g style="fill:#ff4444;opacity:0.8">
+    <circle cx="161.5" cy="88.5" r="0.15" /><circle cx="163" cy="88.5" r="0.15" /><circle cx="165" cy="88.5" r="0.15" /><circle cx="166.5" cy="88.5" r="0.15" />
+    <circle cx="162" cy="89" r="0.15" /><circle cx="163.5" cy="89" r="0.15" /><circle cx="165.5" cy="89" r="0.15" /><circle cx="167" cy="89" r="0.15" />
+    <circle cx="161.8" cy="89.5" r="0.15" /><circle cx="163.2" cy="89.5" r="0.15" /><circle cx="165.2" cy="89.5" r="0.15" /><circle cx="166.8" cy="89.5" r="0.15" />
+    <circle cx="162.2" cy="90" r="0.15" /><circle cx="164" cy="90" r="0.15" /><circle cx="165.8" cy="90" r="0.15" /><circle cx="167.2" cy="90" r="0.15" />
+  </g>
+  <!-- Trial rows — blue unit -->
+  <g style="fill:#4488ff;opacity:0.8">
+    <circle cx="162.5" cy="91" r="0.15" /><circle cx="164.5" cy="91" r="0.15" /><circle cx="166" cy="91" r="0.15" /><circle cx="168" cy="91" r="0.15" />
+    <circle cx="162" cy="91.5" r="0.15" /><circle cx="164" cy="91.5" r="0.15" /><circle cx="166.5" cy="91.5" r="0.15" /><circle cx="168.2" cy="91.5" r="0.15" />
+    <circle cx="162.8" cy="92" r="0.15" /><circle cx="164.2" cy="92" r="0.15" /><circle cx="166.2" cy="92" r="0.15" /><circle cx="167.8" cy="92" r="0.15" />
+  </g>
+  <!-- Trial rows — green unit -->
+  <g style="fill:#44dd44;opacity:0.8">
+    <circle cx="161.5" cy="93" r="0.15" /><circle cx="163.5" cy="93" r="0.15" /><circle cx="165" cy="93" r="0.15" /><circle cx="167.5" cy="93" r="0.15" />
+    <circle cx="162" cy="93.5" r="0.15" /><circle cx="164" cy="93.5" r="0.15" /><circle cx="165.5" cy="93.5" r="0.15" /><circle cx="167" cy="93.5" r="0.15" />
+  </g>
+  <!-- PSTH bar hints at bottom -->
+  <rect x="161" y="95" width="1" height="0.8" style="fill:#ff4444;opacity:0.5" />
+  <rect x="162.5" y="94.5" width="1" height="1.3" style="fill:#ff4444;opacity:0.5" />
+  <rect x="164" y="95.2" width="1" height="0.6" style="fill:#4488ff;opacity:0.5" />
+  <rect x="165.5" y="94.8" width="1" height="1" style="fill:#4488ff;opacity:0.5" />
+  <rect x="167" y="95" width="1" height="0.8" style="fill:#44dd44;opacity:0.5" />
+  <rect x="168.5" y="95.3" width="1" height="0.5" style="fill:#ddcc22;opacity:0.5" />
+
+  <!-- Subtle screen glow -->
+  <path d="M 150.8,97.2 L 174.2,96.5 L 174.2,86.8 L 150.8,87.5 Z"
+    style="fill:#4488ff;fill-opacity:0.02;stroke:none" />
+</g>
+
+<!-- Pair of handmade leather shoes on the desk — side profile view -->
+<g id="leather-shoes" inkscape:label="leather_shoes">
+  <!-- Front shoe (side profile, facing left toward VP) -->
+  <g transform="translate(198,104) scale(0.8)">
+    <!-- Sole -->
+    <path d="M 0,0 L 8,0 C 8.2,-0.3 8.2,-1 8,-1.2 L 7.5,-1.2 L 7.5,0 L 0.3,0 L 0,0 Z"
+      style="fill:#3d2815;stroke:#2a1a0e;stroke-width:0.15" />
+    <!-- Heel block -->
+    <path d="M 7,0 L 8,0 L 8,-1.2 L 7.5,-1.2 L 7.5,-0.3 L 7,-0.3 Z"
+      style="fill:#4a3420;stroke:#2a1a0e;stroke-width:0.12" />
+    <!-- Shoe upper profile -->
+    <path d="M 0.2,0 C -0.3,-0.5 -0.5,-1.5 0,-2.2 C 0.5,-2.8 1.5,-3.2 2.5,-3.2 C 3.5,-3 4,-2.5 4.5,-2.8 C 5,-3 5.5,-2.8 6,-2.2 C 6.5,-1.8 7,-1.5 7.5,-1.2 L 7.5,-0.3 L 7,-0.3 C 6.5,-0.5 6,-1 5.5,-1.5 C 5,-2 4.5,-2.2 4,-2 C 3.5,-1.8 3,-1.5 2.5,-1.5 C 2,-1.5 1.5,-1.5 1,-1 C 0.5,-0.5 0.3,-0.2 0.2,0 Z"
+      style="fill:#8b5a2b;stroke:#704820;stroke-width:0.15" />
+    <!-- Throat opening (darker inside) -->
+    <path d="M 4,-2 C 4.3,-2.3 4.8,-2.5 5.2,-2.5 C 5.5,-2.3 5.8,-2 6,-1.8"
+      style="fill:none;stroke:#4a3015;stroke-width:0.3" />
+    <!-- Lace eyelets and laces -->
+    <circle cx="4.2" cy="-2.6" r="0.12" style="fill:#3a2010" />
+    <circle cx="4.6" cy="-2.75" r="0.12" style="fill:#3a2010" />
+    <circle cx="5.0" cy="-2.7" r="0.12" style="fill:#3a2010" />
+    <line x1="4.2" y1="-2.6" x2="4.6" y2="-2.75" style="stroke:#2a1508;stroke-width:0.08" />
+    <line x1="4.6" y1="-2.75" x2="5.0" y2="-2.7" style="stroke:#2a1508;stroke-width:0.08" />
+    <!-- Welt stitching along sole edge -->
+    <path d="M 0.5,-0.2 L 7,-0.2"
+      style="fill:none;stroke:#a07050;stroke-width:0.06;stroke-dasharray:0.3,0.2" />
+    <!-- Toe cap stitching -->
+    <path d="M 0.8,-1.5 C 1.2,-2.2 1.8,-2.6 2.5,-2.8"
+      style="fill:none;stroke:#a07050;stroke-width:0.06;stroke-dasharray:0.3,0.2" />
+  </g>
+  <!-- Back shoe (peeking behind, slightly offset) -->
+  <g transform="translate(199,105.2) scale(0.8)">
+    <path d="M 0,0 L 8,0 C 8.2,-0.3 8.2,-1 8,-1.2 L 7.5,-1.2 L 7.5,0 L 0.3,0 L 0,0 Z"
+      style="fill:#3a2512;stroke:#2a1a0e;stroke-width:0.15" />
+    <path d="M 7,0 L 8,0 L 8,-1.2 L 7.5,-1.2 L 7.5,-0.3 L 7,-0.3 Z"
+      style="fill:#45301c;stroke:#2a1a0e;stroke-width:0.12" />
+    <path d="M 0.2,0 C -0.3,-0.5 -0.5,-1.5 0,-2.2 C 0.5,-2.8 1.5,-3.2 2.5,-3.2 C 3.5,-3 4,-2.5 4.5,-2.8 C 5,-3 5.5,-2.8 6,-2.2 C 6.5,-1.8 7,-1.5 7.5,-1.2 L 7.5,-0.3 L 7,-0.3 C 6.5,-0.5 6,-1 5.5,-1.5 C 5,-2 4.5,-2.2 4,-2 C 3.5,-1.8 3,-1.5 2.5,-1.5 C 2,-1.5 1.5,-1.5 1,-1 C 0.5,-0.5 0.3,-0.2 0.2,0 Z"
+      style="fill:#7d5028;stroke:#644020;stroke-width:0.15" />
+    <path d="M 0.5,-0.2 L 7,-0.2"
+      style="fill:none;stroke:#9a6848;stroke-width:0.06;stroke-dasharray:0.3,0.2" />
+  </g>
+</g>
+
+<!-- Black leather handbag on the desk -->
+<g id="leather-handbag" inkscape:label="leather_handbag" transform="translate(102,102) scale(0.7)">
+  <!-- Bag body -->
+  <path d="M -5,0 L -5,7 C -5,8 -3,8.5 0,8.5 C 3,8.5 5,8 5,7 L 5,0 Z"
+    style="fill:#1a1a1a;stroke:#0a0a0a;stroke-width:0.25" />
+  <!-- Side gusset highlight -->
+  <path d="M -5,0 L -5,7" style="stroke:#2a2a2a;stroke-width:0.15" />
+  <path d="M 5,0 L 5,7" style="stroke:#2a2a2a;stroke-width:0.15" />
+  <!-- Flap -->
+  <path d="M -5,0 L 5,0 L 4.5,3 C 4,3.8 2,4.2 0,4.2 C -2,4.2 -4,3.8 -4.5,3 Z"
+    style="fill:#222;stroke:#111;stroke-width:0.2" />
+  <!-- Flap stitching -->
+  <path d="M -4,1 C -2,0.5 0,0.3 2,0.5 L 4,1"
+    style="fill:none;stroke:#333;stroke-width:0.08;stroke-dasharray:0.3,0.2" />
+  <path d="M -3.8,2.5 C -2,3.2 0,3.4 2,3.2 L 3.8,2.5"
+    style="fill:none;stroke:#333;stroke-width:0.08;stroke-dasharray:0.3,0.2" />
+  <!-- Gold turn-lock clasp -->
+  <ellipse cx="0" cy="2.8" rx="0.6" ry="0.4" style="fill:#c8a050;stroke:#a08030;stroke-width:0.12" />
+  <line x1="-0.3" y1="2.8" x2="0.3" y2="2.8" style="stroke:#8a6a28;stroke-width:0.15" />
+  <!-- Handle -->
+  <path d="M -2,0 C -2.2,-3 -1.2,-4.2 0,-4.2 C 1.2,-4.2 2.2,-3 2,0"
+    style="fill:none;stroke:#1a1a1a;stroke-width:0.8;stroke-linecap:round" />
+  <!-- Handle stitching -->
+  <path d="M -2,0 C -2.2,-3 -1.2,-4.2 0,-4.2 C 1.2,-4.2 2.2,-3 2,0"
+    style="fill:none;stroke:#333;stroke-width:0.1;stroke-dasharray:0.25,0.2" />
+  <!-- Bottom leather texture -->
+  <path d="M -3,5.5 C -1,5.8 1,5.8 3,5.5" style="fill:none;stroke:#2a2a2a;stroke-width:0.06;opacity:0.4" />
+  <path d="M -2,6.5 C 0,6.8 2,6.5" style="fill:none;stroke:#2a2a2a;stroke-width:0.06;opacity:0.4" />
+</g>
+
 <g
        id="g21455"
        inkscape:label="tintin_fusee"><image

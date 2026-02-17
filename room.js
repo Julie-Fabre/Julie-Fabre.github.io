@@ -16,8 +16,31 @@ const interactiveObjects = [
     url: "open-science.html",
     tooltip: "Open science in academia",
   },
-  // { svgLabel: "shoes", url: "shoemaking.html", tooltip: "Handmade shoes" },
-  // { svgLabel: "bike", url: "bike.html", tooltip: "A bike I welded from scratch" },
+  {
+    svgLabel: "raw_traces_monitor",
+    url: "protocols.html",
+    tooltip: "Live Neuropixels recordings",
+  },
+  {
+    svgLabel: "analysis_monitor",
+    url: "software.html",
+    tooltip: "Neuroscience analysis tools",
+  },
+  {
+    svgLabel: "fermentation",
+    url: "tinkering-other.html",
+    tooltip: "Kefir & kombucha fermentation",
+  },
+  {
+    svgLabel: "leather_shoes",
+    url: "shoemaking.html",
+    tooltip: "Handmade leather shoes",
+  },
+  {
+    svgLabel: "leather_handbag",
+    url: "shoemaking.html",
+    tooltip: "Handmade leather handbag",
+  },
 ];
 
 // =============================================================
