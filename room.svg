@@ -3829,137 +3829,124 @@
   <path style="fill:none;stroke:#555;stroke-width:0.35"
     d="M 30.5,153.5 L 24.5,155" />
 
-  <!-- === PAINTED-ON POPPIES — flat on tubes, 4 petals each === -->
-  <!-- Each poppy: rotate to tube angle, then scale(1,0.4) to flatten onto the cylinder -->
+  <!-- === HAND-PAINTED POPPIES === -->
+  <!-- Each poppy: 4 custom bezier petals. Wide petals go ALONG the tube, -->
+  <!-- narrow petals WRAP AROUND it — creating a natural painted-on look. -->
+  <!-- Clustered artistically: hero group near center, trailing outward. -->
 
-  <!-- MAIN TUBE poppies (tube angle ≈ -7.9°, from (27,149) to (56,145)) -->
+  <!-- ~~~ MAIN TUBE (angle -7.9°) — hero cluster ~~~ -->
 
-  <!-- Poppy 1: near rear of main tube -->
-  <g transform="translate(30,148.6) rotate(-7.9) scale(1,0.4)">
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g1)" transform="rotate(5,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g6)" transform="rotate(95,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g3)" transform="rotate(185,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g7)" transform="rotate(270,0,0)" />
-    <circle cx="0" cy="0" r="0.5" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.2" style="fill:#ffd700" />
+  <!-- Poppy 1: HERO — large, center of main tube -->
+  <g transform="translate(34,148) rotate(-7.9)">
+    <path d="M 0,0 C -0.7,-0.35 -1.9,-0.5 -1.8,0.1 C -1.6,0.65 -0.5,0.35 0,0 Z" style="fill:url(#poppy-g1)" />
+    <path d="M 0,0 C 0.8,-0.3 2.0,-0.4 1.9,0.15 C 1.7,0.6 0.6,0.3 0,0 Z" style="fill:url(#poppy-g6)" />
+    <path d="M 0,0 C -0.4,-0.2 -0.5,-0.75 0.05,-0.85 C 0.5,-0.7 0.45,-0.2 0,0 Z" style="fill:url(#poppy-g4)" />
+    <path d="M 0,0 C -0.35,0.2 -0.45,0.7 0.05,0.8 C 0.5,0.65 0.4,0.2 0,0 Z" style="fill:url(#poppy-g3)" />
+    <circle cx="0" cy="0" r="0.38" style="fill:#1a1a1a" />
+    <circle cx="-0.1" cy="-0.08" r="0.07" style="fill:#ffd700" />
+    <circle cx="0.1" cy="0.05" r="0.06" style="fill:#daa520" />
+    <circle cx="-0.04" cy="0.1" r="0.05" style="fill:#ffd700" />
   </g>
 
-  <!-- Poppy 2: left-center main tube -->
-  <g transform="translate(33.5,148.1) rotate(-7.9) scale(1,0.4)">
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g4)" transform="rotate(10,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g8)" transform="rotate(100,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g5)" transform="rotate(190,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g2)" transform="rotate(280,0,0)" />
-    <circle cx="0" cy="0" r="0.45" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.18" style="fill:#ffd700" />
+  <!-- Poppy 2: medium, overlapping hero to the left -->
+  <g transform="translate(31,148.4) rotate(-7.9)">
+    <path d="M 0,0 C -0.55,-0.25 -1.4,-0.45 -1.35,0.05 C -1.2,0.5 -0.4,0.3 0,0 Z" style="fill:url(#poppy-g3)" />
+    <path d="M 0,0 C 0.6,-0.2 1.5,-0.35 1.4,0.1 C 1.25,0.45 0.5,0.25 0,0 Z" style="fill:url(#poppy-g5)" />
+    <path d="M 0,0 C -0.3,-0.15 -0.4,-0.6 0,-0.65 C 0.4,-0.55 0.35,-0.15 0,0 Z" style="fill:url(#poppy-g8)" />
+    <path d="M 0,0 C -0.28,0.15 -0.38,0.55 0,0.6 C 0.38,0.5 0.3,0.15 0,0 Z" style="fill:url(#poppy-g2)" />
+    <circle cx="0" cy="0" r="0.3" style="fill:#1a1a1a" />
+    <circle cx="-0.08" cy="-0.06" r="0.06" style="fill:#ffd700" />
+    <circle cx="0.06" cy="0.04" r="0.05" style="fill:#daa520" />
   </g>
 
-  <!-- Poppy 3: just before hinge -->
-  <g transform="translate(37,147.6) rotate(-7.9) scale(1,0.4)">
-    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g2)" transform="rotate(-5,0,0)" />
-    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g7)" transform="rotate(85,0,0)" />
-    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g1)" transform="rotate(180,0,0)" />
-    <ellipse cx="0" cy="-1.2" rx="1.1" ry="1.4" style="fill:url(#poppy-g5)" transform="rotate(265,0,0)" />
-    <circle cx="0" cy="0" r="0.55" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.22" style="fill:#ffd700" />
+  <!-- Poppy 3: small, just right of hero -->
+  <g transform="translate(37.5,147.5) rotate(-7.9)">
+    <path d="M 0,0 C -0.4,-0.2 -1.1,-0.35 -1.0,0.05 C -0.9,0.35 -0.3,0.2 0,0 Z" style="fill:url(#poppy-g7)" />
+    <path d="M 0,0 C 0.45,-0.18 1.15,-0.3 1.05,0.08 C 0.9,0.35 0.35,0.2 0,0 Z" style="fill:url(#poppy-g4)" />
+    <path d="M 0,0 C -0.22,-0.12 -0.3,-0.48 0,-0.52 C 0.3,-0.45 0.25,-0.12 0,0 Z" style="fill:url(#poppy-g1)" />
+    <path d="M 0,0 C -0.2,0.12 -0.28,0.42 0,0.48 C 0.3,0.4 0.22,0.12 0,0 Z" style="fill:url(#poppy-g6)" />
+    <circle cx="0" cy="0" r="0.22" style="fill:#1a1a1a" />
+    <circle cx="-0.06" cy="-0.04" r="0.05" style="fill:#ffd700" />
+    <circle cx="0.04" cy="0.04" r="0.04" style="fill:#daa520" />
   </g>
 
-  <!-- Poppy 4: just after hinge -->
-  <g transform="translate(45,146.5) rotate(-7.9) scale(1,0.4)">
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g6)" transform="rotate(0,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g3)" transform="rotate(88,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g8)" transform="rotate(182,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g4)" transform="rotate(275,0,0)" />
-    <circle cx="0" cy="0" r="0.45" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.18" style="fill:#ffd700" />
+  <!-- Tiny bud between cluster and hinge -->
+  <g transform="translate(32.8,148.2) rotate(-7.9)">
+    <path d="M 0,0 C -0.25,-0.12 -0.6,-0.2 -0.55,0.03 C -0.45,0.2 -0.15,0.12 0,0 Z" style="fill:url(#poppy-g8)" />
+    <path d="M 0,0 C 0.28,-0.1 0.6,-0.18 0.55,0.05 C 0.45,0.22 0.2,0.1 0,0 Z" style="fill:url(#poppy-g5)" />
+    <circle cx="0" cy="0" r="0.14" style="fill:#1a1a1a" />
+    <circle cx="0" cy="-0.03" r="0.04" style="fill:#ffd700" />
   </g>
 
-  <!-- Poppy 5: right-center main tube -->
-  <g transform="translate(49,146.0) rotate(-7.9) scale(1,0.4)">
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g8)" transform="rotate(8,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g1)" transform="rotate(98,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g6)" transform="rotate(188,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g4)" transform="rotate(278,0,0)" />
-    <circle cx="0" cy="0" r="0.5" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.2" style="fill:#ffd700" />
+  <!-- ~~~ MAIN TUBE — trailing toward front ~~~ -->
+
+  <!-- Poppy 4: medium, right side of main tube -->
+  <g transform="translate(47,146.2) rotate(-7.9)">
+    <path d="M 0,0 C -0.6,-0.28 -1.55,-0.4 -1.5,0.08 C -1.35,0.5 -0.45,0.28 0,0 Z" style="fill:url(#poppy-g2)" />
+    <path d="M 0,0 C 0.65,-0.22 1.6,-0.35 1.5,0.12 C 1.35,0.5 0.5,0.25 0,0 Z" style="fill:url(#poppy-g8)" />
+    <path d="M 0,0 C -0.32,-0.16 -0.42,-0.62 0.03,-0.7 C 0.42,-0.58 0.38,-0.16 0,0 Z" style="fill:url(#poppy-g5)" />
+    <path d="M 0,0 C -0.3,0.16 -0.4,0.58 0.03,0.65 C 0.4,0.55 0.35,0.16 0,0 Z" style="fill:url(#poppy-g7)" />
+    <circle cx="0" cy="0" r="0.32" style="fill:#1a1a1a" />
+    <circle cx="-0.09" cy="-0.06" r="0.06" style="fill:#ffd700" />
+    <circle cx="0.07" cy="0.05" r="0.05" style="fill:#daa520" />
   </g>
 
-  <!-- Poppy 6: near front of main tube -->
-  <g transform="translate(53,145.5) rotate(-7.9) scale(1,0.4)">
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g5)" transform="rotate(-3,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g2)" transform="rotate(92,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g7)" transform="rotate(185,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g3)" transform="rotate(272,0,0)" />
-    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
+  <!-- Poppy 5: small, near front of main tube -->
+  <g transform="translate(52,145.5) rotate(-7.9)">
+    <path d="M 0,0 C -0.4,-0.18 -1.05,-0.3 -1.0,0.05 C -0.85,0.3 -0.3,0.18 0,0 Z" style="fill:url(#poppy-g6)" />
+    <path d="M 0,0 C 0.42,-0.15 1.1,-0.25 1.0,0.08 C 0.85,0.32 0.35,0.15 0,0 Z" style="fill:url(#poppy-g3)" />
+    <path d="M 0,0 C -0.2,-0.1 -0.28,-0.45 0,-0.5 C 0.28,-0.42 0.22,-0.1 0,0 Z" style="fill:url(#poppy-g4)" />
+    <path d="M 0,0 C -0.18,0.1 -0.25,0.4 0,0.45 C 0.28,0.38 0.2,0.1 0,0 Z" style="fill:url(#poppy-g1)" />
+    <circle cx="0" cy="0" r="0.22" style="fill:#1a1a1a" />
+    <circle cx="-0.05" cy="-0.04" r="0.05" style="fill:#ffd700" />
+    <circle cx="0.04" cy="0.03" r="0.04" style="fill:#daa520" />
   </g>
 
-  <!-- HEAD TUBE poppies (tube angle ≈ 83°, from (55,140) to (56.5,152)) -->
-
-  <!-- Poppy 7: upper head tube -->
-  <g transform="translate(55.3,142) rotate(83) scale(1,0.4)">
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g3)" transform="rotate(5,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g7)" transform="rotate(95,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g1)" transform="rotate(185,0,0)" />
-    <ellipse cx="0" cy="-1.0" rx="0.9" ry="1.2" style="fill:url(#poppy-g6)" transform="rotate(275,0,0)" />
-    <circle cx="0" cy="0" r="0.45" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.18" style="fill:#ffd700" />
+  <!-- Tiny bud trailing near front -->
+  <g transform="translate(44,146.7) rotate(-7.9)">
+    <path d="M 0,0 C -0.22,-0.1 -0.55,-0.18 -0.5,0.03 C -0.4,0.18 -0.12,0.1 0,0 Z" style="fill:url(#poppy-g4)" />
+    <path d="M 0,0 C 0.25,-0.08 0.55,-0.15 0.5,0.04 C 0.42,0.18 0.15,0.08 0,0 Z" style="fill:url(#poppy-g7)" />
+    <circle cx="0" cy="0" r="0.12" style="fill:#1a1a1a" />
+    <circle cx="0" cy="-0.02" r="0.035" style="fill:#ffd700" />
   </g>
 
-  <!-- Poppy 8: lower head tube -->
-  <g transform="translate(56,148) rotate(83) scale(1,0.4)">
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g7)" transform="rotate(-8,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g4)" transform="rotate(87,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g8)" transform="rotate(177,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g2)" transform="rotate(267,0,0)" />
-    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
+  <!-- ~~~ HEAD TUBE (angle 83°) ~~~ -->
+
+  <!-- Poppy 6: on head tube -->
+  <g transform="translate(55.5,145) rotate(83)">
+    <path d="M 0,0 C -0.5,-0.22 -1.3,-0.38 -1.25,0.06 C -1.1,0.4 -0.35,0.22 0,0 Z" style="fill:url(#poppy-g8)" />
+    <path d="M 0,0 C 0.55,-0.2 1.35,-0.32 1.3,0.08 C 1.15,0.42 0.4,0.2 0,0 Z" style="fill:url(#poppy-g7)" />
+    <path d="M 0,0 C -0.28,-0.14 -0.36,-0.52 0.02,-0.58 C 0.36,-0.48 0.32,-0.14 0,0 Z" style="fill:url(#poppy-g2)" />
+    <path d="M 0,0 C -0.25,0.14 -0.34,0.48 0.02,0.54 C 0.36,0.45 0.28,0.14 0,0 Z" style="fill:url(#poppy-g5)" />
+    <circle cx="0" cy="0" r="0.28" style="fill:#1a1a1a" />
+    <circle cx="-0.07" cy="-0.05" r="0.05" style="fill:#ffd700" />
+    <circle cx="0.05" cy="0.04" r="0.04" style="fill:#daa520" />
   </g>
 
-  <!-- STEM poppies (tube angle ≈ -87°, from (55,140) to (56,122)) -->
+  <!-- ~~~ STEM (angle -87°) ~~~ -->
 
-  <!-- Poppy 9: mid-stem -->
-  <g transform="translate(55.6,132) rotate(-87) scale(1,0.4)">
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g4)" transform="rotate(3,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g5)" transform="rotate(93,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g8)" transform="rotate(183,0,0)" />
-    <ellipse cx="0" cy="-1.1" rx="1.0" ry="1.3" style="fill:url(#poppy-g1)" transform="rotate(273,0,0)" />
-    <circle cx="0" cy="0" r="0.5" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.2" style="fill:#ffd700" />
+  <!-- Poppy 7: on stem, mid-height -->
+  <g transform="translate(55.6,130) rotate(-87)">
+    <path d="M 0,0 C -0.5,-0.24 -1.35,-0.4 -1.3,0.06 C -1.15,0.45 -0.38,0.24 0,0 Z" style="fill:url(#poppy-g4)" />
+    <path d="M 0,0 C 0.55,-0.2 1.4,-0.35 1.35,0.08 C 1.2,0.42 0.42,0.2 0,0 Z" style="fill:url(#poppy-g1)" />
+    <path d="M 0,0 C -0.26,-0.14 -0.35,-0.55 0,-0.6 C 0.35,-0.5 0.3,-0.14 0,0 Z" style="fill:url(#poppy-g6)" />
+    <path d="M 0,0 C -0.24,0.14 -0.32,0.48 0,0.55 C 0.34,0.45 0.26,0.14 0,0 Z" style="fill:url(#poppy-g3)" />
+    <circle cx="0" cy="0" r="0.28" style="fill:#1a1a1a" />
+    <circle cx="-0.07" cy="-0.05" r="0.05" style="fill:#ffd700" />
+    <circle cx="0.06" cy="0.03" r="0.045" style="fill:#daa520" />
   </g>
 
-  <!-- Poppy 10: upper stem -->
-  <g transform="translate(55.8,126) rotate(-87) scale(1,0.4)">
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g6)" transform="rotate(-6,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g3)" transform="rotate(90,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g5)" transform="rotate(180,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g7)" transform="rotate(270,0,0)" />
-    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
-  </g>
+  <!-- ~~~ REAR AREA ~~~ -->
 
-  <!-- REAR STAY poppy (tube angle ≈ -32°, from (32,150) to (24,155)) -->
-
-  <!-- Poppy 11: on rear stay -->
-  <g transform="translate(28.5,152) rotate(-32) scale(1,0.4)">
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g2)" transform="rotate(0,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g8)" transform="rotate(92,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g4)" transform="rotate(184,0,0)" />
-    <ellipse cx="0" cy="-0.9" rx="0.8" ry="1.1" style="fill:url(#poppy-g6)" transform="rotate(276,0,0)" />
-    <circle cx="0" cy="0" r="0.4" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.16" style="fill:#ffd700" />
-  </g>
-
-  <!-- CHAIN STAY poppy (tube angle ≈ -11°, from (34,153) to (24,155)) -->
-
-  <!-- Poppy 12: on chain stay -->
-  <g transform="translate(29,154) rotate(-11) scale(1,0.4)">
-    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g7)" transform="rotate(7,0,0)" />
-    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g1)" transform="rotate(97,0,0)" />
-    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g3)" transform="rotate(187,0,0)" />
-    <ellipse cx="0" cy="-0.8" rx="0.7" ry="1.0" style="fill:url(#poppy-g5)" transform="rotate(277,0,0)" />
-    <circle cx="0" cy="0" r="0.35" style="fill:#1a1a1a" />
-    <circle cx="0" cy="0" r="0.14" style="fill:#ffd700" />
+  <!-- Poppy 8: small, on rear stay near junction -->
+  <g transform="translate(29,151.5) rotate(-32)">
+    <path d="M 0,0 C -0.35,-0.16 -0.9,-0.28 -0.85,0.04 C -0.75,0.28 -0.25,0.16 0,0 Z" style="fill:url(#poppy-g5)" />
+    <path d="M 0,0 C 0.38,-0.14 0.95,-0.24 0.9,0.06 C 0.78,0.3 0.3,0.14 0,0 Z" style="fill:url(#poppy-g2)" />
+    <path d="M 0,0 C -0.18,-0.1 -0.24,-0.38 0,-0.42 C 0.24,-0.35 0.2,-0.1 0,0 Z" style="fill:url(#poppy-g6)" />
+    <path d="M 0,0 C -0.16,0.1 -0.22,0.35 0,0.38 C 0.24,0.32 0.18,0.1 0,0 Z" style="fill:url(#poppy-g8)" />
+    <circle cx="0" cy="0" r="0.2" style="fill:#1a1a1a" />
+    <circle cx="-0.05" cy="-0.03" r="0.04" style="fill:#ffd700" />
+    <circle cx="0.04" cy="0.03" r="0.035" style="fill:#daa520" />
   </g>
 
   <!-- === "POPPY" / "MOBILE" TEXT on main tube === -->
