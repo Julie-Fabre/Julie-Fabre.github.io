@@ -82,7 +82,10 @@
   <stop offset="0" style="stop-color:#d4a060;stop-opacity:1" />
   <stop offset="0.5" style="stop-color:#c89050;stop-opacity:1" />
   <stop offset="1" style="stop-color:#b88040;stop-opacity:1" />
-</linearGradient></defs><g
+</linearGradient>
+<clipPath id="floor-clip">
+  <path d="M -3.05,164.90 L 54.31,136.35 L 84.15,136.35 L 121.64,126.58 L 181.98,126.02 L 215.82,136.14 L 241.91,135.95 L 300.10,165.42 Z" />
+</clipPath></defs><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
@@ -101,12 +104,65 @@
          style="fill:url(#floor-gradient);fill-opacity:1;stroke:none"
          d="M -3.05,164.90 L 54.31,136.35 L 84.15,136.35 L 121.64,126.58 L 181.98,126.02 L 215.82,136.14 L 241.91,135.95 L 300.10,165.42 Z"
          id="path-floor-fill" />
-<g id="floor-planks" style="stroke:#a07838;stroke-width:0.3;stroke-opacity:0.5;fill:none">
-  <path d="M 30,148 L 84.5,134 L 122,126 L 182,125.5 L 216,134 L 268,148" />
-  <path d="M 20,152 L 70,137 L 122,127.5 L 182,127 L 216,135 L 278,152" />
-  <path d="M 10,156 L 62,139 L 122,129 L 182,128.5 L 216,136.5 L 288,156" />
-  <path d="M 2,160 L 57,141 L 122,130.5 L 182,130 L 216,138 L 296,160" />
-  <path d="M -3,164 L 54,143 L 122,132 L 182,131.5 L 216,139.5 L 300,164" />
+<g id="floor-planks" clip-path="url(#floor-clip)">
+  <!-- Alternating plank tint (even planks slightly darker) -->
+  <g style="fill:#7a5020;fill-opacity:0.08;stroke:none">
+    <path d="M 149.3,89 L -13.8,170 L 12.9,170 Z" />
+    <path d="M 149.3,89 L 39.8,170 L 66.7,170 Z" />
+    <path d="M 149.3,89 L 93.7,170 L 120.4,170 Z" />
+    <path d="M 149.3,89 L 147.4,170 L 174.2,170 Z" />
+    <path d="M 149.3,89 L 201.2,170 L 228.0,170 Z" />
+    <path d="M 149.3,89 L 254.9,170 L 281.8,170 Z" />
+  </g>
+  <!-- Plank gap lines (between boards) -->
+  <g style="stroke:#6a4820;stroke-width:0.35;stroke-opacity:0.5;fill:none">
+    <line x1="149.3" y1="89" x2="12.9" y2="170" />
+    <line x1="149.3" y1="89" x2="39.8" y2="170" />
+    <line x1="149.3" y1="89" x2="66.7" y2="170" />
+    <line x1="149.3" y1="89" x2="93.7" y2="170" />
+    <line x1="149.3" y1="89" x2="120.4" y2="170" />
+    <line x1="149.3" y1="89" x2="147.4" y2="170" />
+    <line x1="149.3" y1="89" x2="174.2" y2="170" />
+    <line x1="149.3" y1="89" x2="201.2" y2="170" />
+    <line x1="149.3" y1="89" x2="228.0" y2="170" />
+    <line x1="149.3" y1="89" x2="254.9" y2="170" />
+    <line x1="149.3" y1="89" x2="281.8" y2="170" />
+  </g>
+  <!-- Staggered cross-board joints -->
+  <g style="stroke:#7a5428;stroke-width:0.3;stroke-opacity:0.35;fill:none">
+    <!-- Near back wall - odd planks -->
+    <line x1="66.7" y1="138" x2="83.1" y2="138" />
+    <line x1="99.3" y1="138" x2="115.6" y2="138" />
+    <line x1="131.8" y1="138" x2="148.1" y2="138" />
+    <line x1="164.4" y1="138" x2="180.7" y2="138" />
+    <line x1="196.9" y1="138" x2="213.2" y2="138" />
+    <line x1="229.5" y1="138" x2="245.6" y2="138" />
+    <!-- Mid depth - even planks -->
+    <line x1="30.5" y1="148" x2="50.0" y2="148" />
+    <line x1="69.6" y1="148" x2="89.2" y2="148" />
+    <line x1="108.8" y1="148" x2="128.3" y2="148" />
+    <line x1="147.9" y1="148" x2="167.5" y2="148" />
+    <line x1="187.1" y1="148" x2="206.6" y2="148" />
+    <line x1="226.2" y1="148" x2="245.8" y2="148" />
+    <!-- Near viewer - odd planks -->
+    <line x1="33.1" y1="158" x2="56.0" y2="158" />
+    <line x1="78.9" y1="158" x2="101.9" y2="158" />
+    <line x1="124.7" y1="158" x2="147.7" y2="158" />
+    <line x1="170.5" y1="158" x2="193.5" y2="158" />
+    <line x1="216.3" y1="158" x2="239.3" y2="158" />
+    <line x1="262.2" y1="158" x2="284.9" y2="158" />
+  </g>
+  <!-- Subtle wood grain -->
+  <g style="stroke:#a07838;stroke-width:0.15;stroke-opacity:0.2;fill:none">
+    <line x1="149.3" y1="89" x2="80.4" y2="170" />
+    <line x1="149.3" y1="89" x2="107.5" y2="170" />
+    <line x1="149.3" y1="89" x2="129.4" y2="170" />
+    <line x1="149.3" y1="89" x2="138.3" y2="170" />
+    <line x1="149.3" y1="89" x2="156.3" y2="170" />
+    <line x1="149.3" y1="89" x2="165.3" y2="170" />
+    <line x1="149.3" y1="89" x2="187.8" y2="170" />
+    <line x1="149.3" y1="89" x2="214.6" y2="170" />
+  </g>
 </g></g><g
        id="baseboards"
        inkscape:label="baseboards"><path
@@ -194,10 +250,14 @@
          style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 102.45652,72.250275 16.32714,0.21291 0.003,30.822385 -16.3619,3.72287 z"
          id="path8421" />
-<!-- Curtain rod -->
-<line x1="98" y1="50" x2="205" y2="49" style="stroke:#6b4e30;stroke-width:0.8" id="curtain-rod" />
-<circle cx="98" cy="50" r="0.8" style="fill:#6b4e30;stroke:none" />
-<circle cx="205" cy="49" r="0.8" style="fill:#6b4e30;stroke:none" />
+<!-- Curtain rod following bow window shape -->
+<path d="M 98,50.5 L 121.7,55 L 181.8,55.4 L 205,50" style="fill:none;stroke:#5a3e20;stroke-width:1;stroke-linecap:round" id="curtain-rod" />
+<!-- Rod finials -->
+<circle cx="98" cy="50.5" r="1" style="fill:#5a3e20;stroke:#4a3520;stroke-width:0.3" />
+<circle cx="205" cy="50" r="1" style="fill:#5a3e20;stroke:#4a3520;stroke-width:0.3" />
+<!-- Rod bracket/support at center -->
+<path d="M 152,39.5 L 152,55.2" style="fill:none;stroke:#5a3e20;stroke-width:0.5" />
+<circle cx="152" cy="55.2" r="0.5" style="fill:#5a3e20;stroke:none" />
 <!-- Left curtain - continuous fabric shape -->
 <path style="fill:url(#curtain-gradient);fill-opacity:0.9;stroke:#4a3520;stroke-width:0.4"
   d="M 99,50 C 100,50.5 102,51.5 104,51 C 106,50.5 108,51.5 110,52
@@ -3434,28 +3494,65 @@
   <path style="fill:none;stroke:#4a3520;stroke-width:0.5"
     d="M 239,66 C 239,68 239,71 237.5,72" id="bracket-upper-right" />
   <!-- Books on upper shelf -->
-  <!-- Demon Copperhead (Kingsolver) - orange/copper -->
-  <path style="fill:#c4683a;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 222.5,57.8 L 223.8,58 L 223.6,64.6 L 222.3,64.4 Z" id="book-demon" />
-  <text transform="translate(223.1,63.8) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.65px;fill:#fff8e8;fill-opacity:0.85">Demon Copperhead</text>
-  <!-- Hamlet (Shakespeare) - dark maroon, thinner -->
-  <path style="fill:#6a2233;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 224.2,57.5 L 225.2,57.6 L 225,64.7 L 224,64.6 Z" id="book-hamlet" />
-  <text transform="translate(224.7,63.5) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.6px;fill:#e8d0a0;fill-opacity:0.85">Hamlet</text>
-  <!-- A la recherche du temps perdu (Proust) - cream/ivory, thick -->
-  <path style="fill:#f0e8d0;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 225.5,57.2 L 228,57.5 L 227.8,65 L 225.3,64.7 Z" id="book-proust" />
-  <path style="fill:#c8a850;fill-opacity:0.4;stroke:none"
-    d="M 225.8,57.5 L 227.7,57.7 L 227.5,64.8 L 225.6,64.5 Z" id="book-proust-gold" />
-  <text transform="translate(226.8,64.2) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.5px;fill:#6a5030;fill-opacity:0.9">A la recherche du temps perdu</text>
-  <!-- Physical Biology of the Cell - blue/teal, thick -->
-  <path style="fill:#2a6878;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 228.3,57.8 L 230.2,58 L 230,65 L 228.1,64.8 Z" id="book-physbio" />
-  <text transform="translate(229.3,64.2) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.45px;fill:#d0e8f0;fill-opacity:0.85">Physical Biology of the Cell</text>
-  <!-- Organic Chemistry of Biological Pathways - dark navy, thick, leaning -->
-  <path style="fill:#1a2a48;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-    d="M 230.5,58.5 L 232.8,59.2 L 233.3,65.2 L 231,64.8 Z" id="book-orgchem" />
-  <text transform="translate(232,64.5) rotate(-85)" style="font-family:'IM Fell English',serif;font-size:0.4px;fill:#a0b8d0;fill-opacity:0.85">Organic Chem. Biol. Pathways</text>
+  <!-- Demon Copperhead (Kingsolver) - burnt orange, medium -->
+  <path style="fill:#c45a28;fill-opacity:1;stroke:#3a2010;stroke-width:0.3"
+    d="M 222,57.5 L 223.6,57.7 L 223.4,64.5 L 221.8,64.3 Z" id="book-demon-spine" />
+  <!-- Page edges -->
+  <path style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
+    d="M 223.6,57.7 L 224,57.3 L 223.8,64.1 L 223.4,64.5 Z" id="book-demon-pages" />
+  <!-- Top edge detail -->
+  <path style="fill:#b85020;fill-opacity:1;stroke:none"
+    d="M 222,57.5 L 223.6,57.7 L 224,57.3 L 222.4,57.1 Z" id="book-demon-top" />
+  <text transform="translate(222.9,63.5) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.9px;fill:#ffecd0;letter-spacing:0.05px">Demon</text>
+  <text transform="translate(223.2,63.8) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.55px;fill:#ffd8a0;letter-spacing:0.03px">Copperhead</text>
+
+  <!-- Hamlet (Shakespeare) - dark crimson, thinner -->
+  <path style="fill:#5a1828;fill-opacity:1;stroke:#3a1018;stroke-width:0.3"
+    d="M 224.3,57.3 L 225.4,57.4 L 225.2,64.4 L 224.1,64.3 Z" id="book-hamlet-spine" />
+  <path style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
+    d="M 225.4,57.4 L 225.7,57.1 L 225.5,64.1 L 225.2,64.4 Z" id="book-hamlet-pages" />
+  <path style="fill:#4a1020;fill-opacity:1;stroke:none"
+    d="M 224.3,57.3 L 225.4,57.4 L 225.7,57.1 L 224.6,57 Z" id="book-hamlet-top" />
+  <text transform="translate(224.8,63.2) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.85px;fill:#e8c878;letter-spacing:0.08px">Hamlet</text>
+
+  <!-- A la recherche du temps perdu (Proust) - cream/ivory with gold, THICK -->
+  <path style="fill:#f0e5c8;fill-opacity:1;stroke:#8a7050;stroke-width:0.3"
+    d="M 225.8,56.8 L 228.8,57.1 L 228.6,64.6 L 225.6,64.3 Z" id="book-proust-spine" />
+  <!-- Gold decorative band -->
+  <path style="fill:#c8a848;fill-opacity:0.6;stroke:none"
+    d="M 225.9,57.8 L 228.7,58.1 L 228.65,59 L 225.85,58.7 Z" id="book-proust-band1" />
+  <path style="fill:#c8a848;fill-opacity:0.6;stroke:none"
+    d="M 225.75,63.2 L 228.55,63.5 L 228.5,64 L 225.7,63.7 Z" id="book-proust-band2" />
+  <path style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
+    d="M 228.8,57.1 L 229.2,56.7 L 229,64.2 L 228.6,64.6 Z" id="book-proust-pages" />
+  <path style="fill:#e8d8b8;fill-opacity:1;stroke:none"
+    d="M 225.8,56.8 L 228.8,57.1 L 229.2,56.7 L 226.2,56.4 Z" id="book-proust-top" />
+  <text transform="translate(227,63.8) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.7px;fill:#6a5030;letter-spacing:0.02px">A la recherche</text>
+  <text transform="translate(227.5,63.8) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.6px;fill:#7a6040;letter-spacing:0.02px">du temps perdu</text>
+  <text transform="translate(226.4,62) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.5px;fill:#8a7050;font-style:italic">Proust</text>
+
+  <!-- Physical Biology of the Cell - teal, thick textbook -->
+  <path style="fill:#1a5868;fill-opacity:1;stroke:#0a3040;stroke-width:0.3"
+    d="M 229.2,57.3 L 231.4,57.5 L 231.2,64.7 L 229,64.5 Z" id="book-physbio-spine" />
+  <path style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
+    d="M 231.4,57.5 L 231.8,57.1 L 231.6,64.3 L 231.2,64.7 Z" id="book-physbio-pages" />
+  <path style="fill:#185060;fill-opacity:1;stroke:none"
+    d="M 229.2,57.3 L 231.4,57.5 L 231.8,57.1 L 229.6,56.9 Z" id="book-physbio-top" />
+  <!-- White title band -->
+  <path style="fill:#ffffff;fill-opacity:0.2;stroke:none"
+    d="M 229.3,59.5 L 231.3,59.7 L 231.25,61 L 229.25,60.8 Z" id="book-physbio-band" />
+  <text transform="translate(230.1,64) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.6px;fill:#c0e8f0;letter-spacing:0.02px">Physical Biology</text>
+  <text transform="translate(230.6,63.5) rotate(-90)" style="font-family:'IM Fell English',serif;font-size:0.55px;fill:#a0d0e0;letter-spacing:0.02px">of the Cell</text>
+
+  <!-- Organic Chemistry of Biological Pathways - navy, thick, slightly leaning -->
+  <path style="fill:#182840;fill-opacity:1;stroke:#0a1828;stroke-width:0.3"
+    d="M 231.8,57.8 L 234.2,58.5 L 234.8,64.9 L 232.4,64.5 Z" id="book-orgchem-spine" />
+  <path style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
+    d="M 234.2,58.5 L 234.7,58 L 235.3,64.5 L 234.8,64.9 Z" id="book-orgchem-pages" />
+  <path style="fill:#102038;fill-opacity:1;stroke:none"
+    d="M 231.8,57.8 L 234.2,58.5 L 234.7,58 L 232.3,57.3 Z" id="book-orgchem-top" />
+  <text transform="translate(233,64.2) rotate(-87)" style="font-family:'IM Fell English',serif;font-size:0.55px;fill:#90b0d0;letter-spacing:0.02px">Organic Chem.</text>
+  <text transform="translate(233.5,64.2) rotate(-87)" style="font-family:'IM Fell English',serif;font-size:0.5px;fill:#80a0c0;letter-spacing:0.02px">Biol. Pathways</text>
   <!-- Lower shelf -->
   <path style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
     d="M 219,82 L 241,80.5 L 241,81.5 L 219,83 Z" id="shelf-lower-top" />
