@@ -17,6 +17,11 @@ const interactiveObjects = [
     tooltip: "Open science in academia",
   },
   {
+    svgLabel: "neuropixels_probe",
+    url: "resources.html",
+    tooltip: "Neuropixels probe — tiny but mighty!",
+  },
+  {
     svgLabel: "raw_traces_monitor",
     url: "protocols.html",
     tooltip: "Live Neuropixels recordings",

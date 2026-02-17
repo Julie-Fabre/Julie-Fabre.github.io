@@ -4220,6 +4220,245 @@
     style="fill:#4488ff;fill-opacity:0.02;stroke:none" />
 </g>
 
+<!-- Neuropixels probe under magnifying glass -->
+<g id="neuropixels-magnifier" inkscape:label="neuropixels_probe">
+  <!-- The actual tiny probe on the desk (barely visible thin line) -->
+  <line x1="117.5" y1="106" x2="118.5" y2="103" style="stroke:#8090a0;stroke-width:0.12" />
+  <rect x="117.2" y="106" width="1.6" height="0.8" rx="0.1" style="fill:#4a5560;stroke:#3a4550;stroke-width:0.08" />
+
+  <!-- Magnifying glass handle (brass, vintage) -->
+  <path d="M 114.8,107 L 111,109.5"
+    style="stroke:#b08830;stroke-width:1.4;stroke-linecap:round" />
+  <!-- Handle ferrule -->
+  <path d="M 114.5,107.2 L 113.5,107.8"
+    style="stroke:#c8a040;stroke-width:1.8;stroke-linecap:round" />
+  <!-- Handle grip (dark wood) -->
+  <path d="M 111,109.5 L 108.5,111"
+    style="stroke:#5a3820;stroke-width:1.6;stroke-linecap:round" />
+  <path d="M 111,109.5 L 108.5,111"
+    style="stroke:#6a4828;stroke-width:1.2;stroke-linecap:round" />
+
+  <!-- Lens rim (brass ring) -->
+  <circle cx="118" cy="104" r="3.8"
+    style="fill:none;stroke:#b08830;stroke-width:0.9" />
+  <circle cx="118" cy="104" r="3.4"
+    style="fill:none;stroke:#c8a040;stroke-width:0.3" />
+
+  <!-- Lens glass background (slight magnification tint) -->
+  <circle cx="118" cy="104" r="3.3"
+    style="fill:#e8f0f8;fill-opacity:0.2;stroke:none" />
+
+  <!-- === ENLARGED PROBE VIEW inside lens === -->
+  <!-- Probe shank (silicon, light gray) -->
+  <rect x="117.4" y="101.2" width="1.2" height="5" rx="0.1"
+    style="fill:#b8c0c8;stroke:#8890a0;stroke-width:0.12" />
+  <!-- Tapered tip -->
+  <path d="M 117.4,106.2 L 118,107 L 118.6,106.2 Z"
+    style="fill:#b8c0c8;stroke:#8890a0;stroke-width:0.1" />
+
+  <!-- Electrode sites — 2 staggered columns of small gold squares -->
+  <g style="fill:#c8a848;stroke:#a08828;stroke-width:0.04">
+    <!-- Left column -->
+    <rect x="117.5" y="101.5" width="0.4" height="0.3" />
+    <rect x="117.5" y="102.1" width="0.4" height="0.3" />
+    <rect x="117.5" y="102.7" width="0.4" height="0.3" />
+    <rect x="117.5" y="103.3" width="0.4" height="0.3" />
+    <rect x="117.5" y="103.9" width="0.4" height="0.3" />
+    <rect x="117.5" y="104.5" width="0.4" height="0.3" />
+    <rect x="117.5" y="105.1" width="0.4" height="0.3" />
+    <rect x="117.5" y="105.7" width="0.4" height="0.3" />
+    <!-- Right column (staggered) -->
+    <rect x="118.1" y="101.8" width="0.4" height="0.3" />
+    <rect x="118.1" y="102.4" width="0.4" height="0.3" />
+    <rect x="118.1" y="103.0" width="0.4" height="0.3" />
+    <rect x="118.1" y="103.6" width="0.4" height="0.3" />
+    <rect x="118.1" y="104.2" width="0.4" height="0.3" />
+    <rect x="118.1" y="104.8" width="0.4" height="0.3" />
+    <rect x="118.1" y="105.4" width="0.4" height="0.3" />
+  </g>
+
+  <!-- Probe base PCB (at top, green circuit board) -->
+  <rect x="116.5" y="100.5" width="3" height="1" rx="0.15"
+    style="fill:#2a6830;stroke:#1a4820;stroke-width:0.1" />
+  <!-- Tiny connector on PCB -->
+  <rect x="117.3" y="100.3" width="1.4" height="0.3" rx="0.05"
+    style="fill:#e0d0b0;stroke:#a09070;stroke-width:0.06" />
+  <!-- PCB traces -->
+  <line x1="116.8" y1="101" x2="117.4" y2="101" style="stroke:#c8a040;stroke-width:0.06" />
+  <line x1="118.6" y1="101" x2="119.2" y2="101" style="stroke:#c8a040;stroke-width:0.06" />
+  <line x1="117" y1="100.8" x2="117.4" y2="100.8" style="stroke:#c8a040;stroke-width:0.06" />
+  <line x1="118.6" y1="100.8" x2="119" y2="100.8" style="stroke:#c8a040;stroke-width:0.06" />
+
+  <!-- Glass highlight (light reflection arc) -->
+  <path d="M 115.5,102.5 C 116,101.5 117,101 118.5,101.2"
+    style="fill:none;stroke:#fff;stroke-width:0.3;opacity:0.4;stroke-linecap:round" />
+  <!-- Secondary smaller highlight -->
+  <path d="M 119.5,106 C 120,105.5 120.5,105.2 120.8,105"
+    style="fill:none;stroke:#fff;stroke-width:0.2;opacity:0.25;stroke-linecap:round" />
+</g>
+
+<!-- IBM Model M keyboard on the desk -->
+<g id="keyboard-modelm">
+  <!-- Keyboard body (cream/beige, chunky) -->
+  <path d="M 133,108.5 L 172,107 L 172,102.5 L 133,104 Z"
+    style="fill:#d8d0b8;stroke:#a89878;stroke-width:0.3" />
+  <!-- Top edge (thickness visible) -->
+  <path d="M 133,104 L 172,102.5 L 172,102 L 133,103.5 Z"
+    style="fill:#e8e0c8;stroke:#a89878;stroke-width:0.2" />
+  <!-- IBM badge (blue bar at top) -->
+  <rect x="148" y="102.8" width="8" height="0.8" rx="0.1"
+    style="fill:#2060a8;stroke:#184888;stroke-width:0.1" />
+  <text x="152" y="103.5" text-anchor="middle"
+    style="font-family:sans-serif;font-size:0.55px;fill:#fff;font-weight:bold;letter-spacing:0.15px">IBM</text>
+
+  <!-- Key rows (dark keys in perspective rows) -->
+  <!-- Function key row (small, spaced) -->
+  <g style="fill:#3a3a38;stroke:#2a2a28;stroke-width:0.06">
+    <rect x="134.5" y="103.8" width="0.8" height="0.5" rx="0.05" />
+    <rect x="136" y="103.7" width="0.8" height="0.5" rx="0.05" />
+    <rect x="137" y="103.65" width="0.8" height="0.5" rx="0.05" />
+    <rect x="138" y="103.6" width="0.8" height="0.5" rx="0.05" />
+    <rect x="139" y="103.55" width="0.8" height="0.5" rx="0.05" />
+    <rect x="140.5" y="103.45" width="0.8" height="0.5" rx="0.05" />
+    <rect x="141.5" y="103.4" width="0.8" height="0.5" rx="0.05" />
+    <rect x="142.5" y="103.35" width="0.8" height="0.5" rx="0.05" />
+    <rect x="143.5" y="103.3" width="0.8" height="0.5" rx="0.05" />
+    <rect x="145" y="103.2" width="0.8" height="0.5" rx="0.05" />
+    <rect x="146" y="103.15" width="0.8" height="0.5" rx="0.05" />
+    <rect x="147" y="103.1" width="0.8" height="0.5" rx="0.05" />
+    <rect x="157" y="102.85" width="0.8" height="0.5" rx="0.05" />
+    <rect x="158.5" y="102.8" width="0.8" height="0.5" rx="0.05" />
+    <rect x="160" y="102.75" width="0.8" height="0.5" rx="0.05" />
+  </g>
+
+  <!-- Number row -->
+  <g style="fill:#3a3a38;stroke:#2a2a28;stroke-width:0.06">
+    <rect x="134.5" y="104.8" width="0.9" height="0.6" rx="0.05" />
+    <rect x="135.6" y="104.75" width="0.9" height="0.6" rx="0.05" />
+    <rect x="136.7" y="104.7" width="0.9" height="0.6" rx="0.05" />
+    <rect x="137.8" y="104.65" width="0.9" height="0.6" rx="0.05" />
+    <rect x="138.9" y="104.6" width="0.9" height="0.6" rx="0.05" />
+    <rect x="140" y="104.55" width="0.9" height="0.6" rx="0.05" />
+    <rect x="141.1" y="104.5" width="0.9" height="0.6" rx="0.05" />
+    <rect x="142.2" y="104.45" width="0.9" height="0.6" rx="0.05" />
+    <rect x="143.3" y="104.4" width="0.9" height="0.6" rx="0.05" />
+    <rect x="144.4" y="104.35" width="0.9" height="0.6" rx="0.05" />
+    <rect x="145.5" y="104.3" width="0.9" height="0.6" rx="0.05" />
+    <rect x="146.6" y="104.25" width="0.9" height="0.6" rx="0.05" />
+    <rect x="147.7" y="104.2" width="0.9" height="0.6" rx="0.05" />
+    <rect x="148.8" y="104.15" width="1.8" height="0.6" rx="0.05" />
+  </g>
+
+  <!-- QWERTY row -->
+  <g style="fill:#3a3a38;stroke:#2a2a28;stroke-width:0.06">
+    <rect x="134.5" y="105.7" width="1.3" height="0.6" rx="0.05" />
+    <rect x="136" y="105.65" width="0.9" height="0.6" rx="0.05" />
+    <rect x="137.1" y="105.6" width="0.9" height="0.6" rx="0.05" />
+    <rect x="138.2" y="105.55" width="0.9" height="0.6" rx="0.05" />
+    <rect x="139.3" y="105.5" width="0.9" height="0.6" rx="0.05" />
+    <rect x="140.4" y="105.45" width="0.9" height="0.6" rx="0.05" />
+    <rect x="141.5" y="105.4" width="0.9" height="0.6" rx="0.05" />
+    <rect x="142.6" y="105.35" width="0.9" height="0.6" rx="0.05" />
+    <rect x="143.7" y="105.3" width="0.9" height="0.6" rx="0.05" />
+    <rect x="144.8" y="105.25" width="0.9" height="0.6" rx="0.05" />
+    <rect x="145.9" y="105.2" width="0.9" height="0.6" rx="0.05" />
+    <rect x="147" y="105.15" width="0.9" height="0.6" rx="0.05" />
+    <rect x="148.1" y="105.1" width="0.9" height="0.6" rx="0.05" />
+    <rect x="149.2" y="105.05" width="1.4" height="0.6" rx="0.05" />
+  </g>
+
+  <!-- Home row -->
+  <g style="fill:#3a3a38;stroke:#2a2a28;stroke-width:0.06">
+    <rect x="134.5" y="106.6" width="1.5" height="0.6" rx="0.05" />
+    <rect x="136.2" y="106.55" width="0.9" height="0.6" rx="0.05" />
+    <rect x="137.3" y="106.5" width="0.9" height="0.6" rx="0.05" />
+    <rect x="138.4" y="106.45" width="0.9" height="0.6" rx="0.05" />
+    <rect x="139.5" y="106.4" width="0.9" height="0.6" rx="0.05" />
+    <rect x="140.6" y="106.35" width="0.9" height="0.6" rx="0.05" />
+    <rect x="141.7" y="106.3" width="0.9" height="0.6" rx="0.05" />
+    <rect x="142.8" y="106.25" width="0.9" height="0.6" rx="0.05" />
+    <rect x="143.9" y="106.2" width="0.9" height="0.6" rx="0.05" />
+    <rect x="145" y="106.15" width="0.9" height="0.6" rx="0.05" />
+    <rect x="146.1" y="106.1" width="0.9" height="0.6" rx="0.05" />
+    <rect x="147.2" y="106.05" width="2.2" height="0.6" rx="0.05" />
+  </g>
+
+  <!-- Bottom row (shift, space, etc) -->
+  <g style="fill:#3a3a38;stroke:#2a2a28;stroke-width:0.06">
+    <rect x="134.5" y="107.5" width="2" height="0.6" rx="0.05" />
+    <rect x="136.7" y="107.45" width="0.9" height="0.6" rx="0.05" />
+    <rect x="137.8" y="107.4" width="0.9" height="0.6" rx="0.05" />
+    <rect x="138.9" y="107.35" width="0.9" height="0.6" rx="0.05" />
+    <rect x="140" y="107.3" width="0.9" height="0.6" rx="0.05" />
+    <rect x="141.1" y="107.25" width="6" height="0.6" rx="0.05" />
+    <rect x="147.3" y="107.15" width="0.9" height="0.6" rx="0.05" />
+    <rect x="148.4" y="107.1" width="0.9" height="0.6" rx="0.05" />
+    <rect x="149.5" y="107.05" width="0.9" height="0.6" rx="0.05" />
+  </g>
+
+  <!-- Numpad / nav cluster (right side of keyboard) -->
+  <g style="fill:#3a3a38;stroke:#2a2a28;stroke-width:0.06">
+    <!-- Nav keys -->
+    <rect x="152" y="104.1" width="0.9" height="0.6" rx="0.05" />
+    <rect x="153.1" y="104.05" width="0.9" height="0.6" rx="0.05" />
+    <rect x="154.2" y="104" width="0.9" height="0.6" rx="0.05" />
+    <!-- Arrow cluster -->
+    <rect x="153.1" y="107" width="0.9" height="0.6" rx="0.05" />
+    <rect x="152" y="107.5" width="0.9" height="0.6" rx="0.05" />
+    <rect x="153.1" y="107.5" width="0.9" height="0.6" rx="0.05" />
+    <rect x="154.2" y="107.5" width="0.9" height="0.6" rx="0.05" />
+    <!-- Numpad -->
+    <rect x="156.5" y="104.05" width="0.9" height="0.6" rx="0.05" />
+    <rect x="157.6" y="104" width="0.9" height="0.6" rx="0.05" />
+    <rect x="158.7" y="103.95" width="0.9" height="0.6" rx="0.05" />
+    <rect x="159.8" y="103.9" width="0.9" height="0.6" rx="0.05" />
+    <rect x="156.5" y="104.85" width="0.9" height="0.6" rx="0.05" />
+    <rect x="157.6" y="104.8" width="0.9" height="0.6" rx="0.05" />
+    <rect x="158.7" y="104.75" width="0.9" height="0.6" rx="0.05" />
+    <rect x="159.8" y="104.7" width="0.9" height="1.25" rx="0.05" />
+    <rect x="156.5" y="105.65" width="0.9" height="0.6" rx="0.05" />
+    <rect x="157.6" y="105.6" width="0.9" height="0.6" rx="0.05" />
+    <rect x="158.7" y="105.55" width="0.9" height="0.6" rx="0.05" />
+    <rect x="156.5" y="106.45" width="0.9" height="0.6" rx="0.05" />
+    <rect x="157.6" y="106.4" width="0.9" height="0.6" rx="0.05" />
+    <rect x="158.7" y="106.35" width="0.9" height="0.6" rx="0.05" />
+    <rect x="159.8" y="106.3" width="0.9" height="1.25" rx="0.05" />
+    <rect x="156.5" y="107.25" width="1.9" height="0.6" rx="0.05" />
+    <rect x="158.7" y="107.15" width="0.9" height="0.6" rx="0.05" />
+  </g>
+
+  <!-- Coiled cable coming out the back -->
+  <path d="M 152,102 C 152,101 152.5,100.5 152.5,99.5 C 152.5,99 152,98.8 151.5,99 C 151.5,99.5 152,99.8 152,100.3"
+    style="fill:none;stroke:#555;stroke-width:0.35;stroke-linecap:round" />
+</g>
+
+<!-- Mousepad and mouse -->
+<g id="mousepad-and-mouse">
+  <!-- Mousepad (dark gray, slightly worn) -->
+  <path d="M 174,108.5 L 190,107.8 L 190,103.5 L 174,104.2 Z"
+    style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.15" />
+  <!-- Mousepad subtle edge wear -->
+  <path d="M 174.3,108.2 L 189.7,107.5 L 189.7,103.8 L 174.3,104.5 Z"
+    style="fill:none;stroke:#333;stroke-width:0.08" />
+
+  <!-- Mouse (classic rounded shape, cream to match Model M) -->
+  <g transform="translate(182,105.5)">
+    <!-- Mouse body -->
+    <path d="M -1.5,0 C -1.8,-0.5 -1.5,-2 -0.8,-2.5 C -0.3,-2.8 0.3,-2.8 0.8,-2.5 C 1.5,-2 1.8,-0.5 1.5,0 C 1,0.5 -1,0.5 -1.5,0 Z"
+      style="fill:#d8d0b8;stroke:#a89878;stroke-width:0.15" />
+    <!-- Mouse button divider -->
+    <line x1="0" y1="-2.5" x2="0" y2="-0.5"
+      style="stroke:#b0a888;stroke-width:0.1" />
+    <!-- Left button highlight -->
+    <path d="M -1.2,-0.5 C -1.4,-1.2 -1.2,-2 -0.5,-2.3 L 0,-2.5 L 0,-0.5 Z"
+      style="fill:#e0d8c0;fill-opacity:0.3;stroke:none" />
+    <!-- Scroll wheel area (Model M era = no scroll, just two buttons) -->
+    <!-- Cable -->
+    <path d="M 0,-2.5 C 0,-3.2 -0.5,-3.5 -0.5,-4 C -0.5,-4.5 0,-4.8 0.3,-5"
+      style="fill:none;stroke:#555;stroke-width:0.25;stroke-linecap:round" />
+  </g>
+</g>
+
 <!-- Pair of handmade leather shoes on the desk — side profile view -->
 <g id="leather-shoes" inkscape:label="leather_shoes">
   <!-- Front shoe (side profile, facing left toward VP) -->
