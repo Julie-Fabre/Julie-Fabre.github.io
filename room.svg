@@ -3686,7 +3686,62 @@
     id="philo-leaf5-green" />
   <path style="fill:none;stroke:#c06878;stroke-width:0.1;stroke-opacity:0.5"
     d="M 234,69.5 C 234,68.5 234,68 234,67.5" id="philo-vein5" />
-</g><g
+</g>
+<!-- Framed Open Science Award on left wall -->
+<g id="open-science-award" inkscape:label="open_science_award" transform="translate(24,81) scale(0.5) translate(-24,-81)">
+  <!-- Frame shadow (offset slightly right and down) -->
+  <path style="fill:#000;fill-opacity:0.07;stroke:none"
+    d="M 14,62 L 38,67.5 L 38,102 L 14,105 Z" id="award-shadow" />
+  <!-- Hanging wire -->
+  <path style="fill:none;stroke:#888;stroke-width:0.25"
+    d="M 20,59.5 L 24,57 L 28,61" id="award-wire" />
+  <!-- Small nail -->
+  <circle cx="24" cy="56.8" r="0.4" style="fill:#888;stroke:#666;stroke-width:0.15" />
+  <!-- Outer frame (dark wood) -->
+  <path style="fill:#5a3e20;stroke:#3a2510;stroke-width:0.5"
+    d="M 12,60 L 36,65 L 36,100 L 12,102.5 Z" id="award-frame-outer" />
+  <!-- Gold inner border -->
+  <path style="fill:none;stroke:#c8a050;stroke-width:0.4"
+    d="M 13.2,61.2 L 34.8,65.8 L 34.8,99.2 L 13.2,101.5 Z" id="award-frame-gold" />
+  <!-- Cream mat -->
+  <path style="fill:#f0ebe0;stroke:none"
+    d="M 13.8,61.8 L 34.2,66.2 L 34.2,98.8 L 13.8,101 Z" id="award-mat" />
+  <!-- White paper -->
+  <path style="fill:#fefcf5;stroke:#e0d8c8;stroke-width:0.15"
+    d="M 15.5,63.5 L 32.5,67 L 32.5,97.5 L 15.5,99.8 Z" id="award-paper" />
+  <!-- UCL text -->
+  <text x="24" y="71.5" text-anchor="middle"
+    style="font-family:'IM Fell English SC',serif;font-size:3.8;fill:#1a0a3a;font-weight:bold"
+    transform="rotate(7.5, 24, 71.5)">UCL</text>
+  <!-- Gold decorative line -->
+  <line x1="19" y1="73.5" x2="29.5" y2="75" style="stroke:#c8a050;stroke-width:0.3;stroke-linecap:round" />
+  <!-- "Open Science" -->
+  <text x="24" y="78.5" text-anchor="middle"
+    style="font-family:'IM Fell English SC',serif;font-size:2.4;fill:#1a0a3a"
+    transform="rotate(4.8, 24, 78.5)">Open Science</text>
+  <!-- "Award" -->
+  <text x="24" y="82" text-anchor="middle"
+    style="font-family:'IM Fell English SC',serif;font-size:2.4;fill:#1a0a3a"
+    transform="rotate(3.2, 24, 82)">Award</text>
+  <!-- "Awarded to" -->
+  <text x="24" y="86" text-anchor="middle"
+    style="font-family:'IM Fell English',serif;font-size:1.6;fill:#555;font-style:italic"
+    transform="rotate(1.4, 24, 86)">Awarded to</text>
+  <!-- "Julie Fabre" -->
+  <text x="24" y="90.5" text-anchor="middle"
+    style="font-family:'IM Fell English',serif;font-size:2.8;fill:#1a0a3a;font-style:italic"
+    transform="rotate(0, 24, 90.5)">Julie Fabre</text>
+  <!-- Gold decorative line -->
+  <line x1="19" y1="92.5" x2="29.5" y2="92" style="stroke:#c8a050;stroke-width:0.3;stroke-linecap:round" />
+  <!-- "2024" -->
+  <text x="24" y="96" text-anchor="middle"
+    style="font-family:'IM Fell English SC',serif;font-size:2.2;fill:#1a0a3a"
+    transform="rotate(-2.3, 24, 96)">2024</text>
+  <!-- Small gold seal/rosette at bottom -->
+  <circle cx="24" cy="98" r="1.2" style="fill:#c8a050;fill-opacity:0.6;stroke:#b08030;stroke-width:0.2" />
+  <circle cx="24" cy="98" r="0.6" style="fill:#dab860;stroke:none" />
+</g>
+<g
        id="g21455"
        inkscape:label="tintin_fusee"><image
          width="17.015699"

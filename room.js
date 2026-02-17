@@ -11,6 +11,11 @@ const interactiveObjects = [
     url: "tintin_fusee.html",
     tooltip: "Is Tintin's rocket realistic?",
   },
+  {
+    svgLabel: "open_science_award",
+    url: "open-science.html",
+    tooltip: "Open science in academia",
+  },
   // { svgLabel: "shoes", url: "shoemaking.html", tooltip: "Handmade shoes" },
   // { svgLabel: "bike", url: "bike.html", tooltip: "A bike I welded from scratch" },
 ];
