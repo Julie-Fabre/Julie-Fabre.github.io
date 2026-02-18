@@ -60,10 +60,12 @@
 </linearGradient>
 <linearGradient
    id="wall-gradient-left"
-   x1="1"
-   y1="0"
-   x2="0"
-   y2="1">
+   x1="93.075806"
+   y1="-0.083359946"
+   x2="-6.09344"
+   y2="99.085886"
+   gradientTransform="scale(0.59871732,1.6702373)"
+   gradientUnits="userSpaceOnUse">
   <stop
    offset="0"
    style="stop-color:#f5dfc5;stop-opacity:1"
@@ -75,10 +77,12 @@
 </linearGradient>
 <linearGradient
    id="wall-gradient-right"
-   x1="0"
-   y1="0"
-   x2="1"
-   y2="1">
+   x1="403.0842"
+   y1="0.2286325"
+   x2="502.25344"
+   y2="99.397874"
+   gradientTransform="scale(0.59871729,1.6702374)"
+   gradientUnits="userSpaceOnUse">
   <stop
    offset="0"
    style="stop-color:#f5dfc5;stop-opacity:1"
@@ -94,7 +98,7 @@
    y1="38.23441"
    x2="112.12859"
    y2="180.38968"
-   gradientTransform="scale(1.32299,0.75586363)"
+   gradientTransform="matrix(1.2945473,0,0,0.73961348,2.959059,0.02629627)"
    gradientUnits="userSpaceOnUse">
   <stop
    offset="0"
@@ -115,7 +119,7 @@
    y1="349.55873"
    x2="53.544995"
    y2="458.84784"
-   gradientTransform="scale(2.7738353,0.36051167)"
+   gradientTransform="matrix(2.7246756,0,0,0.35625253,1.8258496,0.39333599)"
    gradientUnits="userSpaceOnUse">
   <stop
    offset="0"
@@ -132,7 +136,7 @@
    y1="109.44343"
    x2="53.227008"
    y2="1.2836303"
-   gradientTransform="scale(2.7905006,0.35835864)"
+   gradientTransform="matrix(2.7305082,0,0,0.35065437,1.4655704,0.77304053)"
    gradientUnits="userSpaceOnUse">
   <stop
    offset="0"
@@ -150,7 +154,7 @@
    r="85.267582"
    fx="112.85415"
    fy="95.004927"
-   gradientTransform="scale(1.3158577,0.7599606)"
+   gradientTransform="matrix(1.2875683,0,0,0.74362236,2.959059,0.02629627)"
    gradientUnits="userSpaceOnUse">
   <stop
    offset="0"
@@ -202,10 +206,27 @@
    style="stop-color:#fff5d0;stop-opacity:0"
    id="stop21" />
 </radialGradient>
-<radialGradient id="lamp-cone-glow" cx="0.5" cy="0" r="0.8" fx="0.5" fy="0">
-  <stop offset="0" style="stop-color:#fff5d0;stop-opacity:0.35" />
-  <stop offset="0.6" style="stop-color:#ffe8a0;stop-opacity:0.15" />
-  <stop offset="1" style="stop-color:#fff5d0;stop-opacity:0" />
+<radialGradient
+   id="lamp-cone-glow"
+   cx="194.61363"
+   cy="37.612988"
+   r="35.732339"
+   fx="194.61363"
+   fy="37.612988"
+   gradientTransform="scale(0.78360391,1.2761549)"
+   gradientUnits="userSpaceOnUse">
+  <stop
+   offset="0"
+   style="stop-color:#fff5d0;stop-opacity:0.35"
+   id="stop22" />
+  <stop
+   offset="0.6"
+   style="stop-color:#ffe8a0;stop-opacity:0.15"
+   id="stop23" />
+  <stop
+   offset="1"
+   style="stop-color:#fff5d0;stop-opacity:0"
+   id="stop24" />
 </radialGradient>
 <linearGradient
    id="curtain-gradient"
@@ -216,15 +237,15 @@
   <stop
    offset="0"
    style="stop-color:#d4a060;stop-opacity:1"
-   id="stop22" />
+   id="stop25" />
   <stop
    offset="0.5"
    style="stop-color:#c89050;stop-opacity:1"
-   id="stop23" />
+   id="stop26" />
   <stop
    offset="1"
    style="stop-color:#b88040;stop-opacity:1"
-   id="stop24" />
+   id="stop27" />
 </linearGradient>
 <radialGradient
    id="poppy-g1"
@@ -234,15 +255,15 @@
   <stop
    offset="0"
    style="stop-color:#ff4500"
-   id="stop25" />
+   id="stop28" />
   <stop
    offset="0.5"
    style="stop-color:#dc143c"
-   id="stop26" />
+   id="stop29" />
   <stop
    offset="1"
    style="stop-color:#8b0000"
-   id="stop27" />
+   id="stop30" />
 </radialGradient>
 <radialGradient
    id="poppy-g2"
@@ -252,15 +273,15 @@
   <stop
    offset="0"
    style="stop-color:#ff8c00"
-   id="stop28" />
+   id="stop31" />
   <stop
    offset="0.4"
    style="stop-color:#ff4500"
-   id="stop29" />
+   id="stop32" />
   <stop
    offset="1"
    style="stop-color:#b22222"
-   id="stop30" />
+   id="stop33" />
 </radialGradient>
 <radialGradient
    id="poppy-g3"
@@ -270,15 +291,15 @@
   <stop
    offset="0"
    style="stop-color:#ff69b4"
-   id="stop31" />
+   id="stop34" />
   <stop
    offset="0.5"
    style="stop-color:#dc143c"
-   id="stop32" />
+   id="stop35" />
   <stop
    offset="1"
    style="stop-color:#800020"
-   id="stop33" />
+   id="stop36" />
 </radialGradient>
 <radialGradient
    id="poppy-g4"
@@ -288,19 +309,19 @@
   <stop
    offset="0"
    style="stop-color:#ffd700"
-   id="stop34" />
+   id="stop37" />
   <stop
    offset="0.3"
    style="stop-color:#ff6347"
-   id="stop35" />
+   id="stop38" />
   <stop
    offset="0.7"
    style="stop-color:#dc143c"
-   id="stop36" />
+   id="stop39" />
   <stop
    offset="1"
    style="stop-color:#8b0000"
-   id="stop37" />
+   id="stop40" />
 </radialGradient>
 <radialGradient
    id="poppy-g5"
@@ -310,15 +331,15 @@
   <stop
    offset="0"
    style="stop-color:#ff6347"
-   id="stop38" />
+   id="stop41" />
   <stop
    offset="0.6"
    style="stop-color:#cc2244"
-   id="stop39" />
+   id="stop42" />
   <stop
    offset="1"
    style="stop-color:#660022"
-   id="stop40" />
+   id="stop43" />
 </radialGradient>
 <radialGradient
    id="poppy-g6"
@@ -328,15 +349,15 @@
   <stop
    offset="0"
    style="stop-color:#ff7744"
-   id="stop41" />
+   id="stop44" />
   <stop
    offset="0.5"
    style="stop-color:#ee3300"
-   id="stop42" />
+   id="stop45" />
   <stop
    offset="1"
    style="stop-color:#991100"
-   id="stop43" />
+   id="stop46" />
 </radialGradient>
 <radialGradient
    id="poppy-g7"
@@ -346,15 +367,15 @@
   <stop
    offset="0"
    style="stop-color:#ffaa33"
-   id="stop44" />
+   id="stop47" />
   <stop
    offset="0.4"
    style="stop-color:#ee5500"
-   id="stop45" />
+   id="stop48" />
   <stop
    offset="1"
    style="stop-color:#882200"
-   id="stop46" />
+   id="stop49" />
 </radialGradient>
 <radialGradient
    id="poppy-g8"
@@ -364,15 +385,15 @@
   <stop
    offset="0"
    style="stop-color:#ff3366"
-   id="stop47" />
+   id="stop50" />
   <stop
    offset="0.5"
    style="stop-color:#cc1144"
-   id="stop48" />
+   id="stop51" />
   <stop
    offset="1"
    style="stop-color:#770033"
-   id="stop49" />
+   id="stop52" />
 </radialGradient>
 <clipPath
    id="floor-clip">
@@ -746,6 +767,114 @@
    x2="266.29211"
    y2="41.739878"
    gradientTransform="scale(0.73227856,1.3656006)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient52"
+   x1="97.991849"
+   y1="56.070655"
+   x2="97.991849"
+   y2="72.807875"
+   gradientTransform="scale(1.0389174,0.9625404)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient53"
+   x1="106.5887"
+   y1="67.157161"
+   x2="106.5887"
+   y2="81.69428"
+   gradientTransform="scale(1.1589084,0.86288094)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient54"
+   x1="120.29839"
+   y1="68.899927"
+   x2="120.29839"
+   y2="83.750337"
+   gradientTransform="scale(1.1858972,0.84324342)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient55"
+   x1="136.81189"
+   y1="68.659085"
+   x2="136.81189"
+   y2="83.60006"
+   gradientTransform="scale(1.1849066,0.8439484)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient56"
+   x1="181.86018"
+   y1="53.888623"
+   x2="181.86018"
+   y2="70.849905"
+   gradientTransform="scale(1.0111541,0.98896894)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient57"
+   x1="265.10106"
+   y1="49.930516"
+   x2="265.10106"
+   y2="74.864126"
+   gradientTransform="scale(0.69408441,1.440747)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient58"
+   x1="209.92061"
+   y1="56.240919"
+   x2="209.92061"
+   y2="79.455906"
+   gradientTransform="scale(0.77260735,1.2943185)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient59"
+   x1="187.66972"
+   y1="55.33355"
+   x2="187.66972"
+   y2="78.342593"
+   gradientTransform="scale(0.76022412,1.3154016)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient60"
+   x1="164.49179"
+   y1="54.600943"
+   x2="164.49179"
+   y2="77.189719"
+   gradientTransform="scale(0.74970684,1.3338547)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#sky-gradient"
+   id="linearGradient61"
+   x1="147.44791"
+   y1="49.833903"
+   x2="147.44791"
+   y2="74.323523"
+   gradientTransform="scale(0.69261587,1.4438017)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#curtain-gradient"
+   id="linearGradient62"
+   x1="227.41703"
+   y1="21.635325"
+   x2="227.41703"
+   y2="47.875747"
+   gradientTransform="scale(0.43444416,2.3017918)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#curtain-gradient"
+   id="linearGradient63"
+   x1="441.9448"
+   y1="21.507304"
+   x2="441.9448"
+   y2="47.638891"
+   gradientTransform="scale(0.43625358,2.2922448)"
    gradientUnits="userSpaceOnUse" /></defs><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -753,25 +882,27 @@
      style="stroke-linecap:round;stroke-linejoin:round"><g
    id="g-room-fills"
    inkscape:label="room-fills"
-   transform="translate(0.70294593,-1.5093752)"><path
-   style="fill:url(#ceiling-gradient);fill-opacity:1;stroke:none"
-   d="M -2.38,0.46 54.78,28.9 h 29.83 l 37.5,9.77 60.34,0.55 33.84,-10.11 26.09,0.19 57.06,-28.32 z"
+   transform="matrix(1,0,0,0.88309144,0.70294593,-1.3941729)"><path
+   style="fill:url(#ceiling-gradient);fill-opacity:1;stroke:none;stroke-width:0.978501"
+   d="M -0.86326248,1.2231511 55.067867,29.051725 h 29.18869 l 36.693793,9.559957 59.04277,0.538176 33.11248,-9.892648 25.5291,0.185915 55.83327,-27.7111533 z"
    id="path-ceiling-fill" /><path
-   style="fill:url(#backwall-gradient);fill-opacity:1;stroke:none"
-   d="m 54.78,28.9 h 29.83 l 37.5,9.77 60.34,0.55 33.84,-10.11 26.09,0.19 -0.47,106.65 -26.09,0.19 -33.84,-10.12 -60.34,0.56 -37.49,9.77 H 54.31 Z"
+   style="fill:url(#backwall-gradient);fill-opacity:1;stroke:none;stroke-width:0.978501"
+   d="m 56.561355,28.304981 h 29.188691 l 36.693794,9.559957 59.04277,0.538176 33.11248,-9.892648 25.52909,0.185915 -0.45989,104.357159 -25.5291,0.18592 -33.11248,-9.90245 -59.04277,0.54797 -36.684004,9.55996 H 56.101459 Z"
    id="path-backwall-fill" /><rect
-   style="fill:url(#window-glow);stroke:none"
-   x="55"
-   y="29"
-   width="187"
-   height="108"
+   style="fill:url(#window-glow);stroke:none;stroke-width:0.978501"
+   x="56.776627"
+   y="28.40283"
+   width="182.97972"
+   height="105.67813"
    id="window-light-glow" /><path
-   style="fill:url(#floor-gradient);fill-opacity:1;stroke:none"
-   d="m -3.05,164.9 57.36,-28.55 h 29.84 l 37.49,-9.77 60.34,-0.56 33.84,10.12 26.09,-0.19 58.19,29.47 z"
-   id="path-floor-fill" />
+   style="fill:url(#floor-gradient);fill-opacity:1;stroke:none;stroke-width:0.985227"
+   d="M -1.1700964,163.34519 55.17333,135.13249 h 29.311156 l 36.825574,-9.65458 59.27062,-0.55339 33.24026,10.00046 25.62762,-0.18776 57.15871,29.12184 z"
+   id="path-floor-fill"
+   inkscape:label="path-floor-fill" />
 <g
    id="floor-planks"
-   clip-path="url(#floor-clip)">
+   clip-path="url(#floor-clip)"
+   transform="matrix(0.97850121,0,0,0.97850121,2.5774835,2.3157495)">
   <!-- Irregular plank shading — darker planks -->
   <g
    style="fill:#7a5020;fill-opacity:0.1;stroke:none"
@@ -1334,7 +1465,8 @@
   </g>
 </g></g><g
    id="baseboards"
-   inkscape:label="baseboards"><path
+   inkscape:label="baseboards"
+   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)"><path
      style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.6"
      d="m -3.05,164.9 57.36,-28.55 v -2.5 L -3.05,161.9 Z"
      id="baseboard-left" /><path
@@ -1345,13 +1477,14 @@
      d="m 241.91,135.95 58.19,29.47 v -3 l -58.19,-28.97 z"
      id="baseboard-right" /></g><g
    id="g21465"
-   inkscape:label="walls"><path
+   inkscape:label="walls"
+   transform="matrix(0.97850121,0,0,0.86410604,3.3557469,-2.4254534)"><path
      style="fill:url(#wall-gradient-left);fill-opacity:1;stroke:#4a3520;stroke-width:1.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="M -2.3823284,0.46073256 54.961274,28.932298 55.126097,136.32456 -3.0482484,164.89698 Z"
+     d="M -3.1622468,2.8004877 54.961274,28.932298 55.126097,136.32456 -3.0482484,164.89698 Z"
      id="path4394"
      sodipodi:nodetypes="ccccc" /><path
      style="fill:url(#wall-gradient-right);fill-opacity:1;stroke:#4a3520;stroke-width:1.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 299.4419,0.981834 -57.3436,28.471564 -0.16482,107.392262 58.17434,28.57242 z"
+     d="m 299.83186,2.93163 -57.73356,26.521768 -0.16482,107.392262 58.17434,28.57242 z"
      id="path4394-6"
      sodipodi:nodetypes="ccccc" /><path
      style="fill:#4a3520;fill-opacity:0;stroke:#4a3520;stroke-width:1.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1378,45 +1511,45 @@
      sodipodi:nodetypes="cc" /></g><g
    id="g8434"
    inkscape:label="window"
-   transform="translate(0,-4.2333335)"><path
+   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-3.7247397)"><path
    style="opacity:1;fill:#4a3520;fill-opacity:0;stroke:#4a3520;stroke-width:0.8;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 100.2466,51.160912 0.26071,58.888228 21.22493,-5.45396 60.27084,0.33457 21.28403,4.95254 -0.0217,-59.359238 -21.48477,5.509583 -60.08661,-0.39106 z"
    id="path8399" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient52);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 102.23405,54.270264 -0.12861,15.038382 16.78859,0.471876 -0.0634,-12.11413 z"
    id="path8401" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient53);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 123.90914,58.248634 -0.0826,11.890793 16.24719,0.05301 -0.1208,-11.839522 z"
    id="path8403" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient54);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 142.96152,58.39941 0.0478,11.922511 16.96326,-0.0113 -0.03,-11.794331 z"
    id="path8407"
    sodipodi:nodetypes="ccccc" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient55);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 162.40931,58.244725 0.0913,12.009412 17.01236,-0.0056 -0.20727,-11.912085 z"
    id="path8409"
    sodipodi:nodetypes="ccccc" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient56);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 184.18867,57.874955 0.14253,11.893402 16.36494,-0.683485 0.043,-15.490706 z"
    id="path8411"
    sodipodi:nodetypes="ccccc" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient57);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 184.31815,72.50403 16.29933,-0.266791 0.39106,35.323031 -16.70603,-4.14522 z"
    id="path8413"
    sodipodi:nodetypes="ccccc" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient58);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 162.48621,73.121902 17.33607,-0.02824 -0.0499,29.322018 -17.20355,0.12557 z"
    id="path8415"
    sodipodi:nodetypes="ccccc" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient59);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 143.05276,73.085838 16.81032,0.0091 -0.0261,29.657032 -16.86593,-0.0643 z"
    id="path8417"
    sodipodi:nodetypes="ccccc" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient60);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 123.69536,73.191425 16.26022,-0.0617 -0.10254,29.530145 -16.23242,-0.0452 z"
    id="path8419"
    sodipodi:nodetypes="ccccc" /><path
-   style="opacity:1;fill:url(#sky-gradient);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;fill:url(#linearGradient61);fill-opacity:1;stroke:#4a3520;stroke-width:0.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 102.45652,72.250275 16.32714,0.21291 0.003,30.822385 -16.3619,3.72287 z"
    id="path8421" />
 <!-- Curtain rod following bow window shape -->
@@ -1447,7 +1580,7 @@
    id="circle140" />
 <!-- Left curtain - continuous fabric shape -->
 <path
-   style="fill:url(#curtain-gradient);fill-opacity:0.9;stroke:#4a3520;stroke-width:0.4"
+   style="fill:url(#linearGradient62);fill-opacity:0.9;stroke:#4a3520;stroke-width:0.4"
    d="m 99,50 c 1,0.5 3,1.5 5,1 2,-0.5 4,0.5 6,1 -0.5,8 0.5,16 -0.5,24 -1,8 0.5,16 -0.5,24 l -0.5,10 H 99 c 0.5,-10 -0.5,-18 0.5,-26 1,-8 -0.5,-16 0,-24 z"
    id="curtain-left" />
 <!-- Left curtain fold lines (wavy) -->
@@ -1465,7 +1598,7 @@
    id="curtain-left-fold3" />
 <!-- Right curtain - continuous fabric shape (mirrored) -->
 <path
-   style="fill:url(#curtain-gradient);fill-opacity:0.9;stroke:#4a3520;stroke-width:0.4"
+   style="fill:url(#linearGradient63);fill-opacity:0.9;stroke:#4a3520;stroke-width:0.4"
    d="m 204,49.5 c -2,0.5 -4,1.5 -6,1 -2,-0.5 -4,0.5 -5,1 0.5,8.5 -0.5,16.5 0.5,24.5 1,8 -0.5,16 0.5,24 l 0.5,9 h 9.5 c -0.5,-10 0.5,-18 -0.5,-26 -1,-8 0.5,-16 0,-24 z"
    id="curtain-right" />
 <!-- Right curtain fold lines (wavy) -->
@@ -1482,7 +1615,8 @@
    d="m 195,51 c -0.5,11 -1,21 -0.5,31 0.5,10 -0.5,20 0,27"
    id="curtain-right-fold3" /></g><g
    id="window-sill"
-   inkscape:label="window-sill"><path
+   inkscape:label="window-sill"
+   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)"><path
      style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:1"
      d="M 100,107 203.5,106 185,102 H 118 Z"
      id="window-sill-top" /><path
@@ -1490,7 +1624,8 @@
      d="m 100,107 103.5,-1 v 2.5 l -103.5,1 z"
      id="window-sill-front" /></g><g
    id="g21665"
-   inkscape:label="table_desk">
+   inkscape:label="table_desk"
+   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
       <!-- Shadow under desk -->
       <ellipse
    cx="152"
@@ -1593,7 +1728,7 @@
    id="sunbeams"
    inkscape:label="sunbeams"
    style="opacity:0.7"
-   transform="matrix(1.0495907,0,0,1.0895109,-8.2699706,-1.1348707)">
+   transform="matrix(1.0270258,0,0,0.94145292,-5.1180048,-1.0473393)">
   <path
    style="fill:url(#linearGradient614);stroke:none"
    d="m 130,60 h 15 l 15,57 -20,13 h -15 l -10,-13 z"
@@ -1609,7 +1744,8 @@
 </g>
 <g
    id="dust-motes"
-   inkscape:label="dust-motes">
+   inkscape:label="dust-motes"
+   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <circle
    cx="135"
    cy="75"
@@ -1747,7 +1883,8 @@
 </g><g
      id="g14983"
      inkscape:label="pegboard"
-     style="stroke-linecap:round;stroke-linejoin:round"><rect
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)"><rect
        style="opacity:1;fill:#e0cca8;fill-opacity:1;stroke:#4a3520;stroke-width:0.597863;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect14797"
        width="24.420891"
@@ -1860,7 +1997,7 @@
      id="poster-basal-ganglia"
      inkscape:label="poster_basal_ganglia"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(2.4328937,0,0,2.4328937,-204.11558,-82.620931)">
+     transform="matrix(2.3805894,0,0,2.1022781,-196.75317,-71.459936)">
   <!-- Poster paper (perspective trapezoid, back wall left of window) -->
   <path
    d="m 85,44 11,2.9 V 71.1 L 85,74 Z"
@@ -2018,7 +2155,7 @@
      id="poster-cta"
      inkscape:label="poster_cta"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(-2.1567695,0,0,2.1567695,497.32147,-45.237953)">
+     transform="matrix(-2.1104016,0,0,1.8636776,489.60383,-39.157079)">
   <!-- Poster paper (perspective trapezoid, back wall right of window) -->
   <path
    d="m 207,38 9,-2.7 V 62.7 L 207,60 Z"
@@ -2231,7 +2368,7 @@
      id="pendant-lamp"
      inkscape:label="pendant-lamp"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(1.0014197,0,0,0.79689845,-0.22914314,9.8938006)">
+     transform="matrix(0.97989038,0,0,0.68860476,2.7499546,8.4826022)">
   <!-- Cord -->
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.504136"
@@ -2243,9 +2380,10 @@
    d="m 147.23383,41.009992 -1,6 c 0,0.5 1,1 3,1.5 h 6 c 2,-0.5 3,-1 3,-1.5 l -1,-6 z"
    id="lamp-shade" />
   <!-- Light cone (spreading from shade to desk) -->
-  <path d="M 148,48 L 135,105 L 170,105 L 158,48 Z"
-    style="fill:url(#lamp-cone-glow);stroke:none"
-    id="lamp-light-cone" />
+  <path
+   d="m 148,48 -13,57 h 35 L 158,48 Z"
+   style="fill:url(#lamp-cone-glow);stroke:none"
+   id="lamp-light-cone" />
   <!-- Bulb glow (inner, bright) -->
   <ellipse
    cx="152.88197"
@@ -2265,196 +2403,197 @@
 </g><g
      id="right-shelf"
      inkscape:label="right-shelf"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- Upper shelf -->
   <path
    style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="M 219,65 L 241,63.5 L 241,64.5 L 219,66 Z"
+   d="m 219,65 22,-1.5 v 1 L 219,66 Z"
    id="shelf-upper-top" />
   <path
    style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="M 219,66 L 241,64.5 L 241,66 L 219,67.5 Z"
+   d="m 219,66 22,-1.5 V 66 l -22,1.5 z"
    id="shelf-upper-front" />
   <!-- Upper shelf curved bracket left -->
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="M 221,67.5 C 221,69 221,72 219.5,73"
+   d="m 221,67.5 c 0,1.5 0,4.5 -1.5,5.5"
    id="bracket-upper-left" />
   <!-- Upper shelf curved bracket right -->
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="M 239,66 C 239,68 239,71 237.5,72"
+   d="m 239,66 c 0,2 0,5 -1.5,6"
    id="bracket-upper-right" />
   <!-- Books on upper shelf -->
   <!-- Demon Copperhead (Kingsolver) - burnt orange, medium -->
   <path
    style="fill:#c45a28;fill-opacity:1;stroke:#3a2010;stroke-width:0.3"
-   d="M 222,57.5 L 223.6,57.7 L 223.4,64.5 L 221.8,64.3 Z"
+   d="m 222,57.5 1.6,0.2 -0.2,6.8 -1.6,-0.2 z"
    id="book-demon-spine" />
   <!-- Page edges -->
   <path
    style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="M 223.6,57.7 L 224,57.3 L 223.8,64.1 L 223.4,64.5 Z"
+   d="m 223.6,57.7 0.4,-0.4 -0.2,6.8 -0.4,0.4 z"
    id="book-demon-pages" />
   <!-- Top edge detail -->
   <path
    style="fill:#b85020;fill-opacity:1;stroke:none"
-   d="M 222,57.5 L 223.6,57.7 L 224,57.3 L 222.4,57.1 Z"
+   d="m 222,57.5 1.6,0.2 0.4,-0.4 -1.6,-0.2 z"
    id="book-demon-top" />
   <text
-   transform="translate(222.9,63.5) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.9px;fill:#ffecd0;letter-spacing:0.05px"
+   transform="rotate(-90,143.2,-79.7)"
+   style="font-size:0.9px;font-family:'IM Fell English', serif;letter-spacing:0.05px;fill:#ffecd0"
    id="text187">Demon</text>
   <text
-   transform="translate(223.2,63.8) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.55px;fill:#ffd8a0;letter-spacing:0.03px"
+   transform="rotate(-90,143.5,-79.7)"
+   style="font-size:0.55px;font-family:'IM Fell English', serif;letter-spacing:0.03px;fill:#ffd8a0"
    id="text188">Copperhead</text>
 
   <!-- Hamlet (Shakespeare) - dark crimson, thinner -->
   <path
    style="fill:#5a1828;fill-opacity:1;stroke:#3a1018;stroke-width:0.3"
-   d="M 224.3,57.3 L 225.4,57.4 L 225.2,64.4 L 224.1,64.3 Z"
+   d="m 224.3,57.3 1.1,0.1 -0.2,7 -1.1,-0.1 z"
    id="book-hamlet-spine" />
   <path
    style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="M 225.4,57.4 L 225.7,57.1 L 225.5,64.1 L 225.2,64.4 Z"
+   d="m 225.4,57.4 0.3,-0.3 -0.2,7 -0.3,0.3 z"
    id="book-hamlet-pages" />
   <path
    style="fill:#4a1020;fill-opacity:1;stroke:none"
-   d="M 224.3,57.3 L 225.4,57.4 L 225.7,57.1 L 224.6,57 Z"
+   d="m 224.3,57.3 1.1,0.1 0.3,-0.3 -1.1,-0.1 z"
    id="book-hamlet-top" />
   <text
-   transform="translate(224.8,63.2) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.85px;fill:#e8c878;letter-spacing:0.08px"
+   transform="rotate(-90,144,-80.8)"
+   style="font-size:0.85px;font-family:'IM Fell English', serif;letter-spacing:0.08px;fill:#e8c878"
    id="text189">Hamlet</text>
 
   <!-- A la recherche du temps perdu (Proust) - cream/ivory with gold, THICK -->
   <path
    style="fill:#f0e5c8;fill-opacity:1;stroke:#8a7050;stroke-width:0.3"
-   d="M 225.8,56.8 L 228.8,57.1 L 228.6,64.6 L 225.6,64.3 Z"
+   d="m 225.8,56.8 3,0.3 -0.2,7.5 -3,-0.3 z"
    id="book-proust-spine" />
   <!-- Gold decorative band -->
   <path
    style="fill:#c8a848;fill-opacity:0.6;stroke:none"
-   d="M 225.9,57.8 L 228.7,58.1 L 228.65,59 L 225.85,58.7 Z"
+   d="m 225.9,57.8 2.8,0.3 -0.05,0.9 -2.8,-0.3 z"
    id="book-proust-band1" />
   <path
    style="fill:#c8a848;fill-opacity:0.6;stroke:none"
-   d="M 225.75,63.2 L 228.55,63.5 L 228.5,64 L 225.7,63.7 Z"
+   d="m 225.75,63.2 2.8,0.3 -0.05,0.5 -2.8,-0.3 z"
    id="book-proust-band2" />
   <path
    style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="M 228.8,57.1 L 229.2,56.7 L 229,64.2 L 228.6,64.6 Z"
+   d="m 228.8,57.1 0.4,-0.4 -0.2,7.5 -0.4,0.4 z"
    id="book-proust-pages" />
   <path
    style="fill:#e8d8b8;fill-opacity:1;stroke:none"
-   d="M 225.8,56.8 L 228.8,57.1 L 229.2,56.7 L 226.2,56.4 Z"
+   d="m 225.8,56.8 3,0.3 0.4,-0.4 -3,-0.3 z"
    id="book-proust-top" />
   <text
-   transform="translate(227,63.8) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.7px;fill:#6a5030;letter-spacing:0.02px"
+   transform="rotate(-90,145.4,-81.6)"
+   style="font-size:0.7px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#6a5030"
    id="text190">A la recherche</text>
   <text
-   transform="translate(227.5,63.8) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.6px;fill:#7a6040;letter-spacing:0.02px"
+   transform="rotate(-90,145.65,-81.85)"
+   style="font-size:0.6px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#7a6040"
    id="text191">du temps perdu</text>
   <text
-   transform="translate(226.4,62) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.5px;fill:#8a7050;font-style:italic"
+   transform="rotate(-90,144.2,-82.2)"
+   style="font-style:italic;font-size:0.5px;font-family:'IM Fell English', serif;fill:#8a7050"
    id="text192">Proust</text>
 
   <!-- Physical Biology of the Cell - teal, thick textbook -->
   <path
    style="fill:#1a5868;fill-opacity:1;stroke:#0a3040;stroke-width:0.3"
-   d="M 229.2,57.3 L 231.4,57.5 L 231.2,64.7 L 229,64.5 Z"
+   d="m 229.2,57.3 2.2,0.2 -0.2,7.2 -2.2,-0.2 z"
    id="book-physbio-spine" />
   <path
    style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="M 231.4,57.5 L 231.8,57.1 L 231.6,64.3 L 231.2,64.7 Z"
+   d="m 231.4,57.5 0.4,-0.4 -0.2,7.2 -0.4,0.4 z"
    id="book-physbio-pages" />
   <path
    style="fill:#185060;fill-opacity:1;stroke:none"
-   d="M 229.2,57.3 L 231.4,57.5 L 231.8,57.1 L 229.6,56.9 Z"
+   d="m 229.2,57.3 2.2,0.2 0.4,-0.4 -2.2,-0.2 z"
    id="book-physbio-top" />
   <!-- White title band -->
   <path
    style="fill:#ffffff;fill-opacity:0.2;stroke:none"
-   d="M 229.3,59.5 L 231.3,59.7 L 231.25,61 L 229.25,60.8 Z"
+   d="m 229.3,59.5 2,0.2 -0.05,1.3 -2,-0.2 z"
    id="book-physbio-band" />
   <text
-   transform="translate(230.1,64) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.6px;fill:#c0e8f0;letter-spacing:0.02px"
+   transform="rotate(-90,147.05,-83.05)"
+   style="font-size:0.6px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#c0e8f0"
    id="text193">Physical Biology</text>
   <text
-   transform="translate(230.6,63.5) rotate(-90)"
-   style="font-family:'IM Fell English',serif;font-size:0.55px;fill:#a0d0e0;letter-spacing:0.02px"
+   transform="rotate(-90,147.05,-83.55)"
+   style="font-size:0.55px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#a0d0e0"
    id="text194">of the Cell</text>
 
   <!-- Organic Chemistry of Biological Pathways - navy, thick, slightly leaning -->
   <path
    style="fill:#182840;fill-opacity:1;stroke:#0a1828;stroke-width:0.3"
-   d="M 231.8,57.8 L 234.2,58.5 L 234.8,64.9 L 232.4,64.5 Z"
+   d="m 231.8,57.8 2.4,0.7 0.6,6.4 -2.4,-0.4 z"
    id="book-orgchem-spine" />
   <path
    style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="M 234.2,58.5 L 234.7,58 L 235.3,64.5 L 234.8,64.9 Z"
+   d="m 234.2,58.5 0.5,-0.5 0.6,6.5 -0.5,0.4 z"
    id="book-orgchem-pages" />
   <path
    style="fill:#102038;fill-opacity:1;stroke:none"
-   d="M 231.8,57.8 L 234.2,58.5 L 234.7,58 L 232.3,57.3 Z"
+   d="m 231.8,57.8 2.4,0.7 0.5,-0.5 -2.4,-0.7 z"
    id="book-orgchem-top" />
   <text
-   transform="translate(233,64.2) rotate(-87)"
-   style="font-family:'IM Fell English',serif;font-size:0.55px;fill:#90b0d0;letter-spacing:0.02px"
+   transform="rotate(-87,150.32634,-90.665385)"
+   style="font-size:0.55px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#90b0d0"
    id="text195">Organic Chem.</text>
   <text
-   transform="translate(233.5,64.2) rotate(-87)"
-   style="font-family:'IM Fell English',serif;font-size:0.5px;fill:#80a0c0;letter-spacing:0.02px"
+   transform="rotate(-87,150.57634,-90.92883)"
+   style="font-size:0.5px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#80a0c0"
    id="text196">Biol. Pathways</text>
   <!-- Lower shelf -->
   <path
    style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="M 219,82 L 241,80.5 L 241,81.5 L 219,83 Z"
+   d="m 219,82 22,-1.5 v 1 L 219,83 Z"
    id="shelf-lower-top" />
   <path
    style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="M 219,83 L 241,81.5 L 241,83 L 219,84.5 Z"
+   d="m 219,83 22,-1.5 V 83 l -22,1.5 z"
    id="shelf-lower-front" />
   <!-- Lower shelf curved bracket left -->
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="M 221,84.5 C 221,86 221,89 219.5,90"
+   d="m 221,84.5 c 0,1.5 0,4.5 -1.5,5.5"
    id="bracket-lower-left" />
   <!-- Lower shelf curved bracket right -->
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="M 239,83 C 239,85 239,88 237.5,89"
+   d="m 239,83 c 0,2 0,5 -1.5,6"
    id="bracket-lower-right" />
   <!-- Small jar/vase on lower shelf -->
   <path
    style="fill:#b8a088;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-   d="M 233,76 C 232.5,76 232,76.5 232,77 L 231.5,80 C 231.5,80.5 232.5,81 233.5,81 C 234.5,81 235.5,80.5 235.5,80 L 235,77 C 235,76.5 234.5,76 234,76 Z"
+   d="m 233,76 c -0.5,0 -1,0.5 -1,1 l -0.5,3 c 0,0.5 1,1 2,1 1,0 2,-0.5 2,-1 L 235,77 c 0,-0.5 -0.5,-1 -1,-1 z"
    id="jar" />
   <ellipse
    cx="233.5"
    cy="76"
    rx="1.2"
-   ry="0.4"
+   ry="0.40000001"
    style="fill:#a89078;stroke:#4a3520;stroke-width:0.2"
    id="jar-rim" />
   <!-- Pink variegated philodendron -->
   <!-- Stems -->
   <path
    style="fill:none;stroke:#4a7838;stroke-width:0.35"
-   d="M 233.5,76 C 233,74.5 232.5,73 231.5,71.5"
+   d="m 233.5,76 c -0.5,-1.5 -1,-3 -2,-4.5"
    id="philo-stem1" />
   <path
    style="fill:none;stroke:#4a7838;stroke-width:0.35"
-   d="M 233.5,76 C 234.5,74 235.5,72 236.5,70.5"
+   d="m 233.5,76 c 1,-2 2,-4 3,-5.5"
    id="philo-stem2" />
   <path
    style="fill:none;stroke:#4a7838;stroke-width:0.3"
-   d="M 233.5,76 C 233,74 231.5,72.5 230,71"
+   d="m 233.5,76 c -0.5,-2 -2,-3.5 -3.5,-5"
    id="philo-stem3" />
   <path
    style="fill:none;stroke:#4a7838;stroke-width:0.3"
@@ -2462,18 +2601,18 @@
    id="philo-stem4" />
   <path
    style="fill:none;stroke:#4a7838;stroke-width:0.25"
-   d="M 233.5,76 C 233.8,74 234.5,72 234,69.5"
+   d="m 233.5,76 c 0.3,-2 1,-4 0.5,-6.5"
    id="philo-stem5" />
   <!-- Heart-shaped leaves (philodendron) with pink variegation -->
   <!-- Leaf 1 - large, top left, mostly green with pink splash -->
   <path
    style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
-   d="M 231.5,71.5 C 230.5,70.5 229.5,70 229,69 C 229,68 230,67.5 231,68 C 231.5,67 232,67.5 232,68.5 C 232.5,67.5 233,67 233.5,68 C 234,69 233,70 231.5,71.5 Z"
+   d="m 231.5,71.5 c -1,-1 -2,-1.5 -2.5,-2.5 0,-1 1,-1.5 2,-1 0.5,-1 1,-0.5 1,0.5 0.5,-1 1,-1.5 1.5,-0.5 0.5,1 -0.5,2 -2,3.5 z"
    id="philo-leaf1"
    transform="rotate(-15,231.5,71.5)" />
   <path
    style="fill:#e890a0;fill-opacity:0.6;stroke:none"
-   d="M 230.5,69.5 C 230.5,69 231,68.5 231.5,69 C 231.5,69.5 231,70 230.5,69.5 Z"
+   d="m 230.5,69.5 c 0,-0.5 0.5,-1 1,-0.5 0,0.5 -0.5,1 -1,0.5 z"
    id="philo-leaf1-pink"
    transform="rotate(-15,231.5,71.5)" />
   <!-- Leaf vein -->
@@ -2485,17 +2624,17 @@
   <!-- Leaf 2 - large, top right, heavy pink variegation -->
   <path
    style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
-   d="M 236.5,70.5 C 237.5,69.5 238.5,69 239,68 C 239,67 238,66.5 237,67 C 236.5,66 236,66.5 236,67.5 C 235.5,66.5 235,66 234.5,67 C 234,68 235,69 236.5,70.5 Z"
+   d="m 236.5,70.5 c 1,-1 2,-1.5 2.5,-2.5 0,-1 -1,-1.5 -2,-1 -0.5,-1 -1,-0.5 -1,0.5 -0.5,-1 -1,-1.5 -1.5,-0.5 -0.5,1 0.5,2 2,3.5 z"
    id="philo-leaf2"
    transform="rotate(10,236.5,70.5)" />
   <path
    style="fill:#e890a0;fill-opacity:0.65;stroke:none"
-   d="M 237,69 C 237.5,68 238,67.5 237.5,67 C 237,67 236.5,67.5 236.5,68 C 236.5,68.5 237,69 237,69 Z"
+   d="m 237,69 c 0.5,-1 1,-1.5 0.5,-2 -0.5,0 -1,0.5 -1,1 0,0.5 0.5,1 0.5,1 z"
    id="philo-leaf2-pink1"
    transform="rotate(10,236.5,70.5)" />
   <path
    style="fill:#f0a0b0;fill-opacity:0.5;stroke:none"
-   d="M 235.5,68.5 C 235.5,68 236,67.5 236,68 C 236,68.5 235.5,69 235.5,68.5 Z"
+   d="m 235.5,68.5 c 0,-0.5 0.5,-1 0.5,-0.5 0,0.5 -0.5,1 -0.5,0.5 z"
    id="philo-leaf2-pink2"
    transform="rotate(10,236.5,70.5)" />
   <path
@@ -2506,52 +2645,53 @@
   <!-- Leaf 3 - medium, lower left, green with pink edge -->
   <path
    style="fill:#48904a;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
-   d="M 230,71 C 229.2,70.2 228.5,70 228,69.2 C 228,68.5 228.8,68.2 229.5,68.8 C 229.8,68 230.2,68.2 230.3,69 C 230.8,68.2 231.2,68 231.5,68.6 C 231.5,69.2 230.8,70 230,71 Z"
+   d="m 230,71 c -0.8,-0.8 -1.5,-1 -2,-1.8 0,-0.7 0.8,-1 1.5,-0.4 0.3,-0.8 0.7,-0.6 0.8,0.2 0.5,-0.8 0.9,-1 1.2,-0.4 0,0.6 -0.7,1.4 -1.5,2.4 z"
    id="philo-leaf3"
    transform="rotate(-35,230,71)" />
   <path
    style="fill:#e890a0;fill-opacity:0.55;stroke:none"
-   d="M 228.8,69.5 C 228.5,69.2 228.5,68.8 229,69 C 229.2,69.3 229,69.7 228.8,69.5 Z"
+   d="m 228.8,69.5 c -0.3,-0.3 -0.3,-0.7 0.2,-0.5 0.2,0.3 0,0.7 -0.2,0.5 z"
    id="philo-leaf3-pink"
    transform="rotate(-35,230,71)" />
   <!-- Leaf 4 - small, drooping right -->
   <path
    style="fill:#3a8048;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
-   d="M 236,71 C 236.8,70.5 237.2,70.2 237.5,69.5 C 237.5,69 237,68.8 236.5,69.2 C 236.3,68.8 236,68.8 235.8,69.2 C 235.5,68.8 235.2,68.8 235,69.2 C 235,69.8 235.5,70.2 236,71 Z"
+   d="m 236,71 c 0.8,-0.5 1.2,-0.8 1.5,-1.5 0,-0.5 -0.5,-0.7 -1,-0.3 -0.2,-0.4 -0.5,-0.4 -0.7,0 -0.3,-0.4 -0.6,-0.4 -0.8,0 0,0.6 0.5,1 1,1.8 z"
    id="philo-leaf4"
    transform="rotate(30,236,71)" />
   <path
    style="fill:#f0a0b0;fill-opacity:0.7;stroke:none"
-   d="M 236.5,69.8 C 236.8,69.5 237,69.2 236.8,69 C 236.5,69 236.3,69.3 236.5,69.8 Z"
+   d="m 236.5,69.8 c 0.3,-0.3 0.5,-0.6 0.3,-0.8 -0.3,0 -0.5,0.3 -0.3,0.8 z"
    id="philo-leaf4-pink"
    transform="rotate(30,236,71)" />
   <!-- Leaf 5 - top center, almost entirely pink! (new growth) -->
   <path
    style="fill:#e88098;fill-opacity:0.9;stroke:#c06878;stroke-width:0.15"
-   d="M 234,69.5 C 233.3,68.8 233,68.3 233,67.8 C 233,67.3 233.5,67 234,67.5 C 234.2,67 234.5,67 234.7,67.5 C 235,67 235.3,67.3 235.3,67.8 C 235.3,68.3 234.7,68.8 234,69.5 Z"
+   d="m 234,69.5 c -0.7,-0.7 -1,-1.2 -1,-1.7 0,-0.5 0.5,-0.8 1,-0.3 0.2,-0.5 0.5,-0.5 0.7,0 0.3,-0.5 0.6,-0.2 0.6,0.3 0,0.5 -0.6,1 -1.3,1.7 z"
    id="philo-leaf5-pink" />
   <path
    style="fill:#48904a;fill-opacity:0.35;stroke:none"
-   d="M 233.8,68.5 C 233.5,68 233.5,67.5 234,67.8 C 234,68.2 233.8,68.5 233.8,68.5 Z"
+   d="m 233.8,68.5 c -0.3,-0.5 -0.3,-1 0.2,-0.7 0,0.4 -0.2,0.7 -0.2,0.7 z"
    id="philo-leaf5-green" />
   <path
    style="fill:none;stroke:#c06878;stroke-width:0.1;stroke-opacity:0.5"
-   d="M 234,69.5 C 234,68.5 234,68 234,67.5"
+   d="m 234,69.5 c 0,-1 0,-1.5 0,-2"
    id="philo-vein5" />
 </g><g
      id="crafting-desk"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- Shadow under desk -->
   <ellipse
    cx="232"
    cy="136.5"
    rx="12"
    ry="2"
-   style="fill:#000;fill-opacity:0.05;stroke:none"
+   style="fill:#000000;fill-opacity:0.05;stroke:none"
    id="ellipse196" />
   <!-- Back legs (deeper in room, longer because perspective) -->
   <path
-   d="M 223,116.5 L 223,136.5"
+   d="m 223,116.5 v 20"
    style="stroke:#4a3520;stroke-width:1;stroke-linecap:round"
    id="path196" /><path
    d="m 259.69888,124.05899 v 35.22322"
@@ -2559,7 +2699,7 @@
    id="path196-9" />
   
   <path
-   d="M 240,115 L 240,136"
+   d="m 240,115 v 21"
    style="stroke:#4a3520;stroke-width:0.8;stroke-linecap:round"
    id="path198" /><path
    d="m 285.6276,121.20643 0.0755,38.70197"
@@ -2585,24 +2725,25 @@
 </g><g
      id="fermentation-shelf"
      inkscape:label="fermentation"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- Shelf board -->
   <path
    style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="M 219,99 L 241,97.5 L 241,98.5 L 219,100 Z"
+   d="m 219,99 22,-1.5 v 1 l -22,1.5 z"
    id="shelf-ferm-top" />
   <path
    style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="M 219,100 L 241,98.5 L 241,100 L 219,101.5 Z"
+   d="m 219,100 22,-1.5 v 1.5 l -22,1.5 z"
    id="shelf-ferm-front" />
   <!-- Curved brackets -->
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="M 221,101.5 C 221,103 221,106 219.5,107"
+   d="m 221,101.5 c 0,1.5 0,4.5 -1.5,5.5"
    id="path209" />
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="M 239,100 C 239,102 239,105 237.5,106"
+   d="m 239,100 c 0,2 0,5 -1.5,6"
    id="path210" />
 
   <!-- === KOMBUCHA JAR (left, taller) === -->
@@ -2612,12 +2753,12 @@
    inkscape:label="kombucha-scarlet">
     <!-- Glass jar body -->
     <path
-   d="M -2.5,0 L -2.5,6 C -2.5,6.8 -1.5,7 0,7 C 1.5,7 2.5,6.8 2.5,6 L 2.5,0 Z"
+   d="m -2.5,0 v 6 c 0,0.8 1,1 2.5,1 C 1.5,7 2.5,6.8 2.5,6 V 0 Z"
    style="fill:#e8d8a8;fill-opacity:0.5;stroke:#b0a080;stroke-width:0.2"
    id="path211" />
     <!-- Amber kombucha liquid -->
     <path
-   d="M -2.3,1.5 L -2.3,5.8 C -2.3,6.5 -1.3,6.8 0,6.8 C 1.3,6.8 2.3,6.5 2.3,5.8 L 2.3,1.5 Z"
+   d="m -2.3,1.5 v 4.3 c 0,0.7 1,1 2.3,1 1.3,0 2.3,-0.3 2.3,-1 V 1.5 Z"
    style="fill:#c8871e;fill-opacity:0.55;stroke:none"
    id="path212" />
     <!-- SCOBY disk floating at liquid surface -->
@@ -2630,23 +2771,23 @@
    id="ellipse212" />
     <!-- Glass highlight -->
     <path
-   d="M -2.2,0.5 L -2.2,5.5"
-   style="stroke:#fff;stroke-width:0.15;opacity:0.3"
+   d="m -2.2,0.5 v 5"
+   style="opacity:0.3;stroke:#ffffff;stroke-width:0.15"
    id="path213" />
     <!-- Jar neck -->
     <path
-   d="M -1.8,-0.8 L -1.8,0 L -2.5,0 L -2.5,0 L 2.5,0 L 2.5,0 L 1.8,0 L 1.8,-0.8 Z"
+   d="M -1.8,-0.8 V 0 h -0.7 v 0 h 5 V 0 H 1.8 v -0.8 z"
    style="fill:#e8d8a8;fill-opacity:0.4;stroke:#b0a080;stroke-width:0.15"
    id="path214" />
     <!-- Muslin cloth cover (draped, tied) -->
     <path
-   d="M -2.5,-1.2 C -2.8,-1.8 -2.2,-2 -1.5,-1.5 C -0.8,-1.2 0.8,-1.2 1.5,-1.5 C 2.2,-2 2.8,-1.8 2.5,-1.2 L 2,-0.8 L -2,-0.8 Z"
+   d="m -2.5,-1.2 c -0.3,-0.6 0.3,-0.8 1,-0.3 0.7,0.3 2.3,0.3 3,0 0.7,-0.5 1.3,-0.3 1,0.3 L 2,-0.8 h -4 z"
    style="fill:#f0ece0;stroke:#d0c8b0;stroke-width:0.12"
    id="path215" />
     <!-- Rubber band / string tie -->
     <ellipse
    cx="0"
-   cy="-0.8"
+   cy="-0.80000001"
    rx="2"
    ry="0.25"
    style="fill:none;stroke:#8a7050;stroke-width:0.2"
@@ -2657,7 +2798,7 @@
    y="3"
    width="3"
    height="1.8"
-   rx="0.15"
+   rx="0.15000001"
    style="fill:#f5f0e0;stroke:#c0b090;stroke-width:0.1"
    id="rect215" />
     <text
@@ -2675,12 +2816,12 @@
    inkscape:label="keffir-kendrick">
     <!-- Glass jar body -->
     <path
-   d="M -2.2,0 L -2.2,4.5 C -2.2,5.2 -1.3,5.5 0,5.5 C 1.3,5.5 2.2,5.2 2.2,4.5 L 2.2,0 Z"
+   d="m -2.2,0 v 4.5 c 0,0.7 0.9,1 2.2,1 1.3,0 2.2,-0.3 2.2,-1 V 0 Z"
    style="fill:#e8e8e8;fill-opacity:0.45;stroke:#b0b0a0;stroke-width:0.2"
    id="path216" />
     <!-- Milky white kefir liquid -->
     <path
-   d="M -2,1 L -2,4.3 C -2,4.9 -1.2,5.3 0,5.3 C 1.2,5.3 2,4.9 2,4.3 L 2,1 Z"
+   d="m -2,1 v 3.3 c 0,0.6 0.8,1 2,1 1.2,0 2,-0.4 2,-1 V 1 Z"
    style="fill:#f0ece8;fill-opacity:0.75;stroke:none"
    id="path217" />
     <!-- Kefir grains visible at bottom -->
@@ -2691,42 +2832,42 @@
    style="fill:#e8dcc8;stroke:#d0c4a8;stroke-width:0.08"
    id="circle217" />
     <circle
-   cx="0.3"
-   cy="4.6"
-   r="0.3"
+   cx="0.30000001"
+   cy="4.5999999"
+   r="0.30000001"
    style="fill:#e0d4c0;stroke:#c8bcaa;stroke-width:0.08"
    id="circle218" />
     <circle
    cx="-0.2"
-   cy="4.8"
+   cy="4.8000002"
    r="0.2"
    style="fill:#e5d8c5;stroke:#d0c4a8;stroke-width:0.06"
    id="circle219" />
     <circle
-   cx="0.8"
-   cy="4.4"
+   cx="0.80000001"
+   cy="4.4000001"
    r="0.2"
    style="fill:#e2d6c2;stroke:#ccbfa8;stroke-width:0.06"
    id="circle220" />
     <!-- Glass highlight -->
     <path
-   d="M -1.9,0.5 L -1.9,4"
-   style="stroke:#fff;stroke-width:0.12;opacity:0.3"
+   d="M -1.9,0.5 V 4"
+   style="opacity:0.3;stroke:#ffffff;stroke-width:0.12"
    id="path220" />
     <!-- Jar neck -->
     <path
-   d="M -1.5,-0.6 L -1.5,0 L -2.2,0 L 2.2,0 L 1.5,0 L 1.5,-0.6 Z"
+   d="M -1.5,-0.6 V 0 H -2.2 2.2 1.5 v -0.6 z"
    style="fill:#e8e8e8;fill-opacity:0.4;stroke:#b0b0a0;stroke-width:0.12"
    id="path221" />
     <!-- Muslin cloth cover -->
     <path
-   d="M -2.2,-0.9 C -2.5,-1.4 -1.8,-1.6 -1.2,-1.2 C -0.5,-1 0.5,-1 1.2,-1.2 C 1.8,-1.6 2.5,-1.4 2.2,-0.9 L 1.6,-0.6 L -1.6,-0.6 Z"
+   d="m -2.2,-0.9 c -0.3,-0.5 0.4,-0.7 1,-0.3 0.7,0.2 1.7,0.2 2.4,0 0.6,-0.4 1.3,-0.2 1,0.3 l -0.6,0.3 h -3.2 z"
    style="fill:#f0ece0;stroke:#d0c8b0;stroke-width:0.12"
    id="path222" />
     <!-- Rubber band -->
     <ellipse
    cx="0"
-   cy="-0.6"
+   cy="-0.60000002"
    rx="1.7"
    ry="0.2"
    style="fill:none;stroke:#8a7050;stroke-width:0.18"
@@ -2752,26 +2893,26 @@
   <circle
    cx="223.5"
    cy="95"
-   r="0.15"
-   style="fill:#fff;fill-opacity:0.3"
+   r="0.15000001"
+   style="fill:#ffffff;fill-opacity:0.3"
    id="circle222" />
   <circle
    cx="224.5"
    cy="94"
    r="0.1"
-   style="fill:#fff;fill-opacity:0.25"
+   style="fill:#ffffff;fill-opacity:0.25"
    id="circle223" />
   <circle
    cx="224"
    cy="96"
    r="0.12"
-   style="fill:#fff;fill-opacity:0.2"
+   style="fill:#ffffff;fill-opacity:0.2"
    id="circle224" />
 </g><g
      id="fermentation-shelf-0"
      inkscape:label="fermentation-shelf-upper"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="translate(0.84591541,-49.524293)">
+     transform="matrix(0.97850121,0,0,0.86410604,3.8019007,-42.860931)">
   <!-- Shelf board -->
   <path
    style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
@@ -2819,7 +2960,7 @@
 </g><g
      id="brompton-bike"
      inkscape:label="brompton"
-     transform="matrix(1.0165357,-0.40511219,0.14286477,1.2944395,29.927066,-18.634934)"
+     transform="matrix(0.99468139,-0.35005989,0.13979335,1.118533,32.257842,-16.16925)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- === WHEELS === -->
   <!-- Rear wheel -->
@@ -3542,7 +3683,7 @@
 </g><g
      id="open-science-award"
      inkscape:label="open_science_award"
-     transform="matrix(0.50000001,0,0,0.50000001,55.982351,3.6799079)"
+     transform="matrix(0.48925061,0,0,0.43205303,57.752969,3.11314)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- Frame shadow (offset slightly right and down) -->
   <path
@@ -3660,152 +3801,154 @@
 </g><g
      id="raw-traces-monitor"
      inkscape:label="raw_traces_monitor"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- Stand base -->
   <path
-   d="M 133,101 L 143,100.6 L 143.5,101.5 L 132.5,102 Z"
+   d="m 133,101 10,-0.4 0.5,0.9 -11,0.5 z"
    style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.2"
    id="path363" />
   <!-- Stand neck -->
   <path
-   d="M 137,100.8 L 139,100.7 L 139,98 L 137,98.1 Z"
-   style="fill:#333;stroke:#1a1a1a;stroke-width:0.15"
+   d="m 137,100.8 2,-0.1 V 98 l -2,0.1 z"
+   style="fill:#333333;stroke:#1a1a1a;stroke-width:0.15"
    id="path364" />
   <!-- Monitor bezel (portrait: tall and narrow) -->
   <path
-   d="M 131,98 L 145,97.4 L 145,82 L 131,82.6 Z"
+   d="m 131,98 14,-0.6 V 82 l -14,0.6 z"
    style="fill:#1a1a1a;stroke:#0a0a0a;stroke-width:0.3"
    id="path365" />
   <!-- Screen area -->
   <path
-   d="M 131.8,97.2 L 144.2,96.6 L 144.2,83 L 131.8,83.6 Z"
+   d="m 131.8,97.2 12.4,-0.6 V 83 l -12.4,0.6 z"
    style="fill:#0a0a18;stroke:none"
    id="path366" />
   <!-- Raw traces — 10 channels, green oscilloscope style -->
   <!-- Channel 1 -->
   <path
-   d="M 132.2,84.5 C 133,84.5 133.5,84.3 134,84.5 C 134.5,84.7 135,84.5 135.5,84.2 C 135.8,83.5 136,85.2 136.3,84.5 C 136.8,84.5 137.5,84.6 138,84.5 C 138.5,84.3 139,84.6 139.5,84.5 L 140,84.1 C 140.2,83.2 140.4,85.6 140.6,84.5 C 141,84.5 141.5,84.4 142,84.5 C 142.5,84.6 143,84.5 143.8,84.5"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9"
+   d="m 132.2,84.5 c 0.8,0 1.3,-0.2 1.8,0 0.5,0.2 1,0 1.5,-0.3 0.3,-0.7 0.5,1 0.8,0.3 0.5,0 1.2,0.1 1.7,0 0.5,-0.2 1,0.1 1.5,0 l 0.5,-0.4 c 0.2,-0.9 0.4,1.5 0.6,0.4 0.4,0 0.9,-0.1 1.4,0 0.5,0.1 1,0 1.8,0"
+   style="opacity:0.9;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path367" />
   <!-- Channel 2 -->
   <path
-   d="M 132.2,85.8 C 133,85.9 133.5,85.7 134,85.8 C 134.5,86 135,85.7 135.5,85.8 C 136,85.9 136.5,85.6 137,85.8 C 137.5,85.8 138,86 138.5,85.8 C 139,85.6 139.5,85.9 140,85.8 C 140.5,85.7 141,85.8 141.5,86 C 142,85.8 142.5,85.7 143,85.8 L 143.8,85.9"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85"
+   d="m 132.2,85.8 c 0.8,0.1 1.3,-0.1 1.8,0 0.5,0.2 1,-0.1 1.5,0 0.5,0.1 1,-0.2 1.5,0 0.5,0 1,0.2 1.5,0 0.5,-0.2 1,0.1 1.5,0 0.5,-0.1 1,0 1.5,0.2 0.5,-0.2 1,-0.3 1.5,-0.2 l 0.8,0.1"
+   style="opacity:0.85;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path368" />
   <!-- Channel 3 (with spike) -->
   <path
-   d="M 132.2,87.2 C 133,87.2 133.5,87.1 134,87.2 C 134.5,87.3 135,87.2 135.3,86.4 C 135.5,88 135.7,87.2 136,87.1 C 136.5,87.2 137,87.3 137.5,87.2 C 138,87.1 138.5,87.2 139,87.3 C 139.5,87.2 140,87.1 140.5,87.2 C 141,87.3 141.5,87.2 142,87.1 C 142.5,87.2 143,87.3 143.8,87.2"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9"
+   d="m 132.2,87.2 c 0.8,0 1.3,-0.1 1.8,0 0.5,0.1 1,0 1.3,-0.8 0.2,1.6 0.4,0.8 0.7,0.7 0.5,0.1 1,0.2 1.5,0.1 0.5,-0.1 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.8,0.1"
+   style="opacity:0.9;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path369" />
   <!-- Channel 4 -->
   <path
-   d="M 132.2,88.5 C 133,88.6 133.5,88.4 134,88.5 C 134.5,88.5 135,88.6 135.5,88.5 C 136,88.3 136.5,88.5 137,88.6 C 137.5,88.5 138,88.4 138.5,88.5 C 139,88.6 139.5,88.5 140,88.4 C 140.3,87.7 140.5,89.2 140.7,88.5 C 141,88.5 141.5,88.4 142,88.5 C 142.5,88.6 143,88.5 143.8,88.5"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85"
+   d="m 132.2,88.5 c 0.8,0.1 1.3,-0.1 1.8,0 0.5,0 1,0.1 1.5,0 0.5,-0.2 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 0.3,-0.7 0.5,0.8 0.7,0.1 0.3,0 0.8,-0.1 1.3,0 0.5,0.1 1,0 1.8,0"
+   style="opacity:0.85;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path370" />
   <!-- Channel 5 (with spike) -->
   <path
-   d="M 132.2,89.8 C 133,89.8 133.3,89.7 133.5,89 C 133.7,90.5 133.9,89.8 134.5,89.9 C 135,89.8 135.5,89.7 136,89.8 C 136.5,89.9 137,89.8 137.5,89.7 C 138,89.8 138.5,89.9 139,89.8 C 139.5,89.7 140,89.8 140.5,89.9 C 141,89.8 141.5,89.7 142,89.8 C 142.5,89.9 143,89.8 143.8,89.8"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9"
+   d="m 132.2,89.8 c 0.8,0 1.1,-0.1 1.3,-0.8 0.2,1.5 0.4,0.8 1,0.9 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.5,0.1 0.5,-0.1 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.8,0"
+   style="opacity:0.9;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path371" />
   <!-- Channel 6 -->
   <path
-   d="M 132.2,91.2 C 133,91.1 133.5,91.2 134,91.3 C 134.5,91.2 135,91.1 135.5,91.2 C 136,91.3 136.5,91.2 137,91.1 C 137.5,91.2 138,91.3 138.5,91.2 C 139,91.1 139.5,91.2 140,91.3 C 140.5,91.2 141,91.1 141.5,91.2 C 142,91.3 142.5,91.2 143,91.1 L 143.8,91.2"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85"
+   d="m 132.2,91.2 c 0.8,-0.1 1.3,0 1.8,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.5,0.1 0.5,-0.1 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 l 0.8,0.1"
+   style="opacity:0.85;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path372" />
   <!-- Channel 7 (with spike) -->
   <path
-   d="M 132.2,92.5 C 133,92.5 133.5,92.4 134,92.5 C 134.5,92.6 135,92.5 135.5,92.4 C 136,92.5 136.5,92.6 137,92.5 C 137.5,92.4 138,92.5 138.2,91.8 C 138.4,93.2 138.6,92.5 139,92.5 C 139.5,92.4 140,92.5 140.5,92.6 C 141,92.5 141.5,92.4 142,92.5 C 142.5,92.6 143,92.5 143.8,92.5"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9"
+   d="m 132.2,92.5 c 0.8,0 1.3,-0.1 1.8,0 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.5,0.1 0.5,-0.1 1,0 1.2,-0.7 0.2,1.4 0.4,0.7 0.8,0.7 0.5,-0.1 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.8,0"
+   style="opacity:0.9;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path373" />
   <!-- Channel 8 -->
   <path
-   d="M 132.2,93.8 C 133,93.9 133.5,93.7 134,93.8 C 134.5,93.9 135,93.8 135.5,93.7 C 136,93.8 136.5,93.9 137,93.8 C 137.5,93.7 138,93.8 138.5,93.9 C 139,93.8 139.5,93.7 140,93.8 C 140.5,93.9 141,93.8 141.5,93.7 C 142,93.8 142.5,93.9 143,93.8 L 143.8,93.8"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85"
+   d="m 132.2,93.8 c 0.8,0.1 1.3,-0.1 1.8,0 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.5,0.1 0.5,-0.1 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.5,0.1 h 0.8"
+   style="opacity:0.85;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path374" />
   <!-- Channel 9 -->
   <path
-   d="M 132.2,95.1 C 133,95.1 133.5,95 134,95.1 C 134.3,94.5 134.5,95.7 134.8,95.1 C 135.5,95.2 136,95.1 136.5,95 C 137,95.1 137.5,95.2 138,95.1 C 138.5,95 139,95.1 139.5,95.2 C 140,95.1 140.5,95 141,95.1 C 141.5,95.2 142,95.1 142.5,95 C 143,95.1 143.5,95.2 143.8,95.1"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.9"
+   d="m 132.2,95.1 c 0.8,0 1.3,-0.1 1.8,0 0.3,-0.6 0.5,0.6 0.8,0 0.7,0.1 1.2,0 1.7,-0.1 0.5,0.1 1,0.2 1.5,0.1 0.5,-0.1 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.3,0.1"
+   style="opacity:0.9;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path375" />
   <!-- Channel 10 -->
   <path
-   d="M 132.2,96.4 C 133,96.3 133.5,96.4 134,96.5 C 134.5,96.4 135,96.3 135.5,96.4 C 136,96.5 136.5,96.4 137,96.3 C 137.5,96.4 138,96.5 138.5,96.4 C 139,96.3 139.5,96.4 140,96.5 C 140.5,96.4 141,96.3 141.5,96.4 C 142,96.5 142.5,96.4 143,96.3 L 143.8,96.4"
-   style="fill:none;stroke:#00e868;stroke-width:0.2;opacity:0.85"
+   d="m 132.2,96.4 c 0.8,-0.1 1.3,0 1.8,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 0.5,0.1 1,0.2 1.5,0.1 0.5,-0.1 1,0 1.5,0.1 0.5,-0.1 1,-0.2 1.5,-0.1 0.5,0.1 1,0 1.5,-0.1 l 0.8,0.1"
+   style="opacity:0.85;fill:none;stroke:#00e868;stroke-width:0.2"
    id="path376" />
   <!-- Subtle screen glow -->
   <path
-   d="M 131.8,97.2 L 144.2,96.6 L 144.2,83 L 131.8,83.6 Z"
+   d="m 131.8,97.2 12.4,-0.6 V 83 l -12.4,0.6 z"
    style="fill:#00e868;fill-opacity:0.03;stroke:none"
    id="path377" />
 </g><g
      id="analysis-monitor"
      inkscape:label="analysis_monitor"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- Stand base -->
   <path
-   d="M 155,101 L 170,100.5 L 170.5,101.4 L 154.5,102 Z"
+   d="m 155,101 15,-0.5 0.5,0.9 -16,0.6 z"
    style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.2"
    id="path378" />
   <!-- Stand neck -->
   <path
-   d="M 161.5,100.7 L 163.5,100.6 L 163.5,98 L 161.5,98.1 Z"
-   style="fill:#333;stroke:#1a1a1a;stroke-width:0.15"
+   d="m 161.5,100.7 2,-0.1 V 98 l -2,0.1 z"
+   style="fill:#333333;stroke:#1a1a1a;stroke-width:0.15"
    id="path379" />
   <!-- Monitor bezel (landscape: wide and shorter) -->
   <path
-   d="M 150,98 L 175,97.2 L 175,86 L 150,86.8 Z"
+   d="m 150,98 25,-0.8 V 86 l -25,0.8 z"
    style="fill:#1a1a1a;stroke:#0a0a0a;stroke-width:0.3"
    id="path380" />
   <!-- Screen area -->
   <path
-   d="M 150.8,97.2 L 174.2,96.5 L 174.2,86.8 L 150.8,87.5 Z"
+   d="m 150.8,97.2 23.4,-0.7 v -9.7 l -23.4,0.7 z"
    style="fill:#0a0a18;stroke:none"
    id="path381" />
 
   <!-- LEFT HALF: Spike waveforms (overlaid colored clusters) -->
   <!-- Cluster 1 — red unit -->
   <path
-   d="M 151.5,92 C 152,91.8 152.3,90 152.5,89 C 152.7,93.5 153,92.2 153.5,92.5 C 154,92.2 154.5,92 155,92"
-   style="fill:none;stroke:#ff4444;stroke-width:0.18;opacity:0.7"
+   d="m 151.5,92 c 0.5,-0.2 0.8,-2 1,-3 0.2,4.5 0.5,3.2 1,3.5 0.5,-0.3 1,-0.5 1.5,-0.5"
+   style="opacity:0.7;fill:none;stroke:#ff4444;stroke-width:0.18"
    id="path382" />
   <path
-   d="M 151.5,92.1 C 152,91.9 152.3,90.2 152.5,89.3 C 152.7,93.3 153,92.3 153.5,92.4 C 154,92.3 154.5,92.1 155,92.1"
-   style="fill:none;stroke:#ff4444;stroke-width:0.18;opacity:0.5"
+   d="m 151.5,92.1 c 0.5,-0.2 0.8,-1.9 1,-2.8 0.2,4 0.5,3 1,3.1 0.5,-0.1 1,-0.3 1.5,-0.3"
+   style="opacity:0.5;fill:none;stroke:#ff4444;stroke-width:0.18"
    id="path383" />
   <path
-   d="M 151.5,91.9 C 152,91.7 152.3,89.8 152.5,88.8 C 152.7,93.6 153,92.1 153.5,92.6 C 154,92.1 154.5,91.9 155,91.9"
-   style="fill:none;stroke:#ff4444;stroke-width:0.18;opacity:0.6"
+   d="m 151.5,91.9 c 0.5,-0.2 0.8,-2.1 1,-3.1 0.2,4.8 0.5,3.3 1,3.8 0.5,-0.5 1,-0.7 1.5,-0.7"
+   style="opacity:0.6;fill:none;stroke:#ff4444;stroke-width:0.18"
    id="path384" />
   <!-- Cluster 2 — blue unit -->
   <path
-   d="M 155.5,92 C 156,91.5 156.3,90.5 156.5,89.5 C 156.7,93 157,92.5 157.5,92.3 C 158,92 158.5,92 159,92"
-   style="fill:none;stroke:#4488ff;stroke-width:0.18;opacity:0.7"
+   d="m 155.5,92 c 0.5,-0.5 0.8,-1.5 1,-2.5 0.2,3.5 0.5,3 1,2.8 0.5,-0.3 1,-0.3 1.5,-0.3"
+   style="opacity:0.7;fill:none;stroke:#4488ff;stroke-width:0.18"
    id="path385" />
   <path
-   d="M 155.5,92.1 C 156,91.6 156.3,90.3 156.5,89.8 C 156.7,92.8 157,92.4 157.5,92.2 C 158,92.1 158.5,92.1 159,92.1"
-   style="fill:none;stroke:#4488ff;stroke-width:0.18;opacity:0.5"
+   d="m 155.5,92.1 c 0.5,-0.5 0.8,-1.8 1,-2.3 0.2,3 0.5,2.6 1,2.4 0.5,-0.1 1,-0.1 1.5,-0.1"
+   style="opacity:0.5;fill:none;stroke:#4488ff;stroke-width:0.18"
    id="path386" />
   <path
-   d="M 155.5,91.9 C 156,91.4 156.3,90.7 156.5,89.3 C 156.7,93.2 157,92.6 157.5,92.4 C 158,91.9 158.5,91.9 159,91.9"
-   style="fill:none;stroke:#4488ff;stroke-width:0.18;opacity:0.6"
+   d="m 155.5,91.9 c 0.5,-0.5 0.8,-1.2 1,-2.6 0.2,3.9 0.5,3.3 1,3.1 0.5,-0.5 1,-0.5 1.5,-0.5"
+   style="opacity:0.6;fill:none;stroke:#4488ff;stroke-width:0.18"
    id="path387" />
   <!-- Cluster 3 — green unit -->
   <path
-   d="M 151.5,95 C 152,94.8 152.2,93.8 152.4,93 C 152.6,96 153,95.2 153.5,95.3 C 154,95 154.5,95 155,95"
-   style="fill:none;stroke:#44dd44;stroke-width:0.18;opacity:0.7"
+   d="m 151.5,95 c 0.5,-0.2 0.7,-1.2 0.9,-2 0.2,3 0.6,2.2 1.1,2.3 0.5,-0.3 1,-0.3 1.5,-0.3"
+   style="opacity:0.7;fill:none;stroke:#44dd44;stroke-width:0.18"
    id="path388" />
   <path
-   d="M 151.5,95.1 C 152,94.9 152.2,94 152.4,93.3 C 152.6,95.8 153,95.1 153.5,95.2 C 154,95.1 154.5,95.1 155,95.1"
-   style="fill:none;stroke:#44dd44;stroke-width:0.18;opacity:0.5"
+   d="m 151.5,95.1 c 0.5,-0.2 0.7,-1.1 0.9,-1.8 0.2,2.5 0.6,1.8 1.1,1.9 0.5,-0.1 1,-0.1 1.5,-0.1"
+   style="opacity:0.5;fill:none;stroke:#44dd44;stroke-width:0.18"
    id="path389" />
   <!-- Cluster 4 — yellow unit -->
   <path
-   d="M 155.5,95 C 156,94.6 156.2,93.5 156.4,92.8 C 156.6,96.2 157,95.3 157.5,95.2 C 158,95 158.5,95 159,95"
-   style="fill:none;stroke:#ddcc22;stroke-width:0.18;opacity:0.7"
+   d="m 155.5,95 c 0.5,-0.4 0.7,-1.5 0.9,-2.2 0.2,3.4 0.6,2.5 1.1,2.4 0.5,-0.2 1,-0.2 1.5,-0.2"
+   style="opacity:0.7;fill:none;stroke:#ddcc22;stroke-width:0.18"
    id="path390" />
   <path
-   d="M 155.5,95.1 C 156,94.7 156.2,93.7 156.4,93.1 C 156.6,96 157,95.2 157.5,95.1 C 158,95.1 158.5,95.1 159,95.1"
-   style="fill:none;stroke:#ddcc22;stroke-width:0.18;opacity:0.5"
+   d="m 155.5,95.1 c 0.5,-0.4 0.7,-1.4 0.9,-2 0.2,2.9 0.6,2.1 1.1,2 0.5,0 1,0 1.5,0"
+   style="opacity:0.5;fill:none;stroke:#ddcc22;stroke-width:0.18"
    id="path391" />
 
   <!-- Dividing line between panels -->
@@ -3814,177 +3957,177 @@
    y1="87.5"
    x2="160"
    y2="96.5"
-   style="stroke:#333;stroke-width:0.15"
+   style="stroke:#333333;stroke-width:0.15"
    id="line391" />
 
   <!-- RIGHT HALF: Raster plot -->
   <!-- Colored dots in rows (each row = a trial, columns = time) -->
   <!-- Trial rows — red unit -->
   <g
-   style="fill:#ff4444;opacity:0.8"
+   style="opacity:0.8;fill:#ff4444"
    id="g406">
     <circle
    cx="161.5"
    cy="88.5"
-   r="0.15"
+   r="0.15000001"
    id="circle391" /><circle
    cx="163"
    cy="88.5"
-   r="0.15"
+   r="0.15000001"
    id="circle392" /><circle
    cx="165"
    cy="88.5"
-   r="0.15"
+   r="0.15000001"
    id="circle393" /><circle
    cx="166.5"
    cy="88.5"
-   r="0.15"
+   r="0.15000001"
    id="circle394" />
     <circle
    cx="162"
    cy="89"
-   r="0.15"
+   r="0.15000001"
    id="circle395" /><circle
    cx="163.5"
    cy="89"
-   r="0.15"
+   r="0.15000001"
    id="circle396" /><circle
    cx="165.5"
    cy="89"
-   r="0.15"
+   r="0.15000001"
    id="circle397" /><circle
    cx="167"
    cy="89"
-   r="0.15"
+   r="0.15000001"
    id="circle398" />
     <circle
    cx="161.8"
    cy="89.5"
-   r="0.15"
+   r="0.15000001"
    id="circle399" /><circle
    cx="163.2"
    cy="89.5"
-   r="0.15"
+   r="0.15000001"
    id="circle400" /><circle
    cx="165.2"
    cy="89.5"
-   r="0.15"
+   r="0.15000001"
    id="circle401" /><circle
    cx="166.8"
    cy="89.5"
-   r="0.15"
+   r="0.15000001"
    id="circle402" />
     <circle
    cx="162.2"
    cy="90"
-   r="0.15"
+   r="0.15000001"
    id="circle403" /><circle
    cx="164"
    cy="90"
-   r="0.15"
+   r="0.15000001"
    id="circle404" /><circle
    cx="165.8"
    cy="90"
-   r="0.15"
+   r="0.15000001"
    id="circle405" /><circle
    cx="167.2"
    cy="90"
-   r="0.15"
+   r="0.15000001"
    id="circle406" />
   </g>
   <!-- Trial rows — blue unit -->
   <g
-   style="fill:#4488ff;opacity:0.8"
+   style="opacity:0.8;fill:#4488ff"
    id="g418">
     <circle
    cx="162.5"
    cy="91"
-   r="0.15"
+   r="0.15000001"
    id="circle407" /><circle
    cx="164.5"
    cy="91"
-   r="0.15"
+   r="0.15000001"
    id="circle408" /><circle
    cx="166"
    cy="91"
-   r="0.15"
+   r="0.15000001"
    id="circle409" /><circle
    cx="168"
    cy="91"
-   r="0.15"
+   r="0.15000001"
    id="circle410" />
     <circle
    cx="162"
    cy="91.5"
-   r="0.15"
+   r="0.15000001"
    id="circle411" /><circle
    cx="164"
    cy="91.5"
-   r="0.15"
+   r="0.15000001"
    id="circle412" /><circle
    cx="166.5"
    cy="91.5"
-   r="0.15"
+   r="0.15000001"
    id="circle413" /><circle
    cx="168.2"
    cy="91.5"
-   r="0.15"
+   r="0.15000001"
    id="circle414" />
     <circle
    cx="162.8"
    cy="92"
-   r="0.15"
+   r="0.15000001"
    id="circle415" /><circle
    cx="164.2"
    cy="92"
-   r="0.15"
+   r="0.15000001"
    id="circle416" /><circle
    cx="166.2"
    cy="92"
-   r="0.15"
+   r="0.15000001"
    id="circle417" /><circle
    cx="167.8"
    cy="92"
-   r="0.15"
+   r="0.15000001"
    id="circle418" />
   </g>
   <!-- Trial rows — green unit -->
   <g
-   style="fill:#44dd44;opacity:0.8"
+   style="opacity:0.8;fill:#44dd44"
    id="g426">
     <circle
    cx="161.5"
    cy="93"
-   r="0.15"
+   r="0.15000001"
    id="circle419" /><circle
    cx="163.5"
    cy="93"
-   r="0.15"
+   r="0.15000001"
    id="circle420" /><circle
    cx="165"
    cy="93"
-   r="0.15"
+   r="0.15000001"
    id="circle421" /><circle
    cx="167.5"
    cy="93"
-   r="0.15"
+   r="0.15000001"
    id="circle422" />
     <circle
    cx="162"
    cy="93.5"
-   r="0.15"
+   r="0.15000001"
    id="circle423" /><circle
    cx="164"
    cy="93.5"
-   r="0.15"
+   r="0.15000001"
    id="circle424" /><circle
    cx="165.5"
    cy="93.5"
-   r="0.15"
+   r="0.15000001"
    id="circle425" /><circle
    cx="167"
    cy="93.5"
-   r="0.15"
+   r="0.15000001"
    id="circle426" />
   </g>
   <!-- PSTH bar hints at bottom -->
@@ -3992,54 +4135,55 @@
    x="161"
    y="95"
    width="1"
-   height="0.8"
-   style="fill:#ff4444;opacity:0.5"
+   height="0.80000001"
+   style="opacity:0.5;fill:#ff4444"
    id="rect426" />
   <rect
    x="162.5"
    y="94.5"
    width="1"
    height="1.3"
-   style="fill:#ff4444;opacity:0.5"
+   style="opacity:0.5;fill:#ff4444"
    id="rect427" />
   <rect
    x="164"
-   y="95.2"
+   y="95.199997"
    width="1"
-   height="0.6"
-   style="fill:#4488ff;opacity:0.5"
+   height="0.60000002"
+   style="opacity:0.5;fill:#4488ff"
    id="rect428" />
   <rect
    x="165.5"
-   y="94.8"
+   y="94.800003"
    width="1"
    height="1"
-   style="fill:#4488ff;opacity:0.5"
+   style="opacity:0.5;fill:#4488ff"
    id="rect429" />
   <rect
    x="167"
    y="95"
    width="1"
-   height="0.8"
-   style="fill:#44dd44;opacity:0.5"
+   height="0.80000001"
+   style="opacity:0.5;fill:#44dd44"
    id="rect430" />
   <rect
    x="168.5"
-   y="95.3"
+   y="95.300003"
    width="1"
    height="0.5"
-   style="fill:#ddcc22;opacity:0.5"
+   style="opacity:0.5;fill:#ddcc22"
    id="rect431" />
 
   <!-- Subtle screen glow -->
   <path
-   d="M 150.8,97.2 L 174.2,96.5 L 174.2,86.8 L 150.8,87.5 Z"
+   d="m 150.8,97.2 23.4,-0.7 v -9.7 l -23.4,0.7 z"
    style="fill:#4488ff;fill-opacity:0.02;stroke:none"
    id="path431" />
 </g><g
      id="neuropixels-magnifier"
      inkscape:label="neuropixels_probe"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- The actual tiny probe on the desk (barely visible thin line) -->
   <line
    x1="117.5"
@@ -4052,28 +4196,28 @@
    x="117.2"
    y="106"
    width="1.6"
-   height="0.8"
+   height="0.80000001"
    rx="0.1"
    style="fill:#4a5560;stroke:#3a4550;stroke-width:0.08"
    id="rect432" />
 
   <!-- Magnifying glass handle (brass, vintage) -->
   <path
-   d="M 114.8,107 L 111,109.5"
+   d="m 114.8,107 -3.8,2.5"
    style="stroke:#b08830;stroke-width:1.4;stroke-linecap:round"
    id="path432" />
   <!-- Handle ferrule -->
   <path
-   d="M 114.5,107.2 L 113.5,107.8"
+   d="m 114.5,107.2 -1,0.6"
    style="stroke:#c8a040;stroke-width:1.8;stroke-linecap:round"
    id="path433" />
   <!-- Handle grip (dark wood) -->
   <path
-   d="M 111,109.5 L 108.5,111"
+   d="m 111,109.5 -2.5,1.5"
    style="stroke:#5a3820;stroke-width:1.6;stroke-linecap:round"
    id="path434" />
   <path
-   d="M 111,109.5 L 108.5,111"
+   d="m 111,109.5 -2.5,1.5"
    style="stroke:#6a4828;stroke-width:1.2;stroke-linecap:round"
    id="path435" />
 
@@ -4087,7 +4231,7 @@
   <circle
    cx="118"
    cy="104"
-   r="3.4"
+   r="3.4000001"
    style="fill:none;stroke:#c8a040;stroke-width:0.3"
    id="circle436" />
 
@@ -4111,7 +4255,7 @@
    id="rect437" />
   <!-- Tapered tip -->
   <path
-   d="M 117.4,106.2 L 118,107 L 118.6,106.2 Z"
+   d="m 117.4,106.2 0.6,0.8 0.6,-0.8 z"
    style="fill:#b8c0c8;stroke:#8890a0;stroke-width:0.1"
    id="path437" />
 
@@ -4123,93 +4267,93 @@
     <rect
    x="117.5"
    y="101.5"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect438" />
     <rect
    x="117.5"
    y="102.1"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect439" />
     <rect
    x="117.5"
    y="102.7"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect440" />
     <rect
    x="117.5"
    y="103.3"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect441" />
     <rect
    x="117.5"
    y="103.9"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect442" />
     <rect
    x="117.5"
    y="104.5"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect443" />
     <rect
    x="117.5"
    y="105.1"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect444" />
     <rect
    x="117.5"
    y="105.7"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect445" />
     <!-- Right column (staggered) -->
     <rect
    x="118.1"
    y="101.8"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect446" />
     <rect
    x="118.1"
    y="102.4"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect447" />
     <rect
    x="118.1"
-   y="103.0"
-   width="0.4"
-   height="0.3"
+   y="103"
+   width="0.40000001"
+   height="0.30000001"
    id="rect448" />
     <rect
    x="118.1"
    y="103.6"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect449" />
     <rect
    x="118.1"
    y="104.2"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect450" />
     <rect
    x="118.1"
    y="104.8"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect451" />
     <rect
    x="118.1"
    y="105.4"
-   width="0.4"
-   height="0.3"
+   width="0.40000001"
+   height="0.30000001"
    id="rect452" />
   </g>
 
@@ -4219,7 +4363,7 @@
    y="100.5"
    width="3"
    height="1"
-   rx="0.15"
+   rx="0.15000001"
    style="fill:#2a6830;stroke:#1a4820;stroke-width:0.1"
    id="rect453" />
   <!-- Tiny connector on PCB -->
@@ -4227,8 +4371,8 @@
    x="117.3"
    y="100.3"
    width="1.4"
-   height="0.3"
-   rx="0.05"
+   height="0.30000001"
+   rx="0.050000001"
    style="fill:#e0d0b0;stroke:#a09070;stroke-width:0.06"
    id="rect454" />
   <!-- PCB traces -->
@@ -4263,17 +4407,18 @@
 
   <!-- Glass highlight (light reflection arc) -->
   <path
-   d="M 115.5,102.5 C 116,101.5 117,101 118.5,101.2"
-   style="fill:none;stroke:#fff;stroke-width:0.3;opacity:0.4;stroke-linecap:round"
+   d="m 115.5,102.5 c 0.5,-1 1.5,-1.5 3,-1.3"
+   style="opacity:0.4;fill:none;stroke:#ffffff;stroke-width:0.3;stroke-linecap:round"
    id="path457" />
   <!-- Secondary smaller highlight -->
   <path
-   d="M 119.5,106 C 120,105.5 120.5,105.2 120.8,105"
-   style="fill:none;stroke:#fff;stroke-width:0.2;opacity:0.25;stroke-linecap:round"
+   d="m 119.5,106 c 0.5,-0.5 1,-0.8 1.3,-1"
+   style="opacity:0.25;fill:none;stroke:#ffffff;stroke-width:0.2;stroke-linecap:round"
    id="path458" />
 </g><g
      id="keyboard-modelm"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- Keyboard body (cream/beige, chunky) -->
   <path
    d="m 132.24216,108.5 30.28489,-0.0601 -0.75783,-5.78832 -28.54187,0.74216 z"
@@ -4298,107 +4443,107 @@
     <rect
    x="134.5"
    y="103.8"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect461" />
     <rect
    x="136"
    y="103.7"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect462" />
     <rect
    x="137"
    y="103.65"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect463" />
     <rect
    x="138"
    y="103.6"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect464" />
     <rect
    x="139"
    y="103.55"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect465" />
     <rect
    x="140.5"
    y="103.45"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect466" />
     <rect
    x="141.5"
    y="103.4"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect467" />
     <rect
    x="142.5"
    y="103.35"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect468" />
     <rect
    x="143.5"
    y="103.3"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect469" />
     <rect
    x="145"
    y="103.2"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect470" />
     <rect
    x="146"
    y="103.15"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect471" />
     <rect
    x="147"
    y="103.1"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect472" />
     <rect
    x="157"
    y="102.85"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect473" />
     <rect
    x="158.5"
    y="102.8"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect474" />
     <rect
    x="160"
    y="102.75"
-   width="0.8"
+   width="0.80000001"
    height="0.5"
-   rx="0.05"
+   rx="0.050000001"
    id="rect475" />
   </g>
 
@@ -4409,100 +4554,100 @@
     <rect
    x="134.5"
    y="104.8"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect476" />
     <rect
-   x="135.6"
+   x="135.60001"
    y="104.75"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect477" />
     <rect
    x="136.7"
    y="104.7"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect478" />
     <rect
    x="137.8"
    y="104.65"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect479" />
     <rect
-   x="138.9"
+   x="138.89999"
    y="104.6"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect480" />
     <rect
    x="140"
    y="104.55"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect481" />
     <rect
-   x="141.1"
+   x="141.10001"
    y="104.5"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect482" />
     <rect
    x="142.2"
    y="104.45"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect483" />
     <rect
    x="143.3"
    y="104.4"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect484" />
     <rect
-   x="144.4"
+   x="144.39999"
    y="104.35"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect485" />
     <rect
    x="145.5"
    y="104.3"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect486" />
     <rect
-   x="146.6"
+   x="146.60001"
    y="104.25"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect487" />
     <rect
    x="147.7"
    y="104.2"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect488" />
     <rect
    x="148.8"
    y="104.15"
    width="1.8"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect489" />
   </g>
 
@@ -4514,99 +4659,99 @@
    x="134.5"
    y="105.7"
    width="1.3"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect490" />
     <rect
    x="136"
    y="105.65"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect491" />
     <rect
-   x="137.1"
+   x="137.10001"
    y="105.6"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect492" />
     <rect
    x="138.2"
    y="105.55"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect493" />
     <rect
    x="139.3"
    y="105.5"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect494" />
     <rect
-   x="140.4"
+   x="140.39999"
    y="105.45"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect495" />
     <rect
    x="141.5"
    y="105.4"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect496" />
     <rect
-   x="142.6"
+   x="142.60001"
    y="105.35"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect497" />
     <rect
    x="143.7"
    y="105.3"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect498" />
     <rect
    x="144.8"
    y="105.25"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect499" />
     <rect
-   x="145.9"
+   x="145.89999"
    y="105.2"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect500" />
     <rect
    x="147"
    y="105.15"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect501" />
     <rect
-   x="148.1"
+   x="148.10001"
    y="105.1"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect502" />
     <rect
    x="149.2"
    y="105.05"
    width="1.4"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect503" />
   </g>
 
@@ -4618,85 +4763,85 @@
    x="134.5"
    y="106.6"
    width="1.5"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect504" />
     <rect
    x="136.2"
    y="106.55"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect505" />
     <rect
    x="137.3"
    y="106.5"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect506" />
     <rect
-   x="138.4"
+   x="138.39999"
    y="106.45"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect507" />
     <rect
    x="139.5"
    y="106.4"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect508" />
     <rect
-   x="140.6"
+   x="140.60001"
    y="106.35"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect509" />
     <rect
    x="141.7"
    y="106.3"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect510" />
     <rect
    x="142.8"
    y="106.25"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect511" />
     <rect
-   x="143.9"
+   x="143.89999"
    y="106.2"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect512" />
     <rect
    x="145"
    y="106.15"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect513" />
     <rect
-   x="146.1"
+   x="146.10001"
    y="106.1"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect514" />
     <rect
    x="147.2"
    y="106.05"
    width="2.2"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect515" />
   </g>
 
@@ -4708,64 +4853,64 @@
    x="134.5"
    y="107.5"
    width="2"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect516" />
     <rect
    x="136.7"
    y="107.45"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect517" />
     <rect
    x="137.8"
    y="107.4"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect518" />
     <rect
-   x="138.9"
+   x="138.89999"
    y="107.35"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect519" />
     <rect
    x="140"
    y="107.3"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect520" />
     <rect
-   x="141.1"
+   x="141.10001"
    y="107.25"
    width="6"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect521" />
     <rect
    x="147.3"
    y="107.15"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect522" />
     <rect
-   x="148.4"
+   x="148.39999"
    y="107.1"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect523" />
     <rect
    x="149.5"
    y="107.05"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect524" />
   </g>
 
@@ -4777,192 +4922,193 @@
     <rect
    x="152"
    y="104.1"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect525" />
     <rect
-   x="153.1"
+   x="153.10001"
    y="104.05"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect526" />
     <rect
    x="154.2"
    y="104"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect527" />
     <!-- Arrow cluster -->
     <rect
-   x="153.1"
+   x="153.10001"
    y="107"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect528" />
     <rect
    x="152"
    y="107.5"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect529" />
     <rect
-   x="153.1"
+   x="153.10001"
    y="107.5"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect530" />
     <rect
    x="154.2"
    y="107.5"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect531" />
     <!-- Numpad -->
     <rect
    x="156.5"
    y="104.05"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect532" />
     <rect
-   x="157.6"
+   x="157.60001"
    y="104"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect533" />
     <rect
    x="158.7"
    y="103.95"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect534" />
     <rect
    x="159.8"
    y="103.9"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect535" />
     <rect
    x="156.5"
    y="104.85"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect536" />
     <rect
-   x="157.6"
+   x="157.60001"
    y="104.8"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect537" />
     <rect
    x="158.7"
    y="104.75"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect538" />
     <rect
    x="159.8"
    y="104.7"
-   width="0.9"
+   width="0.89999998"
    height="1.25"
-   rx="0.05"
+   rx="0.050000001"
    id="rect539" />
     <rect
    x="156.5"
    y="105.65"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect540" />
     <rect
-   x="157.6"
+   x="157.60001"
    y="105.6"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect541" />
     <rect
    x="158.7"
    y="105.55"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect542" />
     <rect
    x="156.5"
    y="106.45"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect543" />
     <rect
-   x="157.6"
+   x="157.60001"
    y="106.4"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect544" />
     <rect
    x="158.7"
    y="106.35"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect545" />
     <rect
    x="159.8"
    y="106.3"
-   width="0.9"
+   width="0.89999998"
    height="1.25"
-   rx="0.05"
+   rx="0.050000001"
    id="rect546" />
     <rect
    x="156.5"
    y="107.25"
    width="1.9"
-   height="0.6"
-   rx="0.05"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect547" />
     <rect
    x="158.7"
    y="107.15"
-   width="0.9"
-   height="0.6"
-   rx="0.05"
+   width="0.89999998"
+   height="0.60000002"
+   rx="0.050000001"
    id="rect548" />
   </g>
 
   <!-- Coiled cable coming out the back -->
   <path
-   d="M 152,102 C 152,101 152.5,100.5 152.5,99.5 C 152.5,99 152,98.8 151.5,99 C 151.5,99.5 152,99.8 152,100.3"
-   style="fill:none;stroke:#555;stroke-width:0.35;stroke-linecap:round"
+   d="m 152,102 c 0,-1 0.5,-1.5 0.5,-2.5 0,-0.5 -0.5,-0.7 -1,-0.5 0,0.5 0.5,0.8 0.5,1.3"
+   style="fill:none;stroke:#555555;stroke-width:0.35;stroke-linecap:round"
    id="path548" />
 </g><g
      id="mousepad-and-mouse"
-     style="stroke-linecap:round;stroke-linejoin:round">
+     style="stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
   <!-- Mousepad (dark gray, slightly worn) -->
   <path
-   d="M 174,108.5 L 190,107.8 L 190,103.5 L 174,104.2 Z"
+   d="m 174,108.5 16,-0.7 v -4.3 l -16,0.7 z"
    style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.15"
    id="path549" />
   <!-- Mousepad subtle edge wear -->
   <path
-   d="M 174.3,108.2 L 189.7,107.5 L 189.7,103.8 L 174.3,104.5 Z"
-   style="fill:none;stroke:#333;stroke-width:0.08"
+   d="m 174.3,108.2 15.4,-0.7 v -3.7 l -15.4,0.7 z"
+   style="fill:none;stroke:#333333;stroke-width:0.08"
    id="path550" />
 
   <!-- Mouse (classic rounded shape, cream to match Model M) -->
@@ -4971,7 +5117,7 @@
    id="g553">
     <!-- Mouse body -->
     <path
-   d="M -1.5,0 C -1.8,-0.5 -1.5,-2 -0.8,-2.5 C -0.3,-2.8 0.3,-2.8 0.8,-2.5 C 1.5,-2 1.8,-0.5 1.5,0 C 1,0.5 -1,0.5 -1.5,0 Z"
+   d="m -1.5,0 c -0.3,-0.5 0,-2 0.7,-2.5 0.5,-0.3 1.1,-0.3 1.6,0 0.7,0.5 1,2 0.7,2.5 C 1,0.5 -1,0.5 -1.5,0 Z"
    style="fill:#d8d0b8;stroke:#a89878;stroke-width:0.15"
    id="path551" />
     <!-- Mouse button divider -->
@@ -4984,20 +5130,20 @@
    id="line551" />
     <!-- Left button highlight -->
     <path
-   d="M -1.2,-0.5 C -1.4,-1.2 -1.2,-2 -0.5,-2.3 L 0,-2.5 L 0,-0.5 Z"
+   d="m -1.2,-0.5 c -0.2,-0.7 0,-1.5 0.7,-1.8 L 0,-2.5 v 2 z"
    style="fill:#e0d8c0;fill-opacity:0.3;stroke:none"
    id="path552" />
     <!-- Scroll wheel area (Model M era = no scroll, just two buttons) -->
     <!-- Cable -->
     <path
-   d="M 0,-2.5 C 0,-3.2 -0.5,-3.5 -0.5,-4 C -0.5,-4.5 0,-4.8 0.3,-5"
-   style="fill:none;stroke:#555;stroke-width:0.25;stroke-linecap:round"
+   d="m 0,-2.5 c 0,-0.7 -0.5,-1 -0.5,-1.5 0,-0.5 0.5,-0.8 0.8,-1"
+   style="fill:none;stroke:#555555;stroke-width:0.25;stroke-linecap:round"
    id="path553" />
   </g>
 </g><g
      id="leather-shoes"
      inkscape:label="leather_shoes"
-     transform="translate(72.686336,13.962347)"
+     transform="matrix(0.97850121,0,0,0.86410604,74.09784,11.998258)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- Front shoe (side profile, facing left toward VP) -->
   <g
@@ -5091,7 +5237,7 @@
 </g><g
      id="leather-handbag"
      inkscape:label="leather_handbag"
-     transform="matrix(1.1191965,0,0,1.1191965,243.36119,104.95495)"
+     transform="matrix(1.0951351,0,0,0.96710443,241.10339,90.625514)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- Bag body -->
   <path
@@ -5158,7 +5304,7 @@
 </g><g
      id="g21455"
      inkscape:label="tintin_fusee"
-     transform="matrix(0.44086742,0,0,0.44086742,151.95602,3.7077935)"
+     transform="matrix(0.43138931,0,0,0.38095621,151.66332,3.1372361)"
      style="stroke-linecap:round;stroke-linejoin:round"><image
        width="17.015699"
        height="8.5078497"

@@ -101,11 +101,13 @@ document.addEventListener("DOMContentLoaded", function () {
       var svg = doc.querySelector("svg");
       if (!svg) return;
 
-      // Make the SVG responsive
+      // Make the SVG fill the full viewport width
       svg.removeAttribute("width");
       svg.removeAttribute("height");
-      svg.style.width = "100%";
+      svg.style.width = "100vw";
       svg.style.height = "auto";
+      svg.style.display = "block";
+      svg.style.marginLeft = "calc(-50vw + 50%)";
       container.appendChild(svg);
 
       // Build a lookup of inkscape:label -> element
