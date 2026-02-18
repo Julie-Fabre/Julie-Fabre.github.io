@@ -46,6 +46,26 @@ const interactiveObjects = [
     url: "shoemaking.html",
     tooltip: "Handmade leather handbag",
   },
+  {
+    svgLabel: "poster_basal_ganglia",
+    url: "about.html",
+    tooltip: "Sensorimotor transformation in basal ganglia",
+  },
+  {
+    svgLabel: "poster_cta",
+    url: "about.html",
+    tooltip: "Conditioned taste aversion neural encoding",
+  },
+  {
+    svgLabel: "card_catalog",
+    url: "https://github.com/Julie-Fabre/awesome_science",
+    tooltip: "Awesome tools for science & academia",
+  },
+  {
+    svgLabel: "about_me",
+    url: "about.html",
+    tooltip: "About me",
+  },
 ];
 
 // =============================================================
