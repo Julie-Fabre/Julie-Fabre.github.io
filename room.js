@@ -57,14 +57,29 @@ const interactiveObjects = [
     tooltip: "Conditioned taste aversion neural encoding",
   },
   {
-    svgLabel: "card_catalog",
+    svgLabel: "bombcell",
+    url: "https://github.com/Julie-Fabre/bombcell",
+    tooltip: "BombCell — spike sorting quality control",
+  },
+  {
+    svgLabel: "brain_street_view",
+    url: "https://github.com/Julie-Fabre/brain_street_view",
+    tooltip: "Brain Street View",
+  },
+  {
+    svgLabel: "unitmatch",
+    url: "https://www.nature.com/articles/s41592-024-02440-1",
+    tooltip: "UnitMatch — cross-session unit tracking",
+  },
+  {
+    svgLabel: "awesome_science_list",
     url: "https://github.com/Julie-Fabre/awesome_science",
     tooltip: "Awesome tools for science & academia",
   },
   {
-    svgLabel: "about_me",
-    url: "about.html",
-    tooltip: "About me",
+    svgLabel: "awesome_neuropixels_list",
+    url: "https://github.com/Julie-Fabre/awesome_neuropixels",
+    tooltip: "Awesome Neuropixels resources",
   },
 ];
 
