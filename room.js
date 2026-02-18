@@ -148,5 +148,54 @@ document.addEventListener("DOMContentLoaded", function () {
           tooltip.style.top = (e.clientY + 12) + "px";
         });
       });
+
+      // === LAMP TOGGLE ===
+      var lamp = labelMap["pendant-lamp"];
+      if (lamp) {
+        // Create a dark overlay that covers the whole room
+        var viewBox = svg.viewBox.baseVal;
+        var overlay = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        overlay.setAttribute("x", viewBox.x);
+        overlay.setAttribute("y", viewBox.y);
+        overlay.setAttribute("width", viewBox.width);
+        overlay.setAttribute("height", viewBox.height);
+        overlay.setAttribute("id", "lamp-darkness");
+        overlay.setAttribute("style",
+          "fill:#1a1020;opacity:0;pointer-events:none;transition:opacity 0.6s ease");
+        // Insert overlay just before the sunbeams so window light shows through
+        var sunbeams = labelMap["sunbeams"];
+        if (sunbeams) {
+          sunbeams.parentNode.insertBefore(overlay, sunbeams);
+        } else {
+          svg.appendChild(overlay);
+        }
+
+        var lampOn = true;
+        lamp.style.cursor = "pointer";
+
+        lamp.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          lampOn = !lampOn;
+          // Toggle darkness overlay
+          overlay.style.opacity = lampOn ? "0" : "0.55";
+          // Toggle bulb glow
+          var glow = lamp.querySelector("#lamp-glow-effect");
+          if (glow) glow.style.opacity = lampOn ? "1" : "0";
+        });
+
+        // Tooltip for lamp
+        lamp.addEventListener("mouseenter", function () {
+          tooltip.textContent = lampOn ? "Turn off the light" : "Turn on the light";
+          tooltip.classList.add("visible");
+        });
+        lamp.addEventListener("mouseleave", function () {
+          tooltip.classList.remove("visible");
+        });
+        lamp.addEventListener("mousemove", function (e) {
+          tooltip.style.left = (e.clientX + 12) + "px";
+          tooltip.style.top = (e.clientY + 12) + "px";
+        });
+      }
     });
 });
