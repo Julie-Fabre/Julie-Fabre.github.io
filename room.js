@@ -226,5 +226,157 @@ document.addEventListener("DOMContentLoaded", function () {
           tooltip.style.top = (e.clientY + 12) + "px";
         });
       }
+
+      // === CURTAIN TOGGLE ===
+      var curtainLeft = svg.querySelector("#curtain-left");
+      var curtainRight = svg.querySelector("#curtain-right");
+
+      if (curtainLeft && curtainRight) {
+        var curtainsOpen = true;
+        var windowGroup = curtainLeft.parentNode;
+
+        // Wrap left curtain elements into a group
+        var leftGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        leftGroup.setAttribute("id", "curtain-left-group");
+        ["curtain-left", "curtain-left-fold1", "curtain-left-fold2", "curtain-left-fold3"]
+          .forEach(function (id) {
+            var el = svg.querySelector("#" + id);
+            if (el) leftGroup.appendChild(el);
+          });
+
+        // Wrap right curtain elements into a group
+        var rightGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        rightGroup.setAttribute("id", "curtain-right-group");
+        ["curtain-right", "curtain-right-fold1", "curtain-right-fold2", "curtain-right-fold3"]
+          .forEach(function (id) {
+            var el = svg.querySelector("#" + id);
+            if (el) rightGroup.appendChild(el);
+          });
+
+        // Create closed-curtain fill panels (fabric covering the window)
+        var leftPanel = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        leftPanel.setAttribute("x", "110");
+        leftPanel.setAttribute("y", "51");
+        leftPanel.setAttribute("width", "42");
+        leftPanel.setAttribute("height", "59");
+        leftPanel.setAttribute("fill", "url(#curtain-gradient)");
+        leftPanel.setAttribute("fill-opacity", "0.88");
+        leftPanel.style.opacity = "0";
+        leftPanel.style.transition = "opacity 0.8s ease";
+        leftPanel.style.pointerEvents = "none";
+
+        var rightPanel = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        rightPanel.setAttribute("x", "152");
+        rightPanel.setAttribute("y", "50.5");
+        rightPanel.setAttribute("width", "41");
+        rightPanel.setAttribute("height", "59");
+        rightPanel.setAttribute("fill", "url(#curtain-gradient)");
+        rightPanel.setAttribute("fill-opacity", "0.88");
+        rightPanel.style.opacity = "0";
+        rightPanel.style.transition = "opacity 0.8s ease";
+        rightPanel.style.pointerEvents = "none";
+
+        // Wavy fold lines on the closed panels for fabric texture
+        var panelFolds = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        panelFolds.setAttribute("id", "curtain-closed-folds");
+        panelFolds.style.opacity = "0";
+        panelFolds.style.transition = "opacity 0.8s ease";
+        panelFolds.style.pointerEvents = "none";
+
+        [
+          "M 118,52 c 0.3,10 -0.3,20 0.2,30 0.3,9 -0.2,19 0,28",
+          "M 127,52 c -0.2,11 0.4,21 -0.2,30 -0.3,9 0.3,18 0,27",
+          "M 137,52 c 0.3,10 -0.2,20 0.2,29 0.2,10 -0.3,19 0,28",
+          "M 148,52 c -0.2,10 0.3,20 -0.1,29 -0.3,10 0.2,18 0.1,27",
+          "M 162,52 c 0.2,10 -0.3,20 0.2,29 0.3,9 -0.2,18 0,27",
+          "M 173,52 c -0.3,10 0.2,20 -0.2,29 -0.2,9 0.3,18 0.1,27",
+          "M 184,52 c 0.2,10 -0.3,20 0.2,29 0.3,9 -0.2,18 0,27"
+        ].forEach(function (d) {
+          var fold = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          fold.setAttribute("d", d);
+          fold.setAttribute("style",
+            "fill:none;stroke:#9a7040;stroke-width:0.25;stroke-opacity:0.4");
+          panelFolds.appendChild(fold);
+        });
+
+        // Insert panels behind curtain rod, folds behind panels
+        var rodEl = svg.querySelector("#curtain-rod");
+        if (rodEl) {
+          windowGroup.insertBefore(leftPanel, rodEl);
+          windowGroup.insertBefore(rightPanel, rodEl);
+          windowGroup.insertBefore(panelFolds, rodEl);
+        }
+
+        // Append curtain groups at the end of the window group
+        // (window-sill is a sibling, not a child of the window group)
+        windowGroup.appendChild(leftGroup);
+        windowGroup.appendChild(rightGroup);
+
+        // CSS transitions for smooth sliding
+        leftGroup.style.transition = "transform 0.8s ease";
+        rightGroup.style.transition = "transform 0.8s ease";
+        leftGroup.style.cursor = "pointer";
+        rightGroup.style.cursor = "pointer";
+
+        // Sunbeams fade when curtains close
+        var sunbeamsForCurtains = labelMap["sunbeams"] || svg.querySelector("#sunbeams");
+        if (sunbeamsForCurtains) {
+          sunbeamsForCurtains.style.transition = "opacity 0.8s ease";
+        }
+
+        function toggleCurtains(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          curtainsOpen = !curtainsOpen;
+
+          if (curtainsOpen) {
+            // Open: slide curtains back to sides
+            leftGroup.style.transform = "";
+            rightGroup.style.transform = "";
+            leftPanel.style.opacity = "0";
+            rightPanel.style.opacity = "0";
+            panelFolds.style.opacity = "0";
+            leftPanel.style.pointerEvents = "none";
+            rightPanel.style.pointerEvents = "none";
+            panelFolds.style.pointerEvents = "none";
+            if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = "0.7";
+          } else {
+            // Close: slide curtains toward center, show panels
+            leftGroup.style.transform = "translateX(42px)";
+            rightGroup.style.transform = "translateX(-41px)";
+            leftPanel.style.opacity = "1";
+            rightPanel.style.opacity = "1";
+            panelFolds.style.opacity = "1";
+            leftPanel.style.pointerEvents = "auto";
+            rightPanel.style.pointerEvents = "auto";
+            panelFolds.style.pointerEvents = "auto";
+            leftPanel.style.cursor = "pointer";
+            rightPanel.style.cursor = "pointer";
+            panelFolds.style.cursor = "pointer";
+            if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = "0";
+          }
+        }
+
+        leftGroup.addEventListener("click", toggleCurtains);
+        rightGroup.addEventListener("click", toggleCurtains);
+        leftPanel.addEventListener("click", toggleCurtains);
+        rightPanel.addEventListener("click", toggleCurtains);
+        panelFolds.addEventListener("click", toggleCurtains);
+
+        // Tooltip for curtains
+        [leftGroup, rightGroup, leftPanel, rightPanel].forEach(function (el) {
+          el.addEventListener("mouseenter", function () {
+            tooltip.textContent = curtainsOpen ? "Close curtains" : "Open curtains";
+            tooltip.classList.add("visible");
+          });
+          el.addEventListener("mouseleave", function () {
+            tooltip.classList.remove("visible");
+          });
+          el.addEventListener("mousemove", function (e) {
+            tooltip.style.left = (e.clientX + 12) + "px";
+            tooltip.style.top = (e.clientY + 12) + "px";
+          });
+        });
+      }
     });
 });
