@@ -173,15 +173,36 @@ document.addEventListener("DOMContentLoaded", function () {
         var lampOn = true;
         lamp.style.cursor = "pointer";
 
+        // Elements that dim more when lamp is off (far from window)
+        var dimTargets = ["pegboard", "poster_basal_ganglia", "poster_cta",
+                          "open_science_award", "fermentation", "right-shelf",
+                          "fermentation-shelf-upper"].map(function (label) {
+          return labelMap[label];
+        }).filter(Boolean);
+
+        // All lamp glow elements
+        var glowIds = ["lamp-glow-effect", "lamp-glow-inner", "lamp-light-cone"];
+
         lamp.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
           lampOn = !lampOn;
           // Toggle darkness overlay
           overlay.style.opacity = lampOn ? "0" : "0.55";
-          // Toggle bulb glow
-          var glow = lamp.querySelector("#lamp-glow-effect");
-          if (glow) glow.style.opacity = lampOn ? "1" : "0";
+          // Toggle bulb glow elements
+          glowIds.forEach(function (id) {
+            var el = lamp.querySelector("#" + id);
+            if (el) {
+              el.style.transition = "opacity 0.6s ease";
+              el.style.opacity = lampOn ? "1" : "0";
+            }
+          });
+          // Dim pegboard, posters, shelves, award when lamp is off
+          dimTargets.forEach(function (el) {
+            el.style.transition = "opacity 0.6s ease, filter 0.6s ease";
+            el.style.opacity = lampOn ? "1" : "0.5";
+            el.style.filter = lampOn ? "none" : "brightness(0.5)";
+          });
         });
 
         // Tooltip for lamp
