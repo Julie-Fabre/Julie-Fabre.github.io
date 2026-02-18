@@ -26,7 +26,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.69339699"
-     inkscape:cx="592.73404"
+     inkscape:cx="338.91119"
      inkscape:cy="338.91119"
      inkscape:window-width="1512"
      inkscape:window-height="949"
@@ -882,7 +882,7 @@
      style="stroke-linecap:round;stroke-linejoin:round"><g
    id="g-room-fills"
    inkscape:label="room-fills"
-   transform="matrix(1,0,0,0.88309144,0.70294593,-1.3941729)"><path
+   transform="matrix(1,0,0,0.89244412,0.70294593,-1.4033891)"><path
    style="fill:url(#ceiling-gradient);fill-opacity:1;stroke:none;stroke-width:0.978501"
    d="M -0.86326248,1.2231511 55.067867,29.051725 h 29.18869 l 36.693793,9.559957 59.04277,0.538176 33.11248,-9.892648 25.5291,0.185915 55.83327,-27.7111533 z"
    id="path-ceiling-fill" /><path
@@ -1466,7 +1466,7 @@
 </g></g><g
    id="baseboards"
    inkscape:label="baseboards"
-   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)"><path
+   transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)"><path
      style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.6"
      d="m -3.05,164.9 57.36,-28.55 v -2.5 L -3.05,161.9 Z"
      id="baseboard-left" /><path
@@ -1478,7 +1478,7 @@
      id="baseboard-right" /></g><g
    id="g21465"
    inkscape:label="walls"
-   transform="matrix(0.97850121,0,0,0.86410604,3.3557469,-2.4254534)"><path
+   transform="matrix(0.97850121,0,0,0.87325765,3.3557469,-2.4455917)"><path
      style="fill:url(#wall-gradient-left);fill-opacity:1;stroke:#4a3520;stroke-width:1.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      d="M -3.1622468,2.8004877 54.961274,28.932298 55.126097,136.32456 -3.0482484,164.89698 Z"
      id="path4394"
@@ -1511,7 +1511,7 @@
      sodipodi:nodetypes="cc" /></g><g
    id="g8434"
    inkscape:label="window"
-   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-3.7247397)"><path
+   transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-3.7586386)"><path
    style="opacity:1;fill:#4a3520;fill-opacity:0;stroke:#4a3520;stroke-width:0.8;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    d="m 100.2466,51.160912 0.26071,58.888228 21.22493,-5.45396 60.27084,0.33457 21.28403,4.95254 -0.0217,-59.359238 -21.48477,5.509583 -60.08661,-0.39106 z"
    id="path8399" /><path
@@ -1616,7 +1616,7 @@
    id="curtain-right-fold3" /></g><g
    id="window-sill"
    inkscape:label="window-sill"
-   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)"><path
+   transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)"><path
      style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:1"
      d="M 100,107 203.5,106 185,102 H 118 Z"
      id="window-sill-top" /><path
@@ -1625,7 +1625,7 @@
      id="window-sill-front" /></g><g
    id="g21665"
    inkscape:label="table_desk"
-   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+   transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
       <!-- Shadow under desk -->
       <ellipse
    cx="152"
@@ -1728,7 +1728,7 @@
    id="sunbeams"
    inkscape:label="sunbeams"
    style="opacity:0.7"
-   transform="matrix(1.0270258,0,0,0.94145292,-5.1180048,-1.0473393)">
+   transform="matrix(1.0270258,0,0,0.9514237,-5.1180048,-1.0528822)">
   <path
    style="fill:url(#linearGradient614);stroke:none"
    d="m 130,60 h 15 l 15,57 -20,13 h -15 l -10,-13 z"
@@ -1745,7 +1745,7 @@
 <g
    id="dust-motes"
    inkscape:label="dust-motes"
-   transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+   transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <circle
    cx="135"
    cy="75"
@@ -1884,7 +1884,7 @@
      id="g14983"
      inkscape:label="pegboard"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)"><rect
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)"><rect
        style="opacity:1;fill:#e0cca8;fill-opacity:1;stroke:#4a3520;stroke-width:0.597863;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect14797"
        width="24.420891"
@@ -1997,7 +1997,7 @@
      id="poster-basal-ganglia"
      inkscape:label="poster_basal_ganglia"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(2.3805894,0,0,2.1022781,-196.75317,-71.459936)">
+     transform="matrix(2.3805894,0,0,2.124543,-196.75317,-72.211208)">
   <!-- Poster paper (perspective trapezoid, back wall left of window) -->
   <path
    d="m 85,44 11,2.9 V 71.1 L 85,74 Z"
@@ -2155,7 +2155,7 @@
      id="poster-cta"
      inkscape:label="poster_cta"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(-2.1104016,0,0,1.8636776,489.60383,-39.157079)">
+     transform="matrix(-2.1104016,0,0,1.8834155,489.60383,-39.566236)">
   <!-- Poster paper (perspective trapezoid, back wall right of window) -->
   <path
    d="m 207,38 9,-2.7 V 62.7 L 207,60 Z"
@@ -2368,7 +2368,7 @@
      id="pendant-lamp"
      inkscape:label="pendant-lamp"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97989038,0,0,0.68860476,2.7499546,8.4826022)">
+     transform="matrix(0.97989038,0,0,0.69589767,2.7499546,8.5779894)">
   <!-- Cord -->
   <path
    style="fill:none;stroke:#4a3520;stroke-width:0.504136"
@@ -2404,7 +2404,7 @@
      id="right-shelf"
      inkscape:label="right-shelf"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- Upper shelf -->
   <path
    style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
@@ -2680,7 +2680,7 @@
 </g><g
      id="crafting-desk"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- Shadow under desk -->
   <ellipse
    cx="232"
@@ -2726,7 +2726,7 @@
      id="fermentation-shelf"
      inkscape:label="fermentation"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- Shelf board -->
   <path
    style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
@@ -2912,7 +2912,7 @@
      id="fermentation-shelf-0"
      inkscape:label="fermentation-shelf-upper"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,3.8019007,-42.860931)">
+     transform="matrix(0.97850121,0,0,0.87325765,3.8019007,-43.309315)">
   <!-- Shelf board -->
   <path
    style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
@@ -2960,7 +2960,7 @@
 </g><g
      id="brompton-bike"
      inkscape:label="brompton"
-     transform="matrix(0.99468139,-0.35005989,0.13979335,1.118533,32.257842,-16.16925)"
+     transform="matrix(0.99468139,-0.35376732,0.13979335,1.1303792,32.257842,-16.334947)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- === WHEELS === -->
   <!-- Rear wheel -->
@@ -3683,7 +3683,7 @@
 </g><g
      id="open-science-award"
      inkscape:label="open_science_award"
-     transform="matrix(0.48925061,0,0,0.43205303,57.752969,3.11314)"
+     transform="matrix(0.48925061,0,0,0.43662884,57.752969,3.1516601)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- Frame shadow (offset slightly right and down) -->
   <path
@@ -3802,7 +3802,7 @@
      id="raw-traces-monitor"
      inkscape:label="raw_traces_monitor"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- Stand base -->
   <path
    d="m 133,101 10,-0.4 0.5,0.9 -11,0.5 z"
@@ -3883,7 +3883,7 @@
      id="analysis-monitor"
      inkscape:label="analysis_monitor"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- Stand base -->
   <path
    d="m 155,101 15,-0.5 0.5,0.9 -16,0.6 z"
@@ -4183,7 +4183,7 @@
      id="neuropixels-magnifier"
      inkscape:label="neuropixels_probe"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- The actual tiny probe on the desk (barely visible thin line) -->
   <line
    x1="117.5"
@@ -4418,7 +4418,7 @@
 </g><g
      id="keyboard-modelm"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- Keyboard body (cream/beige, chunky) -->
   <path
    d="m 132.24216,108.5 30.28489,-0.0601 -0.75783,-5.78832 -28.54187,0.74216 z"
@@ -5099,7 +5099,7 @@
 </g><g
      id="mousepad-and-mouse"
      style="stroke-linecap:round;stroke-linejoin:round"
-     transform="matrix(0.97850121,0,0,0.86410604,2.9741714,-0.0666907)">
+     transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <!-- Mousepad (dark gray, slightly worn) -->
   <path
    d="m 174,108.5 16,-0.7 v -4.3 l -16,0.7 z"
@@ -5143,7 +5143,7 @@
 </g><g
      id="leather-shoes"
      inkscape:label="leather_shoes"
-     transform="matrix(0.97850121,0,0,0.86410604,74.09784,11.998258)"
+     transform="matrix(0.97850121,0,0,0.87325765,74.09784,12.130879)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- Front shoe (side profile, facing left toward VP) -->
   <g
@@ -5237,7 +5237,7 @@
 </g><g
      id="leather-handbag"
      inkscape:label="leather_handbag"
-     transform="matrix(1.0951351,0,0,0.96710443,241.10339,90.625514)"
+     transform="matrix(1.0951351,0,0,0.97734688,241.10339,91.590864)"
      style="stroke-linecap:round;stroke-linejoin:round">
   <!-- Bag body -->
   <path
@@ -5304,7 +5304,7 @@
 </g><g
      id="g21455"
      inkscape:label="tintin_fusee"
-     transform="matrix(0.43138931,0,0,0.38095621,151.66332,3.1372361)"
+     transform="matrix(0.43138931,0,0,0.38499086,151.66332,3.1760114)"
      style="stroke-linecap:round;stroke-linejoin:round"><image
        width="17.015699"
        height="8.5078497"
