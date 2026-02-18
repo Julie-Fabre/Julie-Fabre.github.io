@@ -189,25 +189,31 @@ document.addEventListener("DOMContentLoaded", function () {
           lampOn = !lampOn;
           // Toggle darkness overlay
           overlay.style.opacity = lampOn ? "0" : "0.55";
-          // Toggle bulb glow elements
+          // In dark mode the lamp glows MORE (it's the light source)
           glowIds.forEach(function (id) {
             var el = lamp.querySelector("#" + id);
             if (el) {
               el.style.transition = "opacity 0.6s ease";
-              el.style.opacity = lampOn ? "1" : "0";
+              el.style.opacity = lampOn ? "1" : "1.5";
             }
           });
+          // Make the lamp shade glow warm in dark mode
+          var shade = lamp.querySelector("#lamp-shade");
+          if (shade) {
+            shade.style.transition = "filter 0.6s ease";
+            shade.style.filter = lampOn ? "none" : "brightness(1.3) saturate(1.2)";
+          }
           // Dim pegboard, posters, shelves, award when lamp is off
           dimTargets.forEach(function (el) {
             el.style.transition = "opacity 0.6s ease, filter 0.6s ease";
-            el.style.opacity = lampOn ? "1" : "0.5";
-            el.style.filter = lampOn ? "none" : "brightness(0.5)";
+            el.style.opacity = lampOn ? "1" : "0.65";
+            el.style.filter = lampOn ? "none" : "brightness(0.6)";
           });
         });
 
         // Tooltip for lamp
         lamp.addEventListener("mouseenter", function () {
-          tooltip.textContent = lampOn ? "Turn off the light" : "Turn on the light";
+          tooltip.textContent = lampOn ? "Night mode" : "Day mode";
           tooltip.classList.add("visible");
         });
         lamp.addEventListener("mouseleave", function () {
