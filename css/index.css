@@ -4,6 +4,9 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.6s ease, color 0.6s ease;
 }
 
 header {
@@ -260,4 +263,64 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+    background-color: #1a1020;
+    color: #e0d8d0;
+}
+
+body.dark-mode header {
+    transition: background-color 0.6s ease;
+}
+
+body.dark-mode nav ul li a {
+    color: #e0d8d0;
+    transition: color 0.6s ease;
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #aaaaaa;
+}
+
+body.dark-mode nav ul li ul {
+    background-color: rgba(40, 30, 50, 0.95);
+}
+
+body.dark-mode a {
+    color: #ff8844;
+}
+
+body.dark-mode a:hover {
+    color: #aaaaaa;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #e8e0d8;
+}
+
+body.dark-mode footer {
+    background-color: #1a1020;
+    color: #e0d8d0;
+}
+
+body.dark-mode .room-hint {
+    color: #666666;
+}
+
+body.dark-mode #search {
+    background-color: #2a2030;
+    color: #e0d8d0;
+    border-color: #555555;
+}
+
+body.dark-mode .room-tooltip {
+    background: #555555;
+}
+
+body.dark-mode .rss-button {
+    background-color: #cc7700;
 }

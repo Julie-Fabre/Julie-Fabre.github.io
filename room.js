@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(svg);
 
       // Shared state for toggle interactions
-      var lampOn = true;
+      var lampOn = localStorage.getItem('darkMode') !== 'true';
       var curtainsOpen = true;
       var nightSkyGroup = null;
       var daySkyGroup = null;
@@ -208,33 +208,49 @@ document.addEventListener("DOMContentLoaded", function () {
         // All lamp glow elements
         var glowIds = ["lamp-glow-effect", "lamp-glow-inner", "lamp-light-cone"];
 
-        lamp.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          lampOn = !lampOn;
+        function applyLampState(animate) {
+          var dur = animate ? "0.6s" : "0s";
           // Toggle darkness overlay
+          overlay.style.transition = "opacity " + dur + " ease";
           overlay.style.opacity = lampOn ? "0" : "0.55";
           // In dark mode the lamp glows MORE (it's the light source)
           glowIds.forEach(function (id) {
             var el = lamp.querySelector("#" + id);
             if (el) {
-              el.style.transition = "opacity 0.6s ease";
+              el.style.transition = "opacity " + dur + " ease";
               el.style.opacity = lampOn ? "1" : "1.5";
             }
           });
           // Make the lamp shade glow warm in dark mode
           var shade = lamp.querySelector("#lamp-shade");
           if (shade) {
-            shade.style.transition = "filter 0.6s ease";
+            shade.style.transition = "filter " + dur + " ease";
             shade.style.filter = lampOn ? "none" : "brightness(1.3) saturate(1.2)";
           }
           // Dim pegboard, posters, shelves, award when lamp is off
           dimTargets.forEach(function (el) {
-            el.style.transition = "opacity 0.6s ease, filter 0.6s ease";
+            el.style.transition = "opacity " + dur + " ease, filter " + dur + " ease";
             el.style.opacity = lampOn ? "1" : "0.65";
             el.style.filter = lampOn ? "none" : "brightness(0.6)";
           });
+          // Site-wide dark mode
+          if (lampOn) {
+            document.body.classList.remove("dark-mode");
+          } else {
+            document.body.classList.add("dark-mode");
+          }
+          localStorage.setItem("darkMode", lampOn ? "false" : "true");
           updateWindowScene();
+        }
+
+        // Apply saved state immediately (no animation)
+        if (!lampOn) applyLampState(false);
+
+        lamp.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          lampOn = !lampOn;
+          applyLampState(true);
         });
 
         // Tooltip for lamp

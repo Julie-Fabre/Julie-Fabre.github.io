@@ -63,4 +63,9 @@ function searchArticles(event) {
 // Listen for form submission
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchForm').addEventListener('submit', searchArticles);
+
+    // Apply dark mode from saved preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
 });
