@@ -86,6 +86,11 @@ const interactiveObjects = [
     url: "https://github.com/Julie-Fabre/awesome_neuropixels",
     tooltip: "Awesome Neuropixels resources",
   },
+  {
+    svgLabel: "maxou",
+    url: "https://m-beau.github.io/",
+    tooltip: "Maxou",
+  },
 ];
 
 // =============================================================
@@ -136,6 +141,68 @@ document.addEventListener("DOMContentLoaded", function () {
         var label = g.getAttributeNS(INKSCAPE_NS, "label");
         if (label) labelMap[label] = g;
       });
+
+      // === MAXOU PICTURE FRAME ===
+      // The maxou element is an <image>, not a <g>, so labelMap won't find it.
+      // Wrap it in a group with a little picture frame and add to labelMap.
+      (function () {
+        var maxouImg = svg.querySelector("[inkscape\\:label='maxou']") ||
+                       svg.querySelector("image[id='image1-8']");
+        if (!maxouImg) return;
+
+        var ix = parseFloat(maxouImg.getAttribute("x"));
+        var iy = parseFloat(maxouImg.getAttribute("y"));
+        var iw = parseFloat(maxouImg.getAttribute("width"));
+        var ih = parseFloat(maxouImg.getAttribute("height"));
+
+        var frameGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        frameGroup.setAttributeNS(INKSCAPE_NS, "inkscape:label", "maxou");
+
+        // Frame border (slightly larger than image)
+        var pad = 0.5;
+        var frameRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        frameRect.setAttribute("x", ix - pad);
+        frameRect.setAttribute("y", iy - pad);
+        frameRect.setAttribute("width", iw + pad * 2);
+        frameRect.setAttribute("height", ih + pad * 2);
+        frameRect.setAttribute("rx", "0.25");
+        frameRect.setAttribute("style",
+          "fill:#5a3e20;stroke:#3a2510;stroke-width:0.3");
+
+        // Inner mat (thin lighter border)
+        var matPad = 0.2;
+        var matRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        matRect.setAttribute("x", ix - matPad);
+        matRect.setAttribute("y", iy - matPad);
+        matRect.setAttribute("width", iw + matPad * 2);
+        matRect.setAttribute("height", ih + matPad * 2);
+        matRect.setAttribute("style",
+          "fill:#f5f0e8;stroke:none");
+
+        // Small desk stand (triangle beneath frame)
+        var standCx = ix + iw / 2;
+        var standTop = iy + ih + pad;
+        var standBot = standTop + 1.8;
+        var standW = 1.2;
+        var stand = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        stand.setAttribute("d",
+          "M " + standCx + "," + standTop +
+          " L " + (standCx + standW) + "," + standBot +
+          " L " + (standCx - standW) + "," + standBot + " Z");
+        stand.setAttribute("style",
+          "fill:#5a3e20;stroke:#3a2510;stroke-width:0.2");
+
+        // Build group: frame behind, mat, image on top, stand behind
+        frameGroup.appendChild(stand);
+        frameGroup.appendChild(frameRect);
+        frameGroup.appendChild(matRect);
+
+        // Move the image into the group
+        maxouImg.parentNode.insertBefore(frameGroup, maxouImg);
+        frameGroup.appendChild(maxouImg);
+
+        labelMap["maxou"] = frameGroup;
+      })();
 
       // Wire up each interactive object
       interactiveObjects.forEach(function (obj) {
