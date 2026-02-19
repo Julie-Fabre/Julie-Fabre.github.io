@@ -119,10 +119,14 @@ document.addEventListener("DOMContentLoaded", function () {
       var lampOn = true;
       var curtainsOpen = true;
       var nightSkyGroup = null;
-      function updateNightSky() {
-        if (!nightSkyGroup) return;
-        var show = !lampOn && curtainsOpen;
-        nightSkyGroup.style.opacity = show ? "1" : "0";
+      var daySkyGroup = null;
+      function updateWindowScene() {
+        if (nightSkyGroup) {
+          nightSkyGroup.style.opacity = (!lampOn && curtainsOpen) ? "1" : "0";
+        }
+        if (daySkyGroup) {
+          daySkyGroup.style.opacity = (lampOn && curtainsOpen) ? "1" : "0";
+        }
       }
 
       // Build a lookup of inkscape:label -> element
@@ -225,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
             el.style.opacity = lampOn ? "1" : "0.65";
             el.style.filter = lampOn ? "none" : "brightness(0.6)";
           });
-          updateNightSky();
+          updateWindowScene();
         });
 
         // Tooltip for lamp
@@ -355,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
             closedGroup.style.pointerEvents = "auto";
             if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = "0";
           }
-          updateNightSky();
+          updateWindowScene();
         }
 
         // Click on open curtains to close
@@ -379,74 +383,274 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
-      // === NIGHT SKY (moon + stars visible through window in night mode) ===
-      // Rendered above the darkness overlay so they stay bright.
-      // Uses the window group's transform so coordinates match the window panes.
+      // === WINDOW SCENES (day landscape + night sky) ===
       var windowEl = labelMap["window"];
       var darknessOverlay = svg.querySelector("#lamp-darkness");
-      if (windowEl && darknessOverlay) {
+      if (windowEl) {
+        var winGroup = windowEl;
+        var winTransform = windowEl.getAttribute("transform") || "";
+
+        // Helper: create an SVG element with attributes, append to parent
+        function svgEl(tag, attrs, parent) {
+          var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+          for (var k in attrs) el.setAttribute(k, String(attrs[k]));
+          (parent || daySkyGroup).appendChild(el);
+          return el;
+        }
+
+        // Create a clipPath from each individual window PANE shape, so the
+        // landscape only shows through the glass — not over mullions or frame.
+        var defs = svg.querySelector("defs");
+        var clip = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+        clip.setAttribute("id", "window-glass-clip");
+        var isFrameOutline = true;
+        Array.prototype.slice.call(winGroup.childNodes).forEach(function (node) {
+          if (node.nodeName === "path") {
+            if (isFrameOutline) { isFrameOutline = false; return; } // skip frame
+            var s = node.getAttribute("style") || "";
+            if (s.indexOf("fill:url(#") !== -1) {
+              // Add this pane's shape to the clip (union of all panes)
+              var clipPane = document.createElementNS("http://www.w3.org/2000/svg", "path");
+              clipPane.setAttribute("d", node.getAttribute("d"));
+              clip.appendChild(clipPane);
+              // Make the pane translucent so landscape shows through
+              node.style.fillOpacity = "0.3";
+            }
+          }
+        });
+        if (defs) defs.appendChild(clip);
+
+        // -------------------------------------------------------
+        // DAY SCENE — Ghibli-style: behind the glass panes
+        // -------------------------------------------------------
+        daySkyGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        daySkyGroup.setAttribute("id", "day-scene");
+        daySkyGroup.setAttribute("clip-path", "url(#window-glass-clip)");
+        daySkyGroup.style.opacity = "1";
+        daySkyGroup.style.transition = "opacity 0.8s ease";
+        daySkyGroup.style.pointerEvents = "none";
+
+        // -- Warm sky background (fills entire window area) --
+        svgEl("rect", { x: 98, y: 48, width: 110, height: 65,
+          style: "fill:#d0e8f8;fill-opacity:0.6" });
+        // Warmer horizon glow
+        svgEl("rect", { x: 98, y: 75, width: 110, height: 35,
+          style: "fill:#f0e8c8;fill-opacity:0.3" });
+
+        // -- Golden sun with layered glow --
+        svgEl("circle", { cx: 115, cy: 58, r: 14,
+          style: "fill:#fff8c0;fill-opacity:0.05" });
+        svgEl("circle", { cx: 115, cy: 58, r: 8,
+          style: "fill:#fff5a0;fill-opacity:0.1" });
+        svgEl("circle", { cx: 115, cy: 58, r: 4,
+          style: "fill:#fff8d0;fill-opacity:0.2" });
+        svgEl("circle", { cx: 115, cy: 58, r: 2.2,
+          style: "fill:#fffde8;fill-opacity:0.92" });
+
+        // -- Ghibli cumulus clouds (round, puffy, warm-edged) --
+        function makeCloud(cx, cy, sc) {
+          var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          g.setAttribute("transform", "translate(" + cx + "," + cy + ") scale(" + sc + ")");
+          // Overlapping puffs
+          [[-4, 1.2, 4, 2.2], [-1.5, -0.6, 4.5, 2.8], [2.5, 0.8, 3.5, 2.2],
+           [0, 1.2, 4, 1.8], [-2.5, 0.2, 3, 2.2], [3.5, -0.1, 3, 2.4],
+           [0.5, -1.2, 3.5, 2]
+          ].forEach(function (c) {
+            svgEl("ellipse", { cx: c[0], cy: c[1], rx: c[2], ry: c[3],
+              style: "fill:white;fill-opacity:0.45" }, g);
+          });
+          // Warm top highlight
+          svgEl("ellipse", { cx: -0.5, cy: -2, rx: 3.5, ry: 1.5,
+            style: "fill:#fffae0;fill-opacity:0.3" }, g);
+          daySkyGroup.appendChild(g);
+        }
+        makeCloud(140, 60, 0.7);
+        makeCloud(172, 56, 0.9);
+        makeCloud(198, 61, 0.55);
+
+        // ===== HILLS (back to front, atmospheric perspective) =====
+
+        // Layer 1: Distant mountains (blue-gray, hazy)
+        svgEl("path", { d:
+          "M 98,86 C 106,81 112,79 120,77 C 128,75 138,78 150,74" +
+          " C 160,71 170,75 180,73 C 190,71 197,74 208,78 L 208,113 L 98,113 Z",
+          style: "fill:#b0c8d8;fill-opacity:0.45" });
+
+        // Layer 2: Far hills (cool sage with haze)
+        svgEl("path", { d:
+          "M 98,92 C 108,86 116,88 128,84 C 138,81 148,85 160,82" +
+          " C 172,79 182,82 193,80 C 200,79 205,81 208,84 L 208,113 L 98,113 Z",
+          style: "fill:#90b878;fill-opacity:0.6" });
+
+        // Layer 3: Mid hills (warm green, lush)
+        svgEl("path", { d:
+          "M 98,97 C 108,92 116,93 130,89 C 142,86 152,90 166,87" +
+          " C 178,85 188,88 198,86 C 204,85 207,87 208,90 L 208,113 L 98,113 Z",
+          style: "fill:#68a848;fill-opacity:0.78" });
+
+        // Layer 4: Near meadow (rich deep green)
+        svgEl("path", { d:
+          "M 98,103 C 110,97 122,99 138,95 C 152,92 164,95 178,93" +
+          " C 190,91 200,93 208,96 L 208,113 L 98,113 Z",
+          style: "fill:#488a30;fill-opacity:0.88" });
+
+        // ===== TREES (Ghibli rounded canopies) =====
+        function makeTree(x, gy, h, cr) {
+          var th = h * 0.38;
+          var cy = gy - h + cr;
+          // Trunk
+          svgEl("line", { x1: x, y1: gy, x2: x + 0.15, y2: gy - th,
+            style: "stroke:#5a3e20;stroke-width:" + (cr * 0.18) + ";stroke-linecap:round" });
+          // Shadow canopy
+          svgEl("ellipse", { cx: x + cr * 0.1, cy: cy + cr * 0.3, rx: cr * 1.05, ry: cr * 0.8,
+            style: "fill:#2a5818;fill-opacity:0.5" });
+          // Main canopy (3 overlapping blobs)
+          svgEl("circle", { cx: x - cr * 0.3, cy: cy + cr * 0.1, r: cr * 0.78,
+            style: "fill:#3a7828;fill-opacity:0.88" });
+          svgEl("circle", { cx: x + cr * 0.25, cy: cy - cr * 0.08, r: cr * 0.88,
+            style: "fill:#48922e;fill-opacity:0.88" });
+          svgEl("circle", { cx: x - cr * 0.05, cy: cy - cr * 0.32, r: cr * 0.72,
+            style: "fill:#58a838;fill-opacity:0.82" });
+          // Bright highlight (sunlit top)
+          svgEl("circle", { cx: x + cr * 0.18, cy: cy - cr * 0.48, r: cr * 0.38,
+            style: "fill:#78c048;fill-opacity:0.5" });
+        }
+
+        // Far trees (small, cool-toned)
+        makeTree(120, 85, 5, 2);
+        makeTree(155, 82, 4.5, 1.8);
+        makeTree(190, 81, 5, 2.2);
+        // Mid trees (larger, warmer)
+        makeTree(108, 95, 7, 3);
+        makeTree(135, 90, 8, 3.5);
+        makeTree(162, 88, 7.5, 3.2);
+        makeTree(192, 87, 7, 2.8);
+        // A small tree cluster
+        makeTree(145, 91, 5, 2.2);
+        makeTree(148, 90, 6, 2.5);
+
+        // ===== GRASS TEXTURE on foreground meadow =====
+        function fgY(x) {
+          if (x <= 138) return 103 - (x - 98) / (138 - 98) * 8;
+          if (x <= 178) return 95 - (x - 138) / (178 - 138) * 2;
+          return 93 + (x - 178) / (208 - 178) * 3;
+        }
+        for (var gx = 101; gx < 206; gx += 1.8) {
+          var gy = fgY(gx);
+          var gh = 1.2 + Math.sin(gx * 0.73) * 0.8;
+          var lean = Math.sin(gx * 1.1) * 0.35;
+          svgEl("line", { x1: gx, y1: gy + 0.5, x2: gx + lean, y2: gy - gh,
+            style: "stroke:#4a8830;stroke-width:0.18;stroke-linecap:round;stroke-opacity:0.45" });
+        }
+
+        // ===== POPPIES =====
+        function makePoppy(px, py, sz) {
+          // Curved stem
+          svgEl("path", { d:
+            "M " + px + "," + py + " C " + (px + 0.2 * sz) + "," + (py + sz * 1.2) +
+            " " + (px - 0.15 * sz) + "," + (py + sz * 2) + " " + (px + 0.05) + "," + (py + sz * 2.8),
+            style: "fill:none;stroke:#3a6828;stroke-width:" + (sz * 0.22) + ";stroke-linecap:round" });
+          if (sz >= 0.6) {
+            // Full bloom: 4 overlapping petals with depth
+            [[-0.38, -0.08, "#c82818"], [0.38, -0.08, "#d83020"], [0, -0.42, "#e84030"], [0, 0.12, "#b82418"]]
+              .forEach(function (p) {
+                svgEl("ellipse", {
+                  cx: px + p[0] * sz, cy: py + p[1] * sz,
+                  rx: sz * 0.48, ry: sz * 0.4,
+                  style: "fill:" + p[2] + ";fill-opacity:0.88" });
+              });
+            // Petal highlights (light streaks toward center)
+            svgEl("ellipse", { cx: px + 0.1 * sz, cy: py - 0.3 * sz,
+              rx: sz * 0.18, ry: sz * 0.28,
+              style: "fill:#f06040;fill-opacity:0.35" });
+            // Dark center
+            svgEl("circle", { cx: px, cy: py - sz * 0.1, r: sz * 0.2,
+              style: "fill:#1a0808;fill-opacity:0.78" });
+            // Golden stamens
+            svgEl("circle", { cx: px, cy: py - sz * 0.1, r: sz * 0.09,
+              style: "fill:#c8a020;fill-opacity:0.65" });
+          } else {
+            // Distant poppy: small red dot
+            svgEl("circle", { cx: px, cy: py, r: sz * 0.45,
+              style: "fill:#d42818;fill-opacity:0.8" });
+          }
+        }
+
+        // Foreground poppies (large, detailed)
+        [[106, 101, 1.1], [113, 99, 0.9], [119, 100, 1.15], [126, 98, 0.85],
+         [132, 97, 1.0], [139, 95, 0.95], [146, 96, 1.1], [152, 94, 0.85],
+         [158, 93, 1.0], [165, 93, 0.9], [171, 93, 1.15], [177, 92, 0.8],
+         [183, 93, 1.05], [190, 92, 0.9], [197, 93, 0.85]
+        ].forEach(function (p) { makePoppy(p[0], p[1], p[2]); });
+
+        // Mid-distance poppies
+        [[110, 94, 0.55], [122, 91, 0.5], [138, 89, 0.55], [155, 88, 0.5],
+         [170, 87, 0.55], [185, 88, 0.5], [200, 89, 0.45]
+        ].forEach(function (p) { makePoppy(p[0], p[1], p[2]); });
+
+        // Far poppies (tiny dots)
+        [[115, 88, 0.3], [132, 85, 0.3], [150, 84, 0.35], [168, 83, 0.3],
+         [186, 83, 0.3], [202, 85, 0.25]
+        ].forEach(function (p) { makePoppy(p[0], p[1], p[2]); });
+
+        // Insert day scene as the very first child of window group
+        // (renders underneath everything: frame, panes, curtains)
+        winGroup.insertBefore(daySkyGroup, winGroup.firstChild);
+
+        // -------------------------------------------------------
+        // NIGHT SKY — moon + stars (inside window group, clipped to panes)
+        // Brighter fills to compensate for the darkness overlay on top.
+        // -------------------------------------------------------
         nightSkyGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
         nightSkyGroup.setAttribute("id", "night-sky");
-        nightSkyGroup.setAttribute("transform", windowEl.getAttribute("transform") || "");
+        nightSkyGroup.setAttribute("clip-path", "url(#window-glass-clip)");
         nightSkyGroup.style.opacity = "0";
         nightSkyGroup.style.transition = "opacity 0.8s ease";
         nightSkyGroup.style.pointerEvents = "none";
 
-        // Crescent moon
-        var moon = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        moon.setAttribute("d",
-          "M 189,59 A 4,4 0 1,1 189,67 A 2.8,4 0 1,0 189,59 Z");
-        moon.setAttribute("style", "fill:#fffde0;fill-opacity:0.9;stroke:none");
-        nightSkyGroup.appendChild(moon);
+        // Dark sky background (covers pane gradients)
+        svgEl("rect", { x: 98, y: 48, width: 110, height: 65,
+          style: "fill:#080818;fill-opacity:0.95" }, nightSkyGroup);
 
-        // Soft moon glow
-        var moonGlow = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        moonGlow.setAttribute("cx", "190.5");
-        moonGlow.setAttribute("cy", "63");
-        moonGlow.setAttribute("r", "7");
-        moonGlow.setAttribute("style", "fill:#fffde0;fill-opacity:0.06;stroke:none");
-        nightSkyGroup.appendChild(moonGlow);
+        // Helper for night sky
+        function nEl(tag, attrs) {
+          var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+          for (var k in attrs) el.setAttribute(k, String(attrs[k]));
+          nightSkyGroup.appendChild(el);
+          return el;
+        }
 
-        // Stars — [x, y, radius]
-        var stars = [
-          // Top panes
-          [108, 58, 0.4], [116, 62, 0.3], [126, 60, 0.35], [133, 57, 0.25],
-          [145, 59, 0.4], [155, 56, 0.3], [163, 61, 0.25], [175, 58, 0.35],
-          [199, 56, 0.3], [112, 66, 0.2], [140, 65, 0.25], [170, 64, 0.2],
-          // Bottom panes
-          [107, 78, 0.3], [119, 86, 0.25], [130, 80, 0.35], [142, 92, 0.2],
-          [155, 82, 0.3], [165, 88, 0.25], [178, 76, 0.35], [190, 84, 0.2],
-          [125, 96, 0.2], [160, 95, 0.25], [195, 92, 0.3], [148, 75, 0.2],
-        ];
+        // Crescent moon (bright white to show through overlay)
+        nEl("path", { d: "M 189,59 A 4,4 0 1,1 189,67 A 2.8,4 0 1,0 189,59 Z",
+          style: "fill:#ffffff;fill-opacity:1" });
+        nEl("circle", { cx: 190.5, cy: 63, r: 8,
+          style: "fill:#fffde0;fill-opacity:0.1" });
 
-        stars.forEach(function (s, i) {
-          var star = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-          star.setAttribute("cx", s[0]);
-          star.setAttribute("cy", s[1]);
-          star.setAttribute("r", s[2]);
-          star.setAttribute("style", "fill:#fffde0;fill-opacity:" + (0.6 + (i % 4) * 0.1));
-          nightSkyGroup.appendChild(star);
+        // Stars (boosted brightness + slightly larger)
+        [[108,58,0.5],[116,62,0.4],[126,60,0.45],[133,57,0.35],
+         [145,59,0.5],[155,56,0.4],[163,61,0.35],[175,58,0.45],
+         [199,56,0.4],[112,66,0.3],[140,65,0.35],[170,64,0.3],
+         [107,78,0.4],[119,86,0.35],[130,80,0.45],[142,92,0.3],
+         [155,82,0.4],[165,88,0.35],[178,76,0.45],[190,84,0.3],
+         [125,96,0.3],[160,95,0.35],[195,92,0.4],[148,75,0.3]
+        ].forEach(function (s, i) {
+          nEl("circle", { cx: s[0], cy: s[1], r: s[2],
+            style: "fill:#ffffff;fill-opacity:1" });
         });
 
-        // A few tiny twinkle stars (4-point star shapes)
-        [[150, 62, 1], [120, 74, 0.8], [180, 80, 0.9]].forEach(function (s) {
-          var twinkle = document.createElementNS("http://www.w3.org/2000/svg", "path");
-          var cx = s[0], cy = s[1], sz = s[2];
-          twinkle.setAttribute("d",
-            "M " + cx + "," + (cy - sz) +
-            " L " + (cx + sz * 0.15) + "," + (cy - sz * 0.15) +
-            " L " + (cx + sz) + "," + cy +
-            " L " + (cx + sz * 0.15) + "," + (cy + sz * 0.15) +
-            " L " + cx + "," + (cy + sz) +
-            " L " + (cx - sz * 0.15) + "," + (cy + sz * 0.15) +
-            " L " + (cx - sz) + "," + cy +
-            " L " + (cx - sz * 0.15) + "," + (cy - sz * 0.15) + " Z");
-          twinkle.setAttribute("style", "fill:#fffde0;fill-opacity:0.8;stroke:none");
-          nightSkyGroup.appendChild(twinkle);
+        // Twinkle stars (4-point, bright)
+        [[150,62,1.2],[120,74,1],[180,80,1.1]].forEach(function (s) {
+          var cx = s[0], cy = s[1], sz = s[2], q = sz * 0.15;
+          nEl("path", { d:
+            "M "+cx+","+(cy-sz)+" L "+(cx+q)+","+(cy-q)+" L "+(cx+sz)+","+cy+
+            " L "+(cx+q)+","+(cy+q)+" L "+cx+","+(cy+sz)+
+            " L "+(cx-q)+","+(cy+q)+" L "+(cx-sz)+","+cy+
+            " L "+(cx-q)+","+(cy-q)+" Z",
+            style: "fill:#ffffff;fill-opacity:1" });
         });
 
-        // Insert after the darkness overlay (renders on top of it, stays bright)
-        darknessOverlay.parentNode.insertBefore(nightSkyGroup, darknessOverlay.nextSibling);
+        // Insert night sky right after day scene (both behind panes)
+        winGroup.insertBefore(nightSkyGroup, daySkyGroup.nextSibling);
       }
     });
 });
