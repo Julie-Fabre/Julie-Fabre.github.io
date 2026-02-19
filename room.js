@@ -23,13 +23,13 @@ const interactiveObjects = [
   },
   {
     svgLabel: "raw_traces_monitor",
-    url: "protocols.html",
-    tooltip: "Live Neuropixels recordings",
+    url: "resources.html#current-ongoing-work",
+    tooltip: "Current ongoing work",
   },
   {
     svgLabel: "analysis_monitor",
-    url: "software.html",
-    tooltip: "Neuroscience analysis tools",
+    url: "resources.html#current-ongoing-work",
+    tooltip: "Current ongoing work",
   },
   {
     svgLabel: "fermentation",
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Elements that dim more when lamp is off (far from window)
         var dimTargets = ["pegboard", "poster_basal_ganglia", "poster_cta",
                           "open_science_award", "fermentation", "right-shelf",
-                          "fermentation-shelf-upper"].map(function (label) {
+                          "fermentation-shelf-upper", "corticostriatal_frame"].map(function (label) {
           return labelMap[label];
         }).filter(Boolean);
 

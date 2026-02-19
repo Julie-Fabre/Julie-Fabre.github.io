@@ -268,7 +268,7 @@ footer {
 
 /* === DARK MODE === */
 body.dark-mode {
-    background-color: #1a1020;
+    background-color: #2a2035;
     color: #e0d8d0;
 }
 
@@ -303,7 +303,7 @@ body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
 }
 
 body.dark-mode footer {
-    background-color: #1a1020;
+    background-color: #2a2035;
     color: #e0d8d0;
 }
 
