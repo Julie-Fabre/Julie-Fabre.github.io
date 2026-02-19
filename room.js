@@ -115,6 +115,16 @@ document.addEventListener("DOMContentLoaded", function () {
       svg.style.marginLeft = "calc(-50vw + 50%)";
       container.appendChild(svg);
 
+      // Shared state for toggle interactions
+      var lampOn = true;
+      var curtainsOpen = true;
+      var nightSkyGroup = null;
+      function updateNightSky() {
+        if (!nightSkyGroup) return;
+        var show = !lampOn && curtainsOpen;
+        nightSkyGroup.style.opacity = show ? "1" : "0";
+      }
+
       // Build a lookup of inkscape:label -> element
       var INKSCAPE_NS = "http://www.inkscape.org/namespaces/inkscape";
       var labelMap = {};
@@ -177,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
           svg.appendChild(overlay);
         }
 
-        var lampOn = true;
         lamp.style.cursor = "pointer";
 
         // Elements that dim more when lamp is off (far from window)
@@ -216,6 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
             el.style.opacity = lampOn ? "1" : "0.65";
             el.style.filter = lampOn ? "none" : "brightness(0.6)";
           });
+          updateNightSky();
         });
 
         // Tooltip for lamp
@@ -237,7 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
       var curtainRight = svg.querySelector("#curtain-right");
 
       if (curtainLeft && curtainRight) {
-        var curtainsOpen = true;
         var windowGroup = curtainLeft.parentNode;
 
         // Collect all open-state curtain elements
@@ -346,6 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
             closedGroup.style.pointerEvents = "auto";
             if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = "0";
           }
+          updateNightSky();
         }
 
         // Click on open curtains to close
@@ -367,6 +377,76 @@ document.addEventListener("DOMContentLoaded", function () {
             tooltip.style.top = (e.clientY + 12) + "px";
           });
         });
+      }
+
+      // === NIGHT SKY (moon + stars visible through window in night mode) ===
+      // Rendered above the darkness overlay so they stay bright.
+      // Uses the window group's transform so coordinates match the window panes.
+      var windowEl = labelMap["window"];
+      var darknessOverlay = svg.querySelector("#lamp-darkness");
+      if (windowEl && darknessOverlay) {
+        nightSkyGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        nightSkyGroup.setAttribute("id", "night-sky");
+        nightSkyGroup.setAttribute("transform", windowEl.getAttribute("transform") || "");
+        nightSkyGroup.style.opacity = "0";
+        nightSkyGroup.style.transition = "opacity 0.8s ease";
+        nightSkyGroup.style.pointerEvents = "none";
+
+        // Crescent moon
+        var moon = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        moon.setAttribute("d",
+          "M 189,59 A 4,4 0 1,1 189,67 A 2.8,4 0 1,0 189,59 Z");
+        moon.setAttribute("style", "fill:#fffde0;fill-opacity:0.9;stroke:none");
+        nightSkyGroup.appendChild(moon);
+
+        // Soft moon glow
+        var moonGlow = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        moonGlow.setAttribute("cx", "190.5");
+        moonGlow.setAttribute("cy", "63");
+        moonGlow.setAttribute("r", "7");
+        moonGlow.setAttribute("style", "fill:#fffde0;fill-opacity:0.06;stroke:none");
+        nightSkyGroup.appendChild(moonGlow);
+
+        // Stars — [x, y, radius]
+        var stars = [
+          // Top panes
+          [108, 58, 0.4], [116, 62, 0.3], [126, 60, 0.35], [133, 57, 0.25],
+          [145, 59, 0.4], [155, 56, 0.3], [163, 61, 0.25], [175, 58, 0.35],
+          [199, 56, 0.3], [112, 66, 0.2], [140, 65, 0.25], [170, 64, 0.2],
+          // Bottom panes
+          [107, 78, 0.3], [119, 86, 0.25], [130, 80, 0.35], [142, 92, 0.2],
+          [155, 82, 0.3], [165, 88, 0.25], [178, 76, 0.35], [190, 84, 0.2],
+          [125, 96, 0.2], [160, 95, 0.25], [195, 92, 0.3], [148, 75, 0.2],
+        ];
+
+        stars.forEach(function (s, i) {
+          var star = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          star.setAttribute("cx", s[0]);
+          star.setAttribute("cy", s[1]);
+          star.setAttribute("r", s[2]);
+          star.setAttribute("style", "fill:#fffde0;fill-opacity:" + (0.6 + (i % 4) * 0.1));
+          nightSkyGroup.appendChild(star);
+        });
+
+        // A few tiny twinkle stars (4-point star shapes)
+        [[150, 62, 1], [120, 74, 0.8], [180, 80, 0.9]].forEach(function (s) {
+          var twinkle = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          var cx = s[0], cy = s[1], sz = s[2];
+          twinkle.setAttribute("d",
+            "M " + cx + "," + (cy - sz) +
+            " L " + (cx + sz * 0.15) + "," + (cy - sz * 0.15) +
+            " L " + (cx + sz) + "," + cy +
+            " L " + (cx + sz * 0.15) + "," + (cy + sz * 0.15) +
+            " L " + cx + "," + (cy + sz) +
+            " L " + (cx - sz * 0.15) + "," + (cy + sz * 0.15) +
+            " L " + (cx - sz) + "," + cy +
+            " L " + (cx - sz * 0.15) + "," + (cy - sz * 0.15) + " Z");
+          twinkle.setAttribute("style", "fill:#fffde0;fill-opacity:0.8;stroke:none");
+          nightSkyGroup.appendChild(twinkle);
+        });
+
+        // Insert after the darkness overlay (renders on top of it, stays bright)
+        darknessOverlay.parentNode.insertBefore(nightSkyGroup, darknessOverlay.nextSibling);
       }
     });
 });
