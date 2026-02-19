@@ -43,8 +43,13 @@ const interactiveObjects = [
   },
   {
     svgLabel: "leather_handbag",
-    url: "shoemaking.html",
+    url: "leatherwork.html",
     tooltip: "Handmade leather handbag",
+  },
+  {
+    svgLabel: "led_cycling_gloves",
+    url: "tinkering-other.html",
+    tooltip: "LED cycling gloves",
   },
   {
     svgLabel: "corticostriatal_frame",
@@ -678,6 +683,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Insert night sky right after day scene (both behind panes)
         winGroup.insertBefore(nightSkyGroup, daySkyGroup.nextSibling);
+
+        // Apply correct sky state based on current lamp state (fixes reload in dark mode)
+        updateWindowScene();
       }
     });
 });
