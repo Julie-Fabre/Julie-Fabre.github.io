@@ -233,6 +233,12 @@ document.addEventListener("DOMContentLoaded", function () {
             el.style.opacity = lampOn ? "1" : "0.65";
             el.style.filter = lampOn ? "none" : "brightness(0.6)";
           });
+          // Make sunbeams lighter (less visible) in night mode
+          var sunbeamsEl = labelMap["sunbeams"];
+          if (sunbeamsEl) {
+            sunbeamsEl.style.transition = "opacity " + dur + " ease";
+            sunbeamsEl.style.opacity = lampOn ? "0.7" : "0.25";
+          }
           // Site-wide dark mode
           if (lampOn) {
             document.body.classList.remove("dark-mode");
