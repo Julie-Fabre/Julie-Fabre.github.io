@@ -1,2 +1,2 @@
 # Julie-Fabre.github.io
-A blog-style bare-bones [website](https://coquelicot.cc/) - work in progress
+A blog-style bare-bones [website](https://julie-fabre.github.io/) - work in progress

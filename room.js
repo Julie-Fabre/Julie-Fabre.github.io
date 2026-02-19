@@ -47,13 +47,18 @@ const interactiveObjects = [
     tooltip: "Handmade leather handbag",
   },
   {
+    svgLabel: "corticostriatal_frame",
+    url: "https://www.nature.com/articles/s41586-020-03166-8",
+    tooltip: "Striatal activity topographically reflects cortical activity",
+  },
+  {
     svgLabel: "poster_basal_ganglia",
-    url: "about.html",
+    url: "resources.html#basal-ganglia",
     tooltip: "Sensorimotor transformation in basal ganglia",
   },
   {
     svgLabel: "poster_cta",
-    url: "about.html",
+    url: "resources.html#taste-aversion",
     tooltip: "Conditioned taste aversion neural encoding",
   },
   {
@@ -68,7 +73,7 @@ const interactiveObjects = [
   },
   {
     svgLabel: "unitmatch",
-    url: "https://www.nature.com/articles/s41592-024-02440-1",
+    url: "resources.html#unitmatch",
     tooltip: "UnitMatch — cross-session unit tracking",
   },
   {
@@ -235,88 +240,87 @@ document.addEventListener("DOMContentLoaded", function () {
         var curtainsOpen = true;
         var windowGroup = curtainLeft.parentNode;
 
-        // Wrap left curtain elements into a group
-        var leftGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        leftGroup.setAttribute("id", "curtain-left-group");
-        ["curtain-left", "curtain-left-fold1", "curtain-left-fold2", "curtain-left-fold3"]
-          .forEach(function (id) {
-            var el = svg.querySelector("#" + id);
-            if (el) leftGroup.appendChild(el);
-          });
+        // Collect all open-state curtain elements
+        var openEls = [
+          "curtain-left", "curtain-left-fold1", "curtain-left-fold2", "curtain-left-fold3",
+          "curtain-right", "curtain-right-fold1", "curtain-right-fold2", "curtain-right-fold3"
+        ].map(function (id) { return svg.querySelector("#" + id); }).filter(Boolean);
 
-        // Wrap right curtain elements into a group
-        var rightGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        rightGroup.setAttribute("id", "curtain-right-group");
-        ["curtain-right", "curtain-right-fold1", "curtain-right-fold2", "curtain-right-fold3"]
-          .forEach(function (id) {
-            var el = svg.querySelector("#" + id);
-            if (el) rightGroup.appendChild(el);
-          });
-
-        // Create closed-curtain fill panels (fabric covering the window)
-        var leftPanel = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        leftPanel.setAttribute("x", "110");
-        leftPanel.setAttribute("y", "51");
-        leftPanel.setAttribute("width", "42");
-        leftPanel.setAttribute("height", "59");
-        leftPanel.setAttribute("fill", "url(#curtain-gradient)");
-        leftPanel.setAttribute("fill-opacity", "0.88");
-        leftPanel.style.opacity = "0";
-        leftPanel.style.transition = "opacity 0.8s ease";
-        leftPanel.style.pointerEvents = "none";
-
-        var rightPanel = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        rightPanel.setAttribute("x", "152");
-        rightPanel.setAttribute("y", "50.5");
-        rightPanel.setAttribute("width", "41");
-        rightPanel.setAttribute("height", "59");
-        rightPanel.setAttribute("fill", "url(#curtain-gradient)");
-        rightPanel.setAttribute("fill-opacity", "0.88");
-        rightPanel.style.opacity = "0";
-        rightPanel.style.transition = "opacity 0.8s ease";
-        rightPanel.style.pointerEvents = "none";
-
-        // Wavy fold lines on the closed panels for fabric texture
-        var panelFolds = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        panelFolds.setAttribute("id", "curtain-closed-folds");
-        panelFolds.style.opacity = "0";
-        panelFolds.style.transition = "opacity 0.8s ease";
-        panelFolds.style.pointerEvents = "none";
-
-        [
-          "M 118,52 c 0.3,10 -0.3,20 0.2,30 0.3,9 -0.2,19 0,28",
-          "M 127,52 c -0.2,11 0.4,21 -0.2,30 -0.3,9 0.3,18 0,27",
-          "M 137,52 c 0.3,10 -0.2,20 0.2,29 0.2,10 -0.3,19 0,28",
-          "M 148,52 c -0.2,10 0.3,20 -0.1,29 -0.3,10 0.2,18 0.1,27",
-          "M 162,52 c 0.2,10 -0.3,20 0.2,29 0.3,9 -0.2,18 0,27",
-          "M 173,52 c -0.3,10 0.2,20 -0.2,29 -0.2,9 0.3,18 0.1,27",
-          "M 184,52 c 0.2,10 -0.3,20 0.2,29 0.3,9 -0.2,18 0,27"
-        ].forEach(function (d) {
-          var fold = document.createElementNS("http://www.w3.org/2000/svg", "path");
-          fold.setAttribute("d", d);
-          fold.setAttribute("style",
-            "fill:none;stroke:#9a7040;stroke-width:0.25;stroke-opacity:0.4");
-          panelFolds.appendChild(fold);
+        openEls.forEach(function (el) {
+          el.style.transition = "opacity 0.8s ease";
+          el.style.cursor = "pointer";
         });
 
-        // Insert panels behind curtain rod, folds behind panels
-        var rodEl = svg.querySelector("#curtain-rod");
-        if (rodEl) {
-          windowGroup.insertBefore(leftPanel, rodEl);
-          windowGroup.insertBefore(rightPanel, rodEl);
-          windowGroup.insertBefore(panelFolds, rodEl);
+        // --- Build closed-curtain shapes following the bow window ---
+        // Rod curve: M 98,50.5 → 121.7,55 → 181.8,55.4 → 205,50
+        // Window bottom: ~107 at edges, ~103 at center (perspective)
+        var closedGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        closedGroup.setAttribute("id", "curtains-closed");
+        closedGroup.style.opacity = "0";
+        closedGroup.style.transition = "opacity 0.8s ease";
+        closedGroup.style.pointerEvents = "none";
+        closedGroup.style.cursor = "pointer";
+
+        // Left half — follows rod bow at top, window depth at bottom
+        var closedL = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        closedL.setAttribute("d",
+          "M 99,50.5 C 107,52 115,54 121.7,55 C 133,55.1 143,55.2 152,55.3" +
+          " L 152,103 C 143,103 133,103 121,103 C 110,104.5 104,106 99,107 Z");
+        closedL.setAttribute("style",
+          "fill:url(#curtain-gradient);fill-opacity:0.92;stroke:#4a3520;stroke-width:0.3");
+
+        // Right half (mirror)
+        var closedR = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        closedR.setAttribute("d",
+          "M 204,50 C 196,52 189,54 181.8,55.4 C 170,55.35 160,55.3 152,55.3" +
+          " L 152,103 C 160,103 170,103 181.8,103 C 193,104.5 199,106 204,107 Z");
+        closedR.setAttribute("style",
+          "fill:url(#curtain-gradient);fill-opacity:0.92;stroke:#4a3520;stroke-width:0.3");
+
+        // Center seam
+        var seam = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        seam.setAttribute("x1", "152"); seam.setAttribute("y1", "55.3");
+        seam.setAttribute("x2", "152"); seam.setAttribute("y2", "103");
+        seam.setAttribute("style", "stroke:#8a6530;stroke-width:0.4;stroke-opacity:0.6");
+
+        closedGroup.appendChild(closedL);
+        closedGroup.appendChild(closedR);
+        closedGroup.appendChild(seam);
+
+        // Wavy fold lines that follow the bow curvature
+        // Interpolate rod y and bottom y for any x
+        function rodY(x) {
+          if (x <= 121.7) return 50.5 + (x - 98) / (121.7 - 98) * 4.5;
+          if (x <= 181.8) return 55 + (x - 121.7) / (181.8 - 121.7) * 0.4;
+          return 55.4 + (x - 181.8) / (205 - 181.8) * -5.4;
+        }
+        function botY(x) {
+          if (x <= 152) return 107 - (x - 99) / (152 - 99) * 4;
+          return 103 + (x - 152) / (204 - 152) * 4;
         }
 
-        // Append curtain groups at the end of the window group
-        // (window-sill is a sibling, not a child of the window group)
-        windowGroup.appendChild(leftGroup);
-        windowGroup.appendChild(rightGroup);
+        [105, 113, 121, 130, 139, 148, 156, 164, 173, 181, 190, 198].forEach(function (x, i) {
+          var ty = rodY(x) + 1;
+          var by = botY(x) - 1;
+          var m1 = ty + (by - ty) * 0.33;
+          var m2 = ty + (by - ty) * 0.67;
+          var w = (i % 2 === 0) ? 0.4 : -0.3;
+          var fold = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          fold.setAttribute("d",
+            "M " + x + "," + ty +
+            " C " + (x + w) + "," + m1 + " " + (x - w) + "," + m2 + " " + x + "," + by);
+          fold.setAttribute("style",
+            "fill:none;stroke:#9a7040;stroke-width:0.25;stroke-opacity:" + (0.3 + (i % 3) * 0.05));
+          closedGroup.appendChild(fold);
+        });
 
-        // CSS transitions for smooth sliding
-        leftGroup.style.transition = "transform 0.8s ease";
-        rightGroup.style.transition = "transform 0.8s ease";
-        leftGroup.style.cursor = "pointer";
-        rightGroup.style.cursor = "pointer";
+        // Insert closed group before the rod (behind rod & open curtains)
+        var rodEl = svg.querySelector("#curtain-rod");
+        if (rodEl) {
+          windowGroup.insertBefore(closedGroup, rodEl);
+        } else {
+          windowGroup.appendChild(closedGroup);
+        }
 
         // Sunbeams fade when curtains close
         var sunbeamsForCurtains = labelMap["sunbeams"] || svg.querySelector("#sunbeams");
@@ -330,41 +334,27 @@ document.addEventListener("DOMContentLoaded", function () {
           curtainsOpen = !curtainsOpen;
 
           if (curtainsOpen) {
-            // Open: slide curtains back to sides
-            leftGroup.style.transform = "";
-            rightGroup.style.transform = "";
-            leftPanel.style.opacity = "0";
-            rightPanel.style.opacity = "0";
-            panelFolds.style.opacity = "0";
-            leftPanel.style.pointerEvents = "none";
-            rightPanel.style.pointerEvents = "none";
-            panelFolds.style.pointerEvents = "none";
+            // Open: fade in open curtains, hide closed
+            openEls.forEach(function (el) { el.style.opacity = "1"; el.style.pointerEvents = "auto"; });
+            closedGroup.style.opacity = "0";
+            closedGroup.style.pointerEvents = "none";
             if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = "0.7";
           } else {
-            // Close: slide curtains toward center, show panels
-            leftGroup.style.transform = "translateX(42px)";
-            rightGroup.style.transform = "translateX(-41px)";
-            leftPanel.style.opacity = "1";
-            rightPanel.style.opacity = "1";
-            panelFolds.style.opacity = "1";
-            leftPanel.style.pointerEvents = "auto";
-            rightPanel.style.pointerEvents = "auto";
-            panelFolds.style.pointerEvents = "auto";
-            leftPanel.style.cursor = "pointer";
-            rightPanel.style.cursor = "pointer";
-            panelFolds.style.cursor = "pointer";
+            // Close: fade out open curtains, show closed bow-shaped curtains
+            openEls.forEach(function (el) { el.style.opacity = "0"; el.style.pointerEvents = "none"; });
+            closedGroup.style.opacity = "1";
+            closedGroup.style.pointerEvents = "auto";
             if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = "0";
           }
         }
 
-        leftGroup.addEventListener("click", toggleCurtains);
-        rightGroup.addEventListener("click", toggleCurtains);
-        leftPanel.addEventListener("click", toggleCurtains);
-        rightPanel.addEventListener("click", toggleCurtains);
-        panelFolds.addEventListener("click", toggleCurtains);
+        // Click on open curtains to close
+        openEls.forEach(function (el) { el.addEventListener("click", toggleCurtains); });
+        // Click on closed curtains to open
+        closedGroup.addEventListener("click", toggleCurtains);
 
-        // Tooltip for curtains
-        [leftGroup, rightGroup, leftPanel, rightPanel].forEach(function (el) {
+        // Tooltip
+        openEls.concat([closedGroup]).forEach(function (el) {
           el.addEventListener("mouseenter", function () {
             tooltip.textContent = curtainsOpen ? "Close curtains" : "Open curtains";
             tooltip.classList.add("visible");

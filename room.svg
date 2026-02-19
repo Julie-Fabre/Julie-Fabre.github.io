@@ -2364,7 +2364,51 @@
    y2="60.299999"
    style="stroke:#bbbbbb;stroke-width:0.12"
    id="line187" />
-</g><g
+</g>
+
+<!-- Picture frame: Corticostriatal paper -->
+<g
+     id="corticostriatal-frame"
+     inkscape:label="corticostriatal_frame"
+     style="stroke-linecap:round;stroke-linejoin:round">
+  <!-- Outer frame (wood) -->
+  <rect
+     x="130"
+     y="88"
+     width="38"
+     height="28"
+     rx="1"
+     style="fill:#8b6914;stroke:#5a4510;stroke-width:1.2" />
+  <!-- Inner frame border -->
+  <rect
+     x="133"
+     y="91"
+     width="32"
+     height="22"
+     rx="0.5"
+     style="fill:#f5f0e6;stroke:#a08050;stroke-width:0.5" />
+  <!-- Image placeholder area -->
+  <rect
+     x="135"
+     y="93"
+     width="28"
+     height="18"
+     style="fill:#e8e0d0;stroke:none" />
+  <!-- Placeholder text -->
+  <text
+     x="149"
+     y="103"
+     style="font-size:3px;font-family:sans-serif;fill:#999;text-anchor:middle">
+     Nature 2021
+  </text>
+  <!-- Decorative corner accents -->
+  <line x1="133" y1="91" x2="136" y2="94" style="stroke:#c0a060;stroke-width:0.3" />
+  <line x1="165" y1="91" x2="162" y2="94" style="stroke:#c0a060;stroke-width:0.3" />
+  <line x1="133" y1="113" x2="136" y2="110" style="stroke:#c0a060;stroke-width:0.3" />
+  <line x1="165" y1="113" x2="162" y2="110" style="stroke:#c0a060;stroke-width:0.3" />
+</g>
+
+<g
      id="pendant-lamp"
      inkscape:label="pendant-lamp"
      style="stroke-linecap:round;stroke-linejoin:round"

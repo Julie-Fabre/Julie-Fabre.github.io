@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-  <title>coquelicot</title>
-  <link>https://coquelicot.cc/</link>
+  <title>Julie Fabre</title>
+  <link>https://julie-fabre.github.io/</link>
   <description>An eclectic collection of articles centered around leathermaking, shoemaking and pop-culture physics.</description>
   <item>
     <title>Is Tintin's rocket realistic?</title>
-    <link>https://coquelicot.cc/tintin_fusee.html</link>
+    <link>https://julie-fabre.github.io/tintin_fusee.html</link>
     <description>Physics applied to the nuclear powered described in the comic book Tintin.</description>
     <pubDate>Mon, 27 Jul 2023 04:00:00 GMT</pubDate>
   </item>
