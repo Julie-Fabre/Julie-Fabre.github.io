@@ -1995,6 +1995,28 @@
        style="fill:#3366aa;stroke:#224488;stroke-width:0.187456;stroke-linecap:round;stroke-linejoin:round"
        id="circle174-2-7-5-4"
        transform="scale(-1,1)" /></g></g><g
+   id="corticostriatal-frame"
+   inkscape:label="corticostriatal_frame"
+   style="stroke-linecap:round;stroke-linejoin:round">
+  <!-- Hanging wire -->
+  <path
+     d="M 14,25.5 L 18,24 L 23,28.5"
+     style="fill:none;stroke:#888888;stroke-width:0.2" />
+  <!-- Small nail -->
+  <circle
+     cx="18"
+     cy="24"
+     r="0.35"
+     style="fill:#888888;stroke:#666666;stroke-width:0.15" />
+  <!-- Outer wooden frame (perspective trapezoid, left wall above posters) -->
+  <path
+     d="M 10,25 L 28,31.5 L 28,40.1 L 10,35 Z"
+     style="fill:#5a3e20;stroke:#3a2510;stroke-width:0.4" />
+  <!-- Inner white mat -->
+  <path
+     d="M 10.8,25.8 L 27.2,31.8 L 27.2,39.4 L 10.8,34.2 Z"
+     style="fill:#faf8f5;stroke:none" />
+</g><g
    id="poster-basal-ganglia"
    inkscape:label="poster_basal_ganglia"
    style="stroke-linecap:round;stroke-linejoin:round"
@@ -5162,7 +5184,30 @@
    inkscape:label="Layer 2" /><g
    inkscape:groupmode="layer"
    id="layer3"
-   inkscape:label="Layer 3" /><image
+   inkscape:label="Layer 3" /><g
+   id="maxou-frame"
+   inkscape:label="maxou">
+  <!-- Desk stand -->
+  <path
+     d="M 125.05,90.02 L 126.25,91.82 L 123.85,91.82 Z"
+     style="fill:#5a3e20;stroke:#3a2510;stroke-width:0.2" />
+  <!-- Wooden frame border -->
+  <rect
+     x="120.69229"
+     y="81.31102"
+     width="8.7102523"
+     height="8.7102523"
+     rx="0.25"
+     style="fill:#5a3e20;stroke:#3a2510;stroke-width:0.3" />
+  <!-- Inner white mat -->
+  <rect
+     x="120.99229"
+     y="81.61102"
+     width="8.1102523"
+     height="8.1102523"
+     style="fill:#f5f0e8;stroke:none" />
+  <!-- Maxou photo -->
+  <image
    width="7.7102523"
    height="7.7102523"
    preserveAspectRatio="none"
@@ -5170,4 +5215,5 @@
    id="image1-8"
    x="121.19229"
    y="81.81102"
-   inkscape:label="maxou" /></svg>
+   inkscape:label="maxou-photo" />
+</g></svg>
