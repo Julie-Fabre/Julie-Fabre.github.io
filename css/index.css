@@ -148,8 +148,34 @@ nav ul li a:hover {
         height: auto;
     }
 
+    /* Mobile room container - larger image with horizontal scroll */
+    #room-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+    }
+
     #room-container svg {
-        max-width: 95vw;
+        min-width: 180vw;
+        width: 180vw;
+        max-width: none;
+        height: auto;
+        margin-left: 0;
+    }
+
+    /* Mobile tooltip - larger and more visible */
+    .room-tooltip {
+        font-size: 16px;
+        padding: 8px 16px;
+        max-width: 80vw;
+        text-align: center;
+    }
+
+    /* Highlight tapped objects more visibly on mobile */
+    .interactive-object.mobile-active {
+        filter: drop-shadow(0 0 6px rgba(255, 68, 0, 0.8));
     }
 }
 

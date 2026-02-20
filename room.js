@@ -147,6 +147,46 @@ document.addEventListener("DOMContentLoaded", function () {
         if (label) labelMap[label] = g;
       });
 
+      // Mobile detection
+      var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+      var activeLink = null; // Track which object has tooltip shown (for tap-to-navigate)
+
+      // Helper to position tooltip centered above an element
+      function positionTooltipForElement(element) {
+        var rect = element.getBoundingClientRect();
+        var tooltipRect = tooltip.getBoundingClientRect();
+        var centerX = rect.left + rect.width / 2;
+        var topY = rect.top - 10;
+
+        // Position centered above the element
+        tooltip.style.left = Math.max(10, Math.min(centerX - tooltipRect.width / 2, window.innerWidth - tooltipRect.width - 10)) + "px";
+        // If too close to top, position below instead
+        if (topY - tooltipRect.height < 10) {
+          tooltip.style.top = (rect.bottom + 10) + "px";
+        } else {
+          tooltip.style.top = (topY - tooltipRect.height) + "px";
+        }
+      }
+
+      // Clear active state (for mobile)
+      function clearActiveState() {
+        if (activeLink) {
+          activeLink.classList.remove("mobile-active");
+          activeLink = null;
+        }
+        tooltip.classList.remove("visible");
+      }
+
+      // Tap elsewhere to dismiss (mobile)
+      if (isTouchDevice) {
+        document.addEventListener("touchstart", function (e) {
+          // If tap is outside any interactive object, clear the active state
+          if (!e.target.closest(".interactive-object")) {
+            clearActiveState();
+          }
+        });
+      }
+
       // Wire up each interactive object
       interactiveObjects.forEach(function (obj) {
         var el = labelMap[obj.svgLabel];
@@ -164,20 +204,51 @@ document.addEventListener("DOMContentLoaded", function () {
         el.parentNode.insertBefore(link, el);
         link.appendChild(el);
 
-        // Tooltip on hover
-        link.addEventListener("mouseenter", function () {
-          tooltip.textContent = obj.tooltip;
-          tooltip.classList.add("visible");
-        });
+        if (isTouchDevice) {
+          // Mobile: tap-to-show-tooltip, tap-again-to-navigate
+          link.addEventListener("touchstart", function (e) {
+            if (activeLink === link) {
+              // Second tap on same object - allow navigation (don't prevent default)
+              return;
+            }
 
-        link.addEventListener("mouseleave", function () {
-          tooltip.classList.remove("visible");
-        });
+            // First tap - show tooltip, prevent navigation
+            e.preventDefault();
+            clearActiveState();
 
-        link.addEventListener("mousemove", function (e) {
-          tooltip.style.left = (e.clientX + 12) + "px";
-          tooltip.style.top = (e.clientY + 12) + "px";
-        });
+            activeLink = link;
+            link.classList.add("mobile-active");
+            tooltip.textContent = obj.tooltip;
+            tooltip.classList.add("visible");
+
+            // Position tooltip after it's visible (so we can measure it)
+            requestAnimationFrame(function () {
+              positionTooltipForElement(link);
+            });
+          });
+
+          // Prevent click navigation on first tap (touchstart already handled it)
+          link.addEventListener("click", function (e) {
+            if (activeLink !== link) {
+              e.preventDefault();
+            }
+          });
+        } else {
+          // Desktop: hover behavior
+          link.addEventListener("mouseenter", function () {
+            tooltip.textContent = obj.tooltip;
+            tooltip.classList.add("visible");
+          });
+
+          link.addEventListener("mouseleave", function () {
+            tooltip.classList.remove("visible");
+          });
+
+          link.addEventListener("mousemove", function (e) {
+            tooltip.style.left = (e.clientX + 12) + "px";
+            tooltip.style.top = (e.clientY + 12) + "px";
+          });
+        }
       });
 
       // === LAMP TOGGLE ===
