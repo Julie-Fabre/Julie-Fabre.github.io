@@ -107,6 +107,17 @@ document.addEventListener("DOMContentLoaded", function () {
   var tooltip = document.getElementById("room-tooltip");
   if (!container) return;
 
+  // Update hint text based on device
+  var isTouchHint = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  var hintEl = document.querySelector(".room-hint");
+  if (hintEl) {
+    if (isTouchHint) {
+      hintEl.innerHTML = '<span style="font-size: 19px;">Welcome to my home office!</span><br>This room is full of secrets... tap around to find them';
+    } else {
+      hintEl.innerHTML = '<span style="font-size: 19px;">Welcome to my home office!</span><br>This room is full of secrets... click around to find them';
+    }
+  }
+
   fetch("room.svg")
     .then(function (response) { return response.text(); })
     .then(function (svgText) {
@@ -454,7 +465,8 @@ document.addEventListener("DOMContentLoaded", function () {
             openEls.forEach(function (el) { el.style.opacity = "1"; el.style.pointerEvents = "auto"; });
             closedGroup.style.opacity = "0";
             closedGroup.style.pointerEvents = "none";
-            if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = "0.7";
+            // Use dimmer sunbeams in night mode
+            if (sunbeamsForCurtains) sunbeamsForCurtains.style.opacity = lampOn ? "0.7" : "0.25";
           } else {
             // Close: fade out open curtains, show closed bow-shaped curtains
             openEls.forEach(function (el) { el.style.opacity = "0"; el.style.pointerEvents = "none"; });
