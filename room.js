@@ -1115,3 +1115,164 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 });
+
+// === KONAMI CODE EASTER EGG ===
+(function () {
+  var konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // up up down down left right left right B A
+  var konamiPos = 0;
+  var miceRunning = false;
+
+  document.addEventListener("keydown", function (e) {
+    if (e.keyCode === konamiSequence[konamiPos]) {
+      konamiPos++;
+      if (konamiPos === konamiSequence.length) {
+        konamiPos = 0;
+        if (!miceRunning) runMice();
+      }
+    } else {
+      konamiPos = 0;
+    }
+  });
+
+  function createMouse(delay, y, speed, flip) {
+    var mouse = document.createElement("div");
+    mouse.style.cssText =
+      "position:fixed;left:-60px;top:" + y + "px;z-index:9999;pointer-events:none;" +
+      "font-size:0;line-height:0;transition:none;" +
+      (flip ? "transform:scaleX(1);" : "transform:scaleX(-1);");
+
+    // Build a cute mouse with SVG
+    var sz = 28;
+    var svgNS = "http://www.w3.org/2000/svg";
+    var svgE = document.createElementNS(svgNS, "svg");
+    svgE.setAttribute("width", sz * 2);
+    svgE.setAttribute("height", sz * 1.2);
+    svgE.setAttribute("viewBox", "0 0 40 24");
+    svgE.style.overflow = "visible";
+
+    // Body
+    var body = document.createElementNS(svgNS, "ellipse");
+    body.setAttribute("cx", "20"); body.setAttribute("cy", "14");
+    body.setAttribute("rx", "10"); body.setAttribute("ry", "6");
+    body.setAttribute("style", "fill:#8a7a6a");
+    svgE.appendChild(body);
+
+    // Head
+    var head = document.createElementNS(svgNS, "ellipse");
+    head.setAttribute("cx", "32"); head.setAttribute("cy", "12");
+    head.setAttribute("rx", "5"); head.setAttribute("ry", "4.5");
+    head.setAttribute("style", "fill:#9a8a7a");
+    svgE.appendChild(head);
+
+    // Ears
+    [[-1.5, 0], [2.5, -0.5]].forEach(function (off) {
+      var ear = document.createElementNS(svgNS, "ellipse");
+      ear.setAttribute("cx", 32 + off[0]); ear.setAttribute("cy", 8 + off[1]);
+      ear.setAttribute("rx", "2.5"); ear.setAttribute("ry", "2.8");
+      ear.setAttribute("style", "fill:#9a8a7a;stroke:#7a6a5a;stroke-width:0.3");
+      svgE.appendChild(ear);
+      var inner = document.createElementNS(svgNS, "ellipse");
+      inner.setAttribute("cx", 32 + off[0]); inner.setAttribute("cy", 8.3 + off[1]);
+      inner.setAttribute("rx", "1.5"); inner.setAttribute("ry", "1.8");
+      inner.setAttribute("style", "fill:#e8b0a0");
+      svgE.appendChild(inner);
+    });
+
+    // Eye
+    var eye = document.createElementNS(svgNS, "circle");
+    eye.setAttribute("cx", "34"); eye.setAttribute("cy", "11");
+    eye.setAttribute("r", "1");
+    eye.setAttribute("style", "fill:#1a1a1a");
+    svgE.appendChild(eye);
+    var eyeShine = document.createElementNS(svgNS, "circle");
+    eyeShine.setAttribute("cx", "34.5"); eyeShine.setAttribute("cy", "10.5");
+    eyeShine.setAttribute("r", "0.35");
+    eyeShine.setAttribute("style", "fill:#ffffff");
+    svgE.appendChild(eyeShine);
+
+    // Nose
+    var nose = document.createElementNS(svgNS, "circle");
+    nose.setAttribute("cx", "37"); nose.setAttribute("cy", "12.5");
+    nose.setAttribute("r", "0.8");
+    nose.setAttribute("style", "fill:#e8a0a0");
+    svgE.appendChild(nose);
+
+    // Whiskers
+    [[37.5, 11.5, 40, 10], [37.5, 12.5, 41, 12.5], [37.5, 13.5, 40, 15]].forEach(function (w) {
+      var whisker = document.createElementNS(svgNS, "line");
+      whisker.setAttribute("x1", w[0]); whisker.setAttribute("y1", w[1]);
+      whisker.setAttribute("x2", w[2]); whisker.setAttribute("y2", w[3]);
+      whisker.setAttribute("style", "stroke:#7a6a5a;stroke-width:0.3");
+      svgE.appendChild(whisker);
+    });
+
+    // Tail
+    var tail = document.createElementNS(svgNS, "path");
+    tail.setAttribute("d", "M 10,14 C 6,12 2,16 -2,13");
+    tail.setAttribute("style", "fill:none;stroke:#9a8a7a;stroke-width:1;stroke-linecap:round");
+    svgE.appendChild(tail);
+
+    // Front legs (animated with CSS)
+    var legs = [];
+    [28, 14].forEach(function (lx) {
+      var leg = document.createElementNS(svgNS, "line");
+      leg.setAttribute("x1", lx); leg.setAttribute("y1", "18");
+      leg.setAttribute("x2", lx); leg.setAttribute("y2", "22");
+      leg.setAttribute("style", "stroke:#8a7a6a;stroke-width:1.2;stroke-linecap:round");
+      svgE.appendChild(leg);
+      legs.push(leg);
+    });
+
+    mouse.appendChild(svgE);
+    document.body.appendChild(mouse);
+
+    // Animate running across screen
+    var startX = flip ? window.innerWidth + 60 : -60;
+    var endX = flip ? -60 : window.innerWidth + 60;
+    var x = startX;
+    var frame = 0;
+    var startTime = null;
+
+    function animate(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var elapsed = timestamp - startTime;
+
+      // Leg animation (alternating)
+      frame++;
+      if (frame % 3 === 0) {
+        var legSwing = Math.sin(frame * 0.5) * 3;
+        legs[0].setAttribute("x2", parseFloat(legs[0].getAttribute("x1")) + legSwing);
+        legs[1].setAttribute("x2", parseFloat(legs[1].getAttribute("x1")) - legSwing);
+      }
+
+      // Slight vertical bob
+      var bob = Math.sin(frame * 0.4) * 2;
+      x = startX + (endX - startX) * (elapsed / (speed * 1000));
+      mouse.style.left = x + "px";
+      mouse.style.top = (y + bob) + "px";
+
+      if ((flip && x > -60) || (!flip && x < window.innerWidth + 60)) {
+        requestAnimationFrame(animate);
+      } else {
+        document.body.removeChild(mouse);
+      }
+    }
+
+    setTimeout(function () {
+      requestAnimationFrame(animate);
+    }, delay);
+
+    return mouse;
+  }
+
+  function runMice() {
+    miceRunning = true;
+    var viewH = window.innerHeight;
+    // Three mice at different heights, speeds, and slight delays
+    createMouse(0, viewH * 0.55, 2.2, false);
+    createMouse(200, viewH * 0.65, 1.8, false);
+    createMouse(500, viewH * 0.45, 2.5, false);
+
+    setTimeout(function () { miceRunning = false; }, 4000);
+  }
+})();
