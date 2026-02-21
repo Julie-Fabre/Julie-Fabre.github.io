@@ -4796,38 +4796,54 @@
 </g><g
    id="wall-clock-group"
    inkscape:label="wall_clock"
-   transform="matrix(0.97850121,0,0,0.8461992,2.9741714,-7.2549487)">
+   transform="matrix(0.97850121,0,0,0.8461992,3.3557469,-2.3860491)">
+  <!-- Perspective wrapper: compress x 55%, tilt -10° to match right wall angle -->
+  <g transform="translate(265,60) rotate(-10) scale(0.55,1) translate(-265,-60)">
   <!-- Shadow -->
-  <circle cx="230.5" cy="42.8" r="7.3" style="fill:#000000;fill-opacity:0.06;stroke:none" />
-  <!-- Wood frame ring -->
-  <circle cx="230" cy="42" r="7.2" style="fill:#5a3e20;stroke:#3a2510;stroke-width:0.5" />
-  <!-- Inner bevel -->
-  <circle cx="230" cy="42" r="6.5" style="fill:#6a4e30;stroke:none" />
-  <!-- Clock face -->
-  <circle cx="230" cy="42" r="6" style="fill:#faf5e8;stroke:#d8cbb0;stroke-width:0.2" />
-  <!-- Hour markers - major (12, 3, 6, 9) -->
-  <line x1="230" y1="36.5" x2="230" y2="37.5" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
-  <line x1="235.5" y1="42" x2="234.5" y2="42" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
-  <line x1="230" y1="47.5" x2="230" y2="46.5" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
-  <line x1="224.5" y1="42" x2="225.5" y2="42" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
-  <!-- Hour markers - minor -->
-  <circle cx="232.75" cy="37.24" r="0.22" style="fill:#5a4530" />
-  <circle cx="234.76" cy="39.25" r="0.22" style="fill:#5a4530" />
-  <circle cx="234.76" cy="44.75" r="0.22" style="fill:#5a4530" />
-  <circle cx="232.75" cy="46.76" r="0.22" style="fill:#5a4530" />
-  <circle cx="227.25" cy="46.76" r="0.22" style="fill:#5a4530" />
-  <circle cx="225.24" cy="44.75" r="0.22" style="fill:#5a4530" />
-  <circle cx="225.24" cy="39.25" r="0.22" style="fill:#5a4530" />
-  <circle cx="227.25" cy="37.24" r="0.22" style="fill:#5a4530" />
-  <!-- Hour hand (short, thick) -->
-  <line id="clock-hour" x1="230" y1="42" x2="230" y2="38.2" style="stroke:#2a1a08;stroke-width:0.55;stroke-linecap:round" />
-  <!-- Minute hand (long, medium) -->
-  <line id="clock-minute" x1="230" y1="42" x2="230" y2="37" style="stroke:#2a1a08;stroke-width:0.35;stroke-linecap:round" />
-  <!-- Second hand (longest, thin, red) -->
-  <line id="clock-second" x1="230" y1="43" x2="230" y2="36.8" style="stroke:#c83000;stroke-width:0.18;stroke-linecap:round" />
+  <circle cx="265.8" cy="61" r="10.5" style="fill:#000000;fill-opacity:0.06;stroke:none" />
+  <!-- Silver aluminum frame -->
+  <circle cx="265" cy="60" r="10" style="fill:#c8c8c8;stroke:#a0a0a0;stroke-width:0.5" />
+  <!-- Frame inner edge -->
+  <circle cx="265" cy="60" r="9.3" style="fill:#d4d4d4;stroke:none" />
+  <!-- White clock face -->
+  <circle cx="265" cy="60" r="8.8" style="fill:#ffffff;stroke:#e0e0e0;stroke-width:0.15" />
+  <!-- Hour markers - thick black bars, all 12 hours -->
+  <!-- 12 -->
+  <line x1="265" y1="51.8" x2="265" y2="53.5" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <!-- 1 -->
+  <line x1="269.15" y1="52.85" x2="268.7" y2="53.65" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- 2 -->
+  <line x1="272.15" y1="55.95" x2="271.4" y2="56.4" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- 3 -->
+  <line x1="273.2" y1="60" x2="271.5" y2="60" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <!-- 4 -->
+  <line x1="272.15" y1="64.05" x2="271.4" y2="63.6" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- 5 -->
+  <line x1="269.15" y1="67.15" x2="268.7" y2="66.35" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- 6 -->
+  <line x1="265" y1="68.2" x2="265" y2="66.5" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <!-- 7 -->
+  <line x1="260.85" y1="67.15" x2="261.3" y2="66.35" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- 8 -->
+  <line x1="257.85" y1="64.05" x2="258.6" y2="63.6" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- 9 -->
+  <line x1="256.8" y1="60" x2="258.5" y2="60" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <!-- 10 -->
+  <line x1="257.85" y1="55.95" x2="258.6" y2="56.4" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- 11 -->
+  <line x1="260.85" y1="52.85" x2="261.3" y2="53.65" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <!-- Hour hand (short, thick, blunt — Hilfiker style) -->
+  <line id="clock-hour" x1="265" y1="61" x2="265" y2="54.5" style="stroke:#1a1a1a;stroke-width:1.2;stroke-linecap:butt" />
+  <!-- Minute hand (long, thick, blunt) -->
+  <line id="clock-minute" x1="265" y1="61.5" x2="265" y2="52.5" style="stroke:#1a1a1a;stroke-width:0.8;stroke-linecap:butt" />
+  <!-- Second hand — iconic red paddle/lollipop -->
+  <g id="clock-second">
+    <line x1="265" y1="63" x2="265" y2="53" style="stroke:#dd0000;stroke-width:0.25;stroke-linecap:butt" />
+    <circle cx="265" cy="53.5" r="1" style="fill:#dd0000;stroke:none" />
+  </g>
   <!-- Center pivot -->
-  <circle cx="230" cy="42" r="0.55" style="fill:#2a1a08" />
-  <circle cx="230" cy="42" r="0.3" style="fill:#c83000" />
+  <circle cx="265" cy="60" r="0.7" style="fill:#1a1a1a" />
+  </g>
 </g><g
    id="right-shelf"
    inkscape:label="right-shelf"

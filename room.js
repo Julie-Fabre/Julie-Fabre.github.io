@@ -713,7 +713,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var clockMinute = svg.querySelector("#clock-minute");
       var clockSecond = svg.querySelector("#clock-second");
       if (clockHour && clockMinute && clockSecond) {
-        var clockCX = 230, clockCY = 42;
+        var clockCX = 265, clockCY = 60;
         function updateClock() {
           var now = new Date();
           var h = now.getHours() % 12;
