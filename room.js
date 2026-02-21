@@ -844,6 +844,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // === PHILODENDRON PLANT (click to water & grow) ===
       var plantJar = svg.querySelector("#jar");
       if (plantJar) {
+        var svgNS = "http://www.w3.org/2000/svg";
         var foliageIds = [
           "philo-stem1", "philo-stem2", "philo-stem3", "philo-stem4", "philo-stem5",
           "philo-leaf1", "philo-leaf1-pink", "philo-vein1",
@@ -856,7 +857,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var plantJarRim = svg.querySelector("#jar-rim");
 
         // Wrap everything in a clickable group
-        var plantGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        var plantGroup = document.createElementNS(svgNS, "g");
         plantGroup.setAttribute("id", "plant-interactive");
         plantGroup.style.cursor = "pointer";
         plantJar.parentNode.insertBefore(plantGroup, plantJar);
@@ -864,16 +865,24 @@ document.addEventListener("DOMContentLoaded", function () {
         if (plantJarRim) plantGroup.appendChild(plantJarRim);
 
         // Foliage wrapper (gets scaled for growth)
-        var foliageWrapper = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        var foliageWrapper = document.createElementNS(svgNS, "g");
         foliageWrapper.setAttribute("id", "plant-foliage");
         plantGroup.appendChild(foliageWrapper);
         foliageEls.forEach(function (el) { foliageWrapper.appendChild(el); });
 
-        // Growth state
+        // Growth + pot state
         var maxGrowth = 5;
         var plantGrowth = parseInt(localStorage.getItem("plantGrowth") || "0");
+        var potLevel = parseInt(localStorage.getItem("plantPot") || "0");
+        var maxPot = 1;
         var growX = 233.5, growY = 76; // jar rim center (scale origin)
-        var currentPlantScale = 1 + plantGrowth * 0.1;
+
+        function getTargetScale() {
+          if (potLevel === 0) return 1 + plantGrowth * 0.1;
+          return 1.5 + plantGrowth * 0.06;
+        }
+
+        var currentPlantScale = getTargetScale();
 
         function setPlantScale(s) {
           var tx = growX * (1 - s);
@@ -896,12 +905,59 @@ document.addEventListener("DOMContentLoaded", function () {
           requestAnimationFrame(step);
         }
 
+        // Bigger terracotta pot (created on re-pot)
+        var bigPotEls = [];
+        function createBigPot() {
+          var potBody = document.createElementNS(svgNS, "path");
+          potBody.setAttribute("d",
+            "M 231.2,75.5 L 230.5,80.3 Q 230.5,81.3 233.5,81.3 Q 236.5,81.3 236.5,80.3 L 235.8,75.5 Z");
+          potBody.setAttribute("style", "fill:#c4713a;stroke:#8a4a20;stroke-width:0.3");
+          var potRim = document.createElementNS(svgNS, "ellipse");
+          potRim.setAttribute("cx", "233.5");
+          potRim.setAttribute("cy", "75.5");
+          potRim.setAttribute("rx", "2.6");
+          potRim.setAttribute("ry", "0.55");
+          potRim.setAttribute("style", "fill:#d4815a;stroke:#8a4a20;stroke-width:0.25");
+          var soil = document.createElementNS(svgNS, "ellipse");
+          soil.setAttribute("cx", "233.5");
+          soil.setAttribute("cy", "75.8");
+          soil.setAttribute("rx", "2.1");
+          soil.setAttribute("ry", "0.35");
+          soil.setAttribute("style", "fill:#5a3a20;stroke:none");
+          bigPotEls = [potBody, potRim, soil];
+          return bigPotEls;
+        }
+
+        function showBigPot(animate) {
+          if (bigPotEls.length === 0) createBigPot();
+          // Hide original jar
+          if (animate) {
+            plantJar.style.transition = "opacity 0.4s ease";
+            if (plantJarRim) plantJarRim.style.transition = "opacity 0.4s ease";
+          }
+          plantJar.style.opacity = "0";
+          if (plantJarRim) plantJarRim.style.opacity = "0";
+          // Show terracotta pot (insert before foliage so leaves draw on top)
+          bigPotEls.forEach(function (el) {
+            if (animate) {
+              el.style.opacity = "0";
+              el.style.transition = "opacity 0.6s ease";
+            }
+            plantGroup.insertBefore(el, foliageWrapper);
+            if (animate) {
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () { el.style.opacity = "1"; });
+              });
+            }
+          });
+        }
+
         // Apply saved state immediately
         setPlantScale(currentPlantScale);
+        if (potLevel > 0) showBigPot(false);
 
         // Water droplets animation
         function showWaterDrops() {
-          var svgNS = "http://www.w3.org/2000/svg";
           for (var wi = 0; wi < 5; wi++) {
             (function (idx) {
               setTimeout(function () {
@@ -935,10 +991,11 @@ document.addEventListener("DOMContentLoaded", function () {
           e.stopPropagation();
 
           if (plantGrowth < maxGrowth) {
+            // Water the plant
             plantGrowth++;
             localStorage.setItem("plantGrowth", String(plantGrowth));
             showWaterDrops();
-            var newScale = 1 + plantGrowth * 0.1;
+            var newScale = getTargetScale();
             setTimeout(function () { animatePlantGrowth(newScale); }, 300);
 
             var msgs = [
@@ -946,9 +1003,17 @@ document.addEventListener("DOMContentLoaded", function () {
               "Growing nicely!",
               "Looking lush!",
               "Almost fully grown!",
-              "Fully grown! Beautiful!"
+              "Fully grown!"
             ];
             tooltip.textContent = msgs[plantGrowth - 1];
+          } else if (potLevel < maxPot) {
+            // Re-pot into a bigger pot — plant keeps its size, pot gets larger
+            potLevel++;
+            plantGrowth = 0;
+            localStorage.setItem("plantPot", String(potLevel));
+            localStorage.setItem("plantGrowth", "0");
+            showBigPot(true);
+            tooltip.textContent = "Re-potted! Room to grow";
           } else {
             tooltip.textContent = "A happy, healthy philodendron!";
           }
@@ -958,10 +1023,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Hover tooltip
         plantGroup.addEventListener("mouseenter", function () {
-          if (plantGrowth === 0) {
+          if (plantGrowth === 0 && potLevel === 0) {
             tooltip.textContent = "This plant looks thirsty...";
           } else if (plantGrowth < maxGrowth) {
             tooltip.textContent = "Water me more!";
+          } else if (potLevel < maxPot) {
+            tooltip.textContent = "Needs a bigger pot! Click to re-pot";
           } else {
             tooltip.textContent = "A happy, healthy philodendron!";
           }
