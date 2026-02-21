@@ -841,6 +841,141 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
+      // === PHILODENDRON PLANT (click to water & grow) ===
+      var plantJar = svg.querySelector("#jar");
+      if (plantJar) {
+        var foliageIds = [
+          "philo-stem1", "philo-stem2", "philo-stem3", "philo-stem4", "philo-stem5",
+          "philo-leaf1", "philo-leaf1-pink", "philo-vein1",
+          "philo-leaf2", "philo-leaf2-pink1", "philo-leaf2-pink2", "philo-vein2",
+          "philo-leaf3", "philo-leaf3-pink",
+          "philo-leaf4", "philo-leaf4-pink",
+          "philo-leaf5-pink", "philo-leaf5-green", "philo-vein5"
+        ];
+        var foliageEls = foliageIds.map(function (id) { return svg.querySelector("#" + id); }).filter(Boolean);
+        var plantJarRim = svg.querySelector("#jar-rim");
+
+        // Wrap everything in a clickable group
+        var plantGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        plantGroup.setAttribute("id", "plant-interactive");
+        plantGroup.style.cursor = "pointer";
+        plantJar.parentNode.insertBefore(plantGroup, plantJar);
+        plantGroup.appendChild(plantJar);
+        if (plantJarRim) plantGroup.appendChild(plantJarRim);
+
+        // Foliage wrapper (gets scaled for growth)
+        var foliageWrapper = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        foliageWrapper.setAttribute("id", "plant-foliage");
+        plantGroup.appendChild(foliageWrapper);
+        foliageEls.forEach(function (el) { foliageWrapper.appendChild(el); });
+
+        // Growth state
+        var maxGrowth = 5;
+        var plantGrowth = parseInt(localStorage.getItem("plantGrowth") || "0");
+        var growX = 233.5, growY = 76; // jar rim center (scale origin)
+        var currentPlantScale = 1 + plantGrowth * 0.1;
+
+        function setPlantScale(s) {
+          var tx = growX * (1 - s);
+          var ty = growY * (1 - s);
+          foliageWrapper.setAttribute("transform",
+            "translate(" + tx + "," + ty + ") scale(" + s + ")");
+          currentPlantScale = s;
+        }
+
+        function animatePlantGrowth(toScale) {
+          var fromScale = currentPlantScale;
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / 1000, 1);
+            p = 1 - Math.pow(1 - p, 3); // ease-out cubic
+            setPlantScale(fromScale + (toScale - fromScale) * p);
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        // Apply saved state immediately
+        setPlantScale(currentPlantScale);
+
+        // Water droplets animation
+        function showWaterDrops() {
+          var svgNS = "http://www.w3.org/2000/svg";
+          for (var wi = 0; wi < 5; wi++) {
+            (function (idx) {
+              setTimeout(function () {
+                var drop = document.createElementNS(svgNS, "ellipse");
+                var dx = 232 + Math.random() * 3;
+                var dy = 67 + Math.random() * 2;
+                drop.setAttribute("cx", dx);
+                drop.setAttribute("cy", dy);
+                drop.setAttribute("rx", "0.3");
+                drop.setAttribute("ry", "0.5");
+                drop.setAttribute("style", "fill:#5088cc;fill-opacity:0.8");
+                plantGroup.appendChild(drop);
+
+                var t0 = performance.now();
+                function fall(ts) {
+                  var fp = Math.min((ts - t0) / 500, 1);
+                  drop.setAttribute("cy", String(dy + fp * 9));
+                  drop.style.opacity = String(1 - fp);
+                  if (fp < 1) requestAnimationFrame(fall);
+                  else if (drop.parentNode) drop.parentNode.removeChild(drop);
+                }
+                requestAnimationFrame(fall);
+              }, idx * 80);
+            })(wi);
+          }
+        }
+
+        // Click handler
+        plantGroup.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (plantGrowth < maxGrowth) {
+            plantGrowth++;
+            localStorage.setItem("plantGrowth", String(plantGrowth));
+            showWaterDrops();
+            var newScale = 1 + plantGrowth * 0.1;
+            setTimeout(function () { animatePlantGrowth(newScale); }, 300);
+
+            var msgs = [
+              "Watered!",
+              "Growing nicely!",
+              "Looking lush!",
+              "Almost fully grown!",
+              "Fully grown! Beautiful!"
+            ];
+            tooltip.textContent = msgs[plantGrowth - 1];
+          } else {
+            tooltip.textContent = "A happy, healthy philodendron!";
+          }
+          tooltip.classList.add("visible");
+          setTimeout(function () { tooltip.classList.remove("visible"); }, 1500);
+        });
+
+        // Hover tooltip
+        plantGroup.addEventListener("mouseenter", function () {
+          if (plantGrowth === 0) {
+            tooltip.textContent = "This plant looks thirsty...";
+          } else if (plantGrowth < maxGrowth) {
+            tooltip.textContent = "Water me more!";
+          } else {
+            tooltip.textContent = "A happy, healthy philodendron!";
+          }
+          tooltip.classList.add("visible");
+        });
+        plantGroup.addEventListener("mouseleave", function () {
+          tooltip.classList.remove("visible");
+        });
+        plantGroup.addEventListener("mousemove", function (e) {
+          tooltip.style.left = (e.clientX + 12) + "px";
+          tooltip.style.top = (e.clientY + 12) + "px";
+        });
+      }
+
       // === WINDOW SCENES (day landscape + night sky) ===
       var windowEl = labelMap["window"];
       var darknessOverlay = svg.querySelector("#lamp-darkness");

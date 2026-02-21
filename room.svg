@@ -25,9 +25,9 @@
    inkscape:deskcolor="#505050"
    inkscape:document-units="mm"
    showgrid="false"
-   inkscape:zoom="0.4690367"
-   inkscape:cx="296.35208"
-   inkscape:cy="76.753056"
+   inkscape:zoom="1.8638052"
+   inkscape:cx="789.24558"
+   inkscape:cy="246.27038"
    inkscape:window-width="1512"
    inkscape:window-height="851"
    inkscape:window-x="0"
@@ -2123,11 +2123,100 @@
    clipPathUnits="userSpaceOnUse"
    id="clipPath4262-0"><path
      d="m 388.264,233.418 h 16.305 v 27.514 h -16.305 z"
-     id="path4260-6" /></clipPath></defs><g
+     id="path4260-6" /></clipPath>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</defs><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1"
-   style="stroke-linecap:round;stroke-linejoin:round"><g
+   style="stroke-linecap:round;stroke-linejoin:round"
+   sodipodi:insensitive="true"><g
    id="g-room-fills"
    inkscape:label="room-fills"
    transform="matrix(1,0,0,0.86479118,0.70294593,-1.3761397)"><path
@@ -4797,331 +4886,391 @@
    id="wall-clock-group"
    inkscape:label="wall_clock"
    transform="matrix(0.97850121,0,0,0.8461992,3.3557469,-2.3860491)">
-  <!-- Perspective wrapper: compress x 55%, tilt -10° to match right wall angle -->
-  <g transform="translate(265,60) rotate(-10) scale(0.55,1) translate(-265,-60)">
+  <!-- Perspective wrapper: compress x 55%, tilt -5° to match right wall angle -->
+  <g
+   transform="translate(265,60) rotate(-5) scale(0.55,1) translate(-265,-60)"
+   id="g32">
   <!-- Shadow -->
-  <circle cx="265.8" cy="61" r="10.5" style="fill:#000000;fill-opacity:0.06;stroke:none" />
-  <!-- Silver aluminum frame -->
-  <circle cx="265" cy="60" r="10" style="fill:#c8c8c8;stroke:#a0a0a0;stroke-width:0.5" />
+  <circle
+   cx="265.6"
+   cy="60.8"
+   r="9"
+   style="fill:#000000;fill-opacity:0.06;stroke:none"
+   id="circle2" />
+  <!-- Warm wood frame -->
+  <circle
+   cx="265"
+   cy="60"
+   r="8.5"
+   style="fill:#7a5c3a;stroke:#5a3e20;stroke-width:0.45"
+   id="circle3" />
   <!-- Frame inner edge -->
-  <circle cx="265" cy="60" r="9.3" style="fill:#d4d4d4;stroke:none" />
+  <circle
+   cx="265"
+   cy="60"
+   r="7.9"
+   style="fill:#8a6840;stroke:none"
+   id="circle4" />
   <!-- White clock face -->
-  <circle cx="265" cy="60" r="8.8" style="fill:#ffffff;stroke:#e0e0e0;stroke-width:0.15" />
+  <circle
+   cx="265"
+   cy="60"
+   r="7.5"
+   style="fill:#ffffff;stroke:#e0e0e0;stroke-width:0.12"
+   id="circle5" />
   <!-- Hour markers - thick black bars, all 12 hours -->
   <!-- 12 -->
-  <line x1="265" y1="51.8" x2="265" y2="53.5" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <line
+   x1="265"
+   y1="53.1"
+   x2="265"
+   y2="54.5"
+   style="stroke:#1a1a1a;stroke-width:0.6;stroke-linecap:butt"
+   id="line9" />
   <!-- 1 -->
-  <line x1="269.15" y1="52.85" x2="268.7" y2="53.65" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="268.5"
+   y1="53.95"
+   x2="268.1"
+   y2="54.65"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line10" />
   <!-- 2 -->
-  <line x1="272.15" y1="55.95" x2="271.4" y2="56.4" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="271.05"
+   y1="56.6"
+   x2="270.4"
+   y2="57"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line21" />
   <!-- 3 -->
-  <line x1="273.2" y1="60" x2="271.5" y2="60" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <line
+   x1="271.9"
+   y1="60"
+   x2="270.5"
+   y2="60"
+   style="stroke:#1a1a1a;stroke-width:0.6;stroke-linecap:butt"
+   id="line22" />
   <!-- 4 -->
-  <line x1="272.15" y1="64.05" x2="271.4" y2="63.6" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="271.05"
+   y1="63.4"
+   x2="270.4"
+   y2="63"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line23" />
   <!-- 5 -->
-  <line x1="269.15" y1="67.15" x2="268.7" y2="66.35" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="268.5"
+   y1="66.05"
+   x2="268.1"
+   y2="65.35"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line24" />
   <!-- 6 -->
-  <line x1="265" y1="68.2" x2="265" y2="66.5" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <line
+   x1="265"
+   y1="66.9"
+   x2="265"
+   y2="65.5"
+   style="stroke:#1a1a1a;stroke-width:0.6;stroke-linecap:butt"
+   id="line25" />
   <!-- 7 -->
-  <line x1="260.85" y1="67.15" x2="261.3" y2="66.35" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="261.5"
+   y1="66.05"
+   x2="261.9"
+   y2="65.35"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line26" />
   <!-- 8 -->
-  <line x1="257.85" y1="64.05" x2="258.6" y2="63.6" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="258.95"
+   y1="63.4"
+   x2="259.6"
+   y2="63"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line27" />
   <!-- 9 -->
-  <line x1="256.8" y1="60" x2="258.5" y2="60" style="stroke:#1a1a1a;stroke-width:0.7;stroke-linecap:butt" />
+  <line
+   x1="258.1"
+   y1="60"
+   x2="259.5"
+   y2="60"
+   style="stroke:#1a1a1a;stroke-width:0.6;stroke-linecap:butt"
+   id="line28" />
   <!-- 10 -->
-  <line x1="257.85" y1="55.95" x2="258.6" y2="56.4" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="258.95"
+   y1="56.6"
+   x2="259.6"
+   y2="57"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line29" />
   <!-- 11 -->
-  <line x1="260.85" y1="52.85" x2="261.3" y2="53.65" style="stroke:#1a1a1a;stroke-width:0.45;stroke-linecap:butt" />
+  <line
+   x1="261.5"
+   y1="53.95"
+   x2="261.9"
+   y2="54.65"
+   style="stroke:#1a1a1a;stroke-width:0.38;stroke-linecap:butt"
+   id="line30" />
   <!-- Hour hand (short, thick, blunt — Hilfiker style) -->
-  <line id="clock-hour" x1="265" y1="61" x2="265" y2="54.5" style="stroke:#1a1a1a;stroke-width:1.2;stroke-linecap:butt" />
+  <line
+   id="clock-hour"
+   x1="265"
+   y1="60.8"
+   x2="265"
+   y2="55.3"
+   style="stroke:#1a1a1a;stroke-width:1;stroke-linecap:butt" />
   <!-- Minute hand (long, thick, blunt) -->
-  <line id="clock-minute" x1="265" y1="61.5" x2="265" y2="52.5" style="stroke:#1a1a1a;stroke-width:0.8;stroke-linecap:butt" />
+  <line
+   id="clock-minute"
+   x1="265"
+   y1="61.2"
+   x2="265"
+   y2="53.6"
+   style="stroke:#1a1a1a;stroke-width:0.65;stroke-linecap:butt" />
   <!-- Second hand — iconic red paddle/lollipop -->
-  <g id="clock-second">
-    <line x1="265" y1="63" x2="265" y2="53" style="stroke:#dd0000;stroke-width:0.25;stroke-linecap:butt" />
-    <circle cx="265" cy="53.5" r="1" style="fill:#dd0000;stroke:none" />
+  <g
+   id="clock-second">
+    <line
+   x1="265"
+   y1="62.5"
+   x2="265"
+   y2="53.8"
+   style="stroke:#dd0000;stroke-width:0.2;stroke-linecap:butt"
+   id="line31" />
+    <circle
+   cx="265"
+   cy="54.3"
+   r="0.85"
+   style="fill:#dd0000;stroke:none"
+   id="circle31" />
   </g>
   <!-- Center pivot -->
-  <circle cx="265" cy="60" r="0.7" style="fill:#1a1a1a" />
+  <circle
+   cx="265"
+   cy="60"
+   r="0.6"
+   style="fill:#1a1a1a"
+   id="circle32" />
   </g>
 </g><g
-   id="right-shelf"
-   inkscape:label="right-shelf"
-   style="stroke-linecap:round;stroke-linejoin:round"
-   transform="matrix(0.97850121,0,0,0.8461992,2.9741714,-7.2549487)">
-  <!-- Upper shelf -->
-  <path
-   style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="m 219,65 22,-1.5 v 1 L 219,66 Z"
-   id="shelf-upper-top" />
-  <path
-   style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="m 219,66 22,-1.5 V 66 l -22,1.5 z"
-   id="shelf-upper-front" />
-  <!-- Upper shelf curved bracket left -->
-  <path
-   style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="m 221,67.5 c 0,1.5 0,4.5 -1.5,5.5"
-   id="bracket-upper-left" />
-  <!-- Upper shelf curved bracket right -->
-  <path
-   style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="m 239,66 c 0,2 0,5 -1.5,6"
-   id="bracket-upper-right" />
-  <!-- Books on upper shelf -->
-  <!-- Demon Copperhead (Kingsolver) - burnt orange, medium -->
-  <path
-   style="fill:#c45a28;fill-opacity:1;stroke:#3a2010;stroke-width:0.3"
-   d="m 222,57.5 1.6,0.2 -0.2,6.8 -1.6,-0.2 z"
-   id="book-demon-spine" />
-  <!-- Page edges -->
-  <path
-   style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="m 223.6,57.7 0.4,-0.4 -0.2,6.8 -0.4,0.4 z"
-   id="book-demon-pages" />
-  <!-- Top edge detail -->
-  <path
-   style="fill:#b85020;fill-opacity:1;stroke:none"
-   d="m 222,57.5 1.6,0.2 0.4,-0.4 -1.6,-0.2 z"
-   id="book-demon-top" />
-  <text
-   transform="rotate(-90,143.2,-79.7)"
-   style="font-size:0.9px;font-family:'IM Fell English', serif;letter-spacing:0.05px;fill:#ffecd0"
-   id="text187">Demon</text>
-  <text
-   transform="rotate(-90,143.5,-79.7)"
-   style="font-size:0.55px;font-family:'IM Fell English', serif;letter-spacing:0.03px;fill:#ffd8a0"
-   id="text188">Copperhead</text>
-
-  <!-- Hamlet (Shakespeare) - dark crimson, thinner -->
-  <path
-   style="fill:#5a1828;fill-opacity:1;stroke:#3a1018;stroke-width:0.3"
-   d="m 224.3,57.3 1.1,0.1 -0.2,7 -1.1,-0.1 z"
-   id="book-hamlet-spine" />
-  <path
-   style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="m 225.4,57.4 0.3,-0.3 -0.2,7 -0.3,0.3 z"
-   id="book-hamlet-pages" />
-  <path
-   style="fill:#4a1020;fill-opacity:1;stroke:none"
-   d="m 224.3,57.3 1.1,0.1 0.3,-0.3 -1.1,-0.1 z"
-   id="book-hamlet-top" />
-  <text
-   transform="rotate(-90,144,-80.8)"
-   style="font-size:0.85px;font-family:'IM Fell English', serif;letter-spacing:0.08px;fill:#e8c878"
-   id="text189">Hamlet</text>
-
-  <!-- A la recherche du temps perdu (Proust) - cream/ivory with gold, THICK -->
-  <path
-   style="fill:#f0e5c8;fill-opacity:1;stroke:#8a7050;stroke-width:0.3"
-   d="m 225.8,56.8 3,0.3 -0.2,7.5 -3,-0.3 z"
-   id="book-proust-spine" />
-  <!-- Gold decorative band -->
-  <path
-   style="fill:#c8a848;fill-opacity:0.6;stroke:none"
-   d="m 225.9,57.8 2.8,0.3 -0.05,0.9 -2.8,-0.3 z"
-   id="book-proust-band1" />
-  <path
-   style="fill:#c8a848;fill-opacity:0.6;stroke:none"
-   d="m 225.75,63.2 2.8,0.3 -0.05,0.5 -2.8,-0.3 z"
-   id="book-proust-band2" />
-  <path
-   style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="m 228.8,57.1 0.4,-0.4 -0.2,7.5 -0.4,0.4 z"
-   id="book-proust-pages" />
-  <path
-   style="fill:#e8d8b8;fill-opacity:1;stroke:none"
-   d="m 225.8,56.8 3,0.3 0.4,-0.4 -3,-0.3 z"
-   id="book-proust-top" />
-  <text
-   transform="rotate(-90,145.4,-81.6)"
-   style="font-size:0.7px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#6a5030"
-   id="text190">A la recherche</text>
-  <text
-   transform="rotate(-90,145.65,-81.85)"
-   style="font-size:0.6px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#7a6040"
-   id="text191">du temps perdu</text>
-  <text
-   transform="rotate(-90,144.2,-82.2)"
-   style="font-style:italic;font-size:0.5px;font-family:'IM Fell English', serif;fill:#8a7050"
-   id="text192">Proust</text>
-
-  <!-- Physical Biology of the Cell - teal, thick textbook -->
-  <path
-   style="fill:#1a5868;fill-opacity:1;stroke:#0a3040;stroke-width:0.3"
-   d="m 229.2,57.3 2.2,0.2 -0.2,7.2 -2.2,-0.2 z"
-   id="book-physbio-spine" />
-  <path
-   style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="m 231.4,57.5 0.4,-0.4 -0.2,7.2 -0.4,0.4 z"
-   id="book-physbio-pages" />
-  <path
-   style="fill:#185060;fill-opacity:1;stroke:none"
-   d="m 229.2,57.3 2.2,0.2 0.4,-0.4 -2.2,-0.2 z"
-   id="book-physbio-top" />
-  <!-- White title band -->
-  <path
-   style="fill:#ffffff;fill-opacity:0.2;stroke:none"
-   d="m 229.3,59.5 2,0.2 -0.05,1.3 -2,-0.2 z"
-   id="book-physbio-band" />
-  <text
-   transform="rotate(-90,147.05,-83.05)"
-   style="font-size:0.6px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#c0e8f0"
-   id="text193">Physical Biology</text>
-  <text
-   transform="rotate(-90,147.05,-83.55)"
-   style="font-size:0.55px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#a0d0e0"
-   id="text194">of the Cell</text>
-
-  <!-- Organic Chemistry of Biological Pathways - navy, thick, slightly leaning -->
-  <path
-   style="fill:#182840;fill-opacity:1;stroke:#0a1828;stroke-width:0.3"
-   d="m 231.8,57.8 2.4,0.7 0.6,6.4 -2.4,-0.4 z"
-   id="book-orgchem-spine" />
-  <path
-   style="fill:#f5f0e5;fill-opacity:1;stroke:#d0c8b8;stroke-width:0.15"
-   d="m 234.2,58.5 0.5,-0.5 0.6,6.5 -0.5,0.4 z"
-   id="book-orgchem-pages" />
-  <path
-   style="fill:#102038;fill-opacity:1;stroke:none"
-   d="m 231.8,57.8 2.4,0.7 0.5,-0.5 -2.4,-0.7 z"
-   id="book-orgchem-top" />
-  <text
-   transform="rotate(-87,150.32634,-90.665385)"
-   style="font-size:0.55px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#90b0d0"
-   id="text195">Organic Chem.</text>
-  <text
-   transform="rotate(-87,150.57634,-90.92883)"
-   style="font-size:0.5px;font-family:'IM Fell English', serif;letter-spacing:0.02px;fill:#80a0c0"
-   id="text196">Biol. Pathways</text>
-  <!-- Lower shelf -->
-  <path
-   style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="m 219,82 22,-1.5 v 1 L 219,83 Z"
-   id="shelf-lower-top" />
-  <path
-   style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="m 219,83 22,-1.5 V 83 l -22,1.5 z"
-   id="shelf-lower-front" />
-  <!-- Lower shelf curved bracket left -->
-  <path
-   style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="m 221,84.5 c 0,1.5 0,4.5 -1.5,5.5"
-   id="bracket-lower-left" />
-  <!-- Lower shelf curved bracket right -->
-  <path
-   style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="m 239,83 c 0,2 0,5 -1.5,6"
-   id="bracket-lower-right" />
-  <!-- Small jar/vase on lower shelf -->
-  <path
-   style="fill:#b8a088;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
-   d="m 233,76 c -0.5,0 -1,0.5 -1,1 l -0.5,3 c 0,0.5 1,1 2,1 1,0 2,-0.5 2,-1 L 235,77 c 0,-0.5 -0.5,-1 -1,-1 z"
-   id="jar" />
-  <ellipse
-   cx="233.5"
-   cy="76"
-   rx="1.2"
-   ry="0.40000001"
-   style="fill:#a89078;stroke:#4a3520;stroke-width:0.2"
-   id="jar-rim" />
-  <!-- Pink variegated philodendron -->
-  <!-- Stems -->
-  <path
-   style="fill:none;stroke:#4a7838;stroke-width:0.35"
-   d="m 233.5,76 c -0.5,-1.5 -1,-3 -2,-4.5"
-   id="philo-stem1" />
-  <path
-   style="fill:none;stroke:#4a7838;stroke-width:0.35"
-   d="m 233.5,76 c 1,-2 2,-4 3,-5.5"
-   id="philo-stem2" />
-  <path
-   style="fill:none;stroke:#4a7838;stroke-width:0.3"
-   d="m 233.5,76 c -0.5,-2 -2,-3.5 -3.5,-5"
-   id="philo-stem3" />
-  <path
-   style="fill:none;stroke:#4a7838;stroke-width:0.3"
-   d="M 233.5,76 C 234,74 235,72 236,71"
-   id="philo-stem4" />
-  <path
-   style="fill:none;stroke:#4a7838;stroke-width:0.25"
-   d="m 233.5,76 c 0.3,-2 1,-4 0.5,-6.5"
-   id="philo-stem5" />
-  <!-- Heart-shaped leaves (philodendron) with pink variegation -->
-  <!-- Leaf 1 - large, top left, mostly green with pink splash -->
-  <path
-   style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
-   d="m 231.5,71.5 c -1,-1 -2,-1.5 -2.5,-2.5 0,-1 1,-1.5 2,-1 0.5,-1 1,-0.5 1,0.5 0.5,-1 1,-1.5 1.5,-0.5 0.5,1 -0.5,2 -2,3.5 z"
-   id="philo-leaf1"
-   transform="rotate(-15,231.5,71.5)" />
-  <path
-   style="fill:#e890a0;fill-opacity:0.6;stroke:none"
-   d="m 230.5,69.5 c 0,-0.5 0.5,-1 1,-0.5 0,0.5 -0.5,1 -1,0.5 z"
-   id="philo-leaf1-pink"
-   transform="rotate(-15,231.5,71.5)" />
-  <!-- Leaf vein -->
-  <path
-   style="fill:none;stroke:#2a5830;stroke-width:0.12;stroke-opacity:0.5"
-   d="M 231.5,71.5 C 231.2,70 231,69 231.2,68"
-   id="philo-vein1"
-   transform="rotate(-15,231.5,71.5)" />
-  <!-- Leaf 2 - large, top right, heavy pink variegation -->
-  <path
-   style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
-   d="m 236.5,70.5 c 1,-1 2,-1.5 2.5,-2.5 0,-1 -1,-1.5 -2,-1 -0.5,-1 -1,-0.5 -1,0.5 -0.5,-1 -1,-1.5 -1.5,-0.5 -0.5,1 0.5,2 2,3.5 z"
-   id="philo-leaf2"
-   transform="rotate(10,236.5,70.5)" />
-  <path
-   style="fill:#e890a0;fill-opacity:0.65;stroke:none"
-   d="m 237,69 c 0.5,-1 1,-1.5 0.5,-2 -0.5,0 -1,0.5 -1,1 0,0.5 0.5,1 0.5,1 z"
-   id="philo-leaf2-pink1"
-   transform="rotate(10,236.5,70.5)" />
-  <path
-   style="fill:#f0a0b0;fill-opacity:0.5;stroke:none"
-   d="m 235.5,68.5 c 0,-0.5 0.5,-1 0.5,-0.5 0,0.5 -0.5,1 -0.5,0.5 z"
-   id="philo-leaf2-pink2"
-   transform="rotate(10,236.5,70.5)" />
-  <path
-   style="fill:none;stroke:#2a5830;stroke-width:0.12;stroke-opacity:0.5"
-   d="M 236.5,70.5 C 236.8,69 237,68 236.8,67"
-   id="philo-vein2"
-   transform="rotate(10,236.5,70.5)" />
-  <!-- Leaf 3 - medium, lower left, green with pink edge -->
-  <path
-   style="fill:#48904a;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
-   d="m 230,71 c -0.8,-0.8 -1.5,-1 -2,-1.8 0,-0.7 0.8,-1 1.5,-0.4 0.3,-0.8 0.7,-0.6 0.8,0.2 0.5,-0.8 0.9,-1 1.2,-0.4 0,0.6 -0.7,1.4 -1.5,2.4 z"
-   id="philo-leaf3"
-   transform="rotate(-35,230,71)" />
-  <path
-   style="fill:#e890a0;fill-opacity:0.55;stroke:none"
-   d="m 228.8,69.5 c -0.3,-0.3 -0.3,-0.7 0.2,-0.5 0.2,0.3 0,0.7 -0.2,0.5 z"
-   id="philo-leaf3-pink"
-   transform="rotate(-35,230,71)" />
-  <!-- Leaf 4 - small, drooping right -->
-  <path
-   style="fill:#3a8048;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
-   d="m 236,71 c 0.8,-0.5 1.2,-0.8 1.5,-1.5 0,-0.5 -0.5,-0.7 -1,-0.3 -0.2,-0.4 -0.5,-0.4 -0.7,0 -0.3,-0.4 -0.6,-0.4 -0.8,0 0,0.6 0.5,1 1,1.8 z"
-   id="philo-leaf4"
-   transform="rotate(30,236,71)" />
-  <path
-   style="fill:#f0a0b0;fill-opacity:0.7;stroke:none"
-   d="m 236.5,69.8 c 0.3,-0.3 0.5,-0.6 0.3,-0.8 -0.3,0 -0.5,0.3 -0.3,0.8 z"
-   id="philo-leaf4-pink"
-   transform="rotate(30,236,71)" />
-  <!-- Leaf 5 - top center, almost entirely pink! (new growth) -->
-  <path
-   style="fill:#e88098;fill-opacity:0.9;stroke:#c06878;stroke-width:0.15"
-   d="m 234,69.5 c -0.7,-0.7 -1,-1.2 -1,-1.7 0,-0.5 0.5,-0.8 1,-0.3 0.2,-0.5 0.5,-0.5 0.7,0 0.3,-0.5 0.6,-0.2 0.6,0.3 0,0.5 -0.6,1 -1.3,1.7 z"
-   id="philo-leaf5-pink" />
-  <path
-   style="fill:#48904a;fill-opacity:0.35;stroke:none"
-   d="m 233.8,68.5 c -0.3,-0.5 -0.3,-1 0.2,-0.7 0,0.4 -0.2,0.7 -0.2,0.7 z"
-   id="philo-leaf5-green" />
-  <path
-   style="fill:none;stroke:#c06878;stroke-width:0.1;stroke-opacity:0.5"
-   d="m 234,69.5 c 0,-1 0,-1.5 0,-2"
-   id="philo-vein5" />
-</g><g
+   id="g2"
+   transform="translate(0.14195869,13.628034)"><path
+     style="fill:none;stroke:#4a3520;stroke-width:0.454974;stroke-linecap:round;stroke-linejoin:round"
+     d="m 219.22294,49.863497 c 0,1.269299 0,3.807897 -1.46775,4.654096"
+     id="bracket-upper-left" /><g
+     id="g1"><path
+       style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.454974;stroke-linecap:round;stroke-linejoin:round"
+       d="m 217.26594,47.747999 21.52702,-1.269298 V 47.3249 l -21.52702,1.269299 z"
+       id="shelf-upper-top" /><path
+       style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.454974;stroke-linecap:round;stroke-linejoin:round"
+       d="M 217.26594,48.594199 238.79296,47.3249 v 1.269299 l -21.52702,1.269298 z"
+       id="shelf-upper-front" /><path
+       style="fill:none;stroke:#4a3520;stroke-width:0.454974;stroke-linecap:round;stroke-linejoin:round"
+       d="m 236.83596,48.594199 c 0,1.692398 0,4.230996 -1.46775,5.077195"
+       id="bracket-upper-right" /><path
+       style="fill:#c45a28;fill-opacity:1;stroke:#3a2010;stroke-width:0.351096;stroke-linecap:round;stroke-linejoin:round"
+       d="m 220.29944,39.573405 2.01358,0.217666 -0.25169,7.400656 -2.01359,-0.217666 z"
+       id="book-demon-spine" /><path
+       style="fill:#c45a28;fill-opacity:1;stroke:#3a2010;stroke-width:0.175548;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 222.31302,39.791071 0.50339,-0.435333 -0.25169,7.400657 -0.50339,0.435332 z"
+       id="book-demon-pages" /><path
+       style="fill:#f4eee4;fill-opacity:1;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 220.29944,39.573405 2.01358,0.217666 0.50339,-0.435333 -2.01357,-0.217666 z"
+       id="book-demon-top" /><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-size:1.05329px;font-family:'IM Fell English', serif;letter-spacing:0.0585162px;fill:#ffecd0;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text187"
+       x="-48.322666"
+       y="205.71231">Demon</text><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-size:0.643678px;font-family:'IM Fell English', serif;letter-spacing:0.0351096px;fill:#ffd8a0;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text188"
+       x="-48.47472"
+       y="206.1667">Copperhead</text><path
+       style="fill:#5a1828;fill-opacity:1;stroke:#3a1018;stroke-width:0.351096;stroke-linecap:round;stroke-linejoin:round"
+       d="m 223.19395,39.355738 1.38437,0.108834 -0.25171,7.618322 -1.38435,-0.108833 z"
+       id="book-hamlet-spine" /><path
+       style="fill:#5a1828;fill-opacity:1;stroke:#3a1018;stroke-width:0.175548;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 224.57832,39.464572 0.37754,-0.3265 -0.2517,7.618323 -0.37755,0.326499 z"
+       id="book-hamlet-pages" /><path
+       style="fill:#f5f0e5;fill-opacity:1;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 223.19395,39.355738 1.38437,0.108834 0.37754,-0.3265 -1.38435,-0.108833 z"
+       id="book-hamlet-top" /><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-size:0.994774px;font-family:'IM Fell English', serif;letter-spacing:0.0936255px;fill:#e8c878;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text189"
+       x="-48.648331"
+       y="208.40068">Hamlet</text><path
+       style="fill:#f0e5c8;fill-opacity:1;stroke:#8a7050;stroke-width:0.351096;stroke-linecap:round;stroke-linejoin:round"
+       d="m 225.08171,38.811573 3.77546,0.326499 -0.2517,8.162488 -3.77546,-0.326499 z"
+       id="book-proust-spine" /><path
+       style="fill:#c8a848;fill-opacity:0.6;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 225.20756,39.899905 3.52376,0.326499 -0.063,0.979498 -3.52377,-0.326498 z"
+       id="book-proust-band1" /><path
+       style="fill:#c8a848;fill-opacity:0.6;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 225.01878,45.776896 3.52377,0.3265 -0.063,0.544165 -3.52377,-0.326499 z"
+       id="book-proust-band2" /><path
+       style="fill:#f0e5c8;fill-opacity:1;stroke:#8a7050;stroke-width:0.175548;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 228.85717,39.138072 0.5034,-0.435333 -0.25171,8.162489 -0.50339,0.435332 z"
+       id="book-proust-pages" /><path
+       style="fill:#f5f0e5;fill-opacity:1;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 225.08171,38.811573 3.77546,0.326499 0.5034,-0.435333 -3.77547,-0.326499 z"
+       id="book-proust-top" /><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-size:0.819226px;font-family:'IM Fell English', serif;letter-spacing:0.0234064px;fill:#6a5030;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text190"
+       x="-49.927757"
+       y="210.71719">A la recherche</text><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-size:0.702193px;font-family:'IM Fell English', serif;letter-spacing:0.0234064px;fill:#7a6040;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text191"
+       x="-49.927757"
+       y="211.30235">du temps perdu</text><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-style:italic;font-size:0.585162px;font-family:'IM Fell English', serif;fill:#8a7050;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text192"
+       x="-47.821178"
+       y="210.01501">Proust</text><path
+       style="fill:#1a5868;fill-opacity:1;stroke:#0a3040;stroke-width:0.351096;stroke-linecap:round;stroke-linejoin:round"
+       d="m 229.36057,39.355738 2.76868,0.217667 -0.25169,7.835989 -2.7687,-0.217667 z"
+       id="book-physbio-spine" /><path
+       style="fill:#1a5868;fill-opacity:1;stroke:#0a3040;stroke-width:0.175548;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 232.12925,39.573405 0.5034,-0.435333 -0.2517,7.835989 -0.50339,0.435333 z"
+       id="book-physbio-pages" /><path
+       style="fill:#f5f0e5;fill-opacity:1;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 229.36057,39.355738 2.76868,0.217667 0.5034,-0.435333 -2.76869,-0.217666 z"
+       id="book-physbio-top" /><path
+       style="fill:#ffffff;fill-opacity:0.2;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 229.48642,41.750068 2.51699,0.217666 -0.063,1.414832 -2.51699,-0.217666 z"
+       id="book-physbio-band" /><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-size:0.702193px;font-family:'IM Fell English', serif;letter-spacing:0.0234064px;fill:#c0e8f0;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text193"
+       x="-50.161827"
+       y="214.3452">Physical Biology</text><text
+       transform="matrix(0,-0.92994148,1.0753365,0,0,0)"
+       style="font-size:0.643678px;font-family:'IM Fell English', serif;letter-spacing:0.0234064px;fill:#a0d0e0;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text194"
+       x="-49.57666"
+       y="214.93036">of the Cell</text><path
+       style="fill:#182840;fill-opacity:1;stroke:#0a1828;stroke-width:0.351096;stroke-linecap:round;stroke-linejoin:round"
+       d="m 232.63265,39.899905 3.02037,0.761832 0.75509,6.965324 -3.02036,-0.435334 z"
+       id="book-orgchem-spine" /><path
+       style="fill:#182840;fill-opacity:1;stroke:#0a1828;stroke-width:0.175548;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 235.65302,40.661737 0.62926,-0.544166 0.75509,7.074156 -0.62926,0.435334 z"
+       id="book-orgchem-pages" /><path
+       style="fill:#f5f0e5;fill-opacity:1;stroke:none;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       d="m 232.63265,39.899905 3.02037,0.761832 0.62926,-0.544166 -3.02038,-0.761833 z"
+       id="book-orgchem-top" /><text
+       transform="matrix(-0.12703481,-0.92165716,1.0625373,-0.16298604,0,0)"
+       style="font-size:0.643678px;font-family:'IM Fell English', serif;letter-spacing:0.0234064px;fill:#90b0d0;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text195"
+       x="-87.72126"
+       y="210.25368">Organic Chemistry</text><text
+       transform="matrix(-0.12703481,-0.92165716,1.0625373,-0.16298604,0,0)"
+       style="font-size:0.585162px;font-family:'IM Fell English', serif;letter-spacing:0.0234064px;fill:#80a0c0;stroke-width:1.17032;stroke-linecap:round;stroke-linejoin:round"
+       id="text196"
+       x="-88.002304"
+       y="210.78339">of biological pathways</text></g></g><g
+   id="g34"
+   transform="matrix(0.97850121,0,0,0.8461992,3.4757498,-23.33367)"
+   style="stroke-linecap:round;stroke-linejoin:round"><path
+     style="fill:none;stroke:#4a3520;stroke-width:0.5"
+     d="m 221,84.5 c 0,1.5 0,4.5 -1.5,5.5"
+     id="bracket-lower-left" /><g
+     id="g33"><path
+       style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
+       d="m 219,82 22,-1.5 v 1 L 219,83 Z"
+       id="shelf-lower-top" /><path
+       style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
+       d="m 219,83 22,-1.5 V 83 l -22,1.5 z"
+       id="shelf-lower-front" /><path
+       style="fill:none;stroke:#4a3520;stroke-width:0.5"
+       d="m 239,83 c 0,2 0,5 -1.5,6"
+       id="bracket-lower-right" /><g
+       id="g35"
+       transform="translate(-3.114747,0.86128401)"><path
+         style="fill:#b8a088;fill-opacity:1;stroke:#4a3520;stroke-width:0.3"
+         d="m 233,76 c -0.5,0 -1,0.5 -1,1 l -0.5,3 c 0,0.5 1,1 2,1 1,0 2,-0.5 2,-1 L 235,77 c 0,-0.5 -0.5,-1 -1,-1 z"
+         id="jar" /><ellipse
+         cx="233.5"
+         cy="76"
+         rx="1.2"
+         ry="0.40000001"
+         style="fill:#a89078;stroke:#4a3520;stroke-width:0.2"
+         id="jar-rim" /><path
+         style="fill:none;stroke:#4a7838;stroke-width:0.35"
+         d="m 233.5,76 c -0.5,-1.5 -1,-3 -2,-4.5"
+         id="philo-stem1" /><path
+         style="fill:none;stroke:#4a7838;stroke-width:0.35"
+         d="m 233.5,76 c 1,-2 2,-4 3,-5.5"
+         id="philo-stem2" /><path
+         style="fill:none;stroke:#4a7838;stroke-width:0.3"
+         d="m 233.5,76 c -0.5,-2 -2,-3.5 -3.5,-5"
+         id="philo-stem3" /><path
+         style="fill:none;stroke:#4a7838;stroke-width:0.3"
+         d="M 233.5,76 C 234,74 235,72 236,71"
+         id="philo-stem4" /><path
+         style="fill:none;stroke:#4a7838;stroke-width:0.25"
+         d="m 233.5,76 c 0.3,-2 1,-4 0.5,-6.5"
+         id="philo-stem5" /><path
+         style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
+         d="m 231.5,71.5 c -1,-1 -2,-1.5 -2.5,-2.5 0,-1 1,-1.5 2,-1 0.5,-1 1,-0.5 1,0.5 0.5,-1 1,-1.5 1.5,-0.5 0.5,1 -0.5,2 -2,3.5 z"
+         id="philo-leaf1"
+         transform="rotate(-15,231.5,71.5)" /><path
+         style="fill:#e890a0;fill-opacity:0.6;stroke:none"
+         d="m 230.5,69.5 c 0,-0.5 0.5,-1 1,-0.5 0,0.5 -0.5,1 -1,0.5 z"
+         id="philo-leaf1-pink"
+         transform="rotate(-15,231.5,71.5)" /><path
+         style="fill:none;stroke:#2a5830;stroke-width:0.12;stroke-opacity:0.5"
+         d="M 231.5,71.5 C 231.2,70 231,69 231.2,68"
+         id="philo-vein1"
+         transform="rotate(-15,231.5,71.5)" /><path
+         style="fill:#3a8048;fill-opacity:0.9;stroke:#2a5830;stroke-width:0.2"
+         d="m 236.5,70.5 c 1,-1 2,-1.5 2.5,-2.5 0,-1 -1,-1.5 -2,-1 -0.5,-1 -1,-0.5 -1,0.5 -0.5,-1 -1,-1.5 -1.5,-0.5 -0.5,1 0.5,2 2,3.5 z"
+         id="philo-leaf2"
+         transform="rotate(10,236.5,70.5)" /><path
+         style="fill:#e890a0;fill-opacity:0.65;stroke:none"
+         d="m 237,69 c 0.5,-1 1,-1.5 0.5,-2 -0.5,0 -1,0.5 -1,1 0,0.5 0.5,1 0.5,1 z"
+         id="philo-leaf2-pink1"
+         transform="rotate(10,236.5,70.5)" /><path
+         style="fill:#f0a0b0;fill-opacity:0.5;stroke:none"
+         d="m 235.5,68.5 c 0,-0.5 0.5,-1 0.5,-0.5 0,0.5 -0.5,1 -0.5,0.5 z"
+         id="philo-leaf2-pink2"
+         transform="rotate(10,236.5,70.5)" /><path
+         style="fill:none;stroke:#2a5830;stroke-width:0.12;stroke-opacity:0.5"
+         d="M 236.5,70.5 C 236.8,69 237,68 236.8,67"
+         id="philo-vein2"
+         transform="rotate(10,236.5,70.5)" /><path
+         style="fill:#48904a;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
+         d="m 230,71 c -0.8,-0.8 -1.5,-1 -2,-1.8 0,-0.7 0.8,-1 1.5,-0.4 0.3,-0.8 0.7,-0.6 0.8,0.2 0.5,-0.8 0.9,-1 1.2,-0.4 0,0.6 -0.7,1.4 -1.5,2.4 z"
+         id="philo-leaf3"
+         transform="rotate(-35,230,71)" /><path
+         style="fill:#e890a0;fill-opacity:0.55;stroke:none"
+         d="m 228.8,69.5 c -0.3,-0.3 -0.3,-0.7 0.2,-0.5 0.2,0.3 0,0.7 -0.2,0.5 z"
+         id="philo-leaf3-pink"
+         transform="rotate(-35,230,71)" /><path
+         style="fill:#3a8048;fill-opacity:0.85;stroke:#2a5830;stroke-width:0.18"
+         d="m 236,71 c 0.8,-0.5 1.2,-0.8 1.5,-1.5 0,-0.5 -0.5,-0.7 -1,-0.3 -0.2,-0.4 -0.5,-0.4 -0.7,0 -0.3,-0.4 -0.6,-0.4 -0.8,0 0,0.6 0.5,1 1,1.8 z"
+         id="philo-leaf4"
+         transform="rotate(30,236,71)" /><path
+         style="fill:#f0a0b0;fill-opacity:0.7;stroke:none"
+         d="m 236.5,69.8 c 0.3,-0.3 0.5,-0.6 0.3,-0.8 -0.3,0 -0.5,0.3 -0.3,0.8 z"
+         id="philo-leaf4-pink"
+         transform="rotate(30,236,71)" /><path
+         style="fill:#e88098;fill-opacity:0.9;stroke:#c06878;stroke-width:0.15"
+         d="m 234,69.5 c -0.7,-0.7 -1,-1.2 -1,-1.7 0,-0.5 0.5,-0.8 1,-0.3 0.2,-0.5 0.5,-0.5 0.7,0 0.3,-0.5 0.6,-0.2 0.6,0.3 0,0.5 -0.6,1 -1.3,1.7 z"
+         id="philo-leaf5-pink" /><path
+         style="fill:#48904a;fill-opacity:0.35;stroke:none"
+         d="m 233.8,68.5 c -0.3,-0.5 -0.3,-1 0.2,-0.7 0,0.4 -0.2,0.7 -0.2,0.7 z"
+         id="philo-leaf5-green" /><path
+         style="fill:none;stroke:#c06878;stroke-width:0.1;stroke-opacity:0.5"
+         d="m 234,69.5 c 0,-1 0,-1.5 0,-2"
+         id="philo-vein5" /></g></g></g><g
    id="crafting-desk"
    style="stroke-linecap:round;stroke-linejoin:round"
    transform="matrix(0.97850121,0,0,0.8461992,2.9741714,-0.07616689)">
@@ -5430,55 +5579,6 @@
    r="0.12"
    style="fill:#ffffff;fill-opacity:0.2"
    id="circle224" />
-</g><g
-   id="fermentation-shelf-0"
-   inkscape:label="fermentation-shelf-upper"
-   style="stroke-linecap:round;stroke-linejoin:round"
-   transform="matrix(0.97850121,0,0,0.8461992,3.8019007,-49.16237)">
-  <!-- Shelf board -->
-  <path
-   style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="m 219,99 22,-1.5 v 1 l -22,1.5 z"
-   id="shelf-ferm-top-2" />
-  <path
-   style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.5"
-   d="m 219,100 22,-1.5 v 1.5 l -22,1.5 z"
-   id="shelf-ferm-front-3" />
-  <!-- Curved brackets -->
-  <path
-   style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="m 221,101.5 c 0,1.5 0,4.5 -1.5,5.5"
-   id="path209-9" />
-  <path
-   style="fill:none;stroke:#4a3520;stroke-width:0.5"
-   d="m 239,100 c 0,2 0,5 -1.5,6"
-   id="path210-9" />
-
-  <!-- === KOMBUCHA JAR (left, taller) === -->
-  
-
-  <!-- === KEFIR JAR (right, shorter/wider) === -->
-  
-
-  <!-- Tiny bubbles in kombucha (fermentation activity) -->
-  <circle
-   cx="223.5"
-   cy="95"
-   r="0.15000001"
-   style="fill:#ffffff;fill-opacity:0.3"
-   id="circle222-8" />
-  <circle
-   cx="224.5"
-   cy="94"
-   r="0.1"
-   style="fill:#ffffff;fill-opacity:0.25"
-   id="circle223-1" />
-  <circle
-   cx="224"
-   cy="96"
-   r="0.12"
-   style="fill:#ffffff;fill-opacity:0.2"
-   id="circle224-4" />
 </g><g
    id="brompton-bike"
    inkscape:label="brompton"
@@ -7436,36 +7536,108 @@
    inkscape:label="coffee_mug"
    transform="matrix(0.97850121,0,0,0.8461992,2.9741714,-0.07616689)">
   <!-- Mug shadow -->
-  <ellipse cx="198.3" cy="107.2" rx="2.3" ry="0.5" style="fill:#000000;fill-opacity:0.07;stroke:none" />
+  <ellipse
+   cx="198.3"
+   cy="107.2"
+   rx="2.3"
+   ry="0.5"
+   style="fill:#000000;fill-opacity:0.07;stroke:none"
+   id="ellipse32" />
   <!-- Mug body (slightly tapered) -->
-  <path d="M 196,103.5 195.7,106.5 c -0.05,0.3 0.2,0.5 0.5,0.5 l 3.6,0 c 0.3,0 0.55,-0.2 0.5,-0.5 L 200,103.5 Z"
-        style="fill:#f0e8d8;stroke:#c0b090;stroke-width:0.25" id="mug-body" />
+  <path
+   d="M 196,103.5 195.7,106.5 c -0.05,0.3 0.2,0.5 0.5,0.5 l 3.6,0 c 0.3,0 0.55,-0.2 0.5,-0.5 L 200,103.5 Z"
+   style="fill:#f0e8d8;stroke:#c0b090;stroke-width:0.25"
+   id="mug-body" />
   <!-- Mug body highlight (left side light reflection) -->
-  <path d="M 196.2,103.8 195.95,106.3 c 0,0.1 0.1,0.2 0.2,0.2 l 0.8,0 0.25,-2.7 z"
-        style="fill:#ffffff;fill-opacity:0.15;stroke:none" id="mug-highlight" />
+  <path
+   d="M 196.2,103.8 195.95,106.3 c 0,0.1 0.1,0.2 0.2,0.2 l 0.8,0 0.25,-2.7 z"
+   style="fill:#ffffff;fill-opacity:0.15;stroke:none"
+   id="mug-highlight" />
   <!-- Handle -->
-  <path d="M 200,104.3 c 0.9,-0.1 1.4,0.4 1.4,1.1 0,0.7 -0.5,1.2 -1.4,1.1"
-        style="fill:none;stroke:#c0b090;stroke-width:0.45;stroke-linecap:round" id="mug-handle" />
+  <path
+   d="M 200,104.3 c 0.9,-0.1 1.4,0.4 1.4,1.1 0,0.7 -0.5,1.2 -1.4,1.1"
+   style="fill:none;stroke:#c0b090;stroke-width:0.45;stroke-linecap:round"
+   id="mug-handle" />
   <!-- Coffee surface (dark liquid) -->
-  <ellipse cx="198" cy="103.5" rx="2" ry="0.55" style="fill:#2a1208;stroke:none" id="mug-coffee" />
+  <ellipse
+   cx="198"
+   cy="103.5"
+   rx="2"
+   ry="0.55"
+   style="fill:#2a1208;stroke:none"
+   id="mug-coffee" />
   <!-- Coffee highlight (reflection on liquid) -->
-  <ellipse cx="197.3" cy="103.4" rx="0.7" ry="0.2" style="fill:#4a2a18;fill-opacity:0.5;stroke:none" id="coffee-shine" />
+  <ellipse
+   cx="197.3"
+   cy="103.4"
+   rx="0.7"
+   ry="0.2"
+   style="fill:#4a2a18;fill-opacity:0.5;stroke:none"
+   id="coffee-shine" />
   <!-- Mug rim -->
-  <ellipse cx="198" cy="103.5" rx="2.1" ry="0.65" style="fill:none;stroke:#d0c0a0;stroke-width:0.2" id="mug-rim" />
+  <ellipse
+   cx="198"
+   cy="103.5"
+   rx="2.1"
+   ry="0.65"
+   style="fill:none;stroke:#d0c0a0;stroke-width:0.2"
+   id="mug-rim" />
   <!-- Steam wisp 1 -->
-  <path d="M 197,103 c -0.5,-1.2 0.5,-2.5 0,-3.8" style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round" id="steam1">
-    <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" repeatCount="indefinite" begin="0s" />
-    <animateTransform attributeName="transform" type="translate" values="0,0;-0.3,-2" dur="2.5s" repeatCount="indefinite" begin="0s" />
+  <path
+   d="M 197,103 c -0.5,-1.2 0.5,-2.5 0,-3.8"
+   style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round"
+   id="steam1">
+    <animate
+   attributeName="opacity"
+   values="0;0.6;0"
+   dur="2.5s"
+   repeatCount="indefinite"
+   begin="0s" />
+    <animateTransform
+   attributeName="transform"
+   type="translate"
+   values="0,0;-0.3,-2"
+   dur="2.5s"
+   repeatCount="indefinite"
+   begin="0s" />
   </path>
   <!-- Steam wisp 2 -->
-  <path d="M 198,102.8 c 0.4,-1 -0.3,-2 0.2,-3.2" style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round" id="steam2">
-    <animate attributeName="opacity" values="0;0.5;0" dur="3s" repeatCount="indefinite" begin="0.8s" />
-    <animateTransform attributeName="transform" type="translate" values="0,0;0.2,-2.5" dur="3s" repeatCount="indefinite" begin="0.8s" />
+  <path
+   d="M 198,102.8 c 0.4,-1 -0.3,-2 0.2,-3.2"
+   style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round"
+   id="steam2">
+    <animate
+   attributeName="opacity"
+   values="0;0.5;0"
+   dur="3s"
+   repeatCount="indefinite"
+   begin="0.8s" />
+    <animateTransform
+   attributeName="transform"
+   type="translate"
+   values="0,0;0.2,-2.5"
+   dur="3s"
+   repeatCount="indefinite"
+   begin="0.8s" />
   </path>
   <!-- Steam wisp 3 -->
-  <path d="M 199,103 c -0.4,-1.3 0.5,-2.2 0,-3.5" style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round" id="steam3">
-    <animate attributeName="opacity" values="0;0.55;0" dur="2.8s" repeatCount="indefinite" begin="1.5s" />
-    <animateTransform attributeName="transform" type="translate" values="0,0;0.15,-2.2" dur="2.8s" repeatCount="indefinite" begin="1.5s" />
+  <path
+   d="M 199,103 c -0.4,-1.3 0.5,-2.2 0,-3.5"
+   style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round"
+   id="steam3">
+    <animate
+   attributeName="opacity"
+   values="0;0.55;0"
+   dur="2.8s"
+   repeatCount="indefinite"
+   begin="1.5s" />
+    <animateTransform
+   attributeName="transform"
+   type="translate"
+   values="0,0;0.15,-2.2"
+   dur="2.8s"
+   repeatCount="indefinite"
+   begin="1.5s" />
   </path>
 </g><g
    id="leather-shoes"
@@ -7631,7 +7803,7 @@
 </g><g
    id="g21455"
    inkscape:label="tintin_fusee"
-   transform="matrix(0.43138931,0,0,0.37306168,151.66332,-4.1174167)"
+   transform="matrix(0.43138931,0,0,0.37306168,185.59145,61.893372)"
    style="stroke-linecap:round;stroke-linejoin:round"><image
      width="17.015699"
      height="8.5078497"
