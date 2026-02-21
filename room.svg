@@ -2712,7 +2712,73 @@
    ry="1.3"
    id="ellipse138" />
   </g>
-</g></g><g
+</g>
+<!-- Loose floor plank (interactive) - aligned with floor perspective -->
+<g
+   id="loose-plank-group"
+   transform="matrix(0.97850121,0,0,0.97850121,2.5774835,2.3157495)">
+  <!-- Dark gap underneath (visible when plank is lifted) -->
+  <path
+   id="plank-gap"
+   style="opacity:0;fill:#1a0a00;stroke:none"
+   d="M 125.5,138 H 137 l -5.5,22 H 117 Z" />
+
+  <!-- Cute mouse head peeking from under tilted plank (initially hidden) -->
+  <g id="mouse-peek" style="opacity:0;pointer-events:none">
+    <ellipse cx="124" cy="157.5" rx="2.2" ry="1.8" style="fill:#b5a595;stroke:#7a6a5a;stroke-width:0.15" id="peek-head" />
+    <ellipse cx="122.3" cy="155.7" rx="1.1" ry="1.3" style="fill:#c8b8a8;stroke:#7a6a5a;stroke-width:0.12" id="peek-ear-l" />
+    <ellipse cx="122.3" cy="155.8" rx="0.65" ry="0.8" style="fill:#e8b0a0;fill-opacity:0.7" id="peek-ear-l-inner" />
+    <ellipse cx="125.7" cy="155.7" rx="1.1" ry="1.3" style="fill:#c8b8a8;stroke:#7a6a5a;stroke-width:0.12" id="peek-ear-r" />
+    <ellipse cx="125.7" cy="155.8" rx="0.65" ry="0.8" style="fill:#e8b0a0;fill-opacity:0.7" id="peek-ear-r-inner" />
+    <circle cx="123" cy="157.2" r="0.55" style="fill:#1a1a1a" id="peek-eye-l" />
+    <circle cx="123.2" cy="157" r="0.18" style="fill:white" id="peek-shine-l" />
+    <circle cx="125" cy="157.2" r="0.55" style="fill:#1a1a1a" id="peek-eye-r" />
+    <circle cx="125.2" cy="157" r="0.18" style="fill:white" id="peek-shine-r" />
+    <ellipse cx="124" cy="158.5" rx="0.35" ry="0.25" style="fill:#e8a0a0" id="peek-nose" />
+    <line x1="123" y1="158.2" x2="120.5" y2="157.5" style="stroke:#9a8a7a;stroke-width:0.08" id="peek-wh1" />
+    <line x1="123" y1="158.5" x2="120.5" y2="158.5" style="stroke:#9a8a7a;stroke-width:0.08" id="peek-wh2" />
+    <line x1="123" y1="158.8" x2="120.8" y2="159.3" style="stroke:#9a8a7a;stroke-width:0.08" id="peek-wh3" />
+    <line x1="125" y1="158.2" x2="127.5" y2="157.5" style="stroke:#9a8a7a;stroke-width:0.08" id="peek-wh4" />
+    <line x1="125" y1="158.5" x2="127.5" y2="158.5" style="stroke:#9a8a7a;stroke-width:0.08" id="peek-wh5" />
+    <line x1="125" y1="158.8" x2="127.2" y2="159.3" style="stroke:#9a8a7a;stroke-width:0.08" id="peek-wh6" />
+  </g>
+
+  <!-- Full mouse for emerge and scurry animation (initially hidden) -->
+  <g id="floor-mouse" inkscape:label="floor_mouse" style="opacity:0;pointer-events:none">
+    <ellipse cx="126" cy="157" rx="3.5" ry="2" style="fill:#b5a595;stroke:#7a6a5a;stroke-width:0.2" id="mouse-body" />
+    <ellipse cx="122" cy="156.5" rx="2" ry="1.5" style="fill:#b5a595;stroke:#7a6a5a;stroke-width:0.15" id="mouse-head" />
+    <ellipse cx="121" cy="155" rx="0.9" ry="1.1" style="fill:#c8b8a8;stroke:#7a6a5a;stroke-width:0.1" id="mouse-ear-l" />
+    <ellipse cx="121" cy="155.1" rx="0.5" ry="0.65" style="fill:#e8b0a0;fill-opacity:0.6" id="mouse-ear-l-inner" />
+    <ellipse cx="123" cy="154.8" rx="0.8" ry="1.0" style="fill:#c8b8a8;stroke:#7a6a5a;stroke-width:0.1" id="mouse-ear-r" />
+    <ellipse cx="123" cy="154.9" rx="0.45" ry="0.6" style="fill:#e8b0a0;fill-opacity:0.6" id="mouse-ear-r-inner" />
+    <circle cx="121.2" cy="156.2" r="0.4" style="fill:#1a1a1a" id="mouse-eye" />
+    <circle cx="121.35" cy="156.05" r="0.13" style="fill:white" id="mouse-shine" />
+    <ellipse cx="120.2" cy="156.8" rx="0.3" ry="0.2" style="fill:#e8a0a0" id="mouse-nose" />
+    <line x1="120.2" y1="156.5" x2="118" y2="155.8" style="stroke:#9a8a7a;stroke-width:0.08" id="mouse-wh1" />
+    <line x1="120.2" y1="156.8" x2="118" y2="156.8" style="stroke:#9a8a7a;stroke-width:0.08" id="mouse-wh2" />
+    <line x1="120.2" y1="157.1" x2="118.2" y2="157.8" style="stroke:#9a8a7a;stroke-width:0.08" id="mouse-wh3" />
+    <path d="M 129.5,157.3 Q 133,155.5 135,157" style="fill:none;stroke:#9a8a7a;stroke-width:0.4;stroke-linecap:round" id="mouse-tail" />
+    <ellipse cx="123.5" cy="158.5" rx="0.5" ry="0.3" style="fill:#c8b0a0" id="mouse-paw-l" />
+    <ellipse cx="128" cy="158.8" rx="0.5" ry="0.3" style="fill:#c8b0a0" id="mouse-paw-r" />
+  </g>
+
+  <!-- Loose plank (clickable) -->
+  <g
+   id="loose-plank"
+   inkscape:label="loose_plank">
+    <path
+   id="plank-surface"
+   style="fill:#a97845;stroke:#5a3818;stroke-width:0.4;fill-opacity:1"
+   d="m 125.94978,137.944 h 10.80034 l -5.5,22.168 -15.7494,-0.28 z" />
+    <line x1="131" y1="138" x2="124" y2="160"
+   style="stroke:#7a5828;stroke-width:0.2;stroke-opacity:0.35" id="plank-grain1" />
+    <line x1="134" y1="138" x2="127.5" y2="160"
+   style="stroke:#9a7848;stroke-width:0.15;stroke-opacity:0.25" id="plank-grain2" />
+    <path style="fill:none;stroke:#2a1000;stroke-width:0.5;stroke-opacity:0.6"
+   d="m 117,160 h 14.5" id="plank-shadow" />
+  </g>
+</g>
+</g><g
    id="baseboards"
    inkscape:label="baseboards"
    transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)"><path
@@ -2930,27 +2996,76 @@
    style="fill:#8a6840;fill-opacity:1;stroke:#4a3520;stroke-width:0.8"
    d="m 85.04,109.85 131.44,-1.26 v 6 C 175,116.5 125,117 85.04,115.85 Z"
    id="desk-front-apron" />
-      <!-- Drawer panel outline -->
-      <path
-   style="fill:none;stroke:#6b4e30;stroke-width:0.35"
+      <!-- Interactive drawer (closed state) -->
+      <g
+   id="desk-drawer-closed"
+   inkscape:label="desk_drawer">
+        <path
+   style="fill:#8a6840;fill-opacity:0.6;stroke:#6b4e30;stroke-width:0.4"
    d="m 130,110.5 45,-0.5 v 4.2 c -10,0.6 -35,0.8 -45,0.6 z"
    id="drawer-panel" />
-      <!-- Drawer knob -->
-      <circle
+        <circle
    cx="152.5"
    cy="112.2"
    r="0.60000002"
    style="fill:#6b4e30;stroke:#4a3520;stroke-width:0.2"
    id="drawer-knob" />
+      </g>
+      <!-- Interactive drawer (open state - initially hidden) -->
+      <g
+   id="desk-drawer-open"
+   inkscape:label="desk_drawer_open"
+   style="opacity:0">
+        <path
+   style="fill:#3a2815;stroke:#2a1a0a;stroke-width:0.3"
+   d="m 130,110.5 45,-0.5 v 4.2 c -10,0.6 -35,0.8 -45,0.6 z"
+   id="drawer-cavity" />
+        <path
+   style="fill:#9a7850;stroke:#6b4e30;stroke-width:0.4"
+   d="m 128,114.5 49,-0.3 v 5 c -12,0.4 -38,0.6 -49,0.4 z"
+   id="drawer-front-open" />
+        <circle
+   cx="152.5"
+   cy="117"
+   r="0.69999999"
+   style="fill:#6b4e30;stroke:#4a3520;stroke-width:0.2"
+   id="drawer-knob-open" />
+        <g
+   id="old-paper"
+   inkscape:label="old_paper">
+          <path
+   style="fill:#f4e8c8;stroke:#c9b896;stroke-width:0.2"
+   d="m 138,111.2 20,-0.2 0.5,2.8 -21,0.3 z"
+   id="paper-base" />
+          <ellipse
+   cx="145"
+   cy="112"
+   rx="2"
+   ry="0.80000001"
+   style="fill:#d4c4a0;fill-opacity:0.4"
+   id="paper-stain1" />
+          <ellipse
+   cx="152"
+   cy="112.5"
+   rx="1.5"
+   ry="0.60000002"
+   style="fill:#c9b090;fill-opacity:0.3"
+   id="paper-stain2" />
+          <path
+   style="fill:none;stroke:#8a7a5a;stroke-width:0.15;stroke-opacity:0.5"
+   d="m 140,111.5 h 15 m -14,0.6 h 12 m -11,0.6 h 10"
+   id="paper-lines" />
+        </g>
+      </g>
       <!-- Desk top surface -->
       <path
-   style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.8"
+   style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.8;pointer-events:none"
    d="m 120.93,100.78 61.28,0.23 34.27,7.58 -131.44,1.26 z"
    id="desk-top-surface" />
       <!-- Wood grain lines on desk surface -->
       <g
    id="desk-grain"
-   style="fill:none;stroke:#8a6838;stroke-width:0.2;stroke-opacity:0.35">
+   style="fill:none;stroke:#8a6838;stroke-width:0.2;stroke-opacity:0.35;pointer-events:none">
         <path
    d="m 122,101.5 c 18,1.5 48,3.5 93,7.5"
    id="path140" />
@@ -2976,7 +3091,7 @@
 <g
    id="sunbeams"
    inkscape:label="sunbeams"
-   style="opacity:0.7"
+   style="opacity:0.7;pointer-events:none"
    transform="matrix(1.0270258,0,0,0.9514237,-5.1180048,-1.0528822)">
   <path
    style="fill:url(#linearGradient614);stroke:none"
@@ -2994,6 +3109,7 @@
 <g
    id="dust-motes"
    inkscape:label="dust-motes"
+   style="pointer-events:none"
    transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <circle
    cx="135"
@@ -4806,7 +4922,39 @@
    id="path204"
    sodipodi:nodetypes="ccccc" />
   <!-- Wood grain on surface -->
-  
+
+  <!-- LED Cycling Gloves on crafting desk -->
+  <g id="led-cycling-gloves" inkscape:label="led_cycling_gloves">
+    <!-- Left glove (palm down, fingers pointing right/toward wall) -->
+    <path d="M 247,119.5 C 246,118.5 246.2,117 247.5,116.5 L 250,116 C 251.2,116.3 252,117 252,118 L 252.5,120 Z"
+      style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.2" id="glove-l" />
+    <!-- Left glove finger cuts -->
+    <path d="M 248,116.8 L 248.5,116.5 M 249.3,116.3 L 249.8,116.1 M 250.5,116.2 L 251,116.3"
+      style="fill:none;stroke:#3a3a3a;stroke-width:0.15" id="glove-l-fingers" />
+    <!-- Left LED strips (glowing green) -->
+    <path d="M 248.2,119 L 248.5,117" style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-opacity:0.9;stroke-linecap:round" id="led-l1" />
+    <path d="M 249.5,119.2 L 249.7,116.8" style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-opacity:0.9;stroke-linecap:round" id="led-l2" />
+    <path d="M 250.8,119.5 L 251,117.2" style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-opacity:0.9;stroke-linecap:round" id="led-l3" />
+    <!-- Left LED glow -->
+    <path d="M 248.2,119 L 248.5,117" style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-opacity:0.15;stroke-linecap:round" id="led-l1-glow" />
+    <path d="M 249.5,119.2 L 249.7,116.8" style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-opacity:0.15;stroke-linecap:round" id="led-l2-glow" />
+    <path d="M 250.8,119.5 L 251,117.2" style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-opacity:0.15;stroke-linecap:round" id="led-l3-glow" />
+
+    <!-- Right glove (slightly offset) -->
+    <path d="M 255,120.5 C 254,119.5 254.2,118 255.5,117.5 L 258,117 C 259.2,117.3 260,118 260,119 L 260.5,121 Z"
+      style="fill:#2a2a2a;stroke:#1a1a1a;stroke-width:0.2" id="glove-r" />
+    <!-- Right glove finger cuts -->
+    <path d="M 256,117.8 L 256.5,117.5 M 257.3,117.3 L 257.8,117.1 M 258.5,117.2 L 259,117.3"
+      style="fill:none;stroke:#3a3a3a;stroke-width:0.15" id="glove-r-fingers" />
+    <!-- Right LED strips -->
+    <path d="M 256.2,120 L 256.5,118" style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-opacity:0.9;stroke-linecap:round" id="led-r1" />
+    <path d="M 257.5,120.2 L 257.7,117.8" style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-opacity:0.9;stroke-linecap:round" id="led-r2" />
+    <path d="M 258.8,120.5 L 259,118.2" style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-opacity:0.9;stroke-linecap:round" id="led-r3" />
+    <!-- Right LED glow -->
+    <path d="M 256.2,120 L 256.5,118" style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-opacity:0.15;stroke-linecap:round" id="led-r1-glow" />
+    <path d="M 257.5,120.2 L 257.7,117.8" style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-opacity:0.15;stroke-linecap:round" id="led-r2-glow" />
+    <path d="M 258.8,120.5 L 259,118.2" style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-opacity:0.15;stroke-linecap:round" id="led-r3-glow" />
+  </g>
 </g><g
    id="fermentation-shelf"
    inkscape:label="fermentation"
