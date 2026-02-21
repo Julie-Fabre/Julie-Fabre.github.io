@@ -207,17 +207,6 @@ nav ul li a.rss-button:hover {
     color: #888;
 }
 
-.discovery-counter {
-    text-align: center;
-    margin: 2px 0;
-    font-size: 12px;
-    color: #bbb;
-    transition: color 0.3s ease;
-}
-
-.discovery-counter.just-found {
-    color: rgb(255, 68, 0);
-}
 
 /* Interactive room */
 #room-container {
@@ -359,10 +348,6 @@ body.dark-mode footer {
 
 body.dark-mode .room-hint {
     color: #666666;
-}
-
-body.dark-mode .discovery-counter {
-    color: #555555;
 }
 
 body.dark-mode #search {

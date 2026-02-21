@@ -140,34 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
       svg.style.marginLeft = "calc(-50vw + 50%)";
       container.appendChild(svg);
 
-      // === DISCOVERY COUNTER ===
-      var counterEl = document.getElementById("discovery-counter");
-      var specialSecrets = ["lamp", "curtains", "drawer", "old-paper", "floor-mouse"];
-      var totalSecrets = interactiveObjects.length + specialSecrets.length;
-      var discovered = new Set(JSON.parse(localStorage.getItem("discoveredSecrets") || "[]"));
-
-      function updateCounter() {
-        if (!counterEl) return;
-        counterEl.textContent = "Secrets found: " + discovered.size + " / " + totalSecrets;
-        if (discovered.size === totalSecrets) {
-          counterEl.textContent += " — you found them all!";
-        }
-      }
-
-      function discover(id) {
-        if (discovered.has(id)) return;
-        discovered.add(id);
-        localStorage.setItem("discoveredSecrets", JSON.stringify(Array.from(discovered)));
-        updateCounter();
-        // Brief highlight
-        if (counterEl) {
-          counterEl.classList.add("just-found");
-          setTimeout(function () { counterEl.classList.remove("just-found"); }, 800);
-        }
-      }
-
-      updateCounter();
-
       // Shared state for toggle interactions
       var lampOn = localStorage.getItem('darkMode') !== 'true';
       var curtainsOpen = true;
@@ -239,9 +211,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Wrap in an SVG <a> element for navigation
+        var isExternal = obj.url.indexOf("http") === 0;
         var link = document.createElementNS("http://www.w3.org/2000/svg", "a");
         link.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", obj.url);
         link.setAttribute("href", obj.url);
+        if (isExternal) link.setAttribute("target", "_blank");
         link.classList.add("interactive-object");
 
         el.parentNode.insertBefore(link, el);
@@ -258,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // First tap - show tooltip, prevent navigation
             e.preventDefault();
             clearActiveState();
-            discover(obj.svgLabel);
 
             activeLink = link;
             link.classList.add("mobile-active");
@@ -280,7 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           // Desktop: hover behavior
           link.addEventListener("mouseenter", function () {
-            discover(obj.svgLabel);
             tooltip.textContent = obj.tooltip;
             tooltip.classList.add("visible");
           });
@@ -376,7 +348,6 @@ document.addEventListener("DOMContentLoaded", function () {
         lamp.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
-          discover("lamp");
           lampOn = !lampOn;
           applyLampState(true);
         });
@@ -493,7 +464,6 @@ document.addEventListener("DOMContentLoaded", function () {
         function toggleCurtains(e) {
           e.preventDefault();
           e.stopPropagation();
-          discover("curtains");
           curtainsOpen = !curtainsOpen;
 
           if (curtainsOpen) {
@@ -549,7 +519,6 @@ document.addEventListener("DOMContentLoaded", function () {
         function toggleDrawer(e) {
           e.preventDefault();
           e.stopPropagation();
-          discover("drawer");
           drawerIsOpen = !drawerIsOpen;
 
           if (drawerIsOpen) {
@@ -591,7 +560,6 @@ document.addEventListener("DOMContentLoaded", function () {
           oldPaper.style.cursor = "pointer";
           oldPaper.addEventListener("click", function (e) {
             e.stopPropagation();
-            discover("old-paper");
             window.location.href = "old-paper.html";
           });
           oldPaper.addEventListener("mouseenter", function () {
@@ -639,7 +607,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Show cute mouse head peeking after a short delay
             if (mouseState === "hidden") {
               mouseState = "peeking";
-              discover("floor-mouse");
               setTimeout(function () {
                 mousePeek.style.opacity = "1";
                 mousePeek.style.pointerEvents = "auto";
