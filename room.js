@@ -400,11 +400,12 @@ document.addEventListener("DOMContentLoaded", function () {
         closedGroup.style.pointerEvents = "none";
         closedGroup.style.cursor = "pointer";
 
-        // Left half — follows rod bow at top, window depth at bottom
+        // Left half — follows rod bow at top, window frame bottom at bottom
+        // Window frame bottom: y≈110 at edges, y≈105 at center (bow window)
         var closedL = document.createElementNS("http://www.w3.org/2000/svg", "path");
         closedL.setAttribute("d",
           "M 99,50.5 C 107,52 115,54 121.7,55 C 133,55.1 143,55.2 152,55.3" +
-          " L 152,103 C 143,103 133,103 121,103 C 110,104.5 104,106 99,107 Z");
+          " L 152,105 C 143,105 133,105 121,105 C 110,107 104,109 99,110 Z");
         closedL.setAttribute("style",
           "fill:url(#curtain-gradient);fill-opacity:0.92;stroke:#4a3520;stroke-width:0.3");
 
@@ -412,14 +413,14 @@ document.addEventListener("DOMContentLoaded", function () {
         var closedR = document.createElementNS("http://www.w3.org/2000/svg", "path");
         closedR.setAttribute("d",
           "M 204,50 C 196,52 189,54 181.8,55.4 C 170,55.35 160,55.3 152,55.3" +
-          " L 152,103 C 160,103 170,103 181.8,103 C 193,104.5 199,106 204,107 Z");
+          " L 152,105 C 160,105 170,105 181.8,105 C 193,107 199,109 204,110 Z");
         closedR.setAttribute("style",
           "fill:url(#curtain-gradient);fill-opacity:0.92;stroke:#4a3520;stroke-width:0.3");
 
         // Center seam
         var seam = document.createElementNS("http://www.w3.org/2000/svg", "line");
         seam.setAttribute("x1", "152"); seam.setAttribute("y1", "55.3");
-        seam.setAttribute("x2", "152"); seam.setAttribute("y2", "103");
+        seam.setAttribute("x2", "152"); seam.setAttribute("y2", "105");
         seam.setAttribute("style", "stroke:#8a6530;stroke-width:0.4;stroke-opacity:0.6");
 
         closedGroup.appendChild(closedL);
@@ -434,8 +435,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return 55.4 + (x - 181.8) / (205 - 181.8) * -5.4;
         }
         function botY(x) {
-          if (x <= 152) return 107 - (x - 99) / (152 - 99) * 4;
-          return 103 + (x - 152) / (204 - 152) * 4;
+          if (x <= 152) return 110 - (x - 99) / (152 - 99) * 5;
+          return 105 + (x - 152) / (204 - 152) * 5;
         }
 
         [105, 113, 121, 130, 139, 148, 156, 164, 173, 181, 190, 198].forEach(function (x, i) {
@@ -591,9 +592,43 @@ document.addEventListener("DOMContentLoaded", function () {
       var mouseState = "hidden"; // hidden → peeking → emerged → scurried
 
       if (loosePlank && plankGap && mousePeek && floorMouse) {
+        // Mouse stays BEFORE plank in DOM so it renders IN the gap (behind tilted plank).
+        // A separate invisible hit overlay AFTER the plank handles clicks.
+
+        // Wrap mouse groups in positioned <g> elements to move them into the
+        // visible gap area (lower-left of plank). Using wrappers avoids conflicts
+        // between SVG transform attributes and CSS transform transitions.
+        // With "right top" pivot, the plank's left side drops away when tilted,
+        // creating a wide visible gap at the lower-left for the mouse to peek from.
+        var svgNS_m = "http://www.w3.org/2000/svg";
+        var peekWrapper = document.createElementNS(svgNS_m, "g");
+        peekWrapper.setAttribute("transform", "translate(3,-17.5)");
+        mousePeek.parentNode.insertBefore(peekWrapper, mousePeek);
+        peekWrapper.appendChild(mousePeek);
+
+        var mouseWrapper = document.createElementNS(svgNS_m, "g");
+        mouseWrapper.setAttribute("transform", "translate(1,-17.5)");
+        floorMouse.parentNode.insertBefore(mouseWrapper, floorMouse);
+        mouseWrapper.appendChild(floorMouse);
+
+        // Hit overlay in loose-plank-group coords (where mouse visually appears
+        // after translate(3,-17.5): ears at ~(125, 138), head at ~(127, 140))
+        var mouseHitOverlay = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        mouseHitOverlay.setAttribute("x", "122");
+        mouseHitOverlay.setAttribute("y", "137");
+        mouseHitOverlay.setAttribute("width", "12");
+        mouseHitOverlay.setAttribute("height", "4");
+        mouseHitOverlay.setAttribute("rx", "2");
+        mouseHitOverlay.style.fill = "transparent";
+        mouseHitOverlay.style.pointerEvents = "none";
+        mouseHitOverlay.style.cursor = "pointer";
+        // Append after loose-plank so it sits on top for clicks
+        loosePlank.parentNode.appendChild(mouseHitOverlay);
+
         // Set up tilt animation on the plank
+        // Pivot at right-top so the left side drops away, revealing a wide gap
         loosePlank.style.transformBox = "fill-box";
-        loosePlank.style.transformOrigin = "center top";
+        loosePlank.style.transformOrigin = "right top";
         loosePlank.style.transition = "transform 0.4s ease";
         loosePlank.style.cursor = "pointer";
 
@@ -615,7 +650,7 @@ document.addEventListener("DOMContentLoaded", function () {
               mouseState = "peeking";
               setTimeout(function () {
                 mousePeek.style.opacity = "1";
-                mousePeek.style.pointerEvents = "auto";
+                mouseHitOverlay.style.pointerEvents = "all";
               }, 300);
             }
           } else {
@@ -624,7 +659,7 @@ document.addEventListener("DOMContentLoaded", function () {
             plankGap.style.opacity = "0";
             if (mouseState === "peeking") {
               mousePeek.style.opacity = "0";
-              mousePeek.style.pointerEvents = "none";
+              mouseHitOverlay.style.pointerEvents = "none";
               mouseState = "hidden";
             }
             tooltip.classList.remove("visible");
@@ -646,40 +681,15 @@ document.addEventListener("DOMContentLoaded", function () {
           tooltip.style.top = (e.clientY + 12) + "px";
         });
 
-        // Mouse peek interaction — click to make it come out!
-        mousePeek.style.cursor = "pointer";
-        mousePeek.addEventListener("click", function (e) {
+        // Mouse interaction — hit overlay handles all clicks/hover
+        mouseHitOverlay.addEventListener("click", function (e) {
           e.stopPropagation();
           if (mouseState === "peeking") {
             mouseState = "emerged";
-            // Hide the peeking head
+            // Hide the peeking head, show the full mouse
             mousePeek.style.opacity = "0";
-            mousePeek.style.pointerEvents = "none";
-            // Show the full mouse
             floorMouse.style.opacity = "1";
-            floorMouse.style.pointerEvents = "auto";
-            floorMouse.style.cursor = "pointer";
-          }
-        });
-
-        mousePeek.addEventListener("mouseenter", function () {
-          if (mouseState === "peeking") {
-            tooltip.textContent = "A little mouse! Click to say hello";
-            tooltip.classList.add("visible");
-          }
-        });
-        mousePeek.addEventListener("mouseleave", function () {
-          tooltip.classList.remove("visible");
-        });
-        mousePeek.addEventListener("mousemove", function (e) {
-          tooltip.style.left = (e.clientX + 12) + "px";
-          tooltip.style.top = (e.clientY + 12) + "px";
-        });
-
-        // Full mouse interaction — click and it scurries away!
-        floorMouse.addEventListener("click", function (e) {
-          e.stopPropagation();
-          if (mouseState === "emerged") {
+          } else if (mouseState === "emerged") {
             mouseState = "scurried";
             tooltip.textContent = "Squeak!";
             tooltip.classList.add("visible");
@@ -688,21 +698,24 @@ document.addEventListener("DOMContentLoaded", function () {
             floorMouse.style.opacity = "0";
             setTimeout(function () {
               tooltip.classList.remove("visible");
-              floorMouse.style.pointerEvents = "none";
+              mouseHitOverlay.style.pointerEvents = "none";
             }, 700);
           }
         });
 
-        floorMouse.addEventListener("mouseenter", function () {
-          if (mouseState === "emerged") {
+        mouseHitOverlay.addEventListener("mouseenter", function () {
+          if (mouseState === "peeking") {
+            tooltip.textContent = "A little mouse! Click to say hello";
+            tooltip.classList.add("visible");
+          } else if (mouseState === "emerged") {
             tooltip.textContent = "A little mouse!";
             tooltip.classList.add("visible");
           }
         });
-        floorMouse.addEventListener("mouseleave", function () {
+        mouseHitOverlay.addEventListener("mouseleave", function () {
           tooltip.classList.remove("visible");
         });
-        floorMouse.addEventListener("mousemove", function (e) {
+        mouseHitOverlay.addEventListener("mousemove", function (e) {
           tooltip.style.left = (e.clientX + 12) + "px";
           tooltip.style.top = (e.clientY + 12) + "px";
         });
