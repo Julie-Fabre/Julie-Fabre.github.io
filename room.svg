@@ -26,14 +26,14 @@
    inkscape:document-units="mm"
    showgrid="false"
    inkscape:zoom="2.6472194"
-   inkscape:cx="416.28586"
-   inkscape:cy="451.79482"
+   inkscape:cx="434.41809"
+   inkscape:cy="309.75899"
    inkscape:window-width="1512"
    inkscape:window-height="849"
    inkscape:window-x="0"
    inkscape:window-y="33"
    inkscape:window-maximized="0"
-   inkscape:current-layer="g-room-fills"
+   inkscape:current-layer="keyboard-modelm"
    showguides="true" /><defs
    id="defs2"><linearGradient
    id="linearGradient1"
@@ -7624,10 +7624,7 @@
   </g>
 
   <!-- Coiled cable coming out the back -->
-  <path
-   d="m 152,102 c 0,-1 0.5,-1.5 0.5,-2.5 0,-0.5 -0.5,-0.7 -1,-0.5 0,0.5 0.5,0.8 0.5,1.3"
-   style="fill:none;stroke:#555555;stroke-width:0.35;stroke-linecap:round"
-   id="path548" />
+  
 </g><g
    id="mousepad-and-mouse"
    style="stroke-linecap:round;stroke-linejoin:round"

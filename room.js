@@ -1263,36 +1263,39 @@ document.addEventListener("DOMContentLoaded", function () {
         // Per-season visual config
         var seasonConfig = {
           spring: {
-            sky: [["#d8ecf8", 0.6], ["#ffe8e0", 0.25]],
+            sky: [["#e0f0ff", 0.6], ["#ffe8e0", 0.25]],
             sunTint: "#fffae0",
+            mountains: { fill: "#9E6850", face: "#B88068", snow: 0.7 },
             hills: [
               { fill: "#b8ccd8", opacity: 0.45 },
-              { fill: "#88c070", opacity: 0.6  },
-              { fill: "#60b848", opacity: 0.78 },
-              { fill: "#48a030", opacity: 0.88 }
+              { fill: "#98d078", opacity: 0.6  },
+              { fill: "#70c850", opacity: 0.78 },
+              { fill: "#58b838", opacity: 0.88 }
             ],
-            canopy: { shadow: "#1a5818", colors: ["#38882e","#50a838","#60c048"], highlight: "#80d858" },
-            grass: { stroke: "#48a830", opacity: 0.45 },
+            canopy: { shadow: "#2a6818", colors: ["#48a838","#60c048","#70d058"], highlight: "#90e068" },
+            grass: { stroke: "#58b838", opacity: 0.45 },
             flowers: { colors: ["#c82818","#e86020","#eaaa18","#d83020","#e84888"], count: { fg: 18, mid: 10, far: 8 } },
             overlay: "blossoms"
           },
           summer: {
-            sky: [["#d0e8f8", 0.6], ["#f0e8c8", 0.3]],
+            sky: [["#c0e0f8", 0.6], ["#f0e8c8", 0.3]],
             sunTint: "#fffde8",
+            mountains: { fill: "#A07048", face: "#B88860", snow: 0.6 },
             hills: [
               { fill: "#b0c8d8", opacity: 0.45 },
-              { fill: "#90b878", opacity: 0.6  },
-              { fill: "#68a848", opacity: 0.78 },
-              { fill: "#488a30", opacity: 0.88 }
+              { fill: "#78a060", opacity: 0.65 },
+              { fill: "#508838", opacity: 0.8  },
+              { fill: "#387828", opacity: 0.9  }
             ],
-            canopy: { shadow: "#2a5818", colors: ["#3a7828","#48922e","#58a838"], highlight: "#78c048" },
-            grass: { stroke: "#4a8830", opacity: 0.45 },
+            canopy: { shadow: "#1a4810", colors: ["#2a6818","#387828","#488a30"], highlight: "#60a838" },
+            grass: { stroke: "#387828", opacity: 0.5 },
             flowers: { colors: ["#c82818","#d83020","#e84030"], count: { fg: 15, mid: 7, far: 6 } },
             overlay: null
           },
           autumn: {
             sky: [["#e8d8c0", 0.6], ["#e8c8a0", 0.35]],
             sunTint: "#ffe8b0",
+            mountains: { fill: "#785838", face: "#987850", snow: 0.6 },
             hills: [
               { fill: "#c0b8a8", opacity: 0.45 },
               { fill: "#b89860", opacity: 0.6  },
@@ -1307,6 +1310,7 @@ document.addEventListener("DOMContentLoaded", function () {
           winter: {
             sky: [["#c8d8e8", 0.65], ["#d8d8e0", 0.3]],
             sunTint: "#f0e8d0",
+            mountains: { fill: "#585048", face: "#787060", snow: 0.85 },
             hills: [
               { fill: "#c8d0d8", opacity: 0.5  },
               { fill: "#b8c8c8", opacity: 0.55 },
@@ -1363,20 +1367,21 @@ document.addEventListener("DOMContentLoaded", function () {
         makeCloud(172, 56, 0.9);
         makeCloud(198, 61, 0.55);
 
-        // ===== MOUNTAINS (year-round, dramatic peaks) =====
+        // ===== MOUNTAINS (year-round, dramatic peaks, seasonal tint) =====
+        var mt = sConf.mountains;
         // Mountain silhouette — jagged peaks behind everything
         svgEl("path", { d:
           "M 98,86 L 105,78 L 110,82 L 118,68 L 124,75 L 130,72 L 138,80" +
           " L 145,70 L 150,76 L 158,64 L 165,74 L 172,71 L 178,62" +
           " L 184,72 L 190,68 L 196,75 L 202,70 L 208,78 L 208,113 L 98,113 Z",
-          style: "fill:#7888a0;fill-opacity:0.55" });
+          style: "fill:" + mt.fill + ";fill-opacity:1" });
         // Lighter face on peaks (sun-facing side)
         svgEl("path", { d:
           "M 118,68 L 124,75 L 120,75 Z M 145,70 L 150,76 L 147,76 Z" +
           " M 158,64 L 165,74 L 160,74 Z M 178,62 L 184,72 L 180,72 Z" +
           " M 202,70 L 208,78 L 205,78 Z",
-          style: "fill:#8898b0;fill-opacity:0.4" });
-        // Snow caps on the tallest peaks (year-round)
+          style: "fill:" + mt.face + ";fill-opacity:0.8" });
+        // Snow caps on the tallest peaks
         [[118,68,3.5],[145,70,2.8],[158,64,4],[178,62,4.5],[202,70,2.5]].forEach(function (pk) {
           svgEl("path", { d:
             "M " + pk[0] + "," + pk[1] +
@@ -1384,7 +1389,7 @@ document.addEventListener("DOMContentLoaded", function () {
             " C " + (pk[0] - pk[2]*0.2) + "," + (pk[1] + pk[2]*0.7) +
             " " + (pk[0] + pk[2]*0.3) + "," + (pk[1] + pk[2]*0.6) +
             " " + (pk[0] + pk[2]*0.7) + "," + (pk[1] + pk[2]) + " Z",
-            style: "fill:#e8eef4;fill-opacity:" + (season === "winter" ? "0.85" : "0.65") });
+            style: "fill:#e8eef4;fill-opacity:" + mt.snow });
         });
 
         // ===== ROLLING HILLS (seasonal colors, in front of mountains) =====
@@ -1409,16 +1414,28 @@ document.addEventListener("DOMContentLoaded", function () {
             style: "stroke:#5a3e20;stroke-width:" + (cr * 0.18) + ";stroke-linecap:round" });
 
           if (cc.colors) {
-            // Leafy season: canopy blobs in seasonal colors
-            svgEl("ellipse", { cx: x + cr*0.1, cy: cy + cr*0.3, rx: cr*1.05, ry: cr*0.8,
-              style: "fill:" + cc.shadow + ";fill-opacity:0.5" });
-            var offsets = [[-0.3, 0.1, 0.78], [0.25, -0.08, 0.88], [-0.05, -0.32, 0.72]];
-            offsets.forEach(function (o, i) {
-              svgEl("circle", { cx: x + cr*o[0], cy: cy + cr*o[1], r: cr*o[2],
-                style: "fill:" + cc.colors[i] + ";fill-opacity:0.88" });
+            // Leafy season: organic irregular canopy shape
+            // Shadow base
+            svgEl("ellipse", { cx: x + cr*0.1, cy: cy + cr*0.35, rx: cr*1.1, ry: cr*0.7,
+              style: "fill:" + cc.shadow + ";fill-opacity:0.45" });
+            // Irregular overlapping blobs (ellipses with varied proportions)
+            var blobs = [
+              [-0.4, 0.15, 0.7, 0.55, cc.colors[0], 0.9],
+              [ 0.35, 0.05, 0.65, 0.6, cc.colors[0], 0.85],
+              [-0.1, -0.2, 0.8, 0.5, cc.colors[1], 0.9],
+              [ 0.2, -0.35, 0.6, 0.45, cc.colors[1], 0.85],
+              [-0.25,-0.45, 0.5, 0.4, cc.colors[2], 0.85],
+              [ 0.15, 0.25, 0.55, 0.45, cc.colors[0], 0.8]
+            ];
+            blobs.forEach(function (b) {
+              svgEl("ellipse", { cx: x + cr*b[0], cy: cy + cr*b[1], rx: cr*b[2], ry: cr*b[3],
+                style: "fill:" + b[4] + ";fill-opacity:" + b[5] });
             });
-            svgEl("circle", { cx: x + cr*0.18, cy: cy - cr*0.48, r: cr*0.38,
+            // Sunlit highlight patches (small, irregular)
+            svgEl("ellipse", { cx: x + cr*0.15, cy: cy - cr*0.4, rx: cr*0.35, ry: cr*0.22,
               style: "fill:" + cc.highlight + ";fill-opacity:0.5" });
+            svgEl("ellipse", { cx: x - cr*0.2, cy: cy - cr*0.15, rx: cr*0.2, ry: cr*0.15,
+              style: "fill:" + cc.highlight + ";fill-opacity:0.3" });
           } else {
             // Winter: bare branches radiating from trunk top
             var tx = x + 0.15, ty = gy - th;
