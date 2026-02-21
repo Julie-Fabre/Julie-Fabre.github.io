@@ -297,12 +297,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         lamp.style.cursor = "pointer";
 
-        // Elements that dim more when lamp is off (far from window)
+        // Elements that dim when lamp is off (everything except screens, keyboard, mouse, books)
         var dimTargets = ["pegboard", "poster_basal_ganglia", "poster_cta",
                           "open_science_award", "fermentation", "right-shelf",
-                          "fermentation-shelf-upper", "corticostriatal_frame"].map(function (label) {
+                          "fermentation-shelf-upper", "corticostriatal_frame",
+                          "coffee_mug", "wall_clock", "table_desk", "desk_drawer",
+                          "leather_shoes", "leather_handbag", "tintin_fusee",
+                          "led_cycling_gloves", "brompton", "neuropixels_probe",
+                          "window-sill"].map(function (label) {
           return labelMap[label];
         }).filter(Boolean);
+
+        // Callbacks for other sections to hook into lamp toggle
+        var onLampToggle = [];
 
         // All lamp glow elements
         var glowIds = ["lamp-glow-effect", "lamp-glow-inner", "lamp-light-cone"];
@@ -338,6 +345,8 @@ document.addEventListener("DOMContentLoaded", function () {
             sunbeamsEl.style.transition = "opacity " + dur + " ease";
             sunbeamsEl.style.opacity = lampOn ? "0.7" : "0.25";
           }
+          // Notify other sections of lamp state change
+          onLampToggle.forEach(function (fn) { fn(lampOn, dur); });
           // Site-wide dark mode
           if (lampOn) {
             document.body.classList.remove("dark-mode");
@@ -929,11 +938,81 @@ document.addEventListener("DOMContentLoaded", function () {
         var steamEls = [svg.querySelector("#steam1"), svg.querySelector("#steam2"), svg.querySelector("#steam3")];
         var coffeeDrunk = false;
 
+        function stopSteam(dur) {
+          steamEls.forEach(function (s) {
+            if (s) {
+              s.style.transition = "opacity " + (dur || "0.5s") + " ease";
+              s.style.opacity = "0";
+              s.querySelectorAll("animate, animateTransform").forEach(function (a) {
+                a.setAttribute("repeatCount", "0");
+              });
+            }
+          });
+        }
+
+        function startSteam(dur) {
+          steamEls.forEach(function (s) {
+            if (s) {
+              // Remove inline opacity so SMIL animation controls it again
+              s.style.transition = "opacity " + (dur || "0.5s") + " ease";
+              s.style.removeProperty("opacity");
+              s.querySelectorAll("animate, animateTransform").forEach(function (a) {
+                a.setAttribute("repeatCount", "indefinite");
+                if (a.beginElement) a.beginElement();
+              });
+            }
+          });
+        }
+
         coffeeMug.style.cursor = "pointer";
+
+        // Dark mode: drain coffee, disable interaction
+        onLampToggle.push(function (isOn, dur) {
+          if (!isOn) {
+            coffeeDrunk = true;
+            coffeeMug.style.pointerEvents = "none";
+            coffeeMug.style.cursor = "default";
+            if (mugCoffee) {
+              mugCoffee.style.transition = "opacity " + dur + " ease";
+              mugCoffee.style.opacity = "0";
+            }
+            if (coffeeShine) {
+              coffeeShine.style.transition = "opacity " + dur + " ease";
+              coffeeShine.style.opacity = "0";
+            }
+            stopSteam(dur);
+          } else {
+            coffeeDrunk = false;
+            coffeeMug.style.pointerEvents = "";
+            coffeeMug.style.cursor = "pointer";
+            if (mugCoffee) {
+              mugCoffee.style.transition = "opacity " + dur + " ease";
+              mugCoffee.style.opacity = "1";
+            }
+            if (coffeeShine) {
+              coffeeShine.style.transition = "opacity " + dur + " ease";
+              coffeeShine.style.opacity = "0.5";
+            }
+            var ei = coffeeMug.querySelector("ellipse[cx='198'][ry='0.45']");
+            if (ei) coffeeMug.removeChild(ei);
+            startSteam(dur);
+          }
+        });
+
+        // Apply initial state if already dark
+        if (!lampOn) {
+          coffeeDrunk = true;
+          coffeeMug.style.pointerEvents = "none";
+          coffeeMug.style.cursor = "default";
+          if (mugCoffee) mugCoffee.style.opacity = "0";
+          if (coffeeShine) coffeeShine.style.opacity = "0";
+          stopSteam("0s");
+        }
 
         coffeeMug.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
+          if (!lampOn) return; // No interaction in dark mode
           if (!coffeeDrunk) {
             coffeeDrunk = true;
             // Drink the coffee — liquid fades away
