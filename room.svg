@@ -4794,6 +4794,41 @@
   <!-- Bulb glow (outer, soft) -->
   
 </g><g
+   id="wall-clock-group"
+   inkscape:label="wall_clock"
+   transform="matrix(0.97850121,0,0,0.8461992,2.9741714,-7.2549487)">
+  <!-- Shadow -->
+  <circle cx="230.5" cy="42.8" r="7.3" style="fill:#000000;fill-opacity:0.06;stroke:none" />
+  <!-- Wood frame ring -->
+  <circle cx="230" cy="42" r="7.2" style="fill:#5a3e20;stroke:#3a2510;stroke-width:0.5" />
+  <!-- Inner bevel -->
+  <circle cx="230" cy="42" r="6.5" style="fill:#6a4e30;stroke:none" />
+  <!-- Clock face -->
+  <circle cx="230" cy="42" r="6" style="fill:#faf5e8;stroke:#d8cbb0;stroke-width:0.2" />
+  <!-- Hour markers - major (12, 3, 6, 9) -->
+  <line x1="230" y1="36.5" x2="230" y2="37.5" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
+  <line x1="235.5" y1="42" x2="234.5" y2="42" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
+  <line x1="230" y1="47.5" x2="230" y2="46.5" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
+  <line x1="224.5" y1="42" x2="225.5" y2="42" style="stroke:#3a2510;stroke-width:0.45;stroke-linecap:round" />
+  <!-- Hour markers - minor -->
+  <circle cx="232.75" cy="37.24" r="0.22" style="fill:#5a4530" />
+  <circle cx="234.76" cy="39.25" r="0.22" style="fill:#5a4530" />
+  <circle cx="234.76" cy="44.75" r="0.22" style="fill:#5a4530" />
+  <circle cx="232.75" cy="46.76" r="0.22" style="fill:#5a4530" />
+  <circle cx="227.25" cy="46.76" r="0.22" style="fill:#5a4530" />
+  <circle cx="225.24" cy="44.75" r="0.22" style="fill:#5a4530" />
+  <circle cx="225.24" cy="39.25" r="0.22" style="fill:#5a4530" />
+  <circle cx="227.25" cy="37.24" r="0.22" style="fill:#5a4530" />
+  <!-- Hour hand (short, thick) -->
+  <line id="clock-hour" x1="230" y1="42" x2="230" y2="38.2" style="stroke:#2a1a08;stroke-width:0.55;stroke-linecap:round" />
+  <!-- Minute hand (long, medium) -->
+  <line id="clock-minute" x1="230" y1="42" x2="230" y2="37" style="stroke:#2a1a08;stroke-width:0.35;stroke-linecap:round" />
+  <!-- Second hand (longest, thin, red) -->
+  <line id="clock-second" x1="230" y1="43" x2="230" y2="36.8" style="stroke:#c83000;stroke-width:0.18;stroke-linecap:round" />
+  <!-- Center pivot -->
+  <circle cx="230" cy="42" r="0.55" style="fill:#2a1a08" />
+  <circle cx="230" cy="42" r="0.3" style="fill:#c83000" />
+</g><g
    id="right-shelf"
    inkscape:label="right-shelf"
    style="stroke-linecap:round;stroke-linejoin:round"
@@ -7380,6 +7415,42 @@
    style="fill:none;stroke:#555555;stroke-width:0.25;stroke-linecap:round"
    id="path553" />
   </g>
+</g><g
+   id="coffee-mug"
+   inkscape:label="coffee_mug"
+   transform="matrix(0.97850121,0,0,0.8461992,2.9741714,-0.07616689)">
+  <!-- Mug shadow -->
+  <ellipse cx="198.3" cy="107.2" rx="2.3" ry="0.5" style="fill:#000000;fill-opacity:0.07;stroke:none" />
+  <!-- Mug body (slightly tapered) -->
+  <path d="M 196,103.5 195.7,106.5 c -0.05,0.3 0.2,0.5 0.5,0.5 l 3.6,0 c 0.3,0 0.55,-0.2 0.5,-0.5 L 200,103.5 Z"
+        style="fill:#f0e8d8;stroke:#c0b090;stroke-width:0.25" id="mug-body" />
+  <!-- Mug body highlight (left side light reflection) -->
+  <path d="M 196.2,103.8 195.95,106.3 c 0,0.1 0.1,0.2 0.2,0.2 l 0.8,0 0.25,-2.7 z"
+        style="fill:#ffffff;fill-opacity:0.15;stroke:none" id="mug-highlight" />
+  <!-- Handle -->
+  <path d="M 200,104.3 c 0.9,-0.1 1.4,0.4 1.4,1.1 0,0.7 -0.5,1.2 -1.4,1.1"
+        style="fill:none;stroke:#c0b090;stroke-width:0.45;stroke-linecap:round" id="mug-handle" />
+  <!-- Coffee surface (dark liquid) -->
+  <ellipse cx="198" cy="103.5" rx="2" ry="0.55" style="fill:#2a1208;stroke:none" id="mug-coffee" />
+  <!-- Coffee highlight (reflection on liquid) -->
+  <ellipse cx="197.3" cy="103.4" rx="0.7" ry="0.2" style="fill:#4a2a18;fill-opacity:0.5;stroke:none" id="coffee-shine" />
+  <!-- Mug rim -->
+  <ellipse cx="198" cy="103.5" rx="2.1" ry="0.65" style="fill:none;stroke:#d0c0a0;stroke-width:0.2" id="mug-rim" />
+  <!-- Steam wisp 1 -->
+  <path d="M 197,103 c -0.5,-1.2 0.5,-2.5 0,-3.8" style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round" id="steam1">
+    <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" repeatCount="indefinite" begin="0s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;-0.3,-2" dur="2.5s" repeatCount="indefinite" begin="0s" />
+  </path>
+  <!-- Steam wisp 2 -->
+  <path d="M 198,102.8 c 0.4,-1 -0.3,-2 0.2,-3.2" style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round" id="steam2">
+    <animate attributeName="opacity" values="0;0.5;0" dur="3s" repeatCount="indefinite" begin="0.8s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;0.2,-2.5" dur="3s" repeatCount="indefinite" begin="0.8s" />
+  </path>
+  <!-- Steam wisp 3 -->
+  <path d="M 199,103 c -0.4,-1.3 0.5,-2.2 0,-3.5" style="fill:none;stroke:#888888;stroke-width:0.3;stroke-linecap:round" id="steam3">
+    <animate attributeName="opacity" values="0;0.55;0" dur="2.8s" repeatCount="indefinite" begin="1.5s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;0.15,-2.2" dur="2.8s" repeatCount="indefinite" begin="1.5s" />
+  </path>
 </g><g
    id="leather-shoes"
    inkscape:label="leather_shoes"

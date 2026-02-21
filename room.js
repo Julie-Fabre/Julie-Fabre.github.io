@@ -140,6 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
       svg.style.marginLeft = "calc(-50vw + 50%)";
       container.appendChild(svg);
 
+      // Prevent decorative overlays from blocking clicks (survives Inkscape re-saves)
+      ["desk-top-surface", "desk-grain", "sunbeams", "dust-motes"].forEach(function (id) {
+        var el = svg.querySelector("#" + id);
+        if (el) el.style.pointerEvents = "none";
+      });
+
       // Shared state for toggle interactions
       var lampOn = localStorage.getItem('darkMode') !== 'true';
       var curtainsOpen = true;
@@ -697,6 +703,139 @@ document.addEventListener("DOMContentLoaded", function () {
           tooltip.classList.remove("visible");
         });
         floorMouse.addEventListener("mousemove", function (e) {
+          tooltip.style.left = (e.clientX + 12) + "px";
+          tooltip.style.top = (e.clientY + 12) + "px";
+        });
+      }
+
+      // === WALL CLOCK (real time) ===
+      var clockHour = svg.querySelector("#clock-hour");
+      var clockMinute = svg.querySelector("#clock-minute");
+      var clockSecond = svg.querySelector("#clock-second");
+      if (clockHour && clockMinute && clockSecond) {
+        var clockCX = 230, clockCY = 42;
+        function updateClock() {
+          var now = new Date();
+          var h = now.getHours() % 12;
+          var m = now.getMinutes();
+          var s = now.getSeconds();
+          var hourAngle = (h + m / 60) * 30;
+          var minuteAngle = (m + s / 60) * 6;
+          var secondAngle = s * 6;
+          clockHour.setAttribute("transform", "rotate(" + hourAngle + "," + clockCX + "," + clockCY + ")");
+          clockMinute.setAttribute("transform", "rotate(" + minuteAngle + "," + clockCX + "," + clockCY + ")");
+          clockSecond.setAttribute("transform", "rotate(" + secondAngle + "," + clockCX + "," + clockCY + ")");
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Tooltip for the clock
+        var clockGroup = svg.querySelector("#wall-clock-group");
+        if (clockGroup) {
+          clockGroup.style.cursor = "pointer";
+          clockGroup.addEventListener("mouseenter", function () {
+            var now = new Date();
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var ampm = h >= 12 ? "pm" : "am";
+            var h12 = h % 12 || 12;
+            var mStr = m < 10 ? "0" + m : m;
+            tooltip.textContent = h12 + ":" + mStr + " " + ampm + " — your local time";
+            tooltip.classList.add("visible");
+          });
+          clockGroup.addEventListener("mouseleave", function () {
+            tooltip.classList.remove("visible");
+          });
+          clockGroup.addEventListener("mousemove", function (e) {
+            tooltip.style.left = (e.clientX + 12) + "px";
+            tooltip.style.top = (e.clientY + 12) + "px";
+          });
+        }
+      }
+
+      // === COFFEE MUG (click to drink) ===
+      var coffeeMug = svg.querySelector("#coffee-mug");
+      if (coffeeMug) {
+        var mugCoffee = svg.querySelector("#mug-coffee");
+        var coffeeShine = svg.querySelector("#coffee-shine");
+        var steamEls = [svg.querySelector("#steam1"), svg.querySelector("#steam2"), svg.querySelector("#steam3")];
+        var coffeeDrunk = false;
+
+        coffeeMug.style.cursor = "pointer";
+
+        coffeeMug.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (!coffeeDrunk) {
+            coffeeDrunk = true;
+            // Drink the coffee — liquid fades away
+            if (mugCoffee) {
+              mugCoffee.style.transition = "opacity 0.6s ease";
+              mugCoffee.style.opacity = "0";
+            }
+            if (coffeeShine) {
+              coffeeShine.style.transition = "opacity 0.4s ease";
+              coffeeShine.style.opacity = "0";
+            }
+            // Steam stops
+            steamEls.forEach(function (s) {
+              if (s) {
+                s.style.transition = "opacity 0.5s ease";
+                s.style.opacity = "0";
+                // Pause animations
+                s.querySelectorAll("animate, animateTransform").forEach(function (a) {
+                  a.setAttribute("repeatCount", "0");
+                });
+              }
+            });
+            // Show empty mug interior
+            var mugInside = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+            mugInside.setAttribute("cx", "198");
+            mugInside.setAttribute("cy", "103.5");
+            mugInside.setAttribute("rx", "1.8");
+            mugInside.setAttribute("ry", "0.45");
+            mugInside.setAttribute("style", "fill:#e8dcc8;stroke:none;opacity:0");
+            coffeeMug.insertBefore(mugInside, mugCoffee);
+            setTimeout(function () { mugInside.style.transition = "opacity 0.6s ease"; mugInside.style.opacity = "1"; }, 300);
+
+            tooltip.textContent = "Ahh, that's better!";
+            tooltip.classList.add("visible");
+            setTimeout(function () { tooltip.classList.remove("visible"); }, 1500);
+          } else {
+            // Refill!
+            coffeeDrunk = false;
+            if (mugCoffee) {
+              mugCoffee.style.opacity = "1";
+            }
+            if (coffeeShine) {
+              coffeeShine.style.opacity = "0.5";
+            }
+            // Remove the empty interior
+            var emptyInside = coffeeMug.querySelector("ellipse[cx='198'][ry='0.45']");
+            if (emptyInside) coffeeMug.removeChild(emptyInside);
+            // Restart steam
+            steamEls.forEach(function (s) {
+              if (s) {
+                s.style.opacity = "";
+                s.querySelectorAll("animate, animateTransform").forEach(function (a) {
+                  a.setAttribute("repeatCount", "indefinite");
+                });
+              }
+            });
+            tooltip.textContent = "Refilled!";
+            tooltip.classList.add("visible");
+            setTimeout(function () { tooltip.classList.remove("visible"); }, 1200);
+          }
+        });
+
+        coffeeMug.addEventListener("mouseenter", function () {
+          tooltip.textContent = coffeeDrunk ? "Empty... click to refill" : "Click for a coffee break!";
+          tooltip.classList.add("visible");
+        });
+        coffeeMug.addEventListener("mouseleave", function () {
+          tooltip.classList.remove("visible");
+        });
+        coffeeMug.addEventListener("mousemove", function (e) {
           tooltip.style.left = (e.clientX + 12) + "px";
           tooltip.style.top = (e.clientY + 12) + "px";
         });
