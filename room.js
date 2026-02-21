@@ -708,6 +708,182 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
+      // === SECRET FLOOR KNOT COMBO ===
+      // Knots must render AFTER all furniture so they receive clicks
+      // (SVG event order = last painted = first to receive events)
+      var floorPlanksEl = svg.querySelector("#floor-planks");
+      if (floorPlanksEl) {
+        var svgNS_k = "http://www.w3.org/2000/svg";
+        var knotLayer = document.createElementNS(svgNS_k, "g");
+        knotLayer.setAttribute("id", "floor-knots");
+        // Same transform as floor-planks so coordinates match
+        knotLayer.setAttribute("transform",
+          floorPlanksEl.getAttribute("transform") || "");
+        svg.appendChild(knotLayer); // appended last = on top for events
+
+        // 4 wood knots centered on planks (gap lines at y=129 computed from
+        // vanishing point 149.3,89 → each bottom x at y=170)
+        // Plank centers at y=129: 82.5, 91.5, 100, 108.5, 117.5, 126, 134.5,
+        //   143, 151.5, 160, 168.5, 177.5, 186.5, 195, 203.5, 212.5
+        // Avoiding loose plank area (~x=125-135)
+        var knotPositions = [
+          { x: 91, y: 129 },
+          { x: 151, y: 129 },
+          { x: 177, y: 129 },
+          { x: 204, y: 129 }
+        ];
+        var secretSequence = [2, 0, 3, 1]; // correct click order
+        var secretPos = 0;
+        var knotEls = [];
+        var diaryRevealed = localStorage.getItem("diaryFound") === "true";
+
+        knotPositions.forEach(function (pos, i) {
+          // Inner ring (wood knot detail)
+          var ring = document.createElementNS(svgNS_k, "ellipse");
+          ring.setAttribute("cx", pos.x);
+          ring.setAttribute("cy", pos.y);
+          ring.setAttribute("rx", "1");
+          ring.setAttribute("ry", "0.7");
+          ring.style.fill = "none";
+          ring.style.stroke = "#3a2008";
+          ring.style.strokeWidth = "0.2";
+          ring.style.strokeOpacity = "0.4";
+          ring.style.pointerEvents = "none";
+          knotLayer.appendChild(ring);
+
+          // Knot (clickable) — DEBUG: bright red, cursor pointer
+          var knot = document.createElementNS(svgNS_k, "ellipse");
+          knot.setAttribute("cx", pos.x);
+          knot.setAttribute("cy", pos.y);
+          knot.setAttribute("rx", "3");
+          knot.setAttribute("ry", "2");
+          knot.style.fill = "red";
+          knot.style.fillOpacity = "0.8";
+          knot.style.stroke = "red";
+          knot.style.strokeWidth = "0.5";
+          knot.style.strokeOpacity = "1";
+          knot.style.cursor = "pointer";
+          knot.style.transition = "fill 0.3s ease, fill-opacity 0.3s ease";
+          knotLayer.appendChild(knot);
+
+          knot.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (diaryRevealed) return;
+
+            if (secretSequence[secretPos] === i) {
+              // Correct — turn green
+              knot.style.fill = "#00cc44";
+              knot.style.fillOpacity = "0.9";
+              setTimeout(function () {
+                knot.style.fill = "red";
+                knot.style.fillOpacity = "0.8";
+              }, 500);
+
+              secretPos++;
+              if (secretPos === secretSequence.length) {
+                diaryRevealed = true;
+                localStorage.setItem("diaryFound", "true");
+                revealDiary();
+              }
+            } else {
+              // Wrong — brief white flash then reset
+              knot.style.fill = "white";
+              setTimeout(function () {
+                knot.style.fill = "red";
+              }, 200);
+              secretPos = 0;
+            }
+          });
+          knotEls.push(knot);
+        });
+
+        // Tiny diary book that appears near the loose plank
+        function revealDiary() {
+          var g = document.createElementNS(svgNS_k, "g");
+          g.setAttribute("id", "secret-diary");
+          // Use loose-plank-group transform so it sits on the floor
+          var plankGroupEl = svg.querySelector("#loose-plank-group");
+          g.setAttribute("transform",
+            plankGroupEl ? plankGroupEl.getAttribute("transform") || "" : "");
+          g.style.cursor = "pointer";
+
+          // Book cover
+          var cover = document.createElementNS(svgNS_k, "rect");
+          cover.setAttribute("x", "126");
+          cover.setAttribute("y", "128");
+          cover.setAttribute("width", "4.5");
+          cover.setAttribute("height", "6");
+          cover.setAttribute("rx", "0.3");
+          cover.setAttribute("style", "fill:#8a4a30;stroke:#5a2a18;stroke-width:0.25");
+          g.appendChild(cover);
+          // Spine
+          var spine = document.createElementNS(svgNS_k, "line");
+          spine.setAttribute("x1", "126.6");
+          spine.setAttribute("y1", "128.3");
+          spine.setAttribute("x2", "126.6");
+          spine.setAttribute("y2", "133.7");
+          spine.setAttribute("style", "stroke:#5a2a18;stroke-width:0.2;stroke-opacity:0.5");
+          g.appendChild(spine);
+          // Pages edge
+          var pages = document.createElementNS(svgNS_k, "rect");
+          pages.setAttribute("x", "127");
+          pages.setAttribute("y", "128.4");
+          pages.setAttribute("width", "3.2");
+          pages.setAttribute("height", "5.2");
+          pages.setAttribute("rx", "0.15");
+          pages.setAttribute("style", "fill:#f0e8d0;stroke:none;fill-opacity:0.5");
+          g.appendChild(pages);
+          // Tiny paw print on cover
+          var paw = document.createElementNS(svgNS_k, "circle");
+          paw.setAttribute("cx", "128.3");
+          paw.setAttribute("cy", "130.5");
+          paw.setAttribute("r", "0.5");
+          paw.setAttribute("style", "fill:#5a2a18;fill-opacity:0.35");
+          g.appendChild(paw);
+          // Toe beans
+          [[127.7, 129.9], [128.3, 129.6], [128.9, 129.9]].forEach(function (b) {
+            var bean = document.createElementNS(svgNS_k, "circle");
+            bean.setAttribute("cx", b[0]);
+            bean.setAttribute("cy", b[1]);
+            bean.setAttribute("r", "0.25");
+            bean.setAttribute("style", "fill:#5a2a18;fill-opacity:0.3");
+            g.appendChild(bean);
+          });
+
+          // Append to SVG root (on top of everything for visibility & clicks)
+          svg.appendChild(g);
+
+          // Fade in
+          g.style.opacity = "0";
+          g.style.transition = "opacity 0.8s ease";
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () { g.style.opacity = "1"; });
+          });
+
+          // Click to navigate
+          g.addEventListener("click", function (e) {
+            e.stopPropagation();
+            window.location.href = "mouse-diary.html";
+          });
+          // Tooltip
+          g.addEventListener("mouseenter", function () {
+            tooltip.textContent = "A tiny diary with paw prints...";
+            tooltip.classList.add("visible");
+          });
+          g.addEventListener("mouseleave", function () {
+            tooltip.classList.remove("visible");
+          });
+          g.addEventListener("mousemove", function (e) {
+            tooltip.style.left = (e.clientX + 12) + "px";
+            tooltip.style.top = (e.clientY + 12) + "px";
+          });
+        }
+
+        // If already found, show diary immediately
+        if (diaryRevealed) revealDiary();
+      }
+
       // === WALL CLOCK (real time) ===
       var clockHour = svg.querySelector("#clock-hour");
       var clockMinute = svg.querySelector("#clock-minute");
