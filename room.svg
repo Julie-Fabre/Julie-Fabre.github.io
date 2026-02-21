@@ -25,15 +25,15 @@
    inkscape:deskcolor="#505050"
    inkscape:document-units="mm"
    showgrid="false"
-   inkscape:zoom="1.4114833"
-   inkscape:cx="367.6983"
-   inkscape:cy="159.40678"
+   inkscape:zoom="2.6472194"
+   inkscape:cx="416.28586"
+   inkscape:cy="451.79482"
    inkscape:window-width="1512"
    inkscape:window-height="849"
    inkscape:window-x="0"
    inkscape:window-y="33"
    inkscape:window-maximized="0"
-   inkscape:current-layer="layer1"
+   inkscape:current-layer="g-room-fills"
    showguides="true" /><defs
    id="defs2"><linearGradient
    id="linearGradient1"
@@ -2947,7 +2947,8 @@
   <path
    id="plank-gap"
    style="opacity:0;fill:#1a0a00;stroke:none"
-   d="M 125.5,138 H 137 l -5.5,22 H 117 Z" />
+   d="M 125.5,138 H 137 l -5.5,22 -15.93001,-0.35434 z"
+   sodipodi:nodetypes="ccccc" />
 
   <!-- Cute mouse head peeking from under tilted plank (initially hidden) -->
   <g

@@ -1249,8 +1249,78 @@ document.addEventListener("DOMContentLoaded", function () {
         if (defs) defs.appendChild(clip);
 
         // -------------------------------------------------------
-        // DAY SCENE — Ghibli-style: behind the glass panes
+        // DAY SCENE — Seasonal Ghibli-style landscape
         // -------------------------------------------------------
+
+        // Determine current season (override with ?season=winter for testing)
+        var month = new Date().getMonth();
+        var season = month >= 2 && month <= 4 ? "spring"
+                   : month >= 5 && month <= 7 ? "summer"
+                   : month >= 8 && month <= 10 ? "autumn" : "winter";
+        var urlSeason = new URLSearchParams(window.location.search).get("season");
+        if (urlSeason && ["spring","summer","autumn","winter"].indexOf(urlSeason) !== -1) season = urlSeason;
+
+        // Per-season visual config
+        var seasonConfig = {
+          spring: {
+            sky: [["#d8ecf8", 0.6], ["#ffe8e0", 0.25]],
+            sunTint: "#fffae0",
+            hills: [
+              { fill: "#b8ccd8", opacity: 0.45 },
+              { fill: "#88c070", opacity: 0.6  },
+              { fill: "#60b848", opacity: 0.78 },
+              { fill: "#48a030", opacity: 0.88 }
+            ],
+            canopy: { shadow: "#1a5818", colors: ["#38882e","#50a838","#60c048"], highlight: "#80d858" },
+            grass: { stroke: "#48a830", opacity: 0.45 },
+            flowers: { colors: ["#c82818","#e86020","#eaaa18","#d83020","#e84888"], count: { fg: 18, mid: 10, far: 8 } },
+            overlay: "blossoms"
+          },
+          summer: {
+            sky: [["#d0e8f8", 0.6], ["#f0e8c8", 0.3]],
+            sunTint: "#fffde8",
+            hills: [
+              { fill: "#b0c8d8", opacity: 0.45 },
+              { fill: "#90b878", opacity: 0.6  },
+              { fill: "#68a848", opacity: 0.78 },
+              { fill: "#488a30", opacity: 0.88 }
+            ],
+            canopy: { shadow: "#2a5818", colors: ["#3a7828","#48922e","#58a838"], highlight: "#78c048" },
+            grass: { stroke: "#4a8830", opacity: 0.45 },
+            flowers: { colors: ["#c82818","#d83020","#e84030"], count: { fg: 15, mid: 7, far: 6 } },
+            overlay: null
+          },
+          autumn: {
+            sky: [["#e8d8c0", 0.6], ["#e8c8a0", 0.35]],
+            sunTint: "#ffe8b0",
+            hills: [
+              { fill: "#c0b8a8", opacity: 0.45 },
+              { fill: "#b89860", opacity: 0.6  },
+              { fill: "#a07838", opacity: 0.75 },
+              { fill: "#887040", opacity: 0.85 }
+            ],
+            canopy: { shadow: "#604020", colors: ["#c86828","#d89830","#b84818"], highlight: "#e8b848" },
+            grass: { stroke: "#907848", opacity: 0.4 },
+            flowers: { colors: ["#c86828","#b84818"], count: { fg: 5, mid: 2, far: 0 } },
+            overlay: "leaves"
+          },
+          winter: {
+            sky: [["#c8d8e8", 0.65], ["#d8d8e0", 0.3]],
+            sunTint: "#f0e8d0",
+            hills: [
+              { fill: "#c8d0d8", opacity: 0.5  },
+              { fill: "#b8c8c8", opacity: 0.55 },
+              { fill: "#e0e8e8", opacity: 0.7  },
+              { fill: "#f0f4f0", opacity: 0.85 }
+            ],
+            canopy: { shadow: null, colors: null, highlight: null },
+            grass: { stroke: "#889888", opacity: 0.25 },
+            flowers: { colors: [], count: { fg: 0, mid: 0, far: 0 } },
+            overlay: "snow"
+          }
+        };
+        var sConf = seasonConfig[season];
+
         daySkyGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
         daySkyGroup.setAttribute("id", "day-scene");
         daySkyGroup.setAttribute("clip-path", "url(#window-glass-clip)");
@@ -1258,28 +1328,26 @@ document.addEventListener("DOMContentLoaded", function () {
         daySkyGroup.style.transition = "opacity 0.8s ease";
         daySkyGroup.style.pointerEvents = "none";
 
-        // -- Warm sky background (fills entire window area) --
+        // -- Sky background --
         svgEl("rect", { x: 98, y: 48, width: 110, height: 65,
-          style: "fill:#d0e8f8;fill-opacity:0.6" });
-        // Warmer horizon glow
+          style: "fill:" + sConf.sky[0][0] + ";fill-opacity:" + sConf.sky[0][1] });
         svgEl("rect", { x: 98, y: 75, width: 110, height: 35,
-          style: "fill:#f0e8c8;fill-opacity:0.3" });
+          style: "fill:" + sConf.sky[1][0] + ";fill-opacity:" + sConf.sky[1][1] });
 
-        // -- Golden sun with layered glow --
+        // -- Sun with layered glow --
         svgEl("circle", { cx: 115, cy: 58, r: 14,
-          style: "fill:#fff8c0;fill-opacity:0.05" });
+          style: "fill:" + sConf.sunTint + ";fill-opacity:0.05" });
         svgEl("circle", { cx: 115, cy: 58, r: 8,
-          style: "fill:#fff5a0;fill-opacity:0.1" });
+          style: "fill:" + sConf.sunTint + ";fill-opacity:0.1" });
         svgEl("circle", { cx: 115, cy: 58, r: 4,
-          style: "fill:#fff8d0;fill-opacity:0.2" });
+          style: "fill:" + sConf.sunTint + ";fill-opacity:0.2" });
         svgEl("circle", { cx: 115, cy: 58, r: 2.2,
-          style: "fill:#fffde8;fill-opacity:0.92" });
+          style: "fill:" + sConf.sunTint + ";fill-opacity:0.92" });
 
-        // -- Ghibli cumulus clouds (round, puffy, warm-edged) --
-        function makeCloud(cx, cy, sc) {
+        // -- Clouds (all seasons) --
+        function makeCloud(cx, cy, scl) {
           var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-          g.setAttribute("transform", "translate(" + cx + "," + cy + ") scale(" + sc + ")");
-          // Overlapping puffs
+          g.setAttribute("transform", "translate(" + cx + "," + cy + ") scale(" + scl + ")");
           [[-4, 1.2, 4, 2.2], [-1.5, -0.6, 4.5, 2.8], [2.5, 0.8, 3.5, 2.2],
            [0, 1.2, 4, 1.8], [-2.5, 0.2, 3, 2.2], [3.5, -0.1, 3, 2.4],
            [0.5, -1.2, 3.5, 2]
@@ -1287,7 +1355,6 @@ document.addEventListener("DOMContentLoaded", function () {
             svgEl("ellipse", { cx: c[0], cy: c[1], rx: c[2], ry: c[3],
               style: "fill:white;fill-opacity:0.45" }, g);
           });
-          // Warm top highlight
           svgEl("ellipse", { cx: -0.5, cy: -2, rx: 3.5, ry: 1.5,
             style: "fill:#fffae0;fill-opacity:0.3" }, g);
           daySkyGroup.appendChild(g);
@@ -1296,68 +1363,99 @@ document.addEventListener("DOMContentLoaded", function () {
         makeCloud(172, 56, 0.9);
         makeCloud(198, 61, 0.55);
 
-        // ===== HILLS (back to front, atmospheric perspective) =====
-
-        // Layer 1: Distant mountains (blue-gray, hazy)
+        // ===== MOUNTAINS (year-round, dramatic peaks) =====
+        // Mountain silhouette — jagged peaks behind everything
         svgEl("path", { d:
-          "M 98,86 C 106,81 112,79 120,77 C 128,75 138,78 150,74" +
-          " C 160,71 170,75 180,73 C 190,71 197,74 208,78 L 208,113 L 98,113 Z",
-          style: "fill:#b0c8d8;fill-opacity:0.45" });
-
-        // Layer 2: Far hills (cool sage with haze)
+          "M 98,86 L 105,78 L 110,82 L 118,68 L 124,75 L 130,72 L 138,80" +
+          " L 145,70 L 150,76 L 158,64 L 165,74 L 172,71 L 178,62" +
+          " L 184,72 L 190,68 L 196,75 L 202,70 L 208,78 L 208,113 L 98,113 Z",
+          style: "fill:#7888a0;fill-opacity:0.55" });
+        // Lighter face on peaks (sun-facing side)
         svgEl("path", { d:
-          "M 98,92 C 108,86 116,88 128,84 C 138,81 148,85 160,82" +
-          " C 172,79 182,82 193,80 C 200,79 205,81 208,84 L 208,113 L 98,113 Z",
-          style: "fill:#90b878;fill-opacity:0.6" });
+          "M 118,68 L 124,75 L 120,75 Z M 145,70 L 150,76 L 147,76 Z" +
+          " M 158,64 L 165,74 L 160,74 Z M 178,62 L 184,72 L 180,72 Z" +
+          " M 202,70 L 208,78 L 205,78 Z",
+          style: "fill:#8898b0;fill-opacity:0.4" });
+        // Snow caps on the tallest peaks (year-round)
+        [[118,68,3.5],[145,70,2.8],[158,64,4],[178,62,4.5],[202,70,2.5]].forEach(function (pk) {
+          svgEl("path", { d:
+            "M " + pk[0] + "," + pk[1] +
+            " L " + (pk[0] - pk[2]*0.6) + "," + (pk[1] + pk[2]) +
+            " C " + (pk[0] - pk[2]*0.2) + "," + (pk[1] + pk[2]*0.7) +
+            " " + (pk[0] + pk[2]*0.3) + "," + (pk[1] + pk[2]*0.6) +
+            " " + (pk[0] + pk[2]*0.7) + "," + (pk[1] + pk[2]) + " Z",
+            style: "fill:#e8eef4;fill-opacity:" + (season === "winter" ? "0.85" : "0.65") });
+        });
 
-        // Layer 3: Mid hills (warm green, lush)
-        svgEl("path", { d:
-          "M 98,97 C 108,92 116,93 130,89 C 142,86 152,90 166,87" +
-          " C 178,85 188,88 198,86 C 204,85 207,87 208,90 L 208,113 L 98,113 Z",
-          style: "fill:#68a848;fill-opacity:0.78" });
+        // ===== ROLLING HILLS (seasonal colors, in front of mountains) =====
+        var hillPaths = [
+          "M 98,92 C 108,86 116,88 128,84 C 138,81 148,85 160,82 C 172,79 182,82 193,80 C 200,79 205,81 208,84 L 208,113 L 98,113 Z",
+          "M 98,97 C 108,92 116,93 130,89 C 142,86 152,90 166,87 C 178,85 188,88 198,86 C 204,85 207,87 208,90 L 208,113 L 98,113 Z",
+          "M 98,103 C 110,97 122,99 138,95 C 152,92 164,95 178,93 C 190,91 200,93 208,96 L 208,113 L 98,113 Z"
+        ];
+        hillPaths.forEach(function (d, i) {
+          // Use hills[1], hills[2], hills[3] from config (hills[0] was the old distant layer)
+          var h = sConf.hills[i + 1];
+          svgEl("path", { d: d, style: "fill:" + h.fill + ";fill-opacity:" + h.opacity });
+        });
 
-        // Layer 4: Near meadow (rich deep green)
-        svgEl("path", { d:
-          "M 98,103 C 110,97 122,99 138,95 C 152,92 164,95 178,93" +
-          " C 190,91 200,93 208,96 L 208,113 L 98,113 Z",
-          style: "fill:#488a30;fill-opacity:0.88" });
-
-        // ===== TREES (Ghibli rounded canopies) =====
+        // ===== TREES (seasonal canopy or bare winter branches) =====
         function makeTree(x, gy, h, cr) {
           var th = h * 0.38;
           var cy = gy - h + cr;
+          var cc = sConf.canopy;
           // Trunk
           svgEl("line", { x1: x, y1: gy, x2: x + 0.15, y2: gy - th,
             style: "stroke:#5a3e20;stroke-width:" + (cr * 0.18) + ";stroke-linecap:round" });
-          // Shadow canopy
-          svgEl("ellipse", { cx: x + cr * 0.1, cy: cy + cr * 0.3, rx: cr * 1.05, ry: cr * 0.8,
-            style: "fill:#2a5818;fill-opacity:0.5" });
-          // Main canopy (3 overlapping blobs)
-          svgEl("circle", { cx: x - cr * 0.3, cy: cy + cr * 0.1, r: cr * 0.78,
-            style: "fill:#3a7828;fill-opacity:0.88" });
-          svgEl("circle", { cx: x + cr * 0.25, cy: cy - cr * 0.08, r: cr * 0.88,
-            style: "fill:#48922e;fill-opacity:0.88" });
-          svgEl("circle", { cx: x - cr * 0.05, cy: cy - cr * 0.32, r: cr * 0.72,
-            style: "fill:#58a838;fill-opacity:0.82" });
-          // Bright highlight (sunlit top)
-          svgEl("circle", { cx: x + cr * 0.18, cy: cy - cr * 0.48, r: cr * 0.38,
-            style: "fill:#78c048;fill-opacity:0.5" });
+
+          if (cc.colors) {
+            // Leafy season: canopy blobs in seasonal colors
+            svgEl("ellipse", { cx: x + cr*0.1, cy: cy + cr*0.3, rx: cr*1.05, ry: cr*0.8,
+              style: "fill:" + cc.shadow + ";fill-opacity:0.5" });
+            var offsets = [[-0.3, 0.1, 0.78], [0.25, -0.08, 0.88], [-0.05, -0.32, 0.72]];
+            offsets.forEach(function (o, i) {
+              svgEl("circle", { cx: x + cr*o[0], cy: cy + cr*o[1], r: cr*o[2],
+                style: "fill:" + cc.colors[i] + ";fill-opacity:0.88" });
+            });
+            svgEl("circle", { cx: x + cr*0.18, cy: cy - cr*0.48, r: cr*0.38,
+              style: "fill:" + cc.highlight + ";fill-opacity:0.5" });
+          } else {
+            // Winter: bare branches radiating from trunk top
+            var tx = x + 0.15, ty = gy - th;
+            var branches = [
+              [tx - cr*0.6, ty - cr*0.7], [tx + cr*0.5, ty - cr*0.9],
+              [tx - cr*0.2, ty - cr*1.0], [tx + cr*0.7, ty - cr*0.5]
+            ];
+            branches.forEach(function (b, bi) {
+              svgEl("line", { x1: tx, y1: ty, x2: b[0], y2: b[1],
+                style: "stroke:#6a4e30;stroke-width:" + (cr*0.1) + ";stroke-linecap:round" });
+              // Sub-branch
+              var bx = (tx + b[0]) / 2, by = (ty + b[1]) / 2;
+              var jitter = Math.sin(x * 12.7 + bi * 31.1) * cr * 0.3;
+              svgEl("line", { x1: bx, y1: by, x2: bx + (b[0]-tx)*0.4 + jitter, y2: by - cr*0.3,
+                style: "stroke:#6a4e30;stroke-width:" + (cr*0.06) + ";stroke-linecap:round" });
+              // Snow cap on branch tip
+              svgEl("ellipse", { cx: b[0], cy: b[1] - 0.2, rx: cr*0.18, ry: cr*0.08,
+                style: "fill:#f0f4f8;fill-opacity:0.7" });
+            });
+          }
         }
 
-        // Far trees (small, cool-toned)
+        // Far trees (small, against the hills)
         makeTree(120, 85, 5, 2);
         makeTree(155, 82, 4.5, 1.8);
         makeTree(190, 81, 5, 2.2);
-        // Mid trees (larger, warmer)
+        // Mid trees
         makeTree(108, 95, 7, 3);
-        makeTree(135, 90, 8, 3.5);
         makeTree(162, 88, 7.5, 3.2);
         makeTree(192, 87, 7, 2.8);
-        // A small tree cluster
+        // Small cluster
         makeTree(145, 91, 5, 2.2);
         makeTree(148, 90, 6, 2.5);
+        // Big close tree on the right (partially framing the window view)
+        makeTree(200, 108, 18, 7);
 
-        // ===== GRASS TEXTURE on foreground meadow =====
+        // ===== GRASS TEXTURE =====
         function fgY(x) {
           if (x <= 138) return 103 - (x - 98) / (138 - 98) * 8;
           if (x <= 178) return 95 - (x - 138) / (178 - 138) * 2;
@@ -1368,58 +1466,155 @@ document.addEventListener("DOMContentLoaded", function () {
           var gh = 1.2 + Math.sin(gx * 0.73) * 0.8;
           var lean = Math.sin(gx * 1.1) * 0.35;
           svgEl("line", { x1: gx, y1: gy + 0.5, x2: gx + lean, y2: gy - gh,
-            style: "stroke:#4a8830;stroke-width:0.18;stroke-linecap:round;stroke-opacity:0.45" });
+            style: "stroke:" + sConf.grass.stroke + ";stroke-width:0.18;stroke-linecap:round;stroke-opacity:" + sConf.grass.opacity });
         }
 
-        // ===== POPPIES =====
-        function makePoppy(px, py, sz) {
-          // Curved stem
+        // ===== FLOWERS (seasonal colors and density) =====
+        function shadeColor(c, amt) {
+          var num = parseInt(c.slice(1), 16);
+          var r = Math.min(255, Math.max(0, (num >> 16) + amt));
+          var g = Math.min(255, Math.max(0, ((num >> 8) & 0xFF) + amt));
+          var b = Math.min(255, Math.max(0, (num & 0xFF) + amt));
+          return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+        }
+
+        function makeFlower(px, py, sz) {
+          // Pick color deterministically from position
+          var ci = Math.floor(Math.abs(Math.sin(px * 127.1 + py * 311.7)) * sConf.flowers.colors.length);
+          var col = sConf.flowers.colors[ci % sConf.flowers.colors.length];
+          // Stem
           svgEl("path", { d:
-            "M " + px + "," + py + " C " + (px + 0.2 * sz) + "," + (py + sz * 1.2) +
-            " " + (px - 0.15 * sz) + "," + (py + sz * 2) + " " + (px + 0.05) + "," + (py + sz * 2.8),
-            style: "fill:none;stroke:#3a6828;stroke-width:" + (sz * 0.22) + ";stroke-linecap:round" });
+            "M " + px + "," + py + " C " + (px + 0.2*sz) + "," + (py + sz*1.2) +
+            " " + (px - 0.15*sz) + "," + (py + sz*2) + " " + (px + 0.05) + "," + (py + sz*2.8),
+            style: "fill:none;stroke:#3a6828;stroke-width:" + (sz*0.22) + ";stroke-linecap:round" });
           if (sz >= 0.6) {
-            // Full bloom: 4 overlapping petals with depth
-            [[-0.38, -0.08, "#c82818"], [0.38, -0.08, "#d83020"], [0, -0.42, "#e84030"], [0, 0.12, "#b82418"]]
+            // Full bloom: 4 petals with shade variants
+            [[-0.38,-0.08,-16], [0.38,-0.08,8], [0,-0.42,24], [0,0.12,-32]]
               .forEach(function (p) {
-                svgEl("ellipse", {
-                  cx: px + p[0] * sz, cy: py + p[1] * sz,
-                  rx: sz * 0.48, ry: sz * 0.4,
-                  style: "fill:" + p[2] + ";fill-opacity:0.88" });
+                svgEl("ellipse", { cx: px + p[0]*sz, cy: py + p[1]*sz, rx: sz*0.48, ry: sz*0.4,
+                  style: "fill:" + shadeColor(col, p[2]) + ";fill-opacity:0.88" });
               });
-            // Petal highlights (light streaks toward center)
-            svgEl("ellipse", { cx: px + 0.1 * sz, cy: py - 0.3 * sz,
-              rx: sz * 0.18, ry: sz * 0.28,
-              style: "fill:#f06040;fill-opacity:0.35" });
-            // Dark center
-            svgEl("circle", { cx: px, cy: py - sz * 0.1, r: sz * 0.2,
+            svgEl("ellipse", { cx: px + 0.1*sz, cy: py - 0.3*sz, rx: sz*0.18, ry: sz*0.28,
+              style: "fill:" + shadeColor(col, 48) + ";fill-opacity:0.35" });
+            svgEl("circle", { cx: px, cy: py - sz*0.1, r: sz*0.2,
               style: "fill:#1a0808;fill-opacity:0.78" });
-            // Golden stamens
-            svgEl("circle", { cx: px, cy: py - sz * 0.1, r: sz * 0.09,
+            svgEl("circle", { cx: px, cy: py - sz*0.1, r: sz*0.09,
               style: "fill:#c8a020;fill-opacity:0.65" });
           } else {
-            // Distant poppy: small red dot
-            svgEl("circle", { cx: px, cy: py, r: sz * 0.45,
-              style: "fill:#d42818;fill-opacity:0.8" });
+            svgEl("circle", { cx: px, cy: py, r: sz*0.45,
+              style: "fill:" + col + ";fill-opacity:0.8" });
           }
         }
 
-        // Foreground poppies (large, detailed)
-        [[106, 101, 1.1], [113, 99, 0.9], [119, 100, 1.15], [126, 98, 0.85],
-         [132, 97, 1.0], [139, 95, 0.95], [146, 96, 1.1], [152, 94, 0.85],
-         [158, 93, 1.0], [165, 93, 0.9], [171, 93, 1.15], [177, 92, 0.8],
-         [183, 93, 1.05], [190, 92, 0.9], [197, 93, 0.85]
-        ].forEach(function (p) { makePoppy(p[0], p[1], p[2]); });
+        if (sConf.flowers.colors.length > 0) {
+          // Foreground flowers
+          for (var fi = 0; fi < sConf.flowers.count.fg; fi++) {
+            var fx = 104 + fi * (100 / sConf.flowers.count.fg) + Math.sin(fi * 2.3) * 2;
+            makeFlower(fx, fgY(fx) - 1, 0.8 + Math.abs(Math.sin(fi * 1.7)) * 0.35);
+          }
+          // Mid-distance flowers
+          for (var mi = 0; mi < sConf.flowers.count.mid; mi++) {
+            var mx = 108 + mi * (96 / Math.max(1, sConf.flowers.count.mid)) + Math.sin(mi * 3.1) * 3;
+            makeFlower(mx, 87 + Math.sin(mi * 2.7) * 3, 0.45 + Math.abs(Math.sin(mi * 1.3)) * 0.15);
+          }
+          // Far flowers (tiny dots)
+          for (var di = 0; di < sConf.flowers.count.far; di++) {
+            var dx = 112 + di * (92 / Math.max(1, sConf.flowers.count.far));
+            makeFlower(dx, 83 + Math.sin(di * 2.1) * 2, 0.25 + Math.abs(Math.sin(di * 1.9)) * 0.1);
+          }
+        }
 
-        // Mid-distance poppies
-        [[110, 94, 0.55], [122, 91, 0.5], [138, 89, 0.55], [155, 88, 0.5],
-         [170, 87, 0.55], [185, 88, 0.5], [200, 89, 0.45]
-        ].forEach(function (p) { makePoppy(p[0], p[1], p[2]); });
+        // ===== SEASONAL OVERLAYS =====
 
-        // Far poppies (tiny dots)
-        [[115, 88, 0.3], [132, 85, 0.3], [150, 84, 0.35], [168, 83, 0.3],
-         [186, 83, 0.3], [202, 85, 0.25]
-        ].forEach(function (p) { makePoppy(p[0], p[1], p[2]); });
+        // Winter: snow on ground + clumps on hills
+        if (sConf.overlay === "snow") {
+          svgEl("path", { d:
+            "M 98,103 C 110,97 122,99 138,95 C 152,92 164,95 178,93" +
+            " C 190,91 200,93 208,96 L 208,100 C 200,97 190,95 178,97" +
+            " C 164,99 152,96 138,99 C 122,102 110,100 98,106 Z",
+            style: "fill:#f4f8fc;fill-opacity:0.8" });
+          [[120,83,3],[150,80,4],[185,82,3],[110,90,3.5],[145,87,4],[175,85,3]].forEach(function (s) {
+            svgEl("ellipse", { cx: s[0], cy: s[1], rx: s[2], ry: s[2]*0.3,
+              style: "fill:#f0f4f8;fill-opacity:0.5" });
+          });
+        }
+
+        // Shared particle animation helper
+        function animateParticles(particles) {
+          (function tick() {
+            particles.forEach(function (p) {
+              p.y += p.speed * 0.16;
+              p.x += Math.sin(p.phase) * p.wobble;
+              p.phase += p.phaseStep;
+              if (p.rot !== undefined) {
+                p.rot += p.rotSpeed;
+                p.el.setAttribute("transform", "rotate(" + p.rot + " " + p.x + " " + p.y + ")");
+              }
+              if (p.y > p.yMax) { p.y = 48; p.x = 100 + Math.random() * 106; }
+              if (p.x < 98) p.x = 208;
+              if (p.x > 208) p.x = 98;
+              p.el.setAttribute("cx", p.x);
+              p.el.setAttribute("cy", p.y);
+            });
+            if (daySkyGroup.style.opacity !== "0") {
+              requestAnimationFrame(tick);
+            } else {
+              var obs = new MutationObserver(function () {
+                if (daySkyGroup.style.opacity !== "0") { obs.disconnect(); requestAnimationFrame(tick); }
+              });
+              obs.observe(daySkyGroup, { attributes: true, attributeFilter: ["style"] });
+            }
+          })();
+        }
+
+        // Snowflakes
+        if (sConf.overlay === "snow") {
+          var snowflakes = [];
+          for (var si = 0; si < 14; si++) {
+            var sf = svgEl("circle", {
+              cx: 100 + Math.random() * 106, cy: 48 + Math.random() * 65,
+              r: 0.3 + Math.random() * 0.4,
+              style: "fill:white;fill-opacity:" + (0.4 + Math.random() * 0.4) });
+            snowflakes.push({ el: sf, x: +sf.getAttribute("cx"), y: +sf.getAttribute("cy"),
+              speed: 0.15 + Math.random() * 0.2, wobble: (Math.random()-0.5) * 0.08,
+              phase: Math.random() * Math.PI * 2, phaseStep: 0.02, yMax: 113 });
+          }
+          animateParticles(snowflakes);
+        }
+
+        // Falling autumn leaves
+        if (sConf.overlay === "leaves") {
+          var leafColors = ["#c86828","#d89830","#b84818","#a06020","#d8a840"];
+          var leafArr = [];
+          for (var li = 0; li < 8; li++) {
+            var lf = svgEl("ellipse", {
+              cx: 100 + Math.random() * 106, cy: 48 + Math.random() * 65,
+              rx: 0.6 + Math.random() * 0.4, ry: 0.3 + Math.random() * 0.2,
+              style: "fill:" + leafColors[li % leafColors.length] + ";fill-opacity:0.7" });
+            leafArr.push({ el: lf, x: +lf.getAttribute("cx"), y: +lf.getAttribute("cy"),
+              speed: 0.1 + Math.random() * 0.15, wobble: (Math.random()-0.5) * 0.15,
+              rot: Math.random() * 360, rotSpeed: (Math.random()-0.5) * 2,
+              phase: Math.random() * Math.PI * 2, phaseStep: 0.015, yMax: 110 });
+          }
+          animateParticles(leafArr);
+        }
+
+        // Spring cherry blossom petals
+        if (sConf.overlay === "blossoms") {
+          var petalColors = ["#f8c8d0","#f0a0b0","#fdd8e0","#f4b8c8"];
+          var petalArr = [];
+          for (var pi = 0; pi < 10; pi++) {
+            var pt = svgEl("ellipse", {
+              cx: 100 + Math.random() * 106, cy: 48 + Math.random() * 65,
+              rx: 0.5 + Math.random() * 0.3, ry: 0.25 + Math.random() * 0.15,
+              style: "fill:" + petalColors[pi % petalColors.length] + ";fill-opacity:0.6" });
+            petalArr.push({ el: pt, x: +pt.getAttribute("cx"), y: +pt.getAttribute("cy"),
+              speed: 0.06 + Math.random() * 0.1, wobble: (Math.random()-0.5) * 0.12,
+              rot: Math.random() * 360, rotSpeed: (Math.random()-0.5) * 1.5,
+              phase: Math.random() * Math.PI * 2, phaseStep: 0.012, yMax: 108 });
+          }
+          animateParticles(petalArr);
+        }
 
         // Insert day scene as the very first child of window group
         // (renders underneath everything: frame, panes, curtains)
