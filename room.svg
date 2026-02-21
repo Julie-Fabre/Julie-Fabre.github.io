@@ -3061,7 +3061,7 @@
    inkscape:label="desk_drawer">
         <!-- Drawer panel outline -->
         <path
-   style="fill:#8a6840;fill-opacity:0.3;stroke:#6b4e30;stroke-width:0.35"
+   style="fill:#8a6840;fill-opacity:0.6;stroke:#6b4e30;stroke-width:0.4"
    d="m 130,110.5 45,-0.5 v 4.2 c -10,0.6 -35,0.8 -45,0.6 z"
    id="drawer-panel" />
         <!-- Drawer knob -->
@@ -3128,13 +3128,13 @@
 
       <!-- Desk top surface -->
       <path
-   style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.8"
+   style="fill:#9a7850;fill-opacity:1;stroke:#4a3520;stroke-width:0.8;pointer-events:none"
    d="m 120.93,100.78 61.28,0.23 34.27,7.58 -131.44,1.26 z"
    id="desk-top-surface" />
       <!-- Wood grain lines on desk surface -->
       <g
    id="desk-grain"
-   style="fill:none;stroke:#8a6838;stroke-width:0.2;stroke-opacity:0.35">
+   style="fill:none;stroke:#8a6838;stroke-width:0.2;stroke-opacity:0.35;pointer-events:none">
         <path
    d="m 122,101.5 c 18,1.5 48,3.5 93,7.5"
    id="path140" />
@@ -3160,7 +3160,7 @@
 <g
    id="sunbeams"
    inkscape:label="sunbeams"
-   style="opacity:0.7"
+   style="opacity:0.7;pointer-events:none"
    transform="matrix(1.0270258,0,0,0.9514237,-5.1180048,-1.0528822)">
   <path
    style="fill:url(#linearGradient614);stroke:none"
@@ -3178,6 +3178,7 @@
 <g
    id="dust-motes"
    inkscape:label="dust-motes"
+   style="pointer-events:none"
    transform="matrix(0.97850121,0,0,0.87325765,2.9741714,-0.06184772)">
   <circle
    cx="135"

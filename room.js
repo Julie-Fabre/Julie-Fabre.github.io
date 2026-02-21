@@ -508,6 +508,7 @@ document.addEventListener("DOMContentLoaded", function () {
         drawerClosed.style.cursor = "pointer";
         drawerClosed.style.transition = "opacity 0.3s ease";
         drawerOpen.style.transition = "opacity 0.3s ease";
+        drawerOpen.style.pointerEvents = "none";
 
         function toggleDrawer(e) {
           e.preventDefault();
@@ -594,7 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (plankLifted) {
             // Lift the plank - change path to lifted position
             plankSurface.setAttribute("d", plankLiftedD);
-            plankSurface.style.fill = "#7a5828";
+            plankSurface.style.fill = "#997835";
             plankGap.style.opacity = "1";
             // Reveal mouse (if it hasn't scurried away)
             if (!mouseScurried) {
@@ -606,10 +607,12 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             // Lower the plank
             plankSurface.setAttribute("d", plankOriginalD);
-            plankSurface.style.fill = "#8a6838";
+            plankSurface.style.fill = "#a97845";
             plankGap.style.opacity = "0";
             floorMouse.style.opacity = "0";
             floorMouse.style.pointerEvents = "none";
+            // Hide tooltip when putting plank back
+            tooltip.classList.remove("visible");
           }
         }
 
