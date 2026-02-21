@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Julie Fabre</title>
         <link rel="icon" type="image/x-icon" href="poppy_logo_noStembold_48x48.ico">
         <link rel="stylesheet" href="css/index.css">
@@ -53,15 +54,16 @@
 
 
         <p class="room-hint"><span style="font-size: 19px;">Welcome to my home office!</span><br>This room is full of secrets... click around to find them</p>
-        <div id="room-container"></div>
+        <div id="room-container"><p class="room-loading">Loading room...</p></div>
         <div id="room-tooltip" class="room-tooltip"></div>
+        <p id="discovery-counter" class="discovery-counter"></p>
 
 
     </section>
   </section>
     <footer style="display:none">
     </footer>
+    <script src="script.js"></script>
+    <script src="room.js"></script>
 </body>
-<script src="script.js"></script>
-<script src="room.js"></script>
 </html>

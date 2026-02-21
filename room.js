@@ -127,6 +127,10 @@ document.addEventListener("DOMContentLoaded", function () {
       var svg = doc.querySelector("svg");
       if (!svg) return;
 
+      // Remove loading indicator and show the SVG
+      container.innerHTML = "";
+      container.classList.add("loaded");
+
       // Make the SVG fill the full viewport width
       svg.removeAttribute("width");
       svg.removeAttribute("height");
@@ -135,6 +139,34 @@ document.addEventListener("DOMContentLoaded", function () {
       svg.style.display = "block";
       svg.style.marginLeft = "calc(-50vw + 50%)";
       container.appendChild(svg);
+
+      // === DISCOVERY COUNTER ===
+      var counterEl = document.getElementById("discovery-counter");
+      var specialSecrets = ["lamp", "curtains", "drawer", "old-paper", "floor-mouse"];
+      var totalSecrets = interactiveObjects.length + specialSecrets.length;
+      var discovered = new Set(JSON.parse(localStorage.getItem("discoveredSecrets") || "[]"));
+
+      function updateCounter() {
+        if (!counterEl) return;
+        counterEl.textContent = "Secrets found: " + discovered.size + " / " + totalSecrets;
+        if (discovered.size === totalSecrets) {
+          counterEl.textContent += " — you found them all!";
+        }
+      }
+
+      function discover(id) {
+        if (discovered.has(id)) return;
+        discovered.add(id);
+        localStorage.setItem("discoveredSecrets", JSON.stringify(Array.from(discovered)));
+        updateCounter();
+        // Brief highlight
+        if (counterEl) {
+          counterEl.classList.add("just-found");
+          setTimeout(function () { counterEl.classList.remove("just-found"); }, 800);
+        }
+      }
+
+      updateCounter();
 
       // Shared state for toggle interactions
       var lampOn = localStorage.getItem('darkMode') !== 'true';
@@ -226,6 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // First tap - show tooltip, prevent navigation
             e.preventDefault();
             clearActiveState();
+            discover(obj.svgLabel);
 
             activeLink = link;
             link.classList.add("mobile-active");
@@ -247,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           // Desktop: hover behavior
           link.addEventListener("mouseenter", function () {
+            discover(obj.svgLabel);
             tooltip.textContent = obj.tooltip;
             tooltip.classList.add("visible");
           });
@@ -342,6 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
         lamp.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
+          discover("lamp");
           lampOn = !lampOn;
           applyLampState(true);
         });
@@ -458,6 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function toggleCurtains(e) {
           e.preventDefault();
           e.stopPropagation();
+          discover("curtains");
           curtainsOpen = !curtainsOpen;
 
           if (curtainsOpen) {
@@ -513,6 +549,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function toggleDrawer(e) {
           e.preventDefault();
           e.stopPropagation();
+          discover("drawer");
           drawerIsOpen = !drawerIsOpen;
 
           if (drawerIsOpen) {
@@ -554,6 +591,7 @@ document.addEventListener("DOMContentLoaded", function () {
           oldPaper.style.cursor = "pointer";
           oldPaper.addEventListener("click", function (e) {
             e.stopPropagation();
+            discover("old-paper");
             window.location.href = "old-paper.html";
           });
           oldPaper.addEventListener("mouseenter", function () {
@@ -573,45 +611,49 @@ document.addEventListener("DOMContentLoaded", function () {
       // === LOOSE FLOOR PLANK & MOUSE ===
       var loosePlank = svg.querySelector("#loose-plank");
       var plankGap = svg.querySelector("#plank-gap");
-      var plankSurface = svg.querySelector("#plank-surface");
+      var mousePeek = svg.querySelector("#mouse-peek");
       var floorMouse = svg.querySelector("#floor-mouse");
-      var plankLifted = false;
-      var mouseScurried = false;
+      var plankTilted = false;
+      var mouseState = "hidden"; // hidden → peeking → emerged → scurried
 
-      if (loosePlank && plankGap && floorMouse) {
-        // Store original plank path for animation
-        var plankOriginalD = plankSurface.getAttribute("d");
-        // Lifted position (shifted up-left to simulate lifting one edge)
-        var plankLiftedD = "M 122,134 L 133.5,134 L 128,156 L 113.5,156 Z";
+      if (loosePlank && plankGap && mousePeek && floorMouse) {
+        // Set up tilt animation on the plank
+        loosePlank.style.transformBox = "fill-box";
+        loosePlank.style.transformOrigin = "center top";
+        loosePlank.style.transition = "transform 0.4s ease";
+        loosePlank.style.cursor = "pointer";
 
         plankGap.style.transition = "opacity 0.3s ease";
+        mousePeek.style.transition = "opacity 0.3s ease";
         floorMouse.style.transition = "opacity 0.4s ease, transform 0.6s ease";
 
         function togglePlank(e) {
           e.preventDefault();
           e.stopPropagation();
-          plankLifted = !plankLifted;
+          plankTilted = !plankTilted;
 
-          if (plankLifted) {
-            // Lift the plank - change path to lifted position
-            plankSurface.setAttribute("d", plankLiftedD);
-            plankSurface.style.fill = "#997835";
+          if (plankTilted) {
+            // Tilt the plank (hinge at far edge, near edge lifts)
+            loosePlank.style.transform = "rotate(-12deg)";
             plankGap.style.opacity = "1";
-            // Reveal mouse (if it hasn't scurried away)
-            if (!mouseScurried) {
+            // Show cute mouse head peeking after a short delay
+            if (mouseState === "hidden") {
+              mouseState = "peeking";
+              discover("floor-mouse");
               setTimeout(function () {
-                floorMouse.style.opacity = "1";
-                floorMouse.style.pointerEvents = "auto";
-              }, 150);
+                mousePeek.style.opacity = "1";
+                mousePeek.style.pointerEvents = "auto";
+              }, 300);
             }
           } else {
-            // Lower the plank
-            plankSurface.setAttribute("d", plankOriginalD);
-            plankSurface.style.fill = "#a97845";
+            // Un-tilt the plank
+            loosePlank.style.transform = "rotate(0deg)";
             plankGap.style.opacity = "0";
-            floorMouse.style.opacity = "0";
-            floorMouse.style.pointerEvents = "none";
-            // Hide tooltip when putting plank back
+            if (mouseState === "peeking") {
+              mousePeek.style.opacity = "0";
+              mousePeek.style.pointerEvents = "none";
+              mouseState = "hidden";
+            }
             tooltip.classList.remove("visible");
           }
         }
@@ -620,7 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Tooltip for plank
         loosePlank.addEventListener("mouseenter", function () {
-          tooltip.textContent = plankLifted ? "Put it back" : "This plank looks loose...";
+          tooltip.textContent = plankTilted ? "Put it back" : "This plank looks loose...";
           tooltip.classList.add("visible");
         });
         loosePlank.addEventListener("mouseleave", function () {
@@ -631,25 +673,55 @@ document.addEventListener("DOMContentLoaded", function () {
           tooltip.style.top = (e.clientY + 12) + "px";
         });
 
-        // Mouse interaction - scurries away when clicked!
+        // Mouse peek interaction — click to make it come out!
+        mousePeek.style.cursor = "pointer";
+        mousePeek.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (mouseState === "peeking") {
+            mouseState = "emerged";
+            // Hide the peeking head
+            mousePeek.style.opacity = "0";
+            mousePeek.style.pointerEvents = "none";
+            // Show the full mouse
+            floorMouse.style.opacity = "1";
+            floorMouse.style.pointerEvents = "auto";
+            floorMouse.style.cursor = "pointer";
+          }
+        });
+
+        mousePeek.addEventListener("mouseenter", function () {
+          if (mouseState === "peeking") {
+            tooltip.textContent = "A little mouse! Click to say hello";
+            tooltip.classList.add("visible");
+          }
+        });
+        mousePeek.addEventListener("mouseleave", function () {
+          tooltip.classList.remove("visible");
+        });
+        mousePeek.addEventListener("mousemove", function (e) {
+          tooltip.style.left = (e.clientX + 12) + "px";
+          tooltip.style.top = (e.clientY + 12) + "px";
+        });
+
+        // Full mouse interaction — click and it scurries away!
         floorMouse.addEventListener("click", function (e) {
           e.stopPropagation();
-          if (!mouseScurried) {
-            mouseScurried = true;
+          if (mouseState === "emerged") {
+            mouseState = "scurried";
             tooltip.textContent = "Squeak!";
             tooltip.classList.add("visible");
-            // Scurry animation - runs to the left
-            floorMouse.style.transform = "translate(-60px, 10px) scale(0.5)";
+            // Scurry animation — runs to the left
+            floorMouse.style.transform = "translate(-60px, 10px) scale(0.3)";
             floorMouse.style.opacity = "0";
             setTimeout(function () {
               tooltip.classList.remove("visible");
               floorMouse.style.pointerEvents = "none";
-            }, 600);
+            }, 700);
           }
         });
 
         floorMouse.addEventListener("mouseenter", function () {
-          if (!mouseScurried) {
+          if (mouseState === "emerged") {
             tooltip.textContent = "A little mouse!";
             tooltip.classList.add("visible");
           }
