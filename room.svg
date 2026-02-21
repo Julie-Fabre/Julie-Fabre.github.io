@@ -25,17 +25,31 @@
    inkscape:deskcolor="#505050"
    inkscape:document-units="mm"
    showgrid="false"
-   inkscape:zoom="1.8638052"
-   inkscape:cx="789.24558"
-   inkscape:cy="246.27038"
+   inkscape:zoom="2.7386384"
+   inkscape:cx="649.59287"
+   inkscape:cy="434.15735"
    inkscape:window-width="1512"
-   inkscape:window-height="851"
+   inkscape:window-height="849"
    inkscape:window-x="0"
    inkscape:window-y="33"
    inkscape:window-maximized="0"
-   inkscape:current-layer="svg5"
+   inkscape:current-layer="layer1"
    showguides="false" /><defs
    id="defs2"><linearGradient
+   id="linearGradient1"
+   inkscape:collect="always"><stop
+     style="stop-color:#784421;stop-opacity:0.50196078;"
+     offset="0.19685039"
+     id="stop57" /><stop
+     style="stop-color:#0a0603;stop-opacity:0;"
+     offset="0.51968503"
+     id="stop58" /><stop
+     style="stop-color:#784421;stop-opacity:0.5;"
+     offset="0.61220473"
+     id="stop20" /><stop
+     style="stop-color:#784421;stop-opacity:0;"
+     offset="0.97440946"
+     id="stop55" /></linearGradient><linearGradient
    id="linearGradient5"
    inkscape:collect="always"><stop
      style="stop-color:#fff5d0;stop-opacity:0.3;"
@@ -2211,12 +2225,51 @@
   
   
   
-</defs><g
+<radialGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient1"
+   id="radialGradient55"
+   cx="81"
+   cy="136.5"
+   fx="81"
+   fy="136.5"
+   r="1.5"
+   gradientTransform="matrix(1.0364053,0,0,1.6716545,105.27339,-318.9612)"
+   gradientUnits="userSpaceOnUse" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient1"
+   id="radialGradient55-7"
+   cx="81"
+   cy="136.5"
+   fx="81"
+   fy="136.5"
+   r="1.5"
+   gradientTransform="matrix(1.0364053,0,0,1.6716545,122.66295,-350.7244)"
+   gradientUnits="userSpaceOnUse" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient1"
+   id="radialGradient55-7-4"
+   cx="81"
+   cy="136.5"
+   fx="81"
+   fy="136.5"
+   r="1.5"
+   gradientTransform="matrix(0.87085104,0,0,1.7604922,64.342543,-110.91232)"
+   gradientUnits="userSpaceOnUse" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient1"
+   id="radialGradient55-7-8"
+   cx="81"
+   cy="136.5"
+   fx="81"
+   fy="136.5"
+   r="1.5"
+   gradientTransform="matrix(0.35948706,0,2.4754107e-8,2.5136045,-12.606713,-92.153128)"
+   gradientUnits="userSpaceOnUse" /></defs><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1"
-   style="stroke-linecap:round;stroke-linejoin:round"
-   sodipodi:insensitive="true"><g
+   style="stroke-linecap:round;stroke-linejoin:round"><g
    id="g-room-fills"
    inkscape:label="room-fills"
    transform="matrix(1,0,0,0.86479118,0.70294593,-1.3761397)"><path
@@ -2240,16 +2293,100 @@
    id="floor-planks"
    clip-path="url(#floor-clip)"
    transform="matrix(0.97850121,0,0,0.97850121,2.5774835,2.3157495)">
+  <!-- SECRET FLOOR KNOT BOARDS (edit positions in Inkscape, JS reads these by id) -->
+  <g
+   id="secret-boards-group"
+   inkscape:label="secret_boards">
+    <g
+   id="secret-knot-group-0"
+   inkscape:label="secret_knot_0"
+   transform="translate(13.782379,5.8716126)">
+      <path
+   id="secret-board-0"
+   inkscape:label="secret_board_0"
+   d="m 80.8,133 9.319689,-0.16776 -22.502068,25.95692 -15.997408,-0.16776 z"
+   style="fill:#c89040;fill-opacity:0.4;stroke:none"
+   sodipodi:nodetypes="ccccc" />
+      <ellipse
+   cx="189.22221"
+   cy="-90.780365"
+   rx="1.5546079"
+   ry="2.5074816"
+   style="fill:url(#radialGradient55);stroke:none;stroke-width:1.61207"
+   id="secret-knot-0"
+   inkscape:label="knot_0"
+   transform="matrix(0.06102253,0.99813639,-0.81315774,0.58204337,0,0)" />
+    </g>
+    <g
+   id="secret-knot-group-1"
+   inkscape:label="secret_knot_1">
+      <ellipse
+   cx="206.61177"
+   cy="-122.54356"
+   rx="1.5546079"
+   ry="2.5074816"
+   style="stroke-linecap:round;stroke-linejoin:round;fill:url(#radialGradient55-7);stroke:none;stroke-width:1.61207"
+   id="secret-knot-0-0"
+   inkscape:label="knot_1"
+   transform="matrix(0.06102253,0.99813639,-0.81315773,0.58204338,-1.179525e-7,0)" /><path
+   id="secret-board-1"
+   inkscape:label="secret_board_1"
+   d="m 109.9785,133.19276 8.6886,0.11417 -12.99618,18.7596 -12.655688,0.11417 z"
+   style="fill:#c89040;fill-opacity:0.4;stroke:none"
+   sodipodi:nodetypes="ccccc" />
+      
+    </g>
+    <g
+   id="secret-knot-group-2"
+   inkscape:label="secret_knot_2">
+      <path
+   id="secret-board-2"
+   inkscape:label="secret_board_2"
+   d="m 165.9,133 h 9.9 l 11.30758,19.10211 -13.37342,0.45668 z"
+   style="fill:#c89040;fill-opacity:0.4;stroke:none"
+   sodipodi:nodetypes="ccccc" />
+      
+    <ellipse
+   cx="134.88147"
+   cy="129.39487"
+   rx="1.3062766"
+   ry="2.640738"
+   style="fill:url(#radialGradient55-7-4);stroke:none;stroke-width:1.51649;stroke-linecap:round;stroke-linejoin:round"
+   id="secret-knot-0-0-3"
+   inkscape:label="knot_2"
+   transform="matrix(0.99280107,0.11977494,0.32626243,0.94527923,0,0)" /></g>
+    <g
+   id="secret-knot-group-3"
+   inkscape:label="secret_knot_3">
+      <path
+   id="secret-board-3"
+   inkscape:label="secret_board_3"
+   d="m 195.20251,133.07859 9.08354,-0.11417 23.41136,19.21628 h -12.85316 z"
+   style="fill:#c89040;fill-opacity:0.4;stroke:none"
+   sodipodi:nodetypes="ccccc" />
+      <ellipse
+   cx="16.511749"
+   cy="250.9539"
+   rx="0.53923053"
+   ry="3.770406"
+   style="fill:url(#radialGradient55-7-8);stroke:none;stroke-width:1.16421;stroke-linecap:round;stroke-linejoin:round"
+   id="secret-knot-0-0-1"
+   inkscape:label="knot_3"
+   transform="matrix(0.29214423,-0.95637427,0.79587778,0.60545732,0,0)" />
+    </g>
+  </g>
   <!-- Irregular plank shading — darker planks -->
   <g
    style="fill:#7a5020;fill-opacity:0.1;stroke:none"
-   id="g55">
+   id="g55"
+   transform="translate(0.59155594,-0.2687319)">
     <path
    d="M 149.3,89 5.1,170 h 18.1 z"
    id="path50" />
     <path
    d="M 149.3,89 58.4,170 H 76.5 Z"
-   id="path51" />
+   id="path51"
+   sodipodi:nodetypes="cccc" />
     <path
    d="m 149.3,89 -38.7,81 h 18.1 z"
    id="path52" />
