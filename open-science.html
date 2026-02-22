@@ -39,40 +39,44 @@
     <section id="hide_from_search_results_page">
         <h1>Open Science</h1>
 
-        <p>I think science works better when the tools are shared. During my PhD I kept building software to solve problems in my own data, and realised other people were hitting the same walls &mdash; so I made the tools open-source, documented them properly, and tried to get the word out.</p>
+        <p>During my PhD I kept building software to solve problems in my own data, and realised other people were hitting the same walls &mdash; so I made the tools open-source, documented them properly, and tried to get the word out.</p>
 
         <p>That has grown into something I care about beyond just my own work. I review for the <a href="https://joss.theoj.org/" target="_blank">Journal of Open Source Software</a>, I received an honourable mention for the <a href="https://www.ucl.ac.uk/library/open-science-research-support/open-science/ucl-open-science-awards" target="_blank">UCL Open Science Award</a> in 2023 and helped organise it the following year, I run workshops on how to build good research software, and I <a href="https://blogs.ucl.ac.uk/open-access/2024/08/27/open-source-software-design-for-academia/" target="_blank">write about it</a> when I can.</p>
 
-        <section id="bombcell">
-            <h2>BombCell</h2>
+        <section id="bombcell" class="tool-section">
+            <div class="tool-logo-container">
+                <img src="images/bombcell_logo.svg" alt="bombcell" class="tool-logo">
+            </div>
+            <div class="tool-text">
+                <p>Neuropixels probes can record hundreds of neurons at once, but spike sorting &mdash; figuring out which spikes belong to which neuron &mdash; is messy and the results need quality control. The standard answer has been to check each unit by hand: hours of work per experiment, highly subjective, and nearly impossible to reproduce across labs.</p>
 
-            <p>Neuropixels probes can record hundreds of neurons at once, but figuring out which spikes belong to which neuron is messy. Spike sorting algorithms do a first pass, but the results need quality control: are these spikes from a real neuron, or an artifact? From one neuron, or a mix of several? Is the neuron being reliably detected? The standard answer has been to check each unit by hand &mdash; hours of work per experiment, highly subjective, and nearly impossible to reproduce across labs.</p>
+                <p>bombcell automates this. It computes quality metrics for every unit and classifies them into single units, multi-units, noise, and non-somatic units. No manual curation needed. It also makes experiments possible that were previously impractical, like tracking neural activity across days while an animal learns a task.</p>
 
-            <p>BombCell automates this. It computes quality metrics for every unit and classifies them into single units, multi-units, noise, and non-somatic units. No manual curation needed. It also makes experiments possible that were previously impractical, like tracking neural activity across days while an animal learns a task.</p>
+                <p>bombcell is available in MATLAB and Python, and we are integrating it into <a href="https://github.com/SpikeInterface" target="_blank">SpikeInterface</a>. Its development was supported by a <a href="https://www.mathworks.com/" target="_blank">MathWorks</a> grant, and I teach it every year in the <a href="https://www.ucl.ac.uk/neuropixels/training" target="_blank">UCL Neuropixels course</a>.</p>
 
-            <p>BombCell is available in MATLAB and Python, and we are integrating it into <a href="https://github.com/SpikeInterface" target="_blank">SpikeInterface</a>. I was honoured to receive a <a href="https://www.mathworks.com/" target="_blank">MathWorks</a> grant to support its development, and I teach it every year in the <a href="https://www.ucl.ac.uk/neuropixels/training" target="_blank">UCL Neuropixels course</a>.</p>
-
-            <p><a href="https://github.com/Julie-Fabre/bombcell" target="_blank">Code on GitHub</a></p>
+                <p><a href="https://github.com/Julie-Fabre/bombcell" target="_blank">Code on GitHub</a></p>
+            </div>
         </section>
 
-        <section id="brain-street-view">
-            <h2>Brain Street View</h2>
+        <section id="brain-street-view" class="tool-section">
+            <div class="tool-logo-container">
+                <img src="images/bsv_logo.svg" alt="Brain Street View" class="tool-logo">
+            </div>
+            <div class="tool-text">
+                <p>The Allen Mouse Brain Connectivity Atlas maps long-range projections across the entire mouse brain, but pulling and exploring that data programmatically is cumbersome. Brain Street View makes it easy &mdash; it lets you query connectivity data from the Allen API in MATLAB and visualise projection pathways between brain regions.</p>
 
-            <p>The Allen Mouse Brain Connectivity Atlas is an incredible dataset &mdash; thousands of tracer injections mapping long-range projections across the entire mouse brain. But actually loading and exploring that data programmatically is surprisingly cumbersome.</p>
-
-            <p>Brain Street View makes it easy. It lets you pull connectivity data from the Allen API in MATLAB and visualise projection pathways between brain regions, so you can quickly answer questions like <q>where does this region project to?</q> or <q>what are the inputs to this area?</q></p>
-
-            <p><a href="https://github.com/Julie-Fabre/brain_street_view" target="_blank">Code on GitHub</a></p>
+                <p><a href="https://github.com/Julie-Fabre/brain_street_view" target="_blank">Code on GitHub</a></p>
+            </div>
         </section>
 
         <section id="other-tools">
             <h2>Other tools</h2>
 
             <ul>
-                <li><a href="https://github.com/Julie-Fabre/UnitMatch" target="_blank">UnitMatch</a> &mdash; Track the same neuron across recording sessions using waveform shape and probe position. Published in <a href="https://doi.org/10.1038/s41592-024-02440-1" target="_blank"><em>Nature Methods</em></a>, 2024.</li>
+                <li><a href="https://github.com/Julie-Fabre/UnitMatch" target="_blank">UnitMatch</a> &mdash; Track the same neuron across recording sessions using waveform shape and probe position. Led by Enny van Beest and C&eacute;lian Bimbard. Published in <a href="https://doi.org/10.1038/s41592-024-02440-1" target="_blank"><em>Nature Methods</em></a>, 2024.</li>
                 <li><a href="https://github.com/Julie-Fabre/YAHT" target="_blank">YAHT</a> &mdash; Yet Another Histology Tool. All-in-one pipeline from histology images to tracked probe trajectories, with automated atlas registration and 3D visualisation.</li>
                 <li><a href="https://github.com/Julie-Fabre/prettify_matlab" target="_blank">prettify_matlab</a> &mdash; Instantly make MATLAB plots publication-ready and colourblind-friendly.</li>
-                <li><a href="https://github.com/Coen-Lab/chronic-neuropixels" target="_blank">Apollo implant</a> &mdash; An adaptable, reusable, and light implant for chronic Neuropixels recordings. Published in <a href="https://elifesciences.org/articles/98522" target="_blank"><em>eLife</em></a>, 2024.</li>
+                <li><a href="https://github.com/Coen-Lab/chronic-neuropixels" target="_blank">Apollo implant</a> &mdash; An adaptable, reusable, and light implant for chronic Neuropixels recordings. Led by C&eacute;lian Bimbard and Pip Coen. Published in <a href="https://elifesciences.org/articles/98522" target="_blank"><em>eLife</em></a>, 2024.</li>
             </ul>
         </section>
 

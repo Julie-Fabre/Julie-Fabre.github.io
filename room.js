@@ -131,13 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
       container.innerHTML = "";
       container.classList.add("loaded");
 
-      // Make the SVG fill the full viewport width
+      // Remove fixed dimensions from SVG - let CSS handle responsive sizing
       svg.removeAttribute("width");
       svg.removeAttribute("height");
-      svg.style.width = "100vw";
-      svg.style.height = "auto";
-      svg.style.display = "block";
-      svg.style.marginLeft = "calc(-50vw + 50%)";
       container.appendChild(svg);
 
       // Prevent decorative overlays from blocking clicks (survives Inkscape re-saves)
