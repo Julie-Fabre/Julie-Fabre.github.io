@@ -237,12 +237,15 @@ nav ul li a:hover {
         -webkit-overflow-scrolling: touch;
         width: 100vw;
         margin-left: calc(-50vw + 50%);
+        display: block;
+        min-height: auto;
     }
 
     #room-container svg {
         min-width: 140vw;
         width: 140vw;
         max-width: none;
+        max-height: none;
         height: auto;
         margin-left: 0;
     }
@@ -349,12 +352,15 @@ nav ul li a:hover {
         -webkit-overflow-scrolling: touch;
         width: 100vw;
         margin-left: calc(-50vw + 50%);
+        display: block;
+        min-height: auto;
     }
 
     #room-container svg {
         min-width: 200vw;
         width: 200vw;
         max-width: none;
+        max-height: none;
         height: auto;
         margin-left: 0;
     }
@@ -457,10 +463,20 @@ nav ul li a.rss-button:hover {
 /* Interactive room - container breaks out of padded parent to span full width */
 #room-container {
     text-align: center;
-    min-height: 50vh;
+    min-height: 80vh;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     overflow: hidden;
+    /* Center SVG vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Background extends the room walls seamlessly */
+    background: linear-gradient(to bottom,
+        #f5dfc5 0%,      /* ceiling/top wall color */
+        #e8c8a0 30%,     /* mid wall color */
+        #c09058 100%     /* floor edge color */
+    );
 }
 
 #room-container.loaded {
@@ -478,7 +494,10 @@ nav ul li a.rss-button:hover {
     display: block;
     animation: roomFadeIn 0.5s ease;
     width: 100%;
+    max-width: 100%;
     height: auto;
+    max-height: 85vh;
+    object-fit: contain;
 }
 
 @keyframes roomFadeIn {
@@ -652,4 +671,13 @@ body.dark-mode .room-tooltip {
 
 body.dark-mode .rss-button {
     background-color: #cc7700;
+}
+
+body.dark-mode #room-container {
+    /* Night scene background - darker warm tones with hint of lamp glow */
+    background: linear-gradient(to bottom,
+        #1a1520 0%,      /* dark ceiling/night sky edge */
+        #2a2035 30%,     /* dark wall color */
+        #3d2a20 100%     /* dark floor edge */
+    );
 }

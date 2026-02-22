@@ -9,7 +9,7 @@ var articles = [
   {
     title: 'Research',
     content: 'neuroscience, neuropixels, corticostriatal, striatum, cortex, UnitMatch, unit tracking, basal ganglia, sensorimotor, taste aversion, learning, Nature, electrophysiology',
-    link: 'resources.html'
+    link: 'research.html'
   },
   {
     title: 'Open Science in Academia',

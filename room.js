@@ -18,17 +18,17 @@ const interactiveObjects = [
   },
   {
     svgLabel: "neuropixels_probe",
-    url: "resources.html",
+    url: "research.html",
     tooltip: "Neuropixels probe — tiny but mighty!",
   },
   {
     svgLabel: "raw_traces_monitor",
-    url: "resources.html#current-ongoing-work",
+    url: "research.html#current-ongoing-work",
     tooltip: "Current work in progress",
   },
   {
     svgLabel: "analysis_monitor",
-    url: "resources.html#current-ongoing-work",
+    url: "research.html#current-ongoing-work",
     tooltip: "Current work in progress",
   },
   {
@@ -58,12 +58,12 @@ const interactiveObjects = [
   },
   {
     svgLabel: "poster_basal_ganglia",
-    url: "resources.html#basal-ganglia",
+    url: "research.html#basal-ganglia",
     tooltip: "Sensorimotor transformation in basal ganglia",
   },
   {
     svgLabel: "poster_cta",
-    url: "resources.html#taste-aversion",
+    url: "research.html#taste-aversion",
     tooltip: "Conditioned taste aversion neural encoding",
   },
   {
