@@ -1279,6 +1279,135 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
+      // === BROMPTON FOLD ANIMATION ===
+      // Fold sequence: 1) rear wheel swings under, 2) frame folds at hinge
+      // bringing front wheel back, 3) handlebar folds down, 4) saddle drops.
+      // Stem is nested inside front group so it travels with the frame fold.
+      var bromptonGroup = labelMap["brompton"];
+      if (bromptonGroup) {
+        var bromptonFolded = false;
+        var bromptonAnimating = false;
+        bromptonGroup.style.cursor = "pointer";
+
+        // Wrap child elements by ID into a <g> sub-group
+        function bromptonWrap(ids) {
+          var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          var els = ids.map(function (id) {
+            return bromptonGroup.querySelector("#" + id);
+          }).filter(Boolean);
+          if (els.length === 0) return null;
+          els[0].parentNode.insertBefore(g, els[0]);
+          els.forEach(function (el) { g.appendChild(el); });
+          return g;
+        }
+
+        // 1) Stem group — created first so it can be nested inside front group
+        //    Pivot: stem hinge clamp at (0, 105)
+        var stemFoldGroup = bromptonWrap([
+          "path303", "rect303", "line303", "line304", "line305",
+          "g350"
+        ]);
+
+        // 2) Front group: front wheel + head tube + fork, then nest stem inside
+        //    Pivot: main hinge clamp at (-6.2, 111.25)
+        var frontIds = [
+          "circle280", "circle281", "circle282", "g293",
+          "path297", "path298",
+          "g345"
+        ];
+        var frontEls = frontIds.map(function (id) {
+          return bromptonGroup.querySelector("#" + id);
+        }).filter(Boolean);
+        var frontFoldGroup = null;
+        if (frontEls.length > 0) {
+          frontFoldGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          frontEls[0].parentNode.insertBefore(frontFoldGroup, frontEls[0]);
+          frontEls.forEach(function (el) { frontFoldGroup.appendChild(el); });
+          if (stemFoldGroup) frontFoldGroup.appendChild(stemFoldGroup);
+        }
+
+        // 3) Rear wheel ONLY (not the rear triangle / stays / rack)
+        //    Pivot: bottom bracket at (-25.8, 123)
+        var rearWheelGroup = bromptonWrap([
+          "circle267", "circle268", "circle269", "g280"
+        ]);
+
+        // 4) Saddle + seat post
+        var saddleFoldGroup = bromptonWrap(["path299", "path305"]);
+
+        // Smooth animation (rotation or translation) with optional delay
+        function animateBromptonPart(group, target, px, py, duration, mode, delay) {
+          if (!group) return;
+          setTimeout(function () {
+            var start = parseFloat(group.getAttribute("data-val") || "0");
+            var t0 = null;
+            function step(ts) {
+              if (!t0) t0 = ts;
+              var p = Math.min((ts - t0) / duration, 1);
+              var ease = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+              var val = start + (target - start) * ease;
+              if (mode === "translate") {
+                group.setAttribute("transform", "translate(0," + val + ")");
+              } else {
+                group.setAttribute("transform", "rotate(" + val + "," + px + "," + py + ")");
+              }
+              if (p < 1) {
+                requestAnimationFrame(step);
+              } else {
+                group.setAttribute("data-val", String(target));
+              }
+            }
+            requestAnimationFrame(step);
+          }, delay || 0);
+        }
+
+        bromptonGroup.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (bromptonAnimating) return;
+          bromptonAnimating = true;
+
+          if (!bromptonFolded) {
+            // Step 1: Rear wheel swings CCW under the frame
+            animateBromptonPart(rearWheelGroup, -175, -25.8, 123, 600, "rotate", 0);
+            // Step 2: Frame folds at hinge — front wheel + fork swing back
+            animateBromptonPart(frontFoldGroup, 70, -6.2, 111.25, 600, "rotate", 400);
+            // Step 3: Handlebar stem folds down (nested in front, so relative)
+            animateBromptonPart(stemFoldGroup, 160, 0, 105, 400, "rotate", 750);
+            // Step 4: Saddle drops
+            animateBromptonPart(saddleFoldGroup, 5, 0, 0, 400, "translate", 900);
+            tooltip.textContent = "Folded";
+            bromptonFolded = true;
+            setTimeout(function () { bromptonAnimating = false; }, 1400);
+          } else {
+            // Unfold in reverse order
+            animateBromptonPart(saddleFoldGroup, 0, 0, 0, 400, "translate", 0);
+            animateBromptonPart(stemFoldGroup, 0, 0, 105, 400, "rotate", 100);
+            animateBromptonPart(frontFoldGroup, 0, -6.2, 111.25, 600, "rotate", 300);
+            animateBromptonPart(rearWheelGroup, 0, -25.8, 123, 600, "rotate", 500);
+            tooltip.textContent = "Ready to ride";
+            bromptonFolded = false;
+            setTimeout(function () { bromptonAnimating = false; }, 1200);
+          }
+          tooltip.classList.add("visible");
+          setTimeout(function () { tooltip.classList.remove("visible"); }, 1500);
+        });
+
+        bromptonGroup.addEventListener("mouseenter", function () {
+          tooltip.textContent = bromptonFolded
+            ? "Click to unfold"
+            : "Brompton — click to fold";
+          tooltip.classList.add("visible");
+        });
+        bromptonGroup.addEventListener("mouseleave", function () {
+          tooltip.classList.remove("visible");
+        });
+        bromptonGroup.addEventListener("mousemove", function (e) {
+          tooltip.style.left = (e.clientX + 12) + "px";
+          tooltip.style.top = (e.clientY + 12) + "px";
+        });
+      }
+
       // === WINDOW SCENES (day landscape + night sky) ===
       var windowEl = labelMap["window"];
       var darknessOverlay = svg.querySelector("#lamp-darkness");
