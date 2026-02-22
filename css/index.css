@@ -291,7 +291,11 @@ section {
 
 #hide_from_search_results_page {
     margin: 0;
-    padding: 0 !important;
+    padding: 0 10vw !important;
+}
+
+#hide_from_search_results_page section {
+    padding: 0;
 }
 
 footer {

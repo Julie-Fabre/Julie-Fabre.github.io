@@ -20,21 +20,8 @@
             </li>
             <li><a href="about.html">ABOUT ME</a></li>
             <li><a href="resources.html">RESEARCH</a></li>
-            <li><a href="open-science.html">OPEN SCIENCE</a>
-            <ul>
-                <li><a href="software.html">SOFTWARE</a></li>
-                <li><a href="protocols.html">PROTOCOLS</a></li>
-                <li><a href="promotion.html">PROMOTION</a></li>
-            </ul>
-            </li>
-            <li><a href="tinkering.html">TINKERING</a>
-            <ul>
-                <li><a href="shoemaking.html">SHOEMAKING</a></li>
-                <li><a href="leatherwork.html">LEATHERWORK</a></li>
-                <li><a href="tinkering-other.html">OTHER PROJECTS</a></li>
-                <li><a href="fun-data-analysis.html">FUN ANALYSIS</a></li>
-            </ul>
-            </li>
+            <li><a href="open-science.html">OPEN SCIENCE</a></li>
+            <li><a href="tinkering.html">TINKERING</a></li>
             <li class="search-bar">
                 <form id="searchForm">
                     <input type="text" id="search" placeholder="Search posts...">
@@ -46,32 +33,67 @@
 
 <section id="search_results">
 <div id="searchResults">
-        <!-- Search results will be appended here -->
 </div>
 </section>
 
-<section id="hide_from_search_results_page">
+    <section id="hide_from_search_results_page">
+        <h1>Open Science</h1>
 
-    <article>
-    <h1>Open Science in Academia</h1>
+        <p>I think science works better when the tools are shared. During my PhD I kept building software to solve problems in my own data, and realised other people were hitting the same walls &mdash; so I made the tools open-source, documented them properly, and tried to get the word out.</p>
 
-    <p>In 2024, I was awarded the <strong>UCL Open Science Award</strong> for my work on making
-    neuroscience research tools freely available and openly developed.</p>
+        <p>That has grown into something I care about beyond just my own work. I review for the <a href="https://joss.theoj.org/" target="_blank">Journal of Open Source Software</a>, I received an honourable mention for the <a href="https://www.ucl.ac.uk/library/open-science-research-support/open-science/ucl-open-science-awards" target="_blank">UCL Open Science Award</a> in 2023 and helped organise it the following year, I run workshops on how to build good research software, and I <a href="https://blogs.ucl.ac.uk/open-access/2024/08/27/open-source-software-design-for-academia/" target="_blank">write about it</a> when I can.</p>
 
-    <p>This page collects my thoughts, experiences and practical guides on open science in academia.</p>
+        <section id="bombcell">
+            <h2>BombCell</h2>
 
-    <h2>Articles</h2>
+            <p>Neuropixels probes can record hundreds of neurons at once, but figuring out which spikes belong to which neuron is messy. Spike sorting algorithms do a first pass, but the results need quality control: are these spikes from a real neuron, or an artifact? From one neuron, or a mix of several? Is the neuron being reliably detected? The standard answer has been to check each unit by hand &mdash; hours of work per experiment, highly subjective, and nearly impossible to reproduce across labs.</p>
 
-    <ul>
-        <li><em>Coming soon...</em></li>
-        <!-- Add articles here as:
-        <li><a href="open-science-article-name.html">Article title</a></li>
-        -->
-    </ul>
+            <p>BombCell automates this. It computes quality metrics for every unit and classifies them into single units, multi-units, noise, and non-somatic units. No manual curation needed. It also makes experiments possible that were previously impractical, like tracking neural activity across days while an animal learns a task.</p>
 
-    </article>
+            <p>BombCell is now used in over forty labs worldwide and has been recognised with a $25,000 MathWorks grant. It is available in MATLAB and Python, and we are integrating it into <a href="https://github.com/SpikeInterface" target="_blank">SpikeInterface</a>. I teach it every year in the <a href="https://www.ucl.ac.uk/neuropixels/training" target="_blank">UCL Neuropixels course</a>, which has had thousands of attendees.</p>
 
-</section>
+            <p><a href="https://github.com/Julie-Fabre/bombcell" target="_blank">Code on GitHub</a></p>
+        </section>
+
+        <section id="brain-street-view">
+            <h2>Brain Street View</h2>
+
+            <p>The Allen Mouse Brain Connectivity Atlas is an incredible dataset &mdash; thousands of tracer injections mapping long-range projections across the entire mouse brain. But actually loading and exploring that data programmatically is surprisingly cumbersome.</p>
+
+            <p>Brain Street View makes it easy. It lets you pull connectivity data from the Allen API in MATLAB and visualise projection pathways between brain regions, so you can quickly answer questions like <q>where does this region project to?</q> or <q>what are the inputs to this area?</q></p>
+
+            <p><a href="https://github.com/Julie-Fabre/brain_street_view" target="_blank">Code on GitHub</a></p>
+        </section>
+
+        <section id="other-tools">
+            <h2>Other tools</h2>
+
+            <ul>
+                <li><a href="https://github.com/Julie-Fabre/UnitMatch" target="_blank">UnitMatch</a> &mdash; Track the same neuron across recording sessions using waveform shape and probe position. Published in <a href="https://doi.org/10.1038/s41592-024-02440-1" target="_blank"><em>Nature Methods</em></a>, 2024.</li>
+                <li><a href="https://github.com/Julie-Fabre/YAHT" target="_blank">YAHT</a> &mdash; Yet Another Histology Tool. All-in-one pipeline from histology images to tracked probe trajectories, with automated atlas registration and 3D visualisation.</li>
+                <li><a href="https://github.com/Julie-Fabre/prettify_matlab" target="_blank">prettify_matlab</a> &mdash; Instantly make MATLAB plots publication-ready and colourblind-friendly.</li>
+                <li><a href="https://github.com/Coen-Lab/chronic-neuropixels" target="_blank">Apollo implant</a> &mdash; An adaptable, reusable, and light implant for chronic Neuropixels recordings. Published in <a href="https://elifesciences.org/articles/98522" target="_blank"><em>eLife</em></a>, 2024.</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="https://github.com/Julie-Fabre/awesome_neuropixels" target="_blank">Awesome Neuropixels</a> &mdash; Curated list of Neuropixels resources.</li>
+                <li><a href="https://github.com/Julie-Fabre/awesome_science" target="_blank">Awesome Science</a> &mdash; Curated list of tools for science and academia.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Writing</h2>
+
+            <ul>
+                <li><a href="https://blogs.ucl.ac.uk/open-access/2024/08/27/open-source-software-design-for-academia/" target="_blank">Open-source software design for academia</a> &mdash; UCL Open Science Blog, 2024</li>
+            </ul>
+        </section>
+
+    </section>
 
     <footer>
     </footer>

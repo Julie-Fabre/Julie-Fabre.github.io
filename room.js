@@ -68,17 +68,17 @@ const interactiveObjects = [
   },
   {
     svgLabel: "bombcell",
-    url: "https://github.com/Julie-Fabre/bombcell",
+    url: "open-science.html#bombcell",
     tooltip: "BombCell — automated spike sorting quality control",
   },
   {
     svgLabel: "brain_street_view",
-    url: "https://github.com/Julie-Fabre/brain_street_view",
+    url: "open-science.html#brain-street-view",
     tooltip: "Brain Street View — Allen connectivity atlas explorer",
   },
   {
     svgLabel: "unitmatch",
-    url: "resources.html#unitmatch",
+    url: "open-science.html#unitmatch",
     tooltip: "UnitMatch — track neurons across recording sessions",
   },
   {
