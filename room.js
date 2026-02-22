@@ -24,12 +24,12 @@ const interactiveObjects = [
   {
     svgLabel: "raw_traces_monitor",
     url: "resources.html#current-ongoing-work",
-    tooltip: "Current ongoing work",
+    tooltip: "Current work in progress",
   },
   {
     svgLabel: "analysis_monitor",
     url: "resources.html#current-ongoing-work",
-    tooltip: "Current ongoing work",
+    tooltip: "Current work in progress",
   },
   {
     svgLabel: "fermentation",
@@ -69,17 +69,17 @@ const interactiveObjects = [
   {
     svgLabel: "bombcell",
     url: "https://github.com/Julie-Fabre/bombcell",
-    tooltip: "BombCell — spike sorting quality control",
+    tooltip: "BombCell — automated spike sorting quality control",
   },
   {
     svgLabel: "brain_street_view",
     url: "https://github.com/Julie-Fabre/brain_street_view",
-    tooltip: "Brain Street View",
+    tooltip: "Brain Street View — Allen connectivity atlas explorer",
   },
   {
     svgLabel: "unitmatch",
     url: "resources.html#unitmatch",
-    tooltip: "UnitMatch — cross-session unit tracking",
+    tooltip: "UnitMatch — track neurons across recording sessions",
   },
   {
     svgLabel: "awesome_science_list",
@@ -94,7 +94,7 @@ const interactiveObjects = [
   {
     svgLabel: "maxou",
     url: "https://m-beau.github.io/",
-    tooltip: "Maxou",
+    tooltip: "Maxime Beau — neuroscientist, Princeton",
   },
 ];
 
@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var hintEl = document.querySelector(".room-hint");
   if (hintEl) {
     if (isTouchHint) {
-      hintEl.innerHTML = '<span style="font-size: 19px;">Welcome to my home office!</span><br>This room is full of secrets... tap around to find them';
+      hintEl.innerHTML = '<span style="font-size: 19px;">Julie Fabre — Systems Neuroscientist, Princeton</span><br>Have a look around my home office — most things are tappable';
     } else {
-      hintEl.innerHTML = '<span style="font-size: 19px;">Welcome to my home office!</span><br>This room is full of secrets... click around to find them';
+      hintEl.innerHTML = '<span style="font-size: 19px;">Julie Fabre — Systems Neuroscientist, Princeton</span><br>Have a look around my home office — most things are clickable';
     }
   }
 
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         lamp.style.cursor = "pointer";
 
-        // Elements that dim when lamp is off (everything except screens, keyboard, mouse, books)
+        // Elements that dim when lamp is off
         var dimTargets = ["pegboard", "poster_basal_ganglia", "poster_cta",
                           "open_science_award", "fermentation", "right-shelf",
                           "fermentation-shelf-upper", "corticostriatal_frame",
@@ -307,6 +307,11 @@ document.addEventListener("DOMContentLoaded", function () {
                           "window-sill"].map(function (label) {
           return labelMap[label];
         }).filter(Boolean);
+        // Add book shelves (queried by ID since they lack inkscape labels)
+        var bookShelf = svg.querySelector("#g2");
+        if (bookShelf) dimTargets.push(bookShelf);
+        var lowerShelf = svg.querySelector("#g34");
+        if (lowerShelf) dimTargets.push(lowerShelf);
 
         // Callbacks for other sections to hook into lamp toggle
         var onLampToggle = [];
@@ -579,7 +584,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "old-paper.html";
           });
           oldPaper.addEventListener("mouseenter", function () {
-            tooltip.textContent = "An old paper... what could it be?";
+            tooltip.textContent = "A forgotten paper tucked in the drawer";
             tooltip.classList.add("visible");
           });
           oldPaper.addEventListener("mouseleave", function () {
@@ -679,7 +684,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Tooltip for plank
         loosePlank.addEventListener("mouseenter", function () {
-          tooltip.textContent = plankTilted ? "Put it back" : "This plank looks loose...";
+          tooltip.textContent = plankTilted ? "Close the plank" : "A loose floorboard...";
           tooltip.classList.add("visible");
         });
         loosePlank.addEventListener("mouseleave", function () {
@@ -714,7 +719,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         mouseHitOverlay.addEventListener("mouseenter", function () {
           if (mouseState === "peeking") {
-            tooltip.textContent = "A little mouse! Click to say hello";
+            tooltip.textContent = "A little mouse!";
             tooltip.classList.add("visible");
           } else if (mouseState === "emerged") {
             tooltip.textContent = "A little mouse!";
@@ -1025,16 +1030,7 @@ document.addEventListener("DOMContentLoaded", function () {
               coffeeShine.style.opacity = "0";
             }
             // Steam stops
-            steamEls.forEach(function (s) {
-              if (s) {
-                s.style.transition = "opacity 0.5s ease";
-                s.style.opacity = "0";
-                // Pause animations
-                s.querySelectorAll("animate, animateTransform").forEach(function (a) {
-                  a.setAttribute("repeatCount", "0");
-                });
-              }
-            });
+            stopSteam("0.5s");
             // Show empty mug interior
             var mugInside = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
             mugInside.setAttribute("cx", "198");
@@ -1045,7 +1041,7 @@ document.addEventListener("DOMContentLoaded", function () {
             coffeeMug.insertBefore(mugInside, mugCoffee);
             setTimeout(function () { mugInside.style.transition = "opacity 0.6s ease"; mugInside.style.opacity = "1"; }, 300);
 
-            tooltip.textContent = "Ahh, that's better!";
+            tooltip.textContent = "Ahh, that's better";
             tooltip.classList.add("visible");
             setTimeout(function () { tooltip.classList.remove("visible"); }, 1500);
           } else {
@@ -1061,22 +1057,15 @@ document.addEventListener("DOMContentLoaded", function () {
             var emptyInside = coffeeMug.querySelector("ellipse[cx='198'][ry='0.45']");
             if (emptyInside) coffeeMug.removeChild(emptyInside);
             // Restart steam
-            steamEls.forEach(function (s) {
-              if (s) {
-                s.style.opacity = "";
-                s.querySelectorAll("animate, animateTransform").forEach(function (a) {
-                  a.setAttribute("repeatCount", "indefinite");
-                });
-              }
-            });
-            tooltip.textContent = "Refilled!";
+            startSteam("0.5s");
+            tooltip.textContent = "Refilled";
             tooltip.classList.add("visible");
             setTimeout(function () { tooltip.classList.remove("visible"); }, 1200);
           }
         });
 
         coffeeMug.addEventListener("mouseenter", function () {
-          tooltip.textContent = coffeeDrunk ? "Empty... click to refill" : "Click for a coffee break!";
+          tooltip.textContent = coffeeDrunk ? "Empty — click to refill" : "Coffee break?";
           tooltip.classList.add("visible");
         });
         coffeeMug.addEventListener("mouseleave", function () {
@@ -1246,11 +1235,11 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(function () { animatePlantGrowth(newScale); }, 300);
 
             var msgs = [
-              "Watered!",
-              "Growing nicely!",
-              "Looking lush!",
-              "Almost fully grown!",
-              "Fully grown!"
+              "Watered",
+              "Growing nicely",
+              "Looking lush",
+              "Almost fully grown",
+              "Fully grown"
             ];
             tooltip.textContent = msgs[plantGrowth - 1];
           } else if (potLevel < maxPot) {
@@ -1260,9 +1249,9 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("plantPot", String(potLevel));
             localStorage.setItem("plantGrowth", "0");
             showBigPot(true);
-            tooltip.textContent = "Re-potted! Room to grow";
+            tooltip.textContent = "Re-potted — room to grow";
           } else {
-            tooltip.textContent = "A happy, healthy philodendron!";
+            tooltip.textContent = "A happy philodendron";
           }
           tooltip.classList.add("visible");
           setTimeout(function () { tooltip.classList.remove("visible"); }, 1500);
@@ -1271,13 +1260,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hover tooltip
         plantGroup.addEventListener("mouseenter", function () {
           if (plantGrowth === 0 && potLevel === 0) {
-            tooltip.textContent = "This plant looks thirsty...";
+            tooltip.textContent = "This philodendron looks thirsty...";
           } else if (plantGrowth < maxGrowth) {
-            tooltip.textContent = "Water me more!";
+            tooltip.textContent = "Click to water";
           } else if (potLevel < maxPot) {
-            tooltip.textContent = "Needs a bigger pot! Click to re-pot";
+            tooltip.textContent = "Needs a bigger pot — click to re-pot";
           } else {
-            tooltip.textContent = "A happy, healthy philodendron!";
+            tooltip.textContent = "A happy philodendron";
           }
           tooltip.classList.add("visible");
         });
