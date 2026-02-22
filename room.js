@@ -94,7 +94,7 @@ const interactiveObjects = [
   {
     svgLabel: "maxou",
     url: "https://m-beau.github.io/",
-    tooltip: "Maxime Beau — neuroscientist, Princeton",
+    tooltip: "Maxime Beau — husband, neuroscientist at Princeton",
   },
 ];
 
