@@ -154,6 +154,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (daySkyGroup) {
           daySkyGroup.style.opacity = (lampOn && curtainsOpen) ? "1" : "0";
         }
+        // Show pointer cursor on window glass only when landscape is visible
+        if (typeof windowPanes !== "undefined") {
+          var canCycle = lampOn && curtainsOpen;
+          windowPanes.forEach(function (pane) {
+            pane.style.cursor = canCycle ? "pointer" : "";
+          });
+        }
       }
 
       // Build a lookup of inkscape:label -> element
@@ -1425,6 +1432,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var clip = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
         clip.setAttribute("id", "window-glass-clip");
         var isFrameOutline = true;
+        var windowPanes = [];
         Array.prototype.slice.call(winGroup.childNodes).forEach(function (node) {
           if (node.nodeName === "path") {
             if (isFrameOutline) { isFrameOutline = false; return; } // skip frame
@@ -1436,6 +1444,7 @@ document.addEventListener("DOMContentLoaded", function () {
               clip.appendChild(clipPane);
               // Make the pane translucent so landscape shows through
               node.style.fillOpacity = "0.3";
+              windowPanes.push(node);
             }
           }
         });
@@ -1452,6 +1461,8 @@ document.addEventListener("DOMContentLoaded", function () {
                    : month >= 8 && month <= 10 ? "autumn" : "winter";
         var urlSeason = new URLSearchParams(window.location.search).get("season");
         if (urlSeason && ["spring","summer","autumn","winter"].indexOf(urlSeason) !== -1) season = urlSeason;
+        var seasons = ["spring", "summer", "autumn", "winter"];
+        var sceneGeneration = 0;
 
         // Per-season visual config
         var seasonConfig = {
@@ -1516,14 +1527,18 @@ document.addEventListener("DOMContentLoaded", function () {
             overlay: "snow"
           }
         };
-        var sConf = seasonConfig[season];
-
         daySkyGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
         daySkyGroup.setAttribute("id", "day-scene");
         daySkyGroup.setAttribute("clip-path", "url(#window-glass-clip)");
         daySkyGroup.style.opacity = "1";
         daySkyGroup.style.transition = "opacity 0.8s ease";
         daySkyGroup.style.pointerEvents = "none";
+
+        function buildDaySceneContent() {
+        while (daySkyGroup.firstChild) daySkyGroup.removeChild(daySkyGroup.firstChild);
+        sceneGeneration++;
+        var myGen = sceneGeneration;
+        var sConf = seasonConfig[season];
 
         // -- Sky background --
         svgEl("rect", { x: 98, y: 48, width: 110, height: 65,
@@ -1752,6 +1767,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Shared particle animation helper
         function animateParticles(particles) {
           (function tick() {
+            if (myGen !== sceneGeneration) return;
             particles.forEach(function (p) {
               p.y += p.speed * 0.16;
               p.x += Math.sin(p.phase) * p.wobble;
@@ -1770,6 +1786,7 @@ document.addEventListener("DOMContentLoaded", function () {
               requestAnimationFrame(tick);
             } else {
               var obs = new MutationObserver(function () {
+                if (myGen !== sceneGeneration) { obs.disconnect(); return; }
                 if (daySkyGroup.style.opacity !== "0") { obs.disconnect(); requestAnimationFrame(tick); }
               });
               obs.observe(daySkyGroup, { attributes: true, attributeFilter: ["style"] });
@@ -1826,9 +1843,56 @@ document.addEventListener("DOMContentLoaded", function () {
           animateParticles(petalArr);
         }
 
+        } // end buildDaySceneContent
+        buildDaySceneContent();
+
         // Insert day scene as the very first child of window group
         // (renders underneath everything: frame, panes, curtains)
         winGroup.insertBefore(daySkyGroup, winGroup.firstChild);
+
+        // === SEASON CYCLING (click window glass to change season) ===
+        function cycleSeason() {
+          if (!lampOn || !curtainsOpen) return;
+          var idx = seasons.indexOf(season);
+          season = seasons[(idx + 1) % seasons.length];
+          // Quick crossfade
+          var prevTransition = daySkyGroup.style.transition;
+          daySkyGroup.style.transition = "opacity 0.3s ease";
+          daySkyGroup.style.opacity = "0";
+          setTimeout(function () {
+            buildDaySceneContent();
+            daySkyGroup.style.opacity = "1";
+            setTimeout(function () {
+              daySkyGroup.style.transition = prevTransition;
+            }, 300);
+          }, 300);
+        }
+
+        function seasonTooltipText() {
+          return season.charAt(0).toUpperCase() + season.slice(1) + " — click to change season";
+        }
+
+        windowPanes.forEach(function (pane) {
+          pane.style.cursor = "pointer";
+          pane.addEventListener("click", function (e) {
+            e.stopPropagation();
+            cycleSeason();
+            tooltip.textContent = seasonTooltipText();
+          });
+          pane.addEventListener("mouseenter", function () {
+            if (!lampOn || !curtainsOpen) return;
+            tooltip.textContent = seasonTooltipText();
+            tooltip.classList.add("visible");
+          });
+          pane.addEventListener("mouseleave", function () {
+            tooltip.classList.remove("visible");
+          });
+          pane.addEventListener("mousemove", function (e) {
+            if (!lampOn || !curtainsOpen) return;
+            tooltip.style.left = (e.clientX + 12) + "px";
+            tooltip.style.top = (e.clientY + 12) + "px";
+          });
+        });
 
         // -------------------------------------------------------
         // NIGHT SKY — moon + stars (inside window group, clipped to panes)
