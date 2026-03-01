@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Apply dark mode from saved preference
     if (localStorage.getItem('darkMode') === 'true') {
+        document.documentElement.classList.add('dark-mode');
         document.body.classList.add('dark-mode');
     }
 

@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var hintEl = document.querySelector(".room-hint");
   if (hintEl) {
     if (isTouchHint) {
-      hintEl.innerHTML = '<span style="font-size: 19px;">Julie Fabre — Systems Neuroscientist, Princeton</span><br>Have a look around my home office — most things are tappable';
+      hintEl.innerHTML = '<span style="font-size: 19px;">Julie Fabre — Systems Neuroscientist, Princeton /!\\ Website under construction /!\\ </span><br>Have a look around my home office — most things are tappable';
     } else {
-      hintEl.innerHTML = '<span style="font-size: 19px;">Julie Fabre — Systems Neuroscientist, Princeton</span><br>Have a look around my home office — most things are clickable';
+      hintEl.innerHTML = '<span style="font-size: 19px;">Julie Fabre — Systems Neuroscientist, Princeton /!\\ Website under construction /!\\ </span><br>Have a look around my home office — most things are clickable';
     }
   }
 
@@ -357,8 +357,10 @@ document.addEventListener("DOMContentLoaded", function () {
           onLampToggle.forEach(function (fn) { fn(lampOn, dur); });
           // Site-wide dark mode
           if (lampOn) {
+            document.documentElement.classList.remove("dark-mode");
             document.body.classList.remove("dark-mode");
           } else {
+            document.documentElement.classList.add("dark-mode");
             document.body.classList.add("dark-mode");
           }
           localStorage.setItem("darkMode", lampOn ? "false" : "true");
