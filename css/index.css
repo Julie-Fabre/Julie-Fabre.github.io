@@ -685,3 +685,20 @@ body.dark-mode #room-container {
         #3d2a20 100%     /* dark floor edge */
     );
 }
+
+/* Profile photo on about page */
+.profile-photo {
+    float: right;
+    max-width: 250px;
+    margin: 0 0 20px 30px;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .profile-photo {
+        float: none;
+        display: block;
+        max-width: 200px;
+        margin: 0 auto 20px auto;
+    }
+}
