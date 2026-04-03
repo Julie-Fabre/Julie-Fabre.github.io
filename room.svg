@@ -25,21 +25,43 @@
    inkscape:deskcolor="#505050"
    inkscape:document-units="mm"
    showgrid="false"
-   inkscape:zoom="1.8054092"
-   inkscape:cx="129.33356"
-   inkscape:cy="204.66275"
+   inkscape:zoom="1.8557884"
+   inkscape:cx="927.63806"
+   inkscape:cy="268.61898"
    inkscape:window-width="1874"
    inkscape:window-height="1011"
    inkscape:window-x="46"
    inkscape:window-y="32"
    inkscape:window-maximized="1"
-   inkscape:current-layer="g14983"
+   inkscape:current-layer="crafting-desk"
    showguides="false"><sodipodi:guide
      position="19.297478,92.81432"
      orientation="-0.22575549,-0.974184"
      id="guide6"
      inkscape:locked="false" /></sodipodi:namedview><defs
    id="defs2"><linearGradient
+   id="linearGradient64"
+   inkscape:collect="always"><stop
+     style="stop-color:#42f9a1;stop-opacity:1;"
+     offset="0"
+     id="stop60" /><stop
+     style="stop-color:#48f9a4;stop-opacity:0.92156863;"
+     offset="0.294072"
+     id="stop64" /><stop
+     style="stop-color:#98fbcc;stop-opacity:0;"
+     offset="1"
+     id="stop61" /></linearGradient><linearGradient
+   id="linearGradient8"
+   inkscape:collect="always"><stop
+     style="stop-color:#98fbcc;stop-opacity:1;"
+     offset="0"
+     id="stop56" /><stop
+     style="stop-color:#4cf8a7;stop-opacity:1;"
+     offset="0.33857638"
+     id="stop65" /><stop
+     style="stop-color:#98fbcc;stop-opacity:0;"
+     offset="1"
+     id="stop59" /></linearGradient><linearGradient
    id="linearGradient1"
    inkscape:collect="always"><stop
      style="stop-color:#784421;stop-opacity:0.50196078;"
@@ -2015,7 +2037,27 @@
   
   
   
-</defs><g
+<radialGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient64"
+   id="radialGradient60"
+   cx="257.50295"
+   cy="119.48533"
+   fx="257.50295"
+   fy="119.48533"
+   r="0.45100747"
+   gradientTransform="matrix(1,0,0,0.54284013,0,54.623898)"
+   gradientUnits="userSpaceOnUse" /><radialGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient8"
+   id="radialGradient64"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="matrix(1,0,0,0.54263446,0,54.401344)"
+   cx="253.86755"
+   cy="118.945"
+   fx="253.86755"
+   fy="118.945"
+   r="0.45117976" /></defs><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1"
@@ -2965,7 +3007,7 @@
      id="baseboard-right" /></g><g
    id="g21465"
    inkscape:label="walls"
-   transform="matrix(0.97850121,0,0,0.8461992,3.3557469,-2.3860491)"><path
+   transform="matrix(0.97850121,0,0,0.8461992,3.3557469,-2.4100759)"><path
      style="fill:url(#wall-gradient-left);fill-opacity:1;stroke:#4a3520;stroke-width:1.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      d="M -3.1622468,2.8004877 54.961274,28.932298 55.126097,136.32456 -3.0482484,164.89698 Z"
      id="path4394"
@@ -5658,7 +5700,7 @@
   
   <!-- Desk top surface -->
   <path
-   d="m 222.8554,116.14358 19,-1.5 44.27132,5.88099 -26.20209,3.36719 z"
+   d="m 222.82215,116.14358 19,-1.5 44.27132,5.88099 -26.20209,3.36719 z"
    style="fill:#9a7850;stroke:#4a3520;stroke-width:0.5"
    id="path204"
    sodipodi:nodetypes="ccccc" />
@@ -5742,10 +5784,7 @@
    style="fill:#663333"
    d="m 126.364,234.193 c -1.32,0 -2.61,0.539 -3.54,1.47 -0.93,0.931 -1.46,2.21 -1.46,3.53 0,1.32 0.53,2.609 1.46,3.539 0.93,0.931 2.22,1.461 3.54,1.461 1.319,0 2.609,-0.53 3.53,-1.461 0.939,-0.93 1.47,-2.219 1.47,-3.539 0,-1.32 -0.53,-2.61 -1.47,-3.53 -0.93,-0.931 -2.211,-1.47 -3.53,-1.47 z"
    id="path14" />
-	<path
-   style="fill:#663333"
-   d="m 126.364,258.732 c -1.32,0 -2.61,0.541 -3.54,1.471 -0.93,0.93 -1.46,2.221 -1.46,3.529 0,1.32 0.53,2.611 1.46,3.541 0.939,0.93 2.22,1.47 3.54,1.47 1.31,0 2.6,-0.54 3.53,-1.47 0.939,-0.93 1.47,-2.221 1.47,-3.541 0,-1.309 -0.53,-2.6 -1.47,-3.529 -0.92,-0.93 -2.211,-1.471 -3.53,-1.471 z"
-   id="path15" />
+	
 	<path
    style="fill:#663333"
    d="m 64.914,283.283 c -1.32,0 -2.61,0.529 -3.54,1.46 -0.93,0.931 -1.46,2.22 -1.46,3.54 0,1.311 0.53,2.6 1.46,3.529 0.93,0.931 2.22,1.471 3.54,1.471 1.31,0 2.6,-0.54 3.53,-1.471 0.93,-0.93 1.47,-2.219 1.47,-3.529 0,-1.32 -0.54,-2.609 -1.47,-3.54 -0.93,-0.931 -2.22,-1.46 -3.53,-1.46 z"
@@ -5794,10 +5833,7 @@
    style="fill:#663333"
    d="m 269.863,159.436 c 1.32,0 2.609,-0.53 3.539,-1.461 0.93,-0.93 1.461,-2.219 1.461,-3.539 0,-1.32 -0.531,-2.6 -1.461,-3.53 -0.93,-0.931 -2.219,-1.47 -3.539,-1.47 -1.32,0 -2.6,0.539 -3.531,1.47 -0.939,0.92 -1.469,2.21 -1.469,3.53 0,1.32 0.529,2.609 1.469,3.539 0.922,0.93 2.211,1.461 3.531,1.461 z"
    id="path27" />
-	<path
-   style="fill:#663333"
-   d="m 269.863,183.985 c 1.32,0 2.6,-0.54 3.539,-1.47 0.93,-0.93 1.461,-2.221 1.461,-3.541 0,-1.309 -0.531,-2.6 -1.461,-3.529 -0.93,-0.929 -2.219,-1.471 -3.539,-1.471 -1.32,0 -2.609,0.541 -3.531,1.471 -0.939,0.93 -1.469,2.221 -1.469,3.529 0,1.32 0.529,2.611 1.469,3.541 0.932,0.93 2.221,1.47 3.531,1.47 z"
-   id="path28" />
+	
 	<path
    style="fill:#663333"
    d="m 331.312,208.525 c 1.32,0 2.611,-0.54 3.541,-1.471 0.93,-0.93 1.459,-2.219 1.459,-3.529 0,-1.32 -0.529,-2.609 -1.459,-3.54 -0.93,-0.931 -2.221,-1.46 -3.541,-1.46 -1.309,0 -2.6,0.529 -3.529,1.46 -0.93,0.931 -1.471,2.22 -1.471,3.54 0,1.311 0.541,2.6 1.471,3.529 0.93,0.931 2.221,1.471 3.529,1.471 z"
@@ -5823,61 +5859,37 @@
     
     <!-- Left LED strips (glowing green) -->
     <path
-   d="m 251.96981,118.95102 1.51419,-1.02693"
-   style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-linecap:round;stroke-opacity:0.9"
-   id="led-l1" />
-    <path
-   d="m 252.06113,119.54619 1.71369,-1.37357"
-   style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-linecap:round;stroke-opacity:0.9"
-   id="led-l2" />
-    <path
-   d="m 252.48838,119.71019 1.64766,-1.30897"
-   style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-linecap:round;stroke-opacity:0.9"
-   id="led-l3" />
+   style="stroke-linecap:round;stroke-linejoin:round;opacity:0.7;fill:url(#radialGradient60);fill-opacity:1;stroke-width:0.0665343"
+   d="m 257.17726,119.65543 c 0.0831,0.0465 0.1986,0.0729 0.31812,0.0747 0.1188,9.6e-4 0.2358,-0.027 0.32142,-0.0693 0.0849,-0.0447 0.135,-0.1077 0.1371,-0.1719 0.002,-0.0645 -0.0441,-0.1281 -0.1269,-0.1749 -0.0831,-0.0465 -0.1992,-0.0732 -0.31713,-0.0735 -0.1194,-0.001 -0.2364,0.027 -0.32076,0.0687 -0.0852,0.045 -0.1356,0.108 -0.1371,0.1725 -0.002,0.0648 0.0441,0.1281 0.1266,0.1746 z"
+   id="path28-7" /><path
+   style="stroke-linecap:round;stroke-linejoin:round;opacity:0.6;fill:url(#radialGradient64);fill-opacity:1;stroke-width:0.0665343"
+   d="m 254.19264,118.7743 c -0.0831,-0.0465 -0.1992,-0.0732 -0.31812,-0.0741 -0.1188,-9.9e-4 -0.2355,0.027 -0.32043,0.069 -0.0852,0.045 -0.1356,0.108 -0.1377,0.1719 -0.001,0.0648 0.0441,0.1281 0.1275,0.1749 0.0825,0.0462 0.1986,0.0729 0.3168,0.0738 0.1194,10e-4 0.2364,-0.027 0.32208,-0.069 0.0846,-0.0444 0.1353,-0.1077 0.1359,-0.1719 0.002,-0.0645 -0.0435,-0.1281 -0.1266,-0.1746 z"
+   id="path15-5" /><path
+   style="fill:#08f181;fill-opacity:1;stroke-width:0.0221781;stroke-linecap:round;stroke-linejoin:round"
+   d="m 257.39573,119.5556 c 0.0277,0.0155 0.0662,0.0243 0.10604,0.0249 0.0396,3.2e-4 0.0786,-0.009 0.10714,-0.0231 0.0283,-0.0149 0.045,-0.0359 0.0457,-0.0573 5.9e-4,-0.0215 -0.0147,-0.0427 -0.0423,-0.0583 -0.0277,-0.0155 -0.0664,-0.0244 -0.10571,-0.0245 -0.0398,-4.4e-4 -0.0788,0.009 -0.10692,0.0229 -0.0284,0.015 -0.0452,0.036 -0.0457,0.0575 -5.5e-4,0.0216 0.0147,0.0427 0.0422,0.0582 z"
+   id="path28" /><path
+   style="fill:#09ee80;fill-opacity:1;stroke-width:0.0221781;stroke-linecap:round;stroke-linejoin:round"
+   d="m 253.97726,118.90169 c -0.0277,-0.0155 -0.0664,-0.0244 -0.10604,-0.0247 -0.0396,-3.3e-4 -0.0785,0.009 -0.10681,0.023 -0.0284,0.015 -0.0452,0.036 -0.0459,0.0573 -4.1e-4,0.0216 0.0147,0.0427 0.0425,0.0583 0.0275,0.0154 0.0662,0.0243 0.1056,0.0246 0.0398,4.5e-4 0.0788,-0.009 0.10736,-0.023 0.0282,-0.0148 0.0451,-0.0359 0.0453,-0.0573 8.1e-4,-0.0215 -0.0145,-0.0427 -0.0422,-0.0582 z"
+   id="path15" />
+    
+    
     <!-- Left LED glow -->
-    <path
-   d="m 251.96981,118.95102 1.51419,-1.02693"
-   style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-linecap:round;stroke-opacity:0.15"
-   id="led-l1-glow" />
-    <path
-   d="m 252.06113,119.54619 1.71369,-1.37357"
-   style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-linecap:round;stroke-opacity:0.15"
-   id="led-l2-glow" />
-    <path
-   d="m 252.48838,119.71019 1.64766,-1.30897"
-   style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-linecap:round;stroke-opacity:0.15"
-   id="led-l3-glow" />
+    
+    
+    
 
     <!-- Right glove (slightly offset) -->
     
     <!-- Right glove finger cuts -->
     
     <!-- Right LED strips -->
-    <path
-   d="m 256.36668,120.2349 1.51419,-1.02693"
-   style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-linecap:round;stroke-opacity:0.9"
-   id="led-r1" />
-    <path
-   d="m 256.45801,120.83006 1.71369,-1.37356"
-   style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-linecap:round;stroke-opacity:0.9"
-   id="led-r2" />
-    <path
-   d="m 256.88525,120.99407 1.64766,-1.30898"
-   style="fill:none;stroke:#00ff88;stroke-width:0.3;stroke-linecap:round;stroke-opacity:0.9"
-   id="led-r3" />
+    
+    
+    
     <!-- Right LED glow -->
-    <path
-   d="m 256.36668,120.2349 1.51419,-1.02693"
-   style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-linecap:round;stroke-opacity:0.15"
-   id="led-r1-glow" />
-    <path
-   d="m 256.45801,120.83006 1.71369,-1.37356"
-   style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-linecap:round;stroke-opacity:0.15"
-   id="led-r2-glow" />
-    <path
-   d="m 256.85845,120.90112 1.64766,-1.30898"
-   style="fill:none;stroke:#00ff88;stroke-width:0.8;stroke-linecap:round;stroke-opacity:0.15"
-   id="led-r3-glow" />
+    
+    
+    
   </g>
 </g><g
    id="fermentation-shelf"
